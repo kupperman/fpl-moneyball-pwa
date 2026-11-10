@@ -204,6 +204,7 @@ def main():
     l124_standings = []
     l124_squads = {}
     histories = {}
+    gw_histories = {}
 
     for s in l124_res['standings']['results']:
         eid = s['entry']
@@ -242,7 +243,9 @@ def main():
         
         cur_list = hist.get('current', [])
         gw_totals = {h['event']: h['total_points'] for h in cur_list}
+        gw_nets = {h['event']: h['points'] - h['event_transfers_cost'] for h in cur_list}
         histories[eid] = gw_totals
+        gw_histories[eid] = gw_nets
 
         # Calculate Turn 2 points (GW11 - GW19)
         t2_pts = sum((h['points'] - h['event_transfers_cost']) for h in cur_list if 11 <= h['event'] <= 19)
@@ -300,13 +303,17 @@ def main():
         "richest": {"team": richest_club['team'], "manager": richest_club['manager'], "val": f"£{richest_club['team_value']}m"}
     }
 
-    # Rank progression for GW1 to current_gw
+    # Rank & Points progression for GW1 to current_gw
     rank_prog = {item['team']: [] for item in l124_standings}
+    points_prog = {item['team']: [] for item in l124_standings}
+    gw_points_prog = {item['team']: [] for item in l124_standings}
     for gw in range(1, current_gw + 1):
         sorted_eids = sorted(histories.keys(), key=lambda eid: histories[eid].get(gw, 0), reverse=True)
         for idx, eid in enumerate(sorted_eids):
             t_name = next(x['team'] for x in l124_standings if x['entry'] == eid)
             rank_prog[t_name].append(idx + 1)
+            points_prog[t_name].append(histories[eid].get(gw, 0))
+            gw_points_prog[t_name].append(gw_histories[eid].get(gw, 0))
 
     # 7. LEAGUE IOC_124
     print("Fetching League IOC_124...")
@@ -399,6 +406,8 @@ def main():
         "turn1_awards": turn1_awards,
         "league_ioc": ioc_standings,
         "rank_progression": rank_prog,
+        "points_progression": points_prog,
+        "gw_points_progression": gw_points_prog,
         "fixtures": fixtures_table,
         "market_players": market_players,
         "watchdog": watchdog,

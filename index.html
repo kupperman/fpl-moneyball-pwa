@@ -132,9 +132,9 @@
       <!-- KỶ LỤC CHẶNG 1 (TURN 1 AWARDS) -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="turn1-awards-container"></div>
 
-      <!-- 2 COLUMNS: BXH CHUYỂN ĐỔI 3 CHẾ ĐỘ & BIỂU ĐỒ + GIẢ LẬP KÈO -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
+      <!-- 2 COLUMNS: BXH 124+ (LEFT) & KHO CHIP + GIẢ LẬP KÈO (RIGHT) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
           <div>
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
               <div>
@@ -157,97 +157,140 @@
             </div>
           </div>
 
-          <!-- MA TRẬN KHO VŨ KHÍ CHIP TOÀN GIẢI -->
-          <div class="pt-3 border-t border-slate-800/80">
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
+            <span><i class="fa-solid fa-circle-info text-cyan-400 mr-1"></i> Bấm vào huy hiệu <b class="text-blue-400">Xanh Samsung</b> hoặc <b class="text-rose-400">Nhà Hảo Tâm</b> để xem chi tiết</span>
+            <span class="font-mono-numbers text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ID: 1473576</span>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: KHO CHIP & BỘ GIẢ LẬP KÈO CHẶNG 2 -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-4">
+          <!-- MA TRẬN KHO VŨ KHÍ CHIP -->
+          <div class="vip-card rounded-2xl p-4 border border-purple-500/20">
             <h3 class="text-xs font-extrabold text-purple-300 mb-2 flex items-center justify-between">
-              <span><i class="fa-solid fa-microchip text-purple-400 mr-1.5"></i> KHO VŨ KHÍ CHIP PHASE 1 (HẠN CHÓT GW19)</span>
-              <span class="text-[10px] text-slate-400 font-normal">Xanh = Còn đạn • Đỏ = Đã bắn</span>
+              <span><i class="fa-solid fa-microchip text-purple-400 mr-1.5"></i> KHO CHIP PHASE 1 (HẠN GW19)</span>
+              <span class="text-[9px] text-slate-400 font-normal">Xanh = Còn • Đỏ = Đã bắn</span>
             </h3>
             <div class="overflow-x-auto">
               <table class="w-full text-center text-[11px] text-slate-300">
                 <thead class="text-[9px] text-slate-400 uppercase bg-slate-950/60">
                   <tr>
                     <th class="p-1.5 text-left">Đội</th>
-                    <th class="p-1.5">Wildcard 1</th>
-                    <th class="p-1.5">Triple Cap 1</th>
-                    <th class="p-1.5">Bench Boost 1</th>
-                    <th class="p-1.5">Free Hit 1</th>
-                    <th class="p-1.5 text-right">Giá Đội (£)</th>
+                    <th class="p-1.5">WC1</th>
+                    <th class="p-1.5">TC1</th>
+                    <th class="p-1.5">BB1</th>
+                    <th class="p-1.5">FH1</th>
+                    <th class="p-1.5 text-right">Giá (£)</th>
                   </tr>
                 </thead>
                 <tbody id="chip-matrix-tbody" class="divide-y divide-slate-800/40"></tbody>
               </table>
             </div>
           </div>
-        </div>
 
-        <!-- CỘT PHẢI: BIỂU ĐỒ & BỘ GIẢ LẬP KÈO CHẶNG 2 VIP PRO -->
-        <div class="lg:col-span-5 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <div>
-                <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
-                  <i class="fa-solid fa-chart-line text-cyan-400"></i> QUỸ ĐẠO THỨ HẠNG (GW1 – GW10)
-                </h3>
-                <p class="text-[11px] text-slate-400">Diễn biến thứ hạng thực tế suốt Chặng 1</p>
-              </div>
-              <span class="text-[10px] text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">Real History</span>
-            </div>
-            <div class="w-full h-52 sm:h-60">
-              <canvas id="rankHistoryChart"></canvas>
-            </div>
-          </div>
-
-          <!-- ĐẤU TRƯỜNG GIẢ LẬP KÈO & CHIP CHẶNG 2 -->
-          <div class="pt-3 border-t border-slate-800/80 space-y-2.5">
+          <!-- ĐẤU TRƯỜNG GIẢ LẬP KÈO & CHIP GW11 -->
+          <div class="vip-card rounded-2xl p-4 border border-indigo-500/30 space-y-2.5">
             <div class="flex items-center justify-between">
               <span class="text-xs font-extrabold text-indigo-300 flex items-center gap-1.5">
-                <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> ĐẤU TRƯỜNG GIẢ LẬP KÈO GW11
+                <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> GIẢ LẬP KÈO ĐỐI ĐẦU GW11
               </span>
-              <select id="sim-mode" onchange="runWhatIfSim()" class="bg-slate-900 border border-slate-700 text-[10px] font-bold text-cyan-300 rounded-lg px-2 py-1">
-                <option value="turn2" selected>Chế độ: Chặng 2 (Reset 0đ)</option>
-                <option value="overall">Chế độ: Cộng dồn Cả Mùa</option>
+              <select id="sim-mode" onchange="runWhatIfSim()" class="bg-slate-950 border border-slate-700 text-[10px] font-bold text-cyan-300 rounded-lg px-2 py-1">
+                <option value="turn2" selected>Chặng 2 (Reset 0đ)</option>
+                <option value="overall">Cộng dồn Cả Mùa</option>
               </select>
             </div>
 
             <div class="grid grid-cols-2 gap-2 text-[11px]">
-              <!-- HLV A -->
-              <div class="bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 space-y-1.5">
-                <select id="sim-manager-a" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-cyan-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
+              <div class="bg-slate-950/70 p-2 rounded-xl border border-slate-800 space-y-1">
+                <select id="sim-manager-a" onchange="runWhatIfSim()" class="w-full bg-slate-900 text-cyan-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
                 <div class="flex justify-between items-center font-mono-numbers">
-                  <span class="text-[10px] text-slate-400">Điểm GW11:</span>
+                  <span class="text-[10px] text-slate-400">GW11:</span>
                   <b id="sim-pts-a" class="text-cyan-400">65đ</b>
                 </div>
                 <input type="range" min="25" max="115" value="65" id="slider-a" oninput="runWhatIfSim()" class="w-full accent-cyan-400">
-                <select id="sim-chip-a" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
+                <select id="sim-chip-a" onchange="runWhatIfSim()" class="w-full bg-slate-900 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
                   <option value="0">Chip: Không (+0đ)</option>
-                  <option value="12">Triple Captain (+12đ)</option>
+                  <option value="12">Triple Cap (+12đ)</option>
                   <option value="18">Bench Boost (+18đ)</option>
                 </select>
               </div>
 
-              <!-- HLV B -->
-              <div class="bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 space-y-1.5">
-                <select id="sim-manager-b" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-amber-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
+              <div class="bg-slate-950/70 p-2 rounded-xl border border-slate-800 space-y-1">
+                <select id="sim-manager-b" onchange="runWhatIfSim()" class="w-full bg-slate-900 text-amber-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
                 <div class="flex justify-between items-center font-mono-numbers">
-                  <span class="text-[10px] text-slate-400">Điểm GW11:</span>
+                  <span class="text-[10px] text-slate-400">GW11:</span>
                   <b id="sim-pts-b" class="text-amber-400">55đ</b>
                 </div>
                 <input type="range" min="25" max="115" value="55" id="slider-b" oninput="runWhatIfSim()" class="w-full accent-amber-400">
-                <select id="sim-chip-b" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
+                <select id="sim-chip-b" onchange="runWhatIfSim()" class="w-full bg-slate-900 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
                   <option value="0">Chip: Không (+0đ)</option>
-                  <option value="12">Triple Captain (+12đ)</option>
+                  <option value="12">Triple Cap (+12đ)</option>
                   <option value="18">Bench Boost (+18đ)</option>
                 </select>
               </div>
             </div>
 
-            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px]">
-              <span class="text-slate-300 font-mono-numbers" id="sim-status-text">Đang tính toán...</span>
+            <div class="p-2 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
+              <span class="text-slate-300 font-mono-numbers" id="sim-status-text">Đang tính...</span>
               <span class="font-extrabold text-emerald-400" id="sim-gap-badge">...</span>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- FULL-WIDTH LUXURY ANALYTICS CHARTS SECTION (2 BIỂU ĐỒ CHUYÊN NGHIỆP: CÁC TURN & ALL SEASON) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- BIỂU ĐỒ 1: PHÂN TÍCH THEO TỪNG CHẶNG (TURN 1 / TURN 2) -->
+        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-cyan-500/20">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div>
+              <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+                <i class="fa-solid fa-layer-group text-cyan-400"></i> BIỂU ĐỒ THEO CHẶNG (TURN ANALYTICS)
+              </h3>
+              <p class="text-[11px] text-slate-400" id="turn-chart-subtitle">Diễn biến thứ hạng qua từng vòng trong Chặng 1 (GW1 – GW10)</p>
+            </div>
+            <div class="flex items-center space-x-1.5 text-[10px]">
+              <select id="turn-chart-stage" onchange="renderTurnChart()" class="bg-slate-950 border border-slate-700 text-cyan-300 font-bold rounded-lg px-2 py-1">
+                <option value="turn1" selected>Chặng 1 (GW1–10)</option>
+                <option value="turn2">Chặng 2 (GW11–19)</option>
+              </select>
+              <select id="turn-chart-metric" onchange="renderTurnChart()" class="bg-slate-950 border border-slate-700 text-slate-200 font-bold rounded-lg px-2 py-1">
+                <option value="rank" selected>Thứ hạng (#1–#7)</option>
+                <option value="gw_pts">Điểm từng vòng</option>
+              </select>
+            </div>
+          </div>
+          <!-- SLEEK CUSTOM PILL LEGEND -->
+          <div id="turn-chart-legend" class="flex flex-wrap gap-1.5 mb-3"></div>
+          <div class="w-full h-64 sm:h-72">
+            <canvas id="turnAnalyticsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- BIỂU ĐỒ 2: ĐUA ĐIỂM TOÀN MÙA (ALL-SEASON CUMULATIVE RACE) -->
+        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-amber-500/20">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <div>
+              <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+                <i class="fa-solid fa-rocket text-amber-400"></i> BIỂU ĐỒ TOÀN MÙA (ALL-SEASON RACE)
+              </h3>
+              <p class="text-[11px] text-slate-400" id="all-chart-subtitle">Đường đua tổng điểm tích lũy toàn mùa giải (GW1 – Hiện tại)</p>
+            </div>
+            <div class="flex items-center space-x-1.5 text-[10px]">
+              <select id="all-chart-metric" onchange="renderAllSeasonChart()" class="bg-slate-950 border border-slate-700 text-amber-300 font-bold rounded-lg px-2 py-1">
+                <option value="total_pts" selected>Tổng điểm tích lũy</option>
+                <option value="rank">Thứ hạng toàn mùa</option>
+              </select>
+            </div>
+          </div>
+          <!-- SLEEK CUSTOM PILL LEGEND -->
+          <div id="all-chart-legend" class="flex flex-wrap gap-1.5 mb-3"></div>
+          <div class="w-full h-64 sm:h-72">
+            <canvas id="allSeasonChart"></canvas>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -650,6 +693,8 @@
 
     let pitchDoughnut = null;
     let currentPitchPlayers = {};
+    let turnChart = null;
+    let allSeasonChart = null;
 
     function renderAll() {
       if (!DATA) return;
@@ -660,7 +705,8 @@
       setStandingMode(standingMode);
       renderChipMatrix();
       renderLeagueIOC();
-      renderRankHistoryChart();
+      renderTurnChart();
+      renderAllSeasonChart();
       populateSimManagers();
       runWhatIfSim();
       populatePitchSelector();
@@ -901,42 +947,222 @@
       }).join('');
     }
 
-    function renderRankHistoryChart() {
-      const ctx = document.getElementById('rankHistoryChart').getContext('2d');
-      if (rankChart) rankChart.destroy();
-      const teamColorMap = {
-        'Bao Bui': '#f59e0b',
-        'Cận VIP': '#06b6d4',
-        'SNAL': '#a855f7',
-        'FC K': '#10b981',
-        'Ninh SS': '#2563eb', // Xanh Samsung Hoàng Gia
-        'Ngocdao': '#f43f5e',
-        'XOẠC-UNITED': '#ec4899'
-      };
-      const labels = Array.from({ length: DATA.current_gw }, (_, i) => `GW${i + 1}`);
-      const datasets = Object.entries(DATA.rank_progression).map(([team, ranks], idx) => {
-        const col = teamColorMap[team] || '#94a3b8';
+    const TEAM_COLOR_MAP = {
+      'Bao Bui': '#f59e0b',
+      'Cận VIP': '#06b6d4',
+      'SNAL': '#a855f7',
+      'FC K': '#10b981',
+      'Ninh SS': '#2563eb', // Xanh Samsung Hoàng Gia
+      'Ngocdao': '#f43f5e',
+      'XOẠC-UNITED': '#ec4899'
+    };
+
+    function buildCustomLegend(containerId, teams) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = teams.map(team => {
+        const col = TEAM_COLOR_MAP[team] || '#94a3b8';
+        const display = team === 'Ninh SS' ? 'Ninh SS (Samsung)' : team;
+        return `
+          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/90 border border-slate-800 text-[10px] font-bold text-slate-200">
+            <span class="w-2 h-2 rounded-full" style="background-color: ${col}; box-shadow: 0 0 6px ${col};"></span>
+            ${display}
+          </span>
+        `;
+      }).join('');
+    }
+
+    function renderTurnChart() {
+      const ctx = document.getElementById('turnAnalyticsChart').getContext('2d');
+      if (turnChart) turnChart.destroy();
+
+      const stage = document.getElementById('turn-chart-stage')?.value || 'turn1';
+      const metric = document.getElementById('turn-chart-metric')?.value || 'rank';
+      const subEl = document.getElementById('turn-chart-subtitle');
+
+      const teams = DATA.league_124.map(s => s.team);
+      buildCustomLegend('turn-chart-legend', teams);
+
+      let startIdx = 0;
+      let endIdx = Math.min(10, DATA.current_gw);
+      if (stage === 'turn2') {
+        startIdx = 10;
+        endIdx = Math.max(10, DATA.current_gw);
+        subEl.textContent = DATA.current_gw >= 11
+          ? `Chặng 2 (GW11 – GW${DATA.current_gw}) • Reset từ 0 điểm`
+          : 'Chặng 2 (GW11 – GW19) • Dự kiến xuất phát 0 – 0 tại GW11';
+      } else {
+        subEl.textContent = metric === 'rank'
+          ? 'Thứ hạng qua từng vòng trong Chặng 1 (GW1 – GW10)'
+          : 'Số điểm ghi được ở từng vòng trong Chặng 1 (GW1 – GW10)';
+      }
+
+      const labels = (stage === 'turn2' && DATA.current_gw < 11)
+        ? ['GW11 (Start)']
+        : Array.from({ length: endIdx - startIdx }, (_, i) => `GW${startIdx + i + 1}`);
+
+      const datasets = teams.map((team, idx) => {
+        const col = TEAM_COLOR_MAP[team] || '#94a3b8';
+        let rawData = [];
+        if (stage === 'turn2' && DATA.current_gw < 11) {
+          rawData = [metric === 'rank' ? 1 : 0];
+        } else {
+          const source = metric === 'rank' ? DATA.rank_progression[team] : (DATA.gw_points_progression ? DATA.gw_points_progression[team] : []);
+          rawData = (source || []).slice(startIdx, endIdx);
+        }
+
         return {
-          label: team === 'Ninh SS' ? 'Ninh SS (Xanh Samsung)' : team,
-          data: ranks,
+          label: team,
+          data: rawData,
           borderColor: col,
           backgroundColor: col,
-          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 3 : 1.5,
-          tension: 0.25
+          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.6,
+          tension: 0.35,
+          pointRadius: 4,
+          pointHoverRadius: 7,
+          pointBackgroundColor: col,
+          pointBorderColor: '#060911',
+          pointBorderWidth: 1.8
         };
       });
 
-      rankChart = new Chart(ctx, {
+      const isRank = metric === 'rank';
+      turnChart = new Chart(ctx, {
         type: 'line',
         data: { labels, datasets },
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: { padding: { top: 14, bottom: 8, left: 4, right: 14 } },
+          interaction: { mode: 'index', intersect: false },
           scales: {
-            y: { reverse: true, min: 1, max: 7, ticks: { stepSize: 1, color: '#94a3b8', callback: v => '#' + v }, grid: { color: 'rgba(255,255,255,0.06)' } },
-            x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.06)' } }
+            y: isRank ? {
+              reverse: true,
+              min: 1,
+              max: 7,
+              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => '#' + v },
+              grid: { color: 'rgba(255,255,255,0.05)', tickBorderDash: [4, 4] }
+            } : {
+              beginAtZero: true,
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => v + 'đ' },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            },
+            x: {
+              offset: true,
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' } },
+              grid: { display: false }
+            }
           },
-          plugins: { legend: { labels: { color: '#e2e8f0', font: { size: 10, weight: 'bold' } } } }
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(13, 19, 33, 0.96)',
+              borderColor: 'rgba(6, 182, 212, 0.45)',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 10,
+              titleFont: { family: 'Plus Jakarta Sans', weight: 'bold', size: 12 },
+              bodyFont: { family: 'JetBrains Mono', size: 11 },
+              callbacks: {
+                label: (c) => ` ${c.dataset.label}: ${isRank ? '#' + c.parsed.y : c.parsed.y + 'đ'}`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    function renderAllSeasonChart() {
+      const ctx = document.getElementById('allSeasonChart').getContext('2d');
+      if (allSeasonChart) allSeasonChart.destroy();
+
+      const metric = document.getElementById('all-chart-metric')?.value || 'total_pts';
+      const subEl = document.getElementById('all-chart-subtitle');
+      subEl.textContent = metric === 'total_pts'
+        ? `Tổng điểm tích lũy liên tục toàn mùa (GW1 – GW${DATA.current_gw})`
+        : `Quỹ đạo thứ hạng chung cuộc toàn mùa (GW1 – GW${DATA.current_gw})`;
+
+      const teams = DATA.league_124.map(s => s.team);
+      buildCustomLegend('all-chart-legend', teams);
+
+      const labels = Array.from({ length: DATA.current_gw }, (_, i) => `GW${i + 1}`);
+      const isTotal = metric === 'total_pts';
+
+      const datasets = teams.map((team, idx) => {
+        const col = TEAM_COLOR_MAP[team] || '#94a3b8';
+        const dataArr = isTotal
+          ? (DATA.points_progression ? DATA.points_progression[team] : [])
+          : (DATA.rank_progression[team] || []);
+
+        // Create sleek vertical gradient fill for top 3 + Ninh SS in total_pts mode
+        let bgFill = col;
+        let fillMode = false;
+        if (isTotal && (idx <= 1 || team === 'Ninh SS')) {
+          const grad = ctx.createLinearGradient(0, 0, 0, 260);
+          grad.addColorStop(0, col + '33');
+          grad.addColorStop(1, col + '00');
+          bgFill = grad;
+          fillMode = true;
+        }
+
+        return {
+          label: team,
+          data: dataArr,
+          borderColor: col,
+          backgroundColor: bgFill,
+          fill: fillMode,
+          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.6,
+          tension: 0.35,
+          pointRadius: 3.5,
+          pointHoverRadius: 6.5,
+          pointBackgroundColor: col,
+          pointBorderColor: '#060911',
+          pointBorderWidth: 1.5
+        };
+      });
+
+      allSeasonChart = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { top: 14, bottom: 8, left: 4, right: 14 } },
+          interaction: { mode: 'index', intersect: false },
+          scales: {
+            y: isTotal ? {
+              beginAtZero: false,
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => v + 'đ' },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            } : {
+              reverse: true,
+              min: 1,
+              max: 7,
+              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => '#' + v },
+              grid: { color: 'rgba(255,255,255,0.05)' }
+            },
+            x: {
+              offset: true,
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' } },
+              grid: { display: false }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(13, 19, 33, 0.96)',
+              borderColor: 'rgba(245, 158, 11, 0.45)',
+              borderWidth: 1,
+              padding: 10,
+              cornerRadius: 10,
+              titleFont: { family: 'Plus Jakarta Sans', weight: 'bold', size: 12 },
+              bodyFont: { family: 'JetBrains Mono', size: 11 },
+              itemSort: (a, b) => isTotal ? b.parsed.y - a.parsed.y : a.parsed.y - b.parsed.y,
+              callbacks: {
+                label: (c) => ` ${c.dataset.label}: ${isTotal ? c.parsed.y + 'đ' : '#' + c.parsed.y}`
+              }
+            }
+          }
         }
       });
     }
