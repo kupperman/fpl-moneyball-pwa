@@ -28,7 +28,7 @@ Hệ thống tách biệt hoàn toàn giữa **Giao diện (`index.html`)** và 
 ## 🔒 2. BẢO MẬT OPSEC & PHÂN TÁCH VIP VAULT
 
 * **Public View:** Chỉ hiển thị thông tin chung của `124+ | NÁT` và số liệu công khai từ Premier League.
-* **VIP Vault (Nút Ổ Khóa góc trên):** Bảo vệ bằng mật mã (`6767` / `tit67` / `canvip`), che giấu hoàn toàn:
+* **VIP Vault (Nút Ổ Khóa góc trên):** Bảo vệ bằng mật mã riêng tư, che giấu hoàn toàn:
   * Bảng xếp hạng giải công ty **`IOC_124` (ID: 155330)**.
   * Ngân sách dư ITB, trạng thái 4 Chip còn lại, đội hình 15 người và chiến lược Chặng 2 của **Cận VIP (ID: 707471)**.
 

@@ -673,7 +673,7 @@
     let countdownInterval = null;
     let radarChart = null;
     let rankChart = null;
-    const VALID_PASSWORDS = ['tit67', '6767', 'canvip'];
+    const VALID_PASSWORDS = ['0124'];
 
     async function loadLiveData() {
       const icon = document.getElementById('refresh-icon');
@@ -1710,7 +1710,7 @@
       const input = document.getElementById('vip-pass-input').value.trim().toLowerCase();
       if (VALID_PASSWORDS.includes(input)) {
         isVipUnlocked = true;
-        localStorage.setItem('fpl_vip_auth', 'true');
+        localStorage.setItem('fpl_vip_auth_0124', 'true');
         togglePasswordModal();
         applyVipState();
         switchTab('vip-vault');
@@ -1718,7 +1718,7 @@
         document.getElementById('pass-error').classList.remove('hidden');
       }
     }
-    function lockVipVault() { isVipUnlocked = false; localStorage.removeItem('fpl_vip_auth'); applyVipState(); switchTab('standings'); }
+    function lockVipVault() { isVipUnlocked = false; localStorage.removeItem('fpl_vip_auth_0124'); applyVipState(); switchTab('standings'); }
     function applyVipState() {
       const navVip = document.getElementById('nav-vip-vault');
       const vipIcon = document.getElementById('vip-icon');
@@ -1737,7 +1737,7 @@
     function closeSamsungModal() { document.getElementById('samsung-modal').classList.add('hidden'); }
 
     window.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('fpl_vip_auth') === 'true') isVipUnlocked = true;
+      if (localStorage.getItem('fpl_vip_auth_0124') === 'true') isVipUnlocked = true;
       applyVipState();
       loadLiveData();
     });
