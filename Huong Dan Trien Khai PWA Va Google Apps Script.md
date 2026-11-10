@@ -1,54 +1,52 @@
-# HƯỚNG DẪN TRIỂN KHAI HỆ THỐNG MONEYBALL FPL PWA VÀ GOOGLE APPS SCRIPT
+# HƯỚNG DẪN KIẾN TRÚC & VẬN HÀNH HỆ THỐNG FPL MONEYBALL PWA (LIVE AUTO-SYNC)
 
-> **Mục tiêu:** Xây dựng ứng dụng web cá nhân PWA (Progressive Web App) hiển thị toàn bộ số liệu FPL (Radar Tiền Vệ, Bảng Xếp Hạng Mini-League 124+ Nát & IOC, Kế Hoạch Chuyển Nhượng) hoàn toàn miễn phí (0 đồng server, 0 đồng domain), truy cập siêu tốc trên điện thoại và máy tính.
-
----
-
-## 🛠️ BƯỚC 1: TRIỂN KHAI BACKEND SERVERLESS TRÊN GOOGLE APPS SCRIPT (GAS)
-
-1. Truy cập vào [Google Apps Script](https://script.google.com/home).
-2. Nhấn nút **New project** (Dự án mới) và đổi tên dự án thành: `FPL Moneyball Engine`.
-3. Mở file mã nguồn:
-   - File trên máy: [`e:\FPL_2026_27_Project\web_dashboard\fpl_pwa\Google Apps Script Code.js`](file:///e:/FPL_2026_27_Project/web_dashboard/fpl_pwa/Google%20Apps%20Script%20Code.js).
-   - Copy toàn bộ nội dung dán đè vào file `Code.gs` trên trình duyệt.
-4. Nhấn **Deploy** (Triển khai) góc trên bên phải -> chọn **New deployment** (Tùy chọn triển khai mới):
-   - **Select type** (Chọn loại): Nhấn biểu tượng bánh răng ⚙️ -> Chọn **Web app**.
-   - **Description**: `FPL Production API v1`.
-   - **Execute as** (Thực thi dưới dạng): `Me (địa chỉ email của bạn)`.
-   - **Who has access** (Ai có quyền truy cập): Chọn **Anyone** (Bất kỳ ai).
-5. Nhấn **Deploy**. Google sẽ yêu cầu ủy quyền quyền truy cập (Authorize Access) lần đầu -> Chọn tài khoản Google của bạn -> Nhấn *Advanced* (Nâng cao) -> *Go to FPL Moneyball Engine (unsafe)* -> Nhấn *Allow*.
-6. Sau khi xong, copy chuỗi **Web App URL** (có đuôi kết thúc bằng `/exec`).
+> **Hệ thống:** `124+ FANTASY ANALYTICS HUB` (GitHub Pages + GitHub Actions Serverless Auto-Sync)  
+> **Live URL:** https://kupperman.github.io/fpl-moneyball-pwa/  
+> **Tài liệu gốc quy chuẩn:** [`e:\FPL_2026_27_Project\00_Admin_Rules\Cam Nang Van Hanh Va Luat Giai 124 Plus Va Live PWA Hub.md`](file:///e:/FPL_2026_27_Project/00_Admin_Rules/Cam%20Nang%20Van%20Hanh%20Va%20Luat%20Giai%20124%20Plus%20Va%20Live%20PWA%20Hub.md)
 
 ---
 
-## 📱 BƯỚC 2: CÁCH CHẠY VÀ SỬ DỤNG FRONTEND PWA
+## 🛠️ 1. KIẾN TRÚC HỆ THỐNG (0 ĐỒNG SERVER, TỰ ĐỘNG 24/7)
 
-Frontend đã được dựng hoàn chỉnh tại thư mục:
-[`e:\FPL_2026_27_Project\web_dashboard\fpl_pwa`](file:///e:/FPL_2026_27_Project/web_dashboard/fpl_pwa)
+Hệ thống tách biệt hoàn toàn giữa **Giao diện (`index.html`)** và **Dữ liệu (`data.json`)**, loại bỏ hoàn toàn lỗi lệch dữ liệu hoặc hỏng cú pháp khi chỉnh sửa thủ công:
 
-### Cách 1: Chạy Thử Ngay Trên Máy Tính (Local)
-- Mở trực tiếp file [`index.html`](file:///e:/FPL_2026_27_Project/web_dashboard/fpl_pwa/index.html) bằng trình duyệt Google Chrome hoặc Edge.
-- Bấm vào nút **Nguồn API** (góc trên bên phải), dán link `/exec` từ Bước 1 vào rồi bấm **Lưu URL**.
-- Bấm **Làm mới**: Dữ liệu Live từ FPL sẽ lập tức đổ về!
-
-### Cách 2: Đưa Lên Mạng Miễn Phí (Cloudflare Pages / GitHub Pages / Vercel)
-Để truy cập được từ điện thoại ở bất kỳ đâu ngoài đường hoặc cơ quan:
-1. Tạo 1 tài khoản miễn phí tại [Cloudflare Pages](https://pages.cloudflare.com/) hoặc GitHub Pages.
-2. Kéo thả thư mục `e:\FPL_2026_27_Project\web_dashboard\fpl_pwa` lên.
-3. Trong vòng 10 giây, Cloudflare sẽ cấp cho bạn một đường link HTTPS siêu tốc (ví dụ: `https://fpl-canvip.pages.dev`).
-4. Mở link trên điện thoại (Safari hoặc Chrome):
-   - **Trên iPhone:** Bấm nút Chia sẻ (Share) -> Chọn **Thêm vào MH chính (Add to Home Screen)**.
-   - **Trên Android:** Bấm menu 3 chấm -> Chọn **Cài đặt ứng dụng / Thêm vào màn hình chính**.
-   - Ngay lập tức trên màn hình điện thoại sẽ xuất hiện icon FPL Moneyball, mở lên full màn hình như 1 app tải từ App Store mà không tốn 1 xu chi phí!
-
-### Cách 3: Nhúng Vào Google Sites (Nếu Vẫn Muốn Có 1 Trang Google Sites Cá Nhân)
-1. Mở trang Google Sites của bạn.
-2. Chọn công cụ **Nhúng (Embed)** -> Chọn tab **Theo URL**.
-3. Dán đường link Cloudflare Pages (hoặc link trực tiếp) vào -> Chọn chế độ hiển thị toàn trang.
+1. **`sync.py` (Bộ Kéo Dữ Liệu Chính Chủ FPL API):**
+   * Kết nối trực tiếp tới các endpoint chính thức của Premier League (`bootstrap-static/`, `fixtures/`, `event/{gw}/live/`, `entry/{id}/history/`, `entry/{id}/event/{gw}/picks/`, `leagues-classic/`).
+   * Tự động tính toán và xuất ra `data.json`: BXH `124+ | NÁT` (kèm điểm Turn 2 Reset 0-0, Chip đã dùng, Giá trị đội hình, Kỷ lục Turn 1), Đội hình GW gần nhất của cả 7 HLV, 20 CLB Fixture Heatmap, Top 35 cầu thủ, Biến động chuyển nhượng thật (`watchdog`), Dream Team và dữ liệu riêng cho `VIP Vault`.
+2. **`.github/workflows/sync.yml` (Tự Động Hóa Cloud):**
+   * Chạy định kỳ mỗi **6 tiếng/lần** trên máy chủ GitHub Actions (`cron: '0 */6 * * *'`) hoặc bấm chạy tay bất cứ lúc nào từ GitHub Actions / CLI (`gh workflow run sync.yml`).
+   * Tự động commit `data.json` mới và kích hoạt GitHub Pages deploy trong vòng ~30 giây.
+3. **`index.html` (Frontend PWA Bloomberg Pro Max):**
+   * Luôn tải `./data.json?v=Date.now()` để đảm bảo hiển thị số liệu mới nhất ngay lập tức.
+   * **Tab Đấu trường:** Countdown Deadline GW11, 4 Thẻ Kỷ Lục Chặng 1 (*Tuyển Trạch Viên Cao Thủ*, *Chiến Thuật Điểm Kém*, *Chúa Tể Dự Bị*, *Chuyên Gia Đi Chợ*), BXH 2 chế độ (`⚡ Chặng 2 Reset 0-0` vs `🏆 Cả Mùa`), Ma trận Kho Chip 7×4, Quỹ đạo Thứ hạng thực tế 10 vòng (Ninh SS màu **Xanh Samsung `#2563EB`**), và Đấu trường Giả lập Kèo GW11.
+   * **Tab Sa bàn 2D (Broadcast Stadium Pitch):** Mặt sân SVG sắc nét, Áo đấu SVG chuẩn màu cả 20 CLB, cho phép soi Dream Team hoặc đội hình GW của từng HLV trong `124+ | NÁT`, Hồ sơ soi cầu thủ khi chạm áo đấu, Biểu đồ Doughnut & Độ phủ CLB.
+   * **Tab Market Radar:** Radar 5 trục, So găng tay đôi trực tiếp, Transfer Watchdog thực tế, Captaincy Index, Bảng tìm kiếm & lọc vị trí Top 35 ngôi sao.
+   * **Tab Heatmap 20 CLB:** Đầy đủ 20 CLB mùa 2026/27 thực tế (có Coventry, Hull, Sunderland, Leeds) + ngôi sao từng đội.
 
 ---
 
-## 📊 CÁC TÍNH NĂNG ĐÃ SỐ LIỆU HÓA TRÊN APP
-- **Radar Tiền Vệ (Midfielders Scanner):** So sánh trực quan dạng biểu đồ mạng nhện giữa bất kỳ 2 tiền vệ nào (xGI/90, Form, ICT, Điểm/Triệu bảng) — giải quyết dứt điểm nỗi lo chọn nhầm tiền vệ xịt.
-- **Phòng Tác Chiến 124+ Nát:** Theo dõi sát sao cuộc đua vô địch (Cận VIP bám đuổi Bao Bui 8 điểm) và cuộc chiến trụ hạng tránh "móc túi nộp phạt" của Cường Tệ & Ngọc Dao.
-- **Quản Trị Kho Chip:** Đếm ngược 9 vòng tới hạn chót GW19 cho 4 chip đợt 1 (Wildcard, Triple Captain, Bench Boost, Free Hit).
+## 🔒 2. BẢO MẬT OPSEC & PHÂN TÁCH VIP VAULT
+
+* **Public View:** Chỉ hiển thị thông tin chung của `124+ | NÁT` và số liệu công khai từ Premier League.
+* **VIP Vault (Nút Ổ Khóa góc trên):** Bảo vệ bằng mật mã (`6767` / `tit67` / `canvip`), che giấu hoàn toàn:
+  * Bảng xếp hạng giải công ty **`IOC_124` (ID: 155330)**.
+  * Ngân sách dư ITB, trạng thái 4 Chip còn lại, đội hình 15 người và chiến lược Chặng 2 của **Cận VIP (ID: 707471)**.
+
+---
+
+## ⚙️ 3. QUY TRÌNH KIỂM ĐỊNH & DEPLOY KHI CHỈNH SỬA CODE
+
+Mỗi khi cập nhật giao diện hoặc logic tính toán:
+1. Chạy `python sync.py` để làm mới `data.json`.
+2. Chạy script kiểm định bắt buộc:
+   ```powershell
+   node e:\FPL_2026_27_Project\07_Automation_Scripts\utility_scripts\verify_pwa.js
+   ```
+   *(Phải pass: JS Syntax Check, All 20 clubs x 5 GWs valid, Zero-Hallucination Check).*
+3. Đồng bộ trước khi đẩy code lên GitHub Pages (tránh đụng commit từ bot GitHub Actions):
+   ```powershell
+   git add -A
+   git commit -m "Mô tả thay đổi"
+   git pull --rebase origin master
+   git push origin master
+   ```
