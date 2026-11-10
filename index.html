@@ -3,231 +3,498 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>124+ Premier League Analytics Hub</title>
-  <meta name="description" content="Trung tâm số liệu & phân tích chuyên sâu FPL 124+ League. Market Radar, Fixture Ticker, xGI Scanner và Bảng Xếp Hạng Chặng 1.">
+  <title>124+ Premier League Analytics Hub — VIP PRO MAX</title>
+  <meta name="description" content="Trung tâm số liệu & phân tích chuyên sâu FPL 124+ League. Sa bàn chiến thuật 2D, Market Radar xGI, What-If Simulator và Bảng Xếp Hạng Chặng 1.">
   
   <!-- OpenGraph Preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kupperman.github.io/fpl-moneyball-pwa/">
-  <meta property="og:title" content="⚽ 124+ FANTASY LEAGUE — ANALYTICS HUB">
-  <meta property="og:description" content="Trung tâm số liệu & phân tích chuyên sâu FPL: Market Radar xGI, Fixture Ticker 5 vòng tới và Cục diện Chặng 1.">
+  <meta property="og:title" content="⚡ 124+ FANTASY LEAGUE — VIP PRO MAX HUB">
+  <meta property="og:description" content="Sa bàn 2D, Market Radar xGI, Bộ giả lập What-If và Vinh danh Nhà Hảo Tâm Turn 1.">
   <meta property="og:image" content="https://img.icons8.com/color/512/premier-league.png">
 
   <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0b0f19">
+  <meta name="theme-color" content="#070a12">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind & Chart.js -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
+    * {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .font-mono-numbers {
+      font-family: 'JetBrains Mono', monospace;
+    }
     body {
-      background-color: #0b0f19;
+      background-color: #070a12;
       color: #f1f5f9;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
-    .glass-card {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    /* AMBIENT GLOW BACKDROP */
+    .bg-ambient {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: 
+        radial-gradient(circle at 10% 15%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
+        #070a12;
+      z-index: -1;
     }
-    .badge-diff-1 { background-color: #059669; color: #fff; } /* Rất dễ */
-    .badge-diff-2 { background-color: #10b981; color: #fff; } /* Dễ */
-    .badge-diff-3 { background-color: #64748b; color: #fff; } /* Trung bình */
-    .badge-diff-4 { background-color: #f97316; color: #fff; } /* Khó */
-    .badge-diff-5 { background-color: #ef4444; color: #fff; } /* Cực khó */
+    /* LUXURY GLASS CARD */
+    .vip-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.09);
+    }
+    .vip-card:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+    /* METALLIC & GLOW EFFECTS */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-cyan-gradient {
+      background: linear-gradient(135deg, #a5f3fc 0%, #06b6d4 50%, #0891b2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .vip-gold-glow {
+      box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.35);
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+    .vip-cyan-glow {
+      box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+      border-color: rgba(6, 182, 212, 0.45);
+    }
+    .vip-rose-glow {
+      box-shadow: 0 0 20px -4px rgba(244, 63, 94, 0.35);
+      border-color: rgba(244, 63, 94, 0.45);
+    }
+    /* PITCH STYLING */
+    .football-pitch {
+      background: 
+        repeating-linear-gradient(
+          to bottom,
+          #15803d,
+          #15803d 30px,
+          #166534 30px,
+          #166534 60px
+        );
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      position: relative;
+      box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    .pitch-line {
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+    .pitch-player {
+      transition: all 0.2s ease;
+    }
+    .pitch-player:hover {
+      transform: scale(1.08);
+    }
+    /* BADGE DIFFICULTIES */
+    .badge-diff-1 { background-color: #059669; color: #fff; }
+    .badge-diff-2 { background-color: #10b981; color: #fff; }
+    .badge-diff-3 { background-color: #475569; color: #fff; }
+    .badge-diff-4 { background-color: #ea580c; color: #fff; }
+    .badge-diff-5 { background-color: #dc2626; color: #fff; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col pb-20">
+<body class="min-h-screen flex flex-col pb-24 text-slate-100">
 
-  <!-- TOP HEADER (TRUNG LẬP & CHUYÊN NGHIỆP) -->
-  <header class="sticky top-0 z-50 glass-card border-b border-slate-800 px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center space-x-2.5">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-black text-white text-sm shadow-md">
-        124
+  <!-- AMBIENT BACKGROUND -->
+  <div class="bg-ambient"></div>
+
+  <!-- TOP ULTRA-LUXURY HEADER -->
+  <header class="sticky top-0 z-50 vip-card border-b border-slate-800/80 px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="relative">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-fuchsia-600 flex items-center justify-center font-black text-white text-sm shadow-lg shadow-indigo-500/25">
+          124
+        </div>
+        <span class="absolute -bottom-1 -right-1 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full animate-pulse"></span>
       </div>
       <div>
-        <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
-          124+ ANALYTICS HUB
-          <span class="text-[10px] px-1.5 py-0.2 rounded bg-indigo-950 text-indigo-400 border border-indigo-800">Pro Edition</span>
-        </h1>
-        <p class="text-[10px] text-slate-400">Market Radar • xGI Models • Fixtures</p>
+        <div class="flex items-center gap-1.5">
+          <h1 class="text-sm font-extrabold tracking-tight text-white">
+            124+ ANALYTICS HUB
+          </h1>
+          <span class="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500/20 to-cyan-500/20 text-cyan-300 border border-cyan-500/30 uppercase tracking-widest">
+            VIP PRO MAX
+          </span>
+        </div>
+        <p class="text-[10px] text-slate-400 font-medium">Moneyball Tactical Engine • Official Turn 1 Lockdown</p>
       </div>
     </div>
     
-    <!-- NÚT KHÓA VIP (BẢO VỆ THÔNG TIN CÁ NHÂN) -->
+    <!-- TOP ACTIONS -->
     <div class="flex items-center space-x-2">
-      <button onclick="handleVipButton()" id="vip-status-btn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5 transition">
+      <button onclick="handleVipButton()" id="vip-status-btn" class="text-xs bg-slate-900/80 hover:bg-slate-800 text-slate-300 px-3 py-1.5 rounded-lg border border-amber-500/30 flex items-center gap-1.5 transition shadow-sm">
         <i class="fa-solid fa-lock text-amber-400" id="vip-icon"></i>
-        <span id="vip-label">VIP Vault</span>
+        <span id="vip-label" class="font-semibold text-[11px]">VIP Vault</span>
       </button>
-      <button onclick="refreshData()" class="text-xs bg-cyan-600 hover:bg-cyan-500 text-white p-1.5 px-2 rounded-lg flex items-center gap-1 transition">
-        <i class="fa-solid fa-rotate" id="refresh-icon"></i>
+      <button onclick="refreshData()" class="text-xs bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white p-2 rounded-lg flex items-center gap-1 shadow-md shadow-cyan-500/20 transition">
+        <i class="fa-solid fa-arrows-rotate" id="refresh-icon"></i>
       </button>
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
-  <main class="flex-1 max-w-4xl w-full mx-auto p-4 space-y-4">
+  <!-- MAIN VIEWPORT -->
+  <main class="flex-1 max-w-4xl w-full mx-auto p-3 sm:p-4 space-y-4">
 
-    <!-- TAB 1: BẢNG XẾP HẠNG & CỤC DIỆN CHẶNG (PUBLIC) -->
+    <!-- ======================================================== -->
+    <!-- TAB 1: 🏆 CỤC DIỆN CHẶNG 1 & ĐẤU TRƯỜNG 124+ -->
+    <!-- ======================================================== -->
     <div id="tab-standings" class="tab-content space-y-4">
       
-      <!-- HERO LEAGUE METRICS -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="glass-card rounded-xl p-3 border border-slate-800">
-          <p class="text-[11px] text-slate-400 font-medium">Chặng 1 (Turn 1)</p>
-          <p class="text-xl font-black text-emerald-400 mt-0.5">Đã Khép Lại</p>
-          <span class="text-[10px] text-slate-400">GW1 – GW10 (10 trận)</span>
+      <!-- HERO METRICS WITH METALLIC SHINE -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+        <div class="vip-card rounded-2xl p-3.5 relative overflow-hidden">
+          <div class="absolute -right-2 -bottom-2 opacity-10 text-4xl text-cyan-400 font-black"><i class="fa-solid fa-flag-checkered"></i></div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Chặng 1 (Turn 1)</p>
+          <p class="text-xl sm:text-2xl font-black text-emerald-400 mt-0.5">HOÀN TẤT</p>
+          <span class="text-[10px] text-slate-400 font-mono-numbers">10 / 10 Vòng đấu</span>
         </div>
-        <div class="glass-card rounded-xl p-3 border border-slate-800">
-          <p class="text-[11px] text-slate-400 font-medium">Quán Quân Chặng 1</p>
-          <p class="text-xl font-black text-amber-400 mt-0.5">Bao Bui</p>
-          <span class="text-[10px] text-slate-400">586 điểm (#1 League)</span>
+
+        <div class="vip-card rounded-2xl p-3.5 vip-gold-glow relative overflow-hidden">
+          <div class="absolute -right-2 -bottom-2 opacity-10 text-4xl text-amber-400 font-black"><i class="fa-solid fa-crown"></i></div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-amber-400">Quán Quân Turn 1</p>
+          <p class="text-xl sm:text-2xl font-black text-gold-gradient mt-0.5">Bao Bui</p>
+          <span class="text-[10px] text-amber-300 font-mono-numbers">586 điểm (#1 League)</span>
         </div>
-        <div class="glass-card rounded-xl p-3 border border-slate-800">
-          <p class="text-[11px] text-slate-400 font-medium">Khoảng Cách Vô Địch</p>
-          <p class="text-xl font-black text-cyan-400 mt-0.5">8 Điểm</p>
-          <span class="text-[10px] text-slate-400">#1 Bao Bui vs #2 Cận VIP</span>
+
+        <div class="vip-card rounded-2xl p-3.5 vip-cyan-glow relative overflow-hidden">
+          <div class="absolute -right-2 -bottom-2 opacity-10 text-4xl text-cyan-400 font-black"><i class="fa-solid fa-shield"></i></div>
+          <p class="text-[10px] font-bold uppercase tracking-wider text-cyan-400">Á Quân Bám Đuổi</p>
+          <p class="text-xl sm:text-2xl font-black text-cyan-gradient mt-0.5">Cận VIP</p>
+          <span class="text-[10px] text-cyan-300 font-mono-numbers">578 điểm (Kém đúng 8đ)</span>
         </div>
-        <div class="glass-card rounded-xl p-3 border border-slate-800">
-          <p class="text-[11px] text-slate-400 font-medium">Nhà Hảo Tâm Turn 1</p>
-          <p class="text-xl font-black text-rose-400 mt-0.5">535 Điểm</p>
-          <span class="text-[10px] text-rose-300">Cường Tệ & Ngọc Dao</span>
+
+        <div class="vip-card rounded-2xl p-3.5 vip-rose-glow relative overflow-hidden cursor-pointer" onclick="openHaoTamModal()">
+          <div class="absolute -right-2 -bottom-2 opacity-10 text-4xl text-rose-400 font-black"><i class="fa-solid fa-medal"></i></div>
+          <div class="flex justify-between items-start">
+            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-400">Nhà Hảo Tâm Turn 1</p>
+            <i class="fa-solid fa-circle-info text-rose-400 text-xs"></i>
+          </div>
+          <p class="text-xl sm:text-2xl font-black text-rose-400 mt-0.5">535 Điểm</p>
+          <span class="text-[10px] text-rose-300 underline">Cường Tệ & Ngọc Dao</span>
         </div>
       </div>
 
-      <!-- BẢNG 124+ NÁT -->
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
+      <!-- BẢNG TỔNG KẾT BẢNG VÀNG CHÍNH THỨC -->
+      <div class="vip-card rounded-2xl p-4 border border-slate-800">
         <div class="flex items-center justify-between mb-3">
           <div>
-            <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-trophy text-amber-400"></i> Bảng Tổng Kết Chặng 1 — 124+ FANTASY LEAGUE
+            <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-amber-400"></i> BẢNG VINH DANH CHÍNH THỨC — 124+ FANTASY LEAGUE
             </h2>
-            <p class="text-[11px] text-slate-400">Quy chuẩn tính điểm chính thức sau loạt trận Gameweek 10</p>
+            <p class="text-[11px] text-slate-400">Chốt sổ sau trận Super Sunday GW10 • Chuẩn hóa số liệu 10/10 trận</p>
           </div>
-          <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">7 HLV</span>
+          <span class="text-[10px] bg-slate-900 text-slate-300 font-mono px-2 py-1 rounded-md border border-slate-700">League ID: 1473576</span>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
+            <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
               <tr>
-                <th class="p-2 text-center w-12">Hạng</th>
-                <th class="p-2">Đội Bóng / HLV</th>
-                <th class="p-2 text-right">GW10</th>
-                <th class="p-2 text-right font-bold text-white">Tổng Điểm</th>
-                <th class="p-2 text-right">Cách Top 1</th>
-                <th class="p-2 text-center">Danh Hiệu Chặng</th>
+                <th class="p-2.5 text-center w-12">Hạng</th>
+                <th class="p-2.5">Đội Bóng / HLV</th>
+                <th class="p-2.5 text-right">GW10 Điểm</th>
+                <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
+                <th class="p-2.5 text-right">Cách Top 1</th>
+                <th class="p-2.5 text-center">Danh Hiệu Chặng 1</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-800/60">
-              <tr class="hover:bg-slate-800/40">
-                <td class="p-2 text-center font-bold text-amber-400">🥇 #1</td>
-                <td class="p-2">
-                  <div class="font-bold text-white">Bao Bui</div>
-                  <div class="text-[10px] text-slate-400">Bao Bui</div>
+            <tbody class="divide-y divide-slate-800/50">
+              <!-- #1 BAO BUI -->
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="p-2.5 text-center font-black text-amber-400 text-sm">🥇 #1</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-white flex items-center gap-1.5">
+                    Bao Bui <i class="fa-solid fa-crown text-[10px] text-amber-400"></i>
+                  </div>
+                  <div class="text-[10px] text-slate-400 font-medium">Bao Bui</div>
                 </td>
-                <td class="p-2 text-right font-medium text-slate-300">52</td>
-                <td class="p-2 text-right font-bold text-amber-400">586</td>
-                <td class="p-2 text-right text-slate-400">-</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">🏆 Quán Quân Turn 1</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-medium text-slate-300">52</td>
+                <td class="p-2.5 text-right font-mono-numbers font-black text-gold-gradient text-sm">586</td>
+                <td class="p-2.5 text-right font-mono-numbers text-slate-500 font-semibold">MỐC #1</td>
+                <td class="p-2.5 text-center">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-amber-500/20 to-yellow-500/20 text-amber-300 font-extrabold border border-amber-500/40 shadow-sm">
+                    🏆 Quán Quân Turn 1
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40">
-                <td class="p-2 text-center font-bold text-cyan-400">🥈 #2</td>
-                <td class="p-2">
-                  <div class="font-bold text-white">Cận VIP</div>
-                  <div class="text-[10px] text-slate-400">Trung TíT</div>
+
+              <!-- #2 CẬN VIP -->
+              <tr class="hover:bg-slate-800/30 transition bg-cyan-950/15 border-l-2 border-cyan-400">
+                <td class="p-2.5 text-center font-black text-cyan-400 text-sm">🥈 #2</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-white flex items-center gap-1.5">
+                    Cận VIP <i class="fa-solid fa-shield-halved text-[10px] text-cyan-400"></i>
+                  </div>
+                  <div class="text-[10px] text-slate-400 font-medium">Trung TíT</div>
                 </td>
-                <td class="p-2 text-right font-medium text-emerald-400 font-bold">64</td>
-                <td class="p-2 text-right font-bold text-cyan-400">578</td>
-                <td class="p-2 text-right text-cyan-400">-8</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30">🥈 Á Quân Turn 1</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-bold text-emerald-400">64</td>
+                <td class="p-2.5 text-right font-mono-numbers font-black text-cyan-gradient text-sm">578</td>
+                <td class="p-2.5 text-right font-mono-numbers text-cyan-400 font-bold">-8đ</td>
+                <td class="p-2.5 text-center">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-cyan-300 font-extrabold border border-cyan-500/40 shadow-sm">
+                    🥈 Á Quân Turn 1
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40">
-                <td class="p-2 text-center font-bold text-slate-300">🥉 #3</td>
-                <td class="p-2">
-                  <div class="font-bold text-white">SNAL</div>
-                  <div class="text-[10px] text-slate-400">paper man</div>
+
+              <!-- #3 SNAL -->
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="p-2.5 text-center font-black text-slate-400">🥉 #3</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-white">SNAL</div>
+                  <div class="text-[10px] text-slate-400 font-medium">paper man</div>
                 </td>
-                <td class="p-2 text-right font-medium text-slate-300">60</td>
-                <td class="p-2 text-right font-bold text-white">568</td>
-                <td class="p-2 text-right text-slate-400">-18</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Top 3 An Toàn</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-medium text-slate-300">60</td>
+                <td class="p-2.5 text-right font-mono-numbers font-bold text-white">568</td>
+                <td class="p-2.5 text-right font-mono-numbers text-slate-400">-18đ</td>
+                <td class="p-2.5 text-center">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 font-medium border border-slate-700">
+                    Top 3 An Toàn
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40">
-                <td class="p-2 text-center font-bold text-slate-400">#4</td>
-                <td class="p-2">
-                  <div class="font-bold text-white">Ninh SS</div>
-                  <div class="text-[10px] text-slate-400">Ninh Dang</div>
+
+              <!-- #4 NINH SS -->
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="p-2.5 text-center font-bold text-slate-400">#4</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-white">Ninh SS</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Ninh Dang</div>
                 </td>
-                <td class="p-2 text-right font-medium text-emerald-400 font-bold">65</td>
-                <td class="p-2 text-right font-bold text-white">554</td>
-                <td class="p-2 text-right text-slate-400">-32</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Bứt Tốc Nước Rút</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-bold text-emerald-400">65</td>
+                <td class="p-2.5 text-right font-mono-numbers font-bold text-white">554</td>
+                <td class="p-2.5 text-right font-mono-numbers text-slate-400">-32đ</td>
+                <td class="p-2.5 text-center">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-950/40 text-emerald-300 font-medium border border-emerald-800/40">
+                    ⚡ Bứt Tốc Nước Rút
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40">
-                <td class="p-2 text-center font-bold text-slate-400">#5</td>
-                <td class="p-2">
-                  <div class="font-bold text-white">FC K</div>
-                  <div class="text-[10px] text-slate-400">iKen Dang</div>
+
+              <!-- #5 FC K -->
+              <tr class="hover:bg-slate-800/30 transition">
+                <td class="p-2.5 text-center font-bold text-slate-400">#5</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-white">FC K</div>
+                  <div class="text-[10px] text-slate-400 font-medium">iKen Dang</div>
                 </td>
-                <td class="p-2 text-right font-medium text-slate-300">54</td>
-                <td class="p-2 text-right font-bold text-white">549</td>
-                <td class="p-2 text-right text-slate-400">-37</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Trụ Hạng Thành Công</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-medium text-slate-300">54</td>
+                <td class="p-2.5 text-right font-mono-numbers font-bold text-white">549</td>
+                <td class="p-2.5 text-right font-mono-numbers text-slate-400">-37đ</td>
+                <td class="p-2.5 text-center">
+                  <span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 font-medium border border-slate-700">
+                    Trụ Hạng Thành Công
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40 bg-rose-950/20">
-                <td class="p-2 text-center font-bold text-rose-400">#6</td>
-                <td class="p-2">
-                  <div class="font-bold text-rose-200">XOẠC-UNITED</div>
-                  <div class="text-[10px] text-slate-400">Cường Tệ</div>
+
+              <!-- #6 XOAC UNITED -->
+              <tr class="hover:bg-rose-950/20 transition bg-rose-950/10">
+                <td class="p-2.5 text-center font-black text-rose-400">#6</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-rose-200">XOẠC-UNITED</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Cường Tệ</div>
                 </td>
-                <td class="p-2 text-right font-medium text-slate-300">59</td>
-                <td class="p-2 text-right font-bold text-rose-300">535</td>
-                <td class="p-2 text-right text-rose-400">-51</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">🎖️ Nhà Hảo Tâm Turn 1</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-medium text-slate-300">59</td>
+                <td class="p-2.5 text-right font-mono-numbers font-black text-rose-300">535</td>
+                <td class="p-2.5 text-right font-mono-numbers text-rose-400 font-bold">-51đ</td>
+                <td class="p-2.5 text-center">
+                  <span onclick="openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-rose-500/25 to-red-500/25 text-rose-300 font-black border border-rose-500/50 shadow-sm hover:scale-105 transition inline-block">
+                    🎖️ Nhà Hảo Tâm Turn 1
+                  </span>
+                </td>
               </tr>
-              <tr class="hover:bg-slate-800/40 bg-rose-950/20">
-                <td class="p-2 text-center font-bold text-rose-400">#7</td>
-                <td class="p-2">
-                  <div class="font-bold text-rose-200">Ngocdao</div>
-                  <div class="text-[10px] text-slate-400">Ngọc Dao</div>
+
+              <!-- #7 NGOCDAO -->
+              <tr class="hover:bg-rose-950/20 transition bg-rose-950/10">
+                <td class="p-2.5 text-center font-black text-rose-400">#7</td>
+                <td class="p-2.5">
+                  <div class="font-extrabold text-rose-200">Ngocdao</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Ngọc Dao</div>
                 </td>
-                <td class="p-2 text-right font-medium text-slate-300">49</td>
-                <td class="p-2 text-right font-bold text-rose-300">535</td>
-                <td class="p-2 text-right text-rose-400">-51</td>
-                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">🎖️ Nhà Hảo Tâm Turn 1</span></td>
+                <td class="p-2.5 text-right font-mono-numbers font-medium text-slate-300">49</td>
+                <td class="p-2.5 text-right font-mono-numbers font-black text-rose-300">535</td>
+                <td class="p-2.5 text-right font-mono-numbers text-rose-400 font-bold">-51đ</td>
+                <td class="p-2.5 text-center">
+                  <span onclick="openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-rose-500/25 to-red-500/25 text-rose-300 font-black border border-rose-500/50 shadow-sm hover:scale-105 transition inline-block">
+                    🎖️ Nhà Hảo Tâm Turn 1
+                  </span>
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
+      <!-- WHAT-IF SIMULATOR: BỘ GIẢ LẬP LẬT ĐỔ NGÔI ĐẦU BẢNG GW11 -->
+      <div class="vip-card rounded-2xl p-4 border border-indigo-500/30">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xs font-extrabold text-indigo-300 flex items-center gap-1.5 uppercase tracking-wide">
+            <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> What-If Live Simulator (Mô Phỏng Lật Đổ GW11)
+          </h3>
+          <span class="text-[10px] text-slate-400">Kéo trượt để tính kịch bản</span>
+        </div>
+        <p class="text-[11px] text-slate-300 mb-3">
+          Giả định điểm số vòng tới để tính toán khoảng cách soán ngôi Quán Quân của <b>Bao Bui</b>:
+        </p>
+
+        <div class="space-y-3 bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+          <div>
+            <div class="flex justify-between text-xs font-semibold mb-1">
+              <span class="text-cyan-400">Điểm GW11 Cận VIP: <b id="sim-my-pts" class="font-mono-numbers">65</b> điểm</span>
+              <span class="text-amber-400">Điểm GW11 Bao Bui: <b id="sim-rival-pts" class="font-mono-numbers">50</b> điểm</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <input type="range" min="30" max="100" value="65" id="slider-my-pts" oninput="runWhatIfSim()" class="w-full accent-cyan-400">
+              <input type="range" min="30" max="100" value="50" id="slider-rival-pts" oninput="runWhatIfSim()" class="w-full accent-amber-400">
+            </div>
+          </div>
+          <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between" id="sim-result-box">
+            <span class="text-xs text-slate-300" id="sim-status-text">Cận VIP hơn 15đ ở GW11</span>
+            <span class="text-xs font-black text-emerald-400" id="sim-gap-badge">🎉 LẬT ĐỔ THÀNH CÔNG (+7đ lên Top 1)</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- TAB 2: MARKET RADAR & XGI SCATTER (TƯƠNG TỰ CÁC BẢN TRẢ PHÍ FPL REVIEW / FFM) -->
+    <!-- ======================================================== -->
+    <!-- TAB 2: 🏟️ SA BÀN CHIẾN THUẬT 2D (TACTICAL PITCH VIEW) -->
+    <!-- ======================================================== -->
+    <div id="tab-pitch" class="tab-content hidden space-y-4">
+      <div class="vip-card rounded-2xl p-4 border border-slate-800">
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-futbol text-emerald-400"></i> SA BÀN CHIẾN THUẬT — DREAM TEAM CHẶNG 1
+            </h2>
+            <p class="text-[11px] text-slate-400">Đội hình 11 ngôi sao tối ưu điểm số trung bình cao nhất qua 10 vòng đầu (Sơ đồ 3-4-3)</p>
+          </div>
+          <span class="text-[10px] bg-emerald-950/60 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded-full font-bold">Total: 712 pts</span>
+        </div>
+
+        <!-- THE FOOTBALL PITCH -->
+        <div class="football-pitch rounded-2xl p-4 sm:p-6 w-full max-w-md mx-auto min-h-[420px] flex flex-col justify-between">
+          <!-- GOALKEEPER -->
+          <div class="flex justify-center">
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-10 h-10 rounded-full bg-amber-400 border-2 border-white mx-auto flex items-center justify-center text-slate-950 font-black text-xs shadow-md">GK</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[10px] font-bold text-white shadow">Raya</div>
+              <div class="text-[9px] text-amber-300 font-mono-numbers font-bold">52đ</div>
+            </div>
+          </div>
+
+          <!-- DEFENDERS (3) -->
+          <div class="flex justify-around">
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-cyan-500 border-2 border-white mx-auto flex items-center justify-center text-slate-950 font-bold text-xs shadow-md">DEF</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Gabriel</div>
+              <div class="text-[9px] text-cyan-300 font-mono-numbers font-bold">54đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-cyan-500 border-2 border-white mx-auto flex items-center justify-center text-slate-950 font-bold text-xs shadow-md">DEF</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Gvardiol</div>
+              <div class="text-[9px] text-cyan-300 font-mono-numbers font-bold">49đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-cyan-500 border-2 border-white mx-auto flex items-center justify-center text-slate-950 font-bold text-xs shadow-md">DEF</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Calafiori</div>
+              <div class="text-[9px] text-cyan-300 font-mono-numbers font-bold">44đ</div>
+            </div>
+          </div>
+
+          <!-- MIDFIELDERS (4) -->
+          <div class="flex justify-around">
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-indigo-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">MID</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Palmer</div>
+              <div class="text-[9px] text-indigo-300 font-mono-numbers font-bold">68đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-indigo-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">MID</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Saka</div>
+              <div class="text-[9px] text-indigo-300 font-mono-numbers font-bold">64đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-indigo-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">MID</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Mbeumo</div>
+              <div class="text-[9px] text-indigo-300 font-mono-numbers font-bold">62đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-indigo-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">MID</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Semenyo</div>
+              <div class="text-[9px] text-indigo-300 font-mono-numbers font-bold">54đ</div>
+            </div>
+          </div>
+
+          <!-- FORWARDS (3) -->
+          <div class="flex justify-around">
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-rose-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">FWD</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Haaland (C)</div>
+              <div class="text-[9px] text-rose-300 font-mono-numbers font-bold">82đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-rose-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">FWD</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">N.Jackson</div>
+              <div class="text-[9px] text-rose-300 font-mono-numbers font-bold">56đ</div>
+            </div>
+            <div class="pitch-player text-center cursor-pointer">
+              <div class="w-9 h-9 rounded-full bg-rose-500 border-2 border-white mx-auto flex items-center justify-center text-white font-bold text-xs shadow-md">FWD</div>
+              <div class="mt-1 bg-slate-950/80 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">Wood</div>
+              <div class="text-[9px] text-rose-300 font-mono-numbers font-bold">58đ</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 3: 🔥 MARKET RADAR & XGI MATRIX 4 GÓC -->
+    <!-- ======================================================== -->
     <div id="tab-market" class="tab-content hidden space-y-4">
       
-      <!-- RADAR SO KÈO -->
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
+      <!-- RADAR MULTI-METRIC -->
+      <div class="vip-card rounded-2xl p-4 border border-slate-800">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
-            <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-chart-radar text-cyan-400"></i> Market Radar — So Sánh Đa Chiều
+            <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-chart-radar text-cyan-400"></i> Market Radar — Đa Chiều Chuẩn FPL Review
             </h2>
-            <p class="text-xs text-slate-400">Chuẩn hóa dữ liệu theo mẫu hình FPL Review ($xGI/90$, Form, Điểm/Triệu £, ICT)</p>
+            <p class="text-xs text-slate-400">So sánh trực quan 5 thuộc tính: xGI/90, Form, Tấn công, Điểm/Giá £, Đá phạt</p>
           </div>
           <div class="flex items-center space-x-2 text-xs">
-            <select id="radar-player-1" onchange="updateRadarChart()" class="bg-slate-900 text-cyan-400 border border-slate-700 rounded px-2.5 py-1 text-xs">
+            <select id="radar-player-1" onchange="updateRadarChart()" class="bg-slate-900 text-cyan-400 font-bold border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs shadow-sm">
               <option value="Mbeumo" selected>Mbeumo (£7.8m)</option>
               <option value="Palmer">Palmer (£10.8m)</option>
               <option value="Saka">Saka (£10.1m)</option>
               <option value="Haaland">Haaland (£15.4m)</option>
             </select>
-            <span class="text-slate-500 font-bold">vs</span>
-            <select id="radar-player-2" onchange="updateRadarChart()" class="bg-slate-900 text-emerald-400 border border-slate-700 rounded px-2.5 py-1 text-xs">
+            <span class="text-slate-500 font-bold text-xs">VS</span>
+            <select id="radar-player-2" onchange="updateRadarChart()" class="bg-slate-900 text-emerald-400 font-bold border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs shadow-sm">
               <option value="Semenyo" selected>Semenyo (£5.6m)</option>
               <option value="Rogers">Rogers (£5.4m)</option>
               <option value="Groß">Groß (£6.2m)</option>
@@ -241,29 +508,59 @@
         </div>
       </div>
 
-      <!-- BẢNG CHỈ SỐ CAO CẤP TỔNG HỢP -->
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <div class="flex items-center justify-between mb-3">
-          <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
-            <i class="fa-solid fa-fire text-amber-400"></i> Bảng Phân Tích Cầu Thủ Trọng Điểm (xGI & Value Matrix)
+      <!-- PRICE CHANGE WATCHDOG (DỰ BÁO TĂNG/GIẢM GIÁ ĐÊM NAY) -->
+      <div class="vip-card rounded-2xl p-4 border border-amber-500/30">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xs font-extrabold text-amber-400 flex items-center gap-1.5 uppercase tracking-wide">
+            <i class="fa-solid fa-bell text-amber-400"></i> Price Change Watchdog (Dự Báo Biến Động Giá Đêm Nay)
           </h3>
-          <span class="text-[10px] text-slate-400">Sắp xếp theo xGI/90</span>
+          <span class="text-[10px] text-slate-400">Cập nhật 01:15 AM</span>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-emerald-950/20 border border-emerald-800/40 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-arrow-trend-up"></i></span>
+              <div>
+                <p class="font-bold text-white">Semenyo (BOU)</p>
+                <p class="text-[10px] text-slate-400">Đang đạt 104% Target chuyển nhượng</p>
+              </div>
+            </div>
+            <span class="font-bold text-emerald-400 font-mono-numbers">Sắp Tăng £0.1m</span>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-rose-950/20 border border-rose-800/40 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-arrow-trend-down"></i></span>
+              <div>
+                <p class="font-bold text-white">Doku (MCI)</p>
+                <p class="text-[10px] text-slate-400">Bị bán tháo -101% Target</p>
+              </div>
+            </div>
+            <span class="font-bold text-rose-400 font-mono-numbers">Sắp Giảm £0.1m</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BẢNG CHỈ SỐ xGI & MA TRẬN GIÁ TRỊ -->
+      <div class="vip-card rounded-2xl p-4 border border-slate-800">
+        <h3 class="text-xs font-extrabold text-slate-200 uppercase tracking-wider mb-3 flex items-center gap-1.5">
+          <i class="fa-solid fa-database text-cyan-400"></i> Dữ Liệu Tinh Tuyển 9 Ngôi Sao Thị Trường
+        </h3>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
+            <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
               <tr>
-                <th class="p-2">Cầu Thủ</th>
-                <th class="p-2">Vị Trí / CLB</th>
-                <th class="p-2">Giá Hiện Tại</th>
-                <th class="p-2 text-cyan-400 font-bold">xGI/90</th>
-                <th class="p-2">Form (4 GW)</th>
-                <th class="p-2 text-emerald-400 font-bold">Điểm / £1m</th>
-                <th class="p-2">Đánh Giá Thị Trường</th>
+                <th class="p-2.5">Cầu Thủ</th>
+                <th class="p-2.5">CLB / Pos</th>
+                <th class="p-2.5">Giá (£)</th>
+                <th class="p-2.5 text-cyan-400 font-bold">xGI/90</th>
+                <th class="p-2.5">Form</th>
+                <th class="p-2.5 text-emerald-400 font-bold">Điểm/Triệu £</th>
+                <th class="p-2.5">Nhận Định Chiến Lược</th>
               </tr>
             </thead>
-            <tbody id="market-table-body" class="divide-y divide-slate-800/60">
-              <!-- JS Populates -->
+            <tbody id="market-table-body" class="divide-y divide-slate-800/50">
+              <!-- JS Injects -->
             </tbody>
           </table>
         </div>
@@ -271,131 +568,98 @@
 
     </div>
 
-    <!-- TAB 3: FIXTURE TICKER (LỊCH THI ĐẤU 5 VÒNG TỚI THEO HEATMAP) -->
+    <!-- ======================================================== -->
+    <!-- TAB 4: 📅 FIXTURE HEATMAP (GW11 – GW15) -->
+    <!-- ======================================================== -->
     <div id="tab-fixtures" class="tab-content hidden space-y-4">
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
+      <div class="vip-card rounded-2xl p-4 border border-slate-800">
         <div class="mb-3">
-          <h2 class="text-sm font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-calendar-days text-indigo-400"></i> Fixture Difficulty Ticker (GW11 – GW15)
+          <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+            <i class="fa-solid fa-calendar-days text-indigo-400"></i> FIXTURE TICKER HEATMAP (GW11 – GW15)
           </h2>
-          <p class="text-xs text-slate-400">Thang đo độ khó lịch thi đấu (1: Rất dễ, 5: Cực khó) giúp lên kế hoạch đón sóng điểm</p>
+          <p class="text-xs text-slate-400">Hệ thống phân cấp màu nhiệt chuẩn FFM (Xanh: Mềm, Đỏ: Xương xẩu)</p>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
-            <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
+            <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
               <tr>
-                <th class="p-2">CLB</th>
-                <th class="p-2 text-center">GW11</th>
-                <th class="p-2 text-center">GW12</th>
-                <th class="p-2 text-center">GW13</th>
-                <th class="p-2 text-center">GW14</th>
-                <th class="p-2 text-center">GW15</th>
-                <th class="p-2 text-center font-bold text-emerald-400">Độ Mềm FDR</th>
+                <th class="p-2.5">Câu Lạc Bộ</th>
+                <th class="p-2.5 text-center">GW11</th>
+                <th class="p-2.5 text-center">GW12</th>
+                <th class="p-2.5 text-center">GW13</th>
+                <th class="p-2.5 text-center">GW14</th>
+                <th class="p-2.5 text-center">GW15</th>
+                <th class="p-2.5 text-center font-bold text-emerald-400">FDR Trung Bình</th>
               </tr>
             </thead>
-            <tbody id="fixture-table-body" class="divide-y divide-slate-800/60">
-              <!-- JS Populates -->
+            <tbody id="fixture-table-body" class="divide-y divide-slate-800/50">
+              <!-- JS Injects -->
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 4: TEMPLATE & EFFECTIVE OWNERSHIP (EO TRACKER) -->
-    <div id="tab-template" class="tab-content hidden space-y-4">
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <div class="mb-3">
-          <h2 class="text-sm font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-users text-cyan-400"></i> Template & Tỷ Lệ Sở Hữu (Ownership Intel)
-          </h2>
-          <p class="text-xs text-slate-400">Phân loại "Hàng Quốc Dân" bảo hiểm rank vs "Hàng Khác Biệt" (Differentials) để leo top</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
-            <h4 class="text-xs font-bold text-amber-400 mb-2 flex items-center gap-1.5">
-              <i class="fa-solid fa-shield-halved"></i> Hàng Quốc Dân Bắt Buộc (Template Core > 40%)
-            </h4>
-            <ul class="text-xs space-y-1.5 text-slate-300">
-              <li class="flex justify-between"><span>• <b>Haaland</b> (MCI - FWD)</span><span class="text-amber-400 font-bold">72.4%</span></li>
-              <li class="flex justify-between"><span>• <b>Palmer</b> (CHE - MID)</span><span class="text-amber-400 font-bold">58.1%</span></li>
-              <li class="flex justify-between"><span>• <b>Saka</b> (ARS - MID)</span><span class="text-amber-400 font-bold">42.6%</span></li>
-              <li class="flex justify-between"><span>• <b>Mbeumo</b> (BRE - MID)</span><span class="text-amber-400 font-bold">41.8%</span></li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
-            <h4 class="text-xs font-bold text-emerald-400 mb-2 flex items-center gap-1.5">
-              <i class="fa-solid fa-gem"></i> Vũ Khí Bí Mật (High Value Differentials < 15%)
-            </h4>
-            <ul class="text-xs space-y-1.5 text-slate-300">
-              <li class="flex justify-between"><span>• <b>Semenyo</b> (BOU - £5.6m)</span><span class="text-emerald-400 font-bold">12.3% (xGI: 0.68)</span></li>
-              <li class="flex justify-between"><span>• <b>Groß</b> (BHA - £6.2m)</span><span class="text-emerald-400 font-bold">8.4% (xGI: 0.58)</span></li>
-              <li class="flex justify-between"><span>• <b>Cherki</b> (MCI - £6.5m)</span><span class="text-emerald-400 font-bold">5.2% (xGI: 0.61)</span></li>
-              <li class="flex justify-between"><span>• <b>Barry</b> (EVE - £4.5m)</span><span class="text-emerald-400 font-bold">3.1% (GW10 nổ 16đ)</span></li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
     <!-- ======================================================== -->
-    <!-- TAB 5: PHÒNG TÁC CHIẾN TUYỆT MẬT (CHỈ HIỆN KHI NHẬP ĐÚNG PASS) -->
+    <!-- TAB 5: 🔒 PHÒNG TÁC CHIẾN CƠ MẬT (CHỈ HIỆN KHI NHẬP PASS) -->
     <!-- ======================================================== -->
     <div id="tab-vip-vault" class="tab-content hidden space-y-4">
-      <div class="glass-card rounded-xl p-4 border border-amber-500/40 bg-gradient-to-b from-amber-950/20 to-slate-900/80 shadow-lg">
+      <div class="vip-card rounded-2xl p-4 border border-amber-500/40 bg-gradient-to-b from-amber-950/20 via-slate-900/90 to-slate-950 shadow-2xl">
         
         <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-3">
-          <div class="flex items-center gap-2">
-            <div class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xs border border-amber-500/40">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xs border border-amber-500/50 shadow-inner">
               VIP
             </div>
             <div>
-              <h2 class="text-sm font-black text-amber-400 tracking-wide">PHÒNG TÁC CHIẾN BẢO MẬT — CẬN VIP</h2>
+              <h2 class="text-sm font-black text-amber-400 tracking-wider">PHÒNG TÁC CHIẾN BẢO MẬT — CẬN VIP</h2>
               <p class="text-[10px] text-slate-400">Chiến lược cá nhân độc quyền • Không lộ cho đối thủ</p>
             </div>
           </div>
-          <button onclick="lockVipVault()" class="text-xs bg-rose-900/40 hover:bg-rose-900 text-rose-300 border border-rose-800 px-2.5 py-1 rounded transition flex items-center gap-1">
+          <button onclick="lockVipVault()" class="text-xs bg-rose-950/50 hover:bg-rose-900 text-rose-300 border border-rose-800/60 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5 shadow-sm">
             <i class="fa-solid fa-lock"></i> Khóa lại
           </button>
         </div>
 
-        <!-- THÔNG TIN TÀI CHÍNH BẢO MẬT -->
-        <div class="grid grid-cols-3 gap-2.5 mb-4 text-center">
-          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-[10px] text-slate-400">Ngân Sách Dư (ITB)</span>
-            <p class="text-lg font-black text-emerald-400">£2.8m</p>
+        <!-- TÀI CHÍNH BẢO MẬT -->
+        <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+          <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Ngân Sách Dư (ITB)</span>
+            <p class="text-xl font-black text-emerald-400 font-mono-numbers mt-0.5">£2.8m</p>
+            <span class="text-[9px] text-slate-400">Đủ tiền mua sắm lớn</span>
           </div>
-          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-[10px] text-slate-400">Lượt Chuyển Free</span>
-            <p class="text-lg font-black text-cyan-400">1 FT</p>
+          <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Lượt Chuyển Free</span>
+            <p class="text-xl font-black text-cyan-400 font-mono-numbers mt-0.5">1 FT</p>
+            <span class="text-[9px] text-slate-400">Tối đa tích 5 FT</span>
           </div>
-          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-            <span class="text-[10px] text-slate-400">Kho Chip Phase 1</span>
-            <p class="text-lg font-black text-purple-400">Đủ 4 Chip</p>
+          <div class="bg-slate-950/80 p-3 rounded-xl border border-slate-800">
+            <span class="text-[10px] uppercase font-bold text-slate-400">Kho Chip Đợt 1</span>
+            <p class="text-xl font-black text-purple-400 font-mono-numbers mt-0.5">4 / 4</p>
+            <span class="text-[9px] text-purple-300 font-bold">Hạn chót: GW19</span>
           </div>
         </div>
 
         <!-- MÔ HÌNH TOÁN HỌC MILP SOLVER -->
         <div class="space-y-3">
-          <div class="bg-slate-900/90 p-3 rounded-lg border border-cyan-800/40">
+          <div class="bg-slate-950/80 p-3.5 rounded-xl border border-cyan-800/40">
             <h4 class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
-              <i class="fa-solid fa-microchip"></i> Kế Hoạch Chuyển Nhượng GW11 Khuyên Dùng:
+              <i class="fa-solid fa-microchip"></i> Nước Đi Tối Ưu Toán Học GW11:
             </h4>
-            <p class="text-xs text-slate-300 mt-1.5">
-              • <b>Nước đi tối ưu:</b> Bán <b>Tavernier</b> (£5.4m) hoặc <b>Doku</b> (£6.3m) -> Xúc thẳng <b>Mbeumo</b> (£7.8m) hoặc <b>Semenyo</b> (£5.6m). Khoản tiền £2.8m ITB cho phép nâng cấp trực tiếp mà không cần bán bất kỳ ai khác!
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">
+              • <b>Kịch bản 1 FT:</b> Bán <b>Tavernier</b> (£5.4m) hoặc <b>Doku</b> (£6.3m) -> Xúc thẳng <b>Mbeumo</b> (£7.8m - đá Pen, lịch mềm) hoặc <b>Semenyo</b> (£5.6m - chuẩn bị tăng giá). Khoản tiền £2.8m ITB cho phép giải quyết ngay không mất điểm Hit (-4đ).
             </p>
           </div>
 
-          <div class="bg-slate-900/90 p-3 rounded-lg border border-purple-800/40">
+          <div class="bg-slate-950/80 p-3.5 rounded-xl border border-purple-800/40">
             <h4 class="text-xs font-bold text-purple-400 flex items-center gap-1.5">
-              <i class="fa-solid fa-hourglass-half"></i> Lộ Trình Bung 4 Chip Trước GW19:
+              <i class="fa-solid fa-bolt"></i> Lộ Trình Bung Kho Chip (GW11 – GW19):
             </h4>
-            <ul class="text-xs text-slate-300 mt-1.5 space-y-1 list-disc list-inside">
-              <li><b>GW11 – GW13:</b> Đá đội hình chuẩn, không kích chip. Tích lũy lên 2-3 FT.</li>
-              <li><b>GW14 hoặc GW15:</b> Kích hoạt <b>Triple Captain</b> cho Haaland khi gặp đối thủ yếu ở sân nhà Etihad.</li>
-              <li><b>GW18 hoặc GW19:</b> Kích hoạt <b>Wildcard 1</b> hoặc <b>Free Hit 1</b> đúng vòng Boxing Day để xoay tua đội hình và không bị mất chip khi qua nửa mùa giải.</li>
+            <ul class="text-xs text-slate-300 mt-1.5 space-y-1.5 list-disc list-inside">
+              <li><b>GW11 – GW13:</b> Chạy đội hình chuẩn, không kích chip. Tích lũy lên 2-3 FT để có độ linh hoạt tối đa.</li>
+              <li><b>GW14 hoặc GW15:</b> Kích hoạt <b>Triple Captain</b> cho Haaland khi Man City tiếp đối thủ mềm trên sân nhà Etihad.</li>
+              <li><b>GW18 hoặc GW19:</b> Bung <b>Wildcard 1</b> hoặc <b>Free Hit 1</b> đúng vòng bão thể lực Boxing Day trước hạn chót Phase 1.</li>
             </ul>
           </div>
         </div>
@@ -405,62 +669,85 @@
 
   </main>
 
-  <!-- BOTTOM BAR (ĐẦY ĐỦ CHO PUBLIC + VIP) -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 glass-card border-t border-slate-800 py-2 px-3 flex justify-around items-center">
-    <button onclick="switchTab('standings')" id="nav-standings" class="flex flex-col items-center text-cyan-400 text-[11px] transition">
+  <!-- BOTTOM ULTRA-SLICK APP BAR -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 vip-card border-t border-slate-800/80 py-2.5 px-4 flex justify-around items-center">
+    <button onclick="switchTab('standings')" id="nav-standings" class="flex flex-col items-center text-cyan-400 text-[11px] font-semibold transition">
       <i class="fa-solid fa-trophy text-sm mb-1"></i>
-      <span>Cục diện</span>
+      <span>Đấu trường</span>
     </button>
-    <button onclick="switchTab('market')" id="nav-market" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
+    <button onclick="switchTab('pitch')" id="nav-pitch" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
+      <i class="fa-solid fa-futbol text-sm mb-1"></i>
+      <span>Sa bàn 2D</span>
+    </button>
+    <button onclick="switchTab('market')" id="nav-market" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
       <i class="fa-solid fa-chart-line text-sm mb-1"></i>
-      <span>Radar xGI</span>
+      <span>Market Radar</span>
     </button>
-    <button onclick="switchTab('fixtures')" id="nav-fixtures" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
+    <button onclick="switchTab('fixtures')" id="nav-fixtures" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
       <i class="fa-solid fa-calendar-days text-sm mb-1"></i>
-      <span>Lịch Ticker</span>
+      <span>Heatmap</span>
     </button>
-    <button onclick="switchTab('template')" id="nav-template" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
-      <i class="fa-solid fa-users text-sm mb-1"></i>
-      <span>Ownership</span>
-    </button>
-    <button onclick="switchTab('vip-vault')" id="nav-vip-vault" class="hidden flex-col items-center text-amber-400 text-[11px] transition">
+    <button onclick="switchTab('vip-vault')" id="nav-vip-vault" class="hidden flex-col items-center text-amber-400 text-[11px] font-semibold transition">
       <i class="fa-solid fa-user-secret text-sm mb-1"></i>
       <span>Tác chiến</span>
     </button>
   </nav>
 
-  <!-- PASSWORD MODAL (BẢO VỆ PHÒNG VIP) -->
-  <div id="password-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
-    <div class="glass-card max-w-sm w-full rounded-2xl p-5 border border-slate-700 space-y-4">
+  <!-- MODAL: VINH DANH NHÀ HẢO TÂM TURN 1 (CỰC HÀI HƯỚC & ĐẲNG CẤP) -->
+  <div id="haotam-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
+    <div class="vip-card max-w-sm w-full rounded-3xl p-5 border border-rose-500/40 text-center space-y-3">
+      <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-500 to-amber-500 mx-auto flex items-center justify-center text-2xl text-white shadow-lg shadow-rose-500/30">
+        🎖️
+      </div>
+      <h3 class="text-base font-black text-rose-300">VINH DANH NHÀ HẢO TÂM TURN 1</h3>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Ban tổ chức giải đấu <b>124+ | NÁT</b> xin chân thành cảm tạ hai nhà tài trợ kim cương cho bữa tiệc tổng kết Chặng 1:
+      </p>
+      <div class="bg-slate-950/80 p-3 rounded-2xl border border-rose-500/30 text-xs font-bold text-white space-y-1">
+        <p>🥇 <b>Cường Tệ</b> (XOẠC-UNITED): <span class="text-rose-400">535 điểm</span></p>
+        <p>🥇 <b>Ngọc Dao</b> (Ngocdao): <span class="text-rose-400">535 điểm</span></p>
+      </div>
+      <p class="text-[11px] text-slate-400 italic">
+        "Túi ơi hãy đợi đấy! Thay mặt 5 HLV còn lại, xin đa tạ lòng hảo tâm của 2 sếp!"
+      </p>
+      <button onclick="closeHaoTamModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-bold text-xs shadow-md">
+        Xin Đa Tạ Hai Nhà Hảo Tâm 🙏
+      </button>
+    </div>
+  </div>
+
+  <!-- PASSWORD MODAL CHO VIP VAULT -->
+  <div id="password-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
+    <div class="vip-card max-w-sm w-full rounded-3xl p-5 border border-amber-500/40 space-y-4">
       <div class="flex justify-between items-center">
-        <h3 class="text-sm font-bold text-white flex items-center gap-2">
+        <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
           <i class="fa-solid fa-shield-halved text-amber-400"></i> Xác Thực Mật Mã VIP
         </h3>
         <button onclick="togglePasswordModal()" class="text-slate-400 hover:text-white">&times;</button>
       </div>
       <p class="text-xs text-slate-300">
-        Khu vực bảo mật dành riêng cho chiến thuật nội bộ Cận VIP. Vui lòng nhập mật mã để mở khóa:
+        Khu vực bảo mật tác chiến nội bộ Cận VIP. Vui lòng nhập mật mã mở khóa:
       </p>
       <div>
-        <input type="password" id="vip-pass-input" placeholder="Nhập mật mã..." 
-          class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-amber-400 focus:outline-none focus:border-amber-500 text-center text-lg tracking-widest font-mono"
+        <input type="password" id="vip-pass-input" placeholder="Mật mã..." 
+          class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-amber-400 focus:outline-none focus:border-amber-500 text-center text-lg tracking-widest font-mono"
           onkeyup="if(event.key === 'Enter') verifyPassword()">
-        <p id="pass-error" class="text-[11px] text-rose-400 mt-1.5 hidden text-center">Mật mã không chính xác!</p>
+        <p id="pass-error" class="text-[11px] text-rose-400 mt-1.5 hidden text-center font-bold">Mật mã không chính xác!</p>
       </div>
       <div class="flex justify-end space-x-2 text-xs">
-        <button onclick="togglePasswordModal()" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300">Đóng</button>
-        <button onclick="verifyPassword()" class="px-4 py-1.5 rounded bg-amber-600 hover:bg-amber-500 text-white font-bold">Mở Khóa</button>
+        <button onclick="togglePasswordModal()" class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 font-semibold">Đóng</button>
+        <button onclick="verifyPassword()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 text-white font-black shadow-md">Mở Khóa</button>
       </div>
     </div>
   </div>
 
   <script>
-    // SECRET PASSCODE: 'tit67' hoặc '6767'
+    // PASSCODES
     const VALID_PASSWORDS = ['tit67', '6767', 'canvip'];
     let isVipUnlocked = false;
     let radarChartInstance = null;
 
-    // MARKET PLAYERS
+    // PLAYERS MARKET DATA
     const PLAYERS_DATA = [
       { name: "Palmer", team: "CHE", pos: "MID", cost: 10.8, xgi_90: 0.88, form: 7.2, value: 0.67, tag: "Must-Have Premium" },
       { name: "Saka", team: "ARS", pos: "MID", cost: 10.1, xgi_90: 0.82, form: 6.8, value: 0.67, tag: "Must-Have Premium" },
@@ -482,6 +769,37 @@
       { team: "Man City", gw11: { opp: "BHA (A)", diff: 3 }, gw12: { opp: "TOT (H)", diff: 3 }, gw13: { opp: "LIV (A)", diff: 5 }, gw14: { opp: "NFO (H)", diff: 2 }, gw15: { opp: "CRY (A)", diff: 2 }, avg: "3.0 (Cân Não)" }
     ];
 
+    // WHAT-IF SIMULATOR ENGINE
+    function runWhatIfSim() {
+      const myPts = parseInt(document.getElementById('slider-my-pts').value);
+      const rivalPts = parseInt(document.getElementById('slider-rival-pts').value);
+      
+      document.getElementById('sim-my-pts').textContent = myPts;
+      document.getElementById('sim-rival-pts').textContent = rivalPts;
+
+      // Base: Bao Bui 586, Can VIP 578 (Gap: -8)
+      const myTotal = 578 + myPts;
+      const rivalTotal = 586 + rivalPts;
+      const netGap = myTotal - rivalTotal;
+
+      const badge = document.getElementById('sim-gap-badge');
+      const text = document.getElementById('sim-status-text');
+
+      if (netGap > 0) {
+        text.textContent = `Cận VIP đạt ${myTotal}đ vs Bao Bui ${rivalTotal}đ`;
+        badge.className = "text-xs font-black text-emerald-400";
+        badge.textContent = `🎉 LẬT ĐỔ THÀNH CÔNG (+${netGap}đ lên TOP 1)`;
+      } else if (netGap === 0) {
+        text.textContent = `Hai đội hòa 586+... = ${myTotal}đ`;
+        badge.className = "text-xs font-black text-amber-400";
+        badge.textContent = `🤝 BẰNG ĐIỂM CHẰN CHẶN`;
+      } else {
+        text.textContent = `Cận VIP đạt ${myTotal}đ vs Bao Bui ${rivalTotal}đ`;
+        badge.className = "text-xs font-black text-rose-400";
+        badge.textContent = `⚠️ Vẫn kém Bao Bui ${Math.abs(netGap)}đ`;
+      }
+    }
+
     // TAB MANAGEMENT
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
@@ -502,7 +820,7 @@
       }
     }
 
-    // VIP ACCESS LOGIC
+    // VIP ACCESS
     function handleVipButton() {
       if (isVipUnlocked) {
         switchTab('vip-vault');
@@ -547,13 +865,21 @@
         navVip.classList.remove('hidden');
         navVip.classList.add('flex');
         vipIcon.className = "fa-solid fa-lock-open text-emerald-400";
-        vipLabel.textContent = "Đã Mở VIP";
+        vipLabel.textContent = "VIP Mở";
       } else {
         navVip.classList.add('hidden');
         navVip.classList.remove('flex');
         vipIcon.className = "fa-solid fa-lock text-amber-400";
         vipLabel.textContent = "VIP Vault";
       }
+    }
+
+    // NHÀ HẢO TÂM MODAL
+    function openHaoTamModal() {
+      document.getElementById('haotam-modal').classList.remove('hidden');
+    }
+    function closeHaoTamModal() {
+      document.getElementById('haotam-modal').classList.add('hidden');
     }
 
     // RENDER TABLES
@@ -564,16 +890,16 @@
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-800/40 transition";
         tr.innerHTML = `
-          <td class="p-2 font-bold text-white flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full ${p.xgi_90 >= 0.7 ? 'bg-cyan-400' : 'bg-slate-500'}"></span>
+          <td class="p-2.5 font-bold text-white flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full ${p.xgi_90 >= 0.7 ? 'bg-cyan-400 shadow-sm shadow-cyan-400' : 'bg-slate-500'}"></span>
             ${p.name}
           </td>
-          <td class="p-2 text-slate-400 font-mono text-[11px]">${p.pos} • ${p.team}</td>
-          <td class="p-2 font-semibold">£${p.cost}m</td>
-          <td class="p-2 font-bold text-cyan-400">${p.xgi_90}</td>
-          <td class="p-2">${p.form}</td>
-          <td class="p-2 font-semibold text-emerald-400">${p.value}</td>
-          <td class="p-2"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 border border-slate-700">${p.tag}</span></td>
+          <td class="p-2.5 text-slate-400 font-mono text-[11px]">${p.pos} • ${p.team}</td>
+          <td class="p-2.5 font-mono-numbers font-semibold">£${p.cost}m</td>
+          <td class="p-2.5 font-mono-numbers font-black text-cyan-400">${p.xgi_90}</td>
+          <td class="p-2.5 font-mono-numbers">${p.form}</td>
+          <td class="p-2.5 font-mono-numbers font-bold text-emerald-400">${p.value}</td>
+          <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-900 text-slate-300 border border-slate-700">${p.tag}</span></td>
         `;
         tbody.appendChild(tr);
       });
@@ -587,17 +913,17 @@
         tr.className = "hover:bg-slate-800/40 transition";
 
         const getBadge = (item) => {
-          return `<span class="badge-diff-${item.diff} px-1.5 py-0.5 rounded text-[10px] font-bold inline-block w-14 text-center">${item.opp}</span>`;
+          return `<span class="badge-diff-${item.diff} px-2 py-0.5 rounded-md text-[10px] font-extrabold inline-block w-16 text-center shadow-sm">${item.opp}</span>`;
         };
 
         tr.innerHTML = `
-          <td class="p-2 font-bold text-white">${f.team}</td>
-          <td class="p-2 text-center">${getBadge(f.gw11)}</td>
-          <td class="p-2 text-center">${getBadge(f.gw12)}</td>
-          <td class="p-2 text-center">${getBadge(f.gw13)}</td>
-          <td class="p-2 text-center">${getBadge(f.gw14)}</td>
-          <td class="p-2 text-center">${getBadge(f.gw15)}</td>
-          <td class="p-2 text-center font-bold text-emerald-400">${f.avg}</td>
+          <td class="p-2.5 font-bold text-white">${f.team}</td>
+          <td class="p-2.5 text-center">${getBadge(f.gw11)}</td>
+          <td class="p-2.5 text-center">${getBadge(f.gw12)}</td>
+          <td class="p-2.5 text-center">${getBadge(f.gw13)}</td>
+          <td class="p-2.5 text-center">${getBadge(f.gw14)}</td>
+          <td class="p-2.5 text-center">${getBadge(f.gw15)}</td>
+          <td class="p-2.5 text-center font-bold text-emerald-400 font-mono-numbers">${f.avg}</td>
         `;
         tbody.appendChild(tr);
       });
@@ -610,12 +936,12 @@
       radarChartInstance = new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['xGI/90', 'Form Điểm', 'ICT Tấn Công', 'Điểm/Giá £', 'Đá Cố Định'],
+          labels: ['xGI/90 Phút', 'Form Điểm', 'ICT Tấn Công', 'Điểm/Giá £', 'Đá Phạt Cố Định'],
           datasets: [
             {
               label: 'Mbeumo (£7.8m)',
               data: [82, 75, 80, 85, 90],
-              backgroundColor: 'rgba(6, 182, 212, 0.25)',
+              backgroundColor: 'rgba(6, 182, 212, 0.28)',
               borderColor: '#06b6d4',
               pointBackgroundColor: '#06b6d4',
               borderWidth: 2
@@ -623,7 +949,7 @@
             {
               label: 'Semenyo (£5.6m)',
               data: [76, 70, 75, 95, 60],
-              backgroundColor: 'rgba(16, 185, 129, 0.25)',
+              backgroundColor: 'rgba(16, 185, 129, 0.28)',
               borderColor: '#10b981',
               pointBackgroundColor: '#10b981',
               borderWidth: 2
@@ -635,15 +961,15 @@
           maintainAspectRatio: false,
           scales: {
             r: {
-              angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+              angleLines: { color: 'rgba(255, 255, 255, 0.12)' },
               grid: { color: 'rgba(255, 255, 255, 0.08)' },
-              pointLabels: { color: '#94a3b8', font: { size: 10 } },
+              pointLabels: { color: '#94a3b8', font: { size: 10, weight: 'bold' } },
               ticks: { display: false, max: 100 }
             }
           },
           plugins: {
             legend: {
-              labels: { color: '#f1f5f9', font: { size: 11 } }
+              labels: { color: '#f1f5f9', font: { size: 11, weight: 'bold' } }
             }
           }
         }
@@ -684,7 +1010,7 @@
       }, 400);
     }
 
-    // INIT
+    // INIT ON LOAD
     window.addEventListener('DOMContentLoaded', () => {
       renderMarketTable();
       renderFixtureTable();
