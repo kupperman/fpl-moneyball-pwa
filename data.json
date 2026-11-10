@@ -1,0 +1,1831 @@
+{
+  "updated_at": "2026-11-10 06:41 UTC",
+  "current_gw": 10,
+  "next_gw": 11,
+  "gw_headers": [
+    "GW11",
+    "GW12",
+    "GW13",
+    "GW14",
+    "GW15"
+  ],
+  "league_124": [
+    {
+      "entry": 5089303,
+      "rank": 1,
+      "team": "Bao Bui",
+      "manager": "Bao Bui",
+      "gw_pts": 71,
+      "total": 605,
+      "chips": [
+        "WILDCARD(GW6)",
+        "BBOOST(GW10)"
+      ],
+      "gap_leader": 0,
+      "is_last": false
+    },
+    {
+      "entry": 707471,
+      "rank": 2,
+      "team": "Cận VIP",
+      "manager": "Trung TíT",
+      "gw_pts": 64,
+      "total": 578,
+      "chips": [
+        "WILDCARD(GW6)"
+      ],
+      "gap_leader": -27,
+      "is_last": false
+    },
+    {
+      "entry": 5084486,
+      "rank": 3,
+      "team": "SNAL",
+      "manager": "paper man",
+      "gw_pts": 60,
+      "total": 568,
+      "chips": [
+        "WILDCARD(GW6)"
+      ],
+      "gap_leader": -37,
+      "is_last": false
+    },
+    {
+      "entry": 7511840,
+      "rank": 4,
+      "team": "FC K",
+      "manager": "iKen Dang",
+      "gw_pts": 69,
+      "total": 564,
+      "chips": [
+        "3XC(GW9)",
+        "BBOOST(GW10)"
+      ],
+      "gap_leader": -41,
+      "is_last": false
+    },
+    {
+      "entry": 5295254,
+      "rank": 5,
+      "team": "Ninh SS",
+      "manager": "Ninh Dang",
+      "gw_pts": 65,
+      "total": 554,
+      "chips": [
+        "WILDCARD(GW5)"
+      ],
+      "gap_leader": -51,
+      "is_last": false
+    },
+    {
+      "entry": 772578,
+      "rank": 6,
+      "team": "Ngocdao",
+      "manager": "Ngoc Dao",
+      "gw_pts": 49,
+      "total": 535,
+      "chips": [
+        "3XC(GW10)"
+      ],
+      "gap_leader": -70,
+      "is_last": true
+    },
+    {
+      "entry": 6938534,
+      "rank": 6,
+      "team": "XOẠC-UNITED",
+      "manager": "Cường Tệ",
+      "gw_pts": 59,
+      "total": 535,
+      "chips": [
+        "3XC(GW10)"
+      ],
+      "gap_leader": -70,
+      "is_last": true
+    }
+  ],
+  "league_ioc": [
+    {
+      "rank": 1,
+      "team": "HELL_BOY Ψ (☆ ｗ ☆) Ψ",
+      "manager": "Toc Maz",
+      "gw_pts": 67,
+      "total": 614,
+      "chips": [
+        "FREEHIT(GW4)",
+        "WILDCARD(GW5)"
+      ]
+    },
+    {
+      "rank": 2,
+      "team": "Phấn Đào",
+      "manager": "Huy Anh",
+      "gw_pts": 61,
+      "total": 585,
+      "chips": []
+    },
+    {
+      "rank": 3,
+      "team": "Cận VIP",
+      "manager": "Trung TíT",
+      "gw_pts": 64,
+      "total": 578,
+      "chips": [
+        "WILDCARD(GW6)"
+      ]
+    },
+    {
+      "rank": 4,
+      "team": "Pending Moderation",
+      "manager": "Phạm Hoàng",
+      "gw_pts": 46,
+      "total": 551,
+      "chips": [
+        "3XC(GW1)"
+      ]
+    },
+    {
+      "rank": 5,
+      "team": "hoheheho",
+      "manager": "Tung Lam",
+      "gw_pts": 38,
+      "total": 550,
+      "chips": [
+        "3XC(GW2)"
+      ]
+    },
+    {
+      "rank": 6,
+      "team": "Dương's Team",
+      "manager": "Dương Đắc",
+      "gw_pts": 43,
+      "total": 437,
+      "chips": [
+        "FREEHIT(GW6)"
+      ]
+    }
+  ],
+  "rank_progression": {
+    "Bao Bui": [
+      2,
+      4,
+      2,
+      1,
+      3,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Cận VIP": [
+      3,
+      3,
+      3,
+      2,
+      1,
+      3,
+      4,
+      2,
+      2,
+      2
+    ],
+    "SNAL": [
+      1,
+      1,
+      4,
+      4,
+      4,
+      2,
+      2,
+      3,
+      3,
+      3
+    ],
+    "FC K": [
+      7,
+      5,
+      5,
+      5,
+      5,
+      6,
+      5,
+      5,
+      4,
+      4
+    ],
+    "Ninh SS": [
+      4,
+      2,
+      1,
+      3,
+      2,
+      4,
+      3,
+      4,
+      5,
+      5
+    ],
+    "Ngocdao": [
+      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      6,
+      6
+    ],
+    "XOẠC-UNITED": [
+      5,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      6,
+      7,
+      7
+    ]
+  },
+  "fixtures": [
+    {
+      "id": 2,
+      "team": "Aston Villa",
+      "short": "AVL",
+      "avg": 2.2,
+      "avg_label": "2.2 (Cực Mềm)",
+      "strat": "Ngôi sao: N.Jackson (54đ), McGinn (44đ)",
+      "matches": [
+        {
+          "opp": "SUN (H)",
+          "diff": 2
+        },
+        {
+          "opp": "IPS (A)",
+          "diff": 2
+        },
+        {
+          "opp": "EVE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "CRY (H)",
+          "diff": 2
+        },
+        {
+          "opp": "COV (A)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "team": "Coventry City",
+      "short": "COV",
+      "avg": 2.6,
+      "avg_label": "2.6 (Khá Mềm)",
+      "strat": "Ngôi sao: Rudoni (39đ), Thomas (32đ)",
+      "matches": [
+        {
+          "opp": "CRY (H)",
+          "diff": 2
+        },
+        {
+          "opp": "LEE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        },
+        {
+          "opp": "MUN (A)",
+          "diff": 3
+        },
+        {
+          "opp": "AVL (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "team": "Spurs",
+      "short": "TOT",
+      "avg": 2.6,
+      "avg_label": "2.6 (Khá Mềm)",
+      "strat": "Ngôi sao: Van Hecke (57đ), Kinsky (40đ)",
+      "matches": [
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        },
+        {
+          "opp": "SUN (A)",
+          "diff": 3
+        },
+        {
+          "opp": "FUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "ARS (H)",
+          "diff": 4
+        },
+        {
+          "opp": "HUL (A)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "team": "Brighton",
+      "short": "BHA",
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)",
+      "strat": "Ngôi sao: De Cuyper (75đ), Groß (70đ)",
+      "matches": [
+        {
+          "opp": "HUL (A)",
+          "diff": 2
+        },
+        {
+          "opp": "NEW (H)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (A)",
+          "diff": 4
+        },
+        {
+          "opp": "NFO (A)",
+          "diff": 2
+        },
+        {
+          "opp": "EVE (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "team": "Crystal Palace",
+      "short": "CRY",
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)",
+      "strat": "Ngôi sao: Kamada (36đ), Mitchell (33đ)",
+      "matches": [
+        {
+          "opp": "COV (A)",
+          "diff": 2
+        },
+        {
+          "opp": "HUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "CHE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "AVL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "MUN (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "team": "Ipswich Town",
+      "short": "IPS",
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)",
+      "strat": "Ngôi sao: Enciso (38đ), Emersonn (34đ)",
+      "matches": [
+        {
+          "opp": "TOT (A)",
+          "diff": 3
+        },
+        {
+          "opp": "AVL (H)",
+          "diff": 3
+        },
+        {
+          "opp": "COV (A)",
+          "diff": 2
+        },
+        {
+          "opp": "LEE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "NEW (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "team": "Man Utd",
+      "short": "MUN",
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)",
+      "strat": "Ngôi sao: Mbeumo (46đ), B.Fernandes (45đ)",
+      "matches": [
+        {
+          "opp": "LIV (A)",
+          "diff": 4
+        },
+        {
+          "opp": "BRE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "NEW (A)",
+          "diff": 3
+        },
+        {
+          "opp": "COV (H)",
+          "diff": 2
+        },
+        {
+          "opp": "CRY (A)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "team": "Liverpool",
+      "short": "LIV",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Isak (61đ), Wirtz (46đ)",
+      "matches": [
+        {
+          "opp": "MUN (H)",
+          "diff": 3
+        },
+        {
+          "opp": "EVE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "SUN (H)",
+          "diff": 2
+        },
+        {
+          "opp": "CHE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "LEE (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "team": "Newcastle",
+      "short": "NEW",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Hall (46đ), Barnes (44đ)",
+      "matches": [
+        {
+          "opp": "ARS (H)",
+          "diff": 4
+        },
+        {
+          "opp": "BHA (A)",
+          "diff": 4
+        },
+        {
+          "opp": "MUN (H)",
+          "diff": 3
+        },
+        {
+          "opp": "SUN (H)",
+          "diff": 2
+        },
+        {
+          "opp": "IPS (A)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "team": "Chelsea",
+      "short": "CHE",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
+      "strat": "Ngôi sao: Rogers (52đ), Palmer (47đ)",
+      "matches": [
+        {
+          "opp": "LEE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "NFO (A)",
+          "diff": 2
+        },
+        {
+          "opp": "CRY (H)",
+          "diff": 2
+        },
+        {
+          "opp": "LIV (H)",
+          "diff": 4
+        },
+        {
+          "opp": "MCI (A)",
+          "diff": 5
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "team": "Hull City",
+      "short": "HUL",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
+      "strat": "Ngôi sao: Tzolakis (49đ), Belloumi (48đ)",
+      "matches": [
+        {
+          "opp": "BHA (H)",
+          "diff": 4
+        },
+        {
+          "opp": "CRY (A)",
+          "diff": 2
+        },
+        {
+          "opp": "NFO (H)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (A)",
+          "diff": 4
+        },
+        {
+          "opp": "TOT (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "team": "Sunderland",
+      "short": "SUN",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
+      "strat": "Ngôi sao: E.Le Fée (46đ), Roefs (33đ)",
+      "matches": [
+        {
+          "opp": "AVL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "TOT (H)",
+          "diff": 3
+        },
+        {
+          "opp": "LIV (A)",
+          "diff": 4
+        },
+        {
+          "opp": "NEW (A)",
+          "diff": 3
+        },
+        {
+          "opp": "NFO (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "team": "Arsenal",
+      "short": "ARS",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Gabriel (66đ), Raya (60đ)",
+      "matches": [
+        {
+          "opp": "NEW (A)",
+          "diff": 3
+        },
+        {
+          "opp": "MCI (H)",
+          "diff": 4
+        },
+        {
+          "opp": "BRE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "TOT (A)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "team": "Bournemouth",
+      "short": "BOU",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Evanilson (61đ), Tavernier (58đ)",
+      "matches": [
+        {
+          "opp": "NFO (H)",
+          "diff": 3
+        },
+        {
+          "opp": "FUL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "BHA (H)",
+          "diff": 4
+        },
+        {
+          "opp": "HUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "ARS (A)",
+          "diff": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "team": "Brentford",
+      "short": "BRE",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Schade (46đ), Ajer (42đ)",
+      "matches": [
+        {
+          "opp": "EVE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "MUN (A)",
+          "diff": 3
+        },
+        {
+          "opp": "ARS (H)",
+          "diff": 4
+        },
+        {
+          "opp": "MCI (H)",
+          "diff": 4
+        },
+        {
+          "opp": "FUL (A)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "team": "Everton",
+      "short": "EVE",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Tarkowski (56đ), Barry (55đ)",
+      "matches": [
+        {
+          "opp": "BRE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "LIV (H)",
+          "diff": 4
+        },
+        {
+          "opp": "AVL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "FUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "BHA (A)",
+          "diff": 4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "team": "Fulham",
+      "short": "FUL",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Castagne (44đ), Iwobi (40đ)",
+      "matches": [
+        {
+          "opp": "MCI (A)",
+          "diff": 5
+        },
+        {
+          "opp": "BOU (H)",
+          "diff": 3
+        },
+        {
+          "opp": "TOT (A)",
+          "diff": 3
+        },
+        {
+          "opp": "EVE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "BRE (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "team": "Leeds",
+      "short": "LEE",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Bogle (58đ), Muharemović (56đ)",
+      "matches": [
+        {
+          "opp": "CHE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "COV (H)",
+          "diff": 2
+        },
+        {
+          "opp": "MCI (A)",
+          "diff": 5
+        },
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        },
+        {
+          "opp": "LIV (A)",
+          "diff": 4
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "team": "Nott'm Forest",
+      "short": "NFO",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Gibbs-White (39đ), Murillo (35đ)",
+      "matches": [
+        {
+          "opp": "BOU (A)",
+          "diff": 4
+        },
+        {
+          "opp": "CHE (H)",
+          "diff": 4
+        },
+        {
+          "opp": "HUL (A)",
+          "diff": 2
+        },
+        {
+          "opp": "BHA (H)",
+          "diff": 4
+        },
+        {
+          "opp": "SUN (A)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "team": "Man City",
+      "short": "MCI",
+      "avg": 3.6,
+      "avg_label": "3.6 (Xương Xẩu)",
+      "strat": "Ngôi sao: Haaland (70đ), Cherki (54đ)",
+      "matches": [
+        {
+          "opp": "FUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "ARS (A)",
+          "diff": 5
+        },
+        {
+          "opp": "LEE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "BRE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "CHE (H)",
+          "diff": 4
+        }
+      ]
+    }
+  ],
+  "market_players": [
+    {
+      "id": 115,
+      "name": "De Cuyper",
+      "team": "BHA",
+      "pos": "DEF",
+      "cost": 5.5,
+      "pts": 75,
+      "form": 5.5,
+      "xgi_90": 0.43,
+      "ict": 67.1,
+      "value": 13.64,
+      "selected_by": 47.6,
+      "news": "",
+      "tag": "👑 Vua Điểm Số"
+    },
+    {
+      "id": 124,
+      "name": "Groß",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 6.3,
+      "pts": 70,
+      "form": 4.2,
+      "xgi_90": 0.54,
+      "ict": 90.7,
+      "value": 11.11,
+      "selected_by": 47.9,
+      "news": "",
+      "tag": "👑 Vua Điểm Số",
+      "cap_index": 86.0,
+      "next_opp": "HUL (A)"
+    },
+    {
+      "id": 504,
+      "name": "Vuskovic",
+      "team": "BHA",
+      "pos": "DEF",
+      "cost": 5.3,
+      "pts": 70,
+      "form": 7.5,
+      "xgi_90": 0.15,
+      "ict": 41.6,
+      "value": 13.21,
+      "selected_by": 9.0,
+      "news": "",
+      "tag": "👑 Vua Điểm Số"
+    },
+    {
+      "id": 411,
+      "name": "Haaland",
+      "team": "MCI",
+      "pos": "FWD",
+      "cost": 15.8,
+      "pts": 70,
+      "form": 6.2,
+      "xgi_90": 0.8,
+      "ict": 90.3,
+      "value": 4.43,
+      "selected_by": 78.9,
+      "news": "",
+      "tag": "👑 Vua Điểm Số",
+      "cap_index": 97.5,
+      "next_opp": "FUL (H)"
+    },
+    {
+      "id": 4,
+      "name": "Gabriel",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 8.1,
+      "pts": 66,
+      "form": 9.8,
+      "xgi_90": 0.17,
+      "ict": 47.8,
+      "value": 8.15,
+      "selected_by": 26.0,
+      "news": "",
+      "tag": "👑 Vua Điểm Số"
+    },
+    {
+      "id": 79,
+      "name": "Evanilson",
+      "team": "BOU",
+      "pos": "FWD",
+      "cost": 6.5,
+      "pts": 61,
+      "form": 9.0,
+      "xgi_90": 0.59,
+      "ict": 71.6,
+      "value": 9.38,
+      "selected_by": 23.4,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 95.2,
+      "next_opp": "NFO (H)"
+    },
+    {
+      "id": 379,
+      "name": "Isak",
+      "team": "LIV",
+      "pos": "FWD",
+      "cost": 9.3,
+      "pts": 61,
+      "form": 5.6,
+      "xgi_90": 0.62,
+      "ict": 71.6,
+      "value": 6.56,
+      "selected_by": 24.9,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 87.5,
+      "next_opp": "MUN (H)"
+    },
+    {
+      "id": 1,
+      "name": "Raya",
+      "team": "ARS",
+      "pos": "GKP",
+      "cost": 6.2,
+      "pts": 60,
+      "form": 6.8,
+      "xgi_90": 0.0,
+      "ict": 19.7,
+      "value": 9.68,
+      "selected_by": 47.5,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 68,
+      "name": "Tavernier",
+      "team": "BOU",
+      "pos": "MID",
+      "cost": 6.7,
+      "pts": 58,
+      "form": 6.5,
+      "xgi_90": 0.61,
+      "ict": 81.0,
+      "value": 8.66,
+      "selected_by": 31.2,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 89.5,
+      "next_opp": "NFO (H)"
+    },
+    {
+      "id": 330,
+      "name": "Bogle",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 4.8,
+      "pts": 58,
+      "form": 3.8,
+      "xgi_90": 0.29,
+      "ict": 51.7,
+      "value": 12.08,
+      "selected_by": 11.2,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 8,
+      "name": "Calafiori",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 5.9,
+      "pts": 57,
+      "form": 4.8,
+      "xgi_90": 0.26,
+      "ict": 40.2,
+      "value": 9.66,
+      "selected_by": 48.7,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 31,
+      "name": "Konsa",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 4.8,
+      "pts": 57,
+      "form": 10.2,
+      "xgi_90": 0.08,
+      "ict": 26.9,
+      "value": 11.88,
+      "selected_by": 24.4,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 109,
+      "name": "Verbruggen",
+      "team": "BHA",
+      "pos": "GKP",
+      "cost": 4.6,
+      "pts": 57,
+      "form": 6.2,
+      "xgi_90": 0.02,
+      "ict": 24.8,
+      "value": 12.39,
+      "selected_by": 23.9,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 112,
+      "name": "Van Hecke",
+      "team": "TOT",
+      "pos": "DEF",
+      "cost": 5.1,
+      "pts": 57,
+      "form": 7.5,
+      "xgi_90": 0.24,
+      "ict": 67.3,
+      "value": 11.18,
+      "selected_by": 14.4,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 229,
+      "name": "Tarkowski",
+      "team": "EVE",
+      "pos": "DEF",
+      "cost": 6.2,
+      "pts": 56,
+      "form": 2.6,
+      "xgi_90": 0.03,
+      "ict": 36.0,
+      "value": 9.03,
+      "selected_by": 19.3,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 334,
+      "name": "Muharemović",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 5.1,
+      "pts": 56,
+      "form": 6.8,
+      "xgi_90": 0.09,
+      "ict": 44.5,
+      "value": 10.98,
+      "selected_by": 6.4,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 249,
+      "name": "Barry",
+      "team": "EVE",
+      "pos": "FWD",
+      "cost": 5.7,
+      "pts": 55,
+      "form": 7.0,
+      "xgi_90": 0.82,
+      "ict": 89.0,
+      "value": 9.65,
+      "selected_by": 10.5,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 92.0,
+      "next_opp": "BRE (A)"
+    },
+    {
+      "id": 166,
+      "name": "N.Jackson",
+      "team": "AVL",
+      "pos": "FWD",
+      "cost": 7.1,
+      "pts": 54,
+      "form": 8.8,
+      "xgi_90": 0.54,
+      "ict": 66.5,
+      "value": 7.61,
+      "selected_by": 30.6,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 97.5,
+      "next_opp": "SUN (H)"
+    },
+    {
+      "id": 385,
+      "name": "Trafford",
+      "team": "LEE",
+      "pos": "GKP",
+      "cost": 5.0,
+      "pts": 54,
+      "form": 6.0,
+      "xgi_90": 0.0,
+      "ict": 27.3,
+      "value": 10.8,
+      "selected_by": 6.4,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 399,
+      "name": "Cherki",
+      "team": "MCI",
+      "pos": "MID",
+      "cost": 7.9,
+      "pts": 54,
+      "form": 4.0,
+      "xgi_90": 0.61,
+      "ict": 81.5,
+      "value": 6.84,
+      "selected_by": 33.5,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 87.2,
+      "next_opp": "FUL (H)"
+    },
+    {
+      "id": 40,
+      "name": "Rogers",
+      "team": "CHE",
+      "pos": "MID",
+      "cost": 8.2,
+      "pts": 52,
+      "form": 3.5,
+      "xgi_90": 0.47,
+      "ict": 74.0,
+      "value": 6.34,
+      "selected_by": 53.9,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 78.5,
+      "next_opp": "LEE (H)"
+    },
+    {
+      "id": 127,
+      "name": "Gomez",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 5.0,
+      "pts": 51,
+      "form": 5.5,
+      "xgi_90": 0.26,
+      "ict": 61.9,
+      "value": 10.2,
+      "selected_by": 4.2,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời",
+      "cap_index": 82.2,
+      "next_opp": "HUL (A)"
+    },
+    {
+      "id": 332,
+      "name": "Justin",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 4.5,
+      "pts": 51,
+      "form": 4.8,
+      "xgi_90": 0.17,
+      "ict": 39.9,
+      "value": 11.33,
+      "selected_by": 2.4,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 13,
+      "name": "Rice",
+      "team": "ARS",
+      "pos": "MID",
+      "cost": 7.5,
+      "pts": 50,
+      "form": 5.8,
+      "xgi_90": 0.29,
+      "ict": 58.3,
+      "value": 6.67,
+      "selected_by": 13.7,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 79.8,
+      "next_opp": "NEW (A)"
+    },
+    {
+      "id": 15,
+      "name": "Ødegaard",
+      "team": "ARS",
+      "pos": "MID",
+      "cost": 6.7,
+      "pts": 50,
+      "form": 5.0,
+      "xgi_90": 0.53,
+      "ict": 77.4,
+      "value": 7.46,
+      "selected_by": 16.5,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 83.8,
+      "next_opp": "NEW (A)"
+    },
+    {
+      "id": 236,
+      "name": "Dewsbury-Hall",
+      "team": "EVE",
+      "pos": "MID",
+      "cost": 6.6,
+      "pts": 50,
+      "form": 6.0,
+      "xgi_90": 0.32,
+      "ict": 80.0,
+      "value": 7.58,
+      "selected_by": 7.1,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 77.0,
+      "next_opp": "BRE (A)"
+    },
+    {
+      "id": 572,
+      "name": "Tzolakis",
+      "team": "HUL",
+      "pos": "GKP",
+      "cost": 4.7,
+      "pts": 49,
+      "form": 3.0,
+      "xgi_90": 0.0,
+      "ict": 32.9,
+      "value": 10.43,
+      "selected_by": 13.5,
+      "news": "",
+      "tag": "💎 Giá Siêu Hời"
+    },
+    {
+      "id": 286,
+      "name": "Belloumi",
+      "team": "HUL",
+      "pos": "MID",
+      "cost": 5.3,
+      "pts": 48,
+      "form": 3.4,
+      "xgi_90": 0.29,
+      "ict": 51.9,
+      "value": 9.06,
+      "selected_by": 9.7,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 138,
+      "name": "Kostoulas",
+      "team": "BHA",
+      "pos": "FWD",
+      "cost": 5.8,
+      "pts": 47,
+      "form": 4.5,
+      "xgi_90": 0.35,
+      "ict": 54.5,
+      "value": 8.1,
+      "selected_by": 9.9,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 154,
+      "name": "Palmer",
+      "team": "CHE",
+      "pos": "MID",
+      "cost": 9.8,
+      "pts": 47,
+      "form": 2.8,
+      "xgi_90": 0.38,
+      "ict": 81.2,
+      "value": 4.8,
+      "selected_by": 28.4,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 165,
+      "name": "João Pedro",
+      "team": "CHE",
+      "pos": "FWD",
+      "cost": 7.6,
+      "pts": 47,
+      "form": 0.5,
+      "xgi_90": 0.58,
+      "ict": 53.9,
+      "value": 6.18,
+      "selected_by": 32.2,
+      "news": "Thigh injury - Unknown return date",
+      "tag": "🔥 Máy Cày xGI"
+    },
+    {
+      "id": 94,
+      "name": "Schade",
+      "team": "BRE",
+      "pos": "MID",
+      "cost": 6.1,
+      "pts": 46,
+      "form": 1.5,
+      "xgi_90": 0.32,
+      "ict": 42.8,
+      "value": 7.54,
+      "selected_by": 12.9,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 129,
+      "name": "Ayari",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 5.5,
+      "pts": 46,
+      "form": 7.0,
+      "xgi_90": 0.31,
+      "ict": 38.0,
+      "value": 8.36,
+      "selected_by": 2.3,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 366,
+      "name": "Wirtz",
+      "team": "LIV",
+      "pos": "MID",
+      "cost": 7.2,
+      "pts": 46,
+      "form": 5.6,
+      "xgi_90": 0.35,
+      "ict": 70.5,
+      "value": 6.39,
+      "selected_by": 5.4,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định"
+    },
+    {
+      "id": 427,
+      "name": "Mbeumo",
+      "team": "MUN",
+      "pos": "MID",
+      "cost": 7.9,
+      "pts": 46,
+      "form": 3.2,
+      "xgi_90": 0.6,
+      "ict": 75.5,
+      "value": 5.82,
+      "selected_by": 19.2,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI"
+    }
+  ],
+  "watchdog": {
+    "rising": [
+      {
+        "name": "N.Jackson",
+        "team": "AVL",
+        "cost": 7.1,
+        "net_transfers": "+252,440",
+        "pts": 54
+      },
+      {
+        "name": "Barry",
+        "team": "EVE",
+        "cost": 5.7,
+        "net_transfers": "+187,917",
+        "pts": 55
+      },
+      {
+        "name": "Evanilson",
+        "team": "BOU",
+        "cost": 6.5,
+        "net_transfers": "+172,201",
+        "pts": 61
+      }
+    ],
+    "falling": [
+      {
+        "name": "João Pedro",
+        "team": "CHE",
+        "cost": 7.6,
+        "net_transfers": "-266,221",
+        "pts": 47
+      },
+      {
+        "name": "Gvardiol",
+        "team": "MCI",
+        "cost": 5.6,
+        "net_transfers": "-248,122",
+        "pts": 44
+      },
+      {
+        "name": "Guéhi",
+        "team": "MCI",
+        "cost": 6.0,
+        "net_transfers": "-116,456",
+        "pts": 37
+      }
+    ]
+  },
+  "dream_team": {
+    "gk": {
+      "name": "Raya",
+      "team": "ARS",
+      "cost": 6.2,
+      "pts": 60
+    },
+    "defs": [
+      {
+        "name": "De Cuyper",
+        "team": "BHA",
+        "cost": 5.5,
+        "pts": 75
+      },
+      {
+        "name": "Vuskovic",
+        "team": "BHA",
+        "cost": 5.3,
+        "pts": 70
+      },
+      {
+        "name": "Gabriel",
+        "team": "ARS",
+        "cost": 8.1,
+        "pts": 66
+      }
+    ],
+    "mids": [
+      {
+        "name": "Groß",
+        "team": "BHA",
+        "cost": 6.3,
+        "pts": 70
+      },
+      {
+        "name": "Tavernier",
+        "team": "BOU",
+        "cost": 6.7,
+        "pts": 58
+      },
+      {
+        "name": "Cherki",
+        "team": "MCI",
+        "cost": 7.9,
+        "pts": 54
+      },
+      {
+        "name": "Rogers",
+        "team": "CHE",
+        "cost": 8.2,
+        "pts": 52
+      }
+    ],
+    "fwds": [
+      {
+        "name": "Haaland",
+        "team": "MCI",
+        "cost": 15.8,
+        "pts": 70
+      },
+      {
+        "name": "Evanilson",
+        "team": "BOU",
+        "cost": 6.5,
+        "pts": 61
+      },
+      {
+        "name": "Isak",
+        "team": "LIV",
+        "cost": 9.3,
+        "pts": 61
+      }
+    ],
+    "bench": [
+      {
+        "pos": "GKP",
+        "name": "Verbruggen",
+        "team": "BHA",
+        "cost": 4.6,
+        "pts": 57
+      },
+      {
+        "pos": "DEF",
+        "name": "Bogle",
+        "team": "LEE",
+        "cost": 4.8,
+        "pts": 58
+      },
+      {
+        "pos": "DEF",
+        "name": "Calafiori",
+        "team": "ARS",
+        "cost": 5.9,
+        "pts": 57
+      },
+      {
+        "pos": "FWD",
+        "name": "Barry",
+        "team": "EVE",
+        "cost": 5.7,
+        "pts": 55
+      }
+    ],
+    "total_pts": 697
+  },
+  "captaincy": [
+    {
+      "id": 411,
+      "name": "Haaland",
+      "team": "MCI",
+      "pos": "FWD",
+      "cost": 15.8,
+      "pts": 70,
+      "form": 6.2,
+      "xgi_90": 0.8,
+      "ict": 90.3,
+      "value": 4.43,
+      "selected_by": 78.9,
+      "news": "",
+      "tag": "👑 Vua Điểm Số",
+      "cap_index": 97.5,
+      "next_opp": "FUL (H)"
+    },
+    {
+      "id": 166,
+      "name": "N.Jackson",
+      "team": "AVL",
+      "pos": "FWD",
+      "cost": 7.1,
+      "pts": 54,
+      "form": 8.8,
+      "xgi_90": 0.54,
+      "ict": 66.5,
+      "value": 7.61,
+      "selected_by": 30.6,
+      "news": "",
+      "tag": "⭐ Trụ Cột Ổn Định",
+      "cap_index": 97.5,
+      "next_opp": "SUN (H)"
+    },
+    {
+      "id": 79,
+      "name": "Evanilson",
+      "team": "BOU",
+      "pos": "FWD",
+      "cost": 6.5,
+      "pts": 61,
+      "form": 9.0,
+      "xgi_90": 0.59,
+      "ict": 71.6,
+      "value": 9.38,
+      "selected_by": 23.4,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 95.2,
+      "next_opp": "NFO (H)"
+    },
+    {
+      "id": 249,
+      "name": "Barry",
+      "team": "EVE",
+      "pos": "FWD",
+      "cost": 5.7,
+      "pts": 55,
+      "form": 7.0,
+      "xgi_90": 0.82,
+      "ict": 89.0,
+      "value": 9.65,
+      "selected_by": 10.5,
+      "news": "",
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 92.0,
+      "next_opp": "BRE (A)"
+    }
+  ],
+  "vip_vault": {
+    "team_name": "Cận VIP",
+    "manager": "Trung TíT",
+    "total_points": 578,
+    "overall_rank": 3985430,
+    "gap_to_leader": -27,
+    "leader_name": "Bao Bui",
+    "leader_pts": 605,
+    "bank_itb": 2.8,
+    "phase1_chips": [
+      {
+        "name": "Wildcard 1",
+        "key": "wildcard",
+        "used": true
+      },
+      {
+        "name": "Triple Captain 1",
+        "key": "3xc",
+        "used": false
+      },
+      {
+        "name": "Bench Boost 1",
+        "key": "bboost",
+        "used": false
+      },
+      {
+        "name": "Free Hit 1",
+        "key": "freehit",
+        "used": false
+      }
+    ],
+    "squad": [
+      {
+        "pos_slot": 1,
+        "pos": "GKP",
+        "name": "Kinsky",
+        "team": "TOT",
+        "cost": 4.4,
+        "pts": 40,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 2,
+        "pos": "DEF",
+        "name": "Calafiori",
+        "team": "ARS",
+        "cost": 5.9,
+        "pts": 57,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 3,
+        "pos": "DEF",
+        "name": "Tarkowski",
+        "team": "EVE",
+        "cost": 6.2,
+        "pts": 56,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 4,
+        "pos": "DEF",
+        "name": "De Cuyper",
+        "team": "BHA",
+        "cost": 5.5,
+        "pts": 75,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 5,
+        "pos": "MID",
+        "name": "Tavernier",
+        "team": "BOU",
+        "cost": 6.7,
+        "pts": 58,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 6,
+        "pos": "MID",
+        "name": "Groß",
+        "team": "BHA",
+        "cost": 6.3,
+        "pts": 70,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 7,
+        "pos": "MID",
+        "name": "Doku",
+        "team": "MCI",
+        "cost": 7.5,
+        "pts": 25,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 8,
+        "pos": "MID",
+        "name": "Rogers",
+        "team": "CHE",
+        "cost": 8.2,
+        "pts": 52,
+        "is_captain": false,
+        "is_vc": true,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 9,
+        "pos": "FWD",
+        "name": "N.Jackson",
+        "team": "AVL",
+        "cost": 7.1,
+        "pts": 54,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 10,
+        "pos": "FWD",
+        "name": "Barry",
+        "team": "EVE",
+        "cost": 5.7,
+        "pts": 55,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 11,
+        "pos": "FWD",
+        "name": "Haaland",
+        "team": "MCI",
+        "cost": 15.8,
+        "pts": 70,
+        "is_captain": true,
+        "is_vc": false,
+        "is_bench": false
+      },
+      {
+        "pos_slot": 12,
+        "pos": "GKP",
+        "name": "Leno",
+        "team": "FUL",
+        "cost": 4.5,
+        "pts": 39,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": true
+      },
+      {
+        "pos_slot": 13,
+        "pos": "MID",
+        "name": "Barnes",
+        "team": "NEW",
+        "cost": 6.1,
+        "pts": 44,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": true
+      },
+      {
+        "pos_slot": 14,
+        "pos": "DEF",
+        "name": "Bogle",
+        "team": "LEE",
+        "cost": 4.8,
+        "pts": 58,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": true
+      },
+      {
+        "pos_slot": 15,
+        "pos": "DEF",
+        "name": "Affengruber",
+        "team": "FUL",
+        "cost": 4.5,
+        "pts": 32,
+        "is_captain": false,
+        "is_vc": false,
+        "is_bench": true
+      }
+    ]
+  }
+}

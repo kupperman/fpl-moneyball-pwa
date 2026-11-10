@@ -1,0 +1,35 @@
+name: FPL Live Data Auto-Sync
+
+on:
+  schedule:
+    # Chạy tự động mỗi 6 tiếng
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run FPL API Sync
+        run: python sync.py
+
+      - name: Commit and push updated data.json
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "FPL Sync Bot"
+          git add data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync live FPL data [skip ci]" && git push)
