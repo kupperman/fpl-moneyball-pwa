@@ -1,0 +1,901 @@
+{
+  "fixtures": [
+    {
+      "id": 2,
+      "team": "Aston Villa",
+      "gw11": {
+        "opp": "SUN (H)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "IPS (A)",
+        "diff": 2
+      },
+      "gw13": {
+        "opp": "EVE (H)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "CRY (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "COV (A)",
+        "diff": 2
+      },
+      "avg": 2.2,
+      "avg_label": "2.2 (Cực Mềm)"
+    },
+    {
+      "id": 7,
+      "team": "Coventry City",
+      "gw11": {
+        "opp": "CRY (H)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "LEE (A)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "IPS (H)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "MUN (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "AVL (H)",
+        "diff": 3
+      },
+      "avg": 2.6,
+      "avg_label": "2.6 (Khá Mềm)"
+    },
+    {
+      "id": 19,
+      "team": "Spurs",
+      "gw11": {
+        "opp": "IPS (H)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "SUN (A)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "FUL (H)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "ARS (H)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "HUL (A)",
+        "diff": 2
+      },
+      "avg": 2.6,
+      "avg_label": "2.6 (Khá Mềm)"
+    },
+    {
+      "id": 5,
+      "team": "Brighton",
+      "gw11": {
+        "opp": "HUL (A)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "NEW (H)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "BOU (A)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "NFO (A)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "EVE (H)",
+        "diff": 3
+      },
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)"
+    },
+    {
+      "id": 8,
+      "team": "Crystal Palace",
+      "gw11": {
+        "opp": "COV (A)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "HUL (H)",
+        "diff": 2
+      },
+      "gw13": {
+        "opp": "CHE (A)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "AVL (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "MUN (H)",
+        "diff": 3
+      },
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)"
+    },
+    {
+      "id": 12,
+      "team": "Ipswich Town",
+      "gw11": {
+        "opp": "TOT (A)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "AVL (H)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "COV (A)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "LEE (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "NEW (H)",
+        "diff": 3
+      },
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)"
+    },
+    {
+      "id": 16,
+      "team": "Man Utd",
+      "gw11": {
+        "opp": "LIV (A)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "BRE (H)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "NEW (A)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "COV (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "CRY (A)",
+        "diff": 2
+      },
+      "avg": 2.8,
+      "avg_label": "2.8 (Khá Mềm)"
+    },
+    {
+      "id": 14,
+      "team": "Liverpool",
+      "gw11": {
+        "opp": "MUN (H)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "EVE (A)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "SUN (H)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "CHE (A)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "LEE (H)",
+        "diff": 3
+      },
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)"
+    },
+    {
+      "id": 17,
+      "team": "Newcastle",
+      "gw11": {
+        "opp": "ARS (H)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "BHA (A)",
+        "diff": 4
+      },
+      "gw13": {
+        "opp": "MUN (H)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "SUN (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "IPS (A)",
+        "diff": 2
+      },
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)"
+    },
+    {
+      "id": 6,
+      "team": "Chelsea",
+      "gw11": {
+        "opp": "LEE (H)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "NFO (A)",
+        "diff": 2
+      },
+      "gw13": {
+        "opp": "CRY (H)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "LIV (H)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "MCI (A)",
+        "diff": 5
+      },
+      "avg": 3.2,
+      "avg_label": "3.2 (Cân Não)"
+    },
+    {
+      "id": 11,
+      "team": "Hull City",
+      "gw11": {
+        "opp": "BHA (H)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "CRY (A)",
+        "diff": 2
+      },
+      "gw13": {
+        "opp": "NFO (H)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "BOU (A)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "TOT (H)",
+        "diff": 3
+      },
+      "avg": 3.2,
+      "avg_label": "3.2 (Cân Não)"
+    },
+    {
+      "id": 20,
+      "team": "Sunderland",
+      "gw11": {
+        "opp": "AVL (A)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "TOT (H)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "LIV (A)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "NEW (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "NFO (H)",
+        "diff": 3
+      },
+      "avg": 3.2,
+      "avg_label": "3.2 (Cân Não)"
+    },
+    {
+      "id": 1,
+      "team": "Arsenal",
+      "gw11": {
+        "opp": "NEW (A)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "MCI (H)",
+        "diff": 4
+      },
+      "gw13": {
+        "opp": "BRE (A)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "TOT (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "BOU (H)",
+        "diff": 3
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 3,
+      "team": "Bournemouth",
+      "gw11": {
+        "opp": "NFO (H)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "FUL (A)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "BHA (H)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "HUL (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "ARS (A)",
+        "diff": 5
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 4,
+      "team": "Brentford",
+      "gw11": {
+        "opp": "EVE (H)",
+        "diff": 3
+      },
+      "gw12": {
+        "opp": "MUN (A)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "ARS (H)",
+        "diff": 4
+      },
+      "gw14": {
+        "opp": "MCI (H)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "FUL (A)",
+        "diff": 3
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 9,
+      "team": "Everton",
+      "gw11": {
+        "opp": "BRE (A)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "LIV (H)",
+        "diff": 4
+      },
+      "gw13": {
+        "opp": "AVL (A)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "FUL (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "BHA (A)",
+        "diff": 4
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 10,
+      "team": "Fulham",
+      "gw11": {
+        "opp": "MCI (A)",
+        "diff": 5
+      },
+      "gw12": {
+        "opp": "BOU (H)",
+        "diff": 3
+      },
+      "gw13": {
+        "opp": "TOT (A)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "EVE (A)",
+        "diff": 3
+      },
+      "gw15": {
+        "opp": "BRE (H)",
+        "diff": 3
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 13,
+      "team": "Leeds",
+      "gw11": {
+        "opp": "CHE (A)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "COV (H)",
+        "diff": 2
+      },
+      "gw13": {
+        "opp": "MCI (A)",
+        "diff": 5
+      },
+      "gw14": {
+        "opp": "IPS (H)",
+        "diff": 2
+      },
+      "gw15": {
+        "opp": "LIV (A)",
+        "diff": 4
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 18,
+      "team": "Nott'm Forest",
+      "gw11": {
+        "opp": "BOU (A)",
+        "diff": 4
+      },
+      "gw12": {
+        "opp": "CHE (H)",
+        "diff": 4
+      },
+      "gw13": {
+        "opp": "HUL (A)",
+        "diff": 2
+      },
+      "gw14": {
+        "opp": "BHA (H)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "SUN (A)",
+        "diff": 3
+      },
+      "avg": 3.4,
+      "avg_label": "3.4 (Khó)"
+    },
+    {
+      "id": 15,
+      "team": "Man City",
+      "gw11": {
+        "opp": "FUL (H)",
+        "diff": 2
+      },
+      "gw12": {
+        "opp": "ARS (A)",
+        "diff": 5
+      },
+      "gw13": {
+        "opp": "LEE (H)",
+        "diff": 3
+      },
+      "gw14": {
+        "opp": "BRE (A)",
+        "diff": 4
+      },
+      "gw15": {
+        "opp": "CHE (H)",
+        "diff": 4
+      },
+      "avg": 3.6,
+      "avg_label": "3.6 (Khó)"
+    }
+  ],
+  "dream_team": {
+    "gk": {
+      "name": "Raya",
+      "team": "ARS",
+      "cost": 6.2,
+      "pts": 60
+    },
+    "defs": [
+      {
+        "name": "De Cuyper",
+        "team": "BHA",
+        "cost": 5.5,
+        "pts": 75
+      },
+      {
+        "name": "Vuskovic",
+        "team": "BHA",
+        "cost": 5.3,
+        "pts": 70
+      },
+      {
+        "name": "Gabriel",
+        "team": "ARS",
+        "cost": 8.1,
+        "pts": 66
+      }
+    ],
+    "mids": [
+      {
+        "name": "Groß",
+        "team": "BHA",
+        "cost": 6.3,
+        "pts": 70
+      },
+      {
+        "name": "Tavernier",
+        "team": "BOU",
+        "cost": 6.7,
+        "pts": 58
+      },
+      {
+        "name": "Cherki",
+        "team": "MCI",
+        "cost": 7.9,
+        "pts": 54
+      },
+      {
+        "name": "Rogers",
+        "team": "CHE",
+        "cost": 8.2,
+        "pts": 52
+      }
+    ],
+    "fwds": [
+      {
+        "name": "Haaland",
+        "team": "MCI",
+        "cost": 15.8,
+        "pts": 70
+      },
+      {
+        "name": "Evanilson",
+        "team": "BOU",
+        "cost": 6.5,
+        "pts": 61
+      },
+      {
+        "name": "Isak",
+        "team": "LIV",
+        "cost": 9.3,
+        "pts": 61
+      }
+    ],
+    "bench": [
+      {
+        "name": "Verbruggen",
+        "team": "BHA",
+        "pos": "GK",
+        "pts": 57
+      },
+      {
+        "name": "Bogle",
+        "team": "LEE",
+        "pos": "DEF",
+        "pts": 58
+      },
+      {
+        "name": "Calafiori",
+        "team": "ARS",
+        "pos": "DEF",
+        "pts": 57
+      },
+      {
+        "name": "Barry",
+        "team": "EVE",
+        "pos": "FWD",
+        "pts": 55
+      }
+    ]
+  },
+  "real_players": [
+    {
+      "name": "De Cuyper",
+      "team": "BHA",
+      "pos": "DEF",
+      "cost": 5.5,
+      "xgi_90": 0.43,
+      "form": 5.5,
+      "value": 13.64,
+      "pts": 75,
+      "tag": "Must-Have"
+    },
+    {
+      "name": "Groß",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 6.3,
+      "xgi_90": 0.54,
+      "form": 4.2,
+      "value": 11.11,
+      "pts": 70,
+      "tag": "Must-Have"
+    },
+    {
+      "name": "Vuskovic",
+      "team": "BHA",
+      "pos": "DEF",
+      "cost": 5.3,
+      "xgi_90": 0.15,
+      "form": 7.5,
+      "value": 13.21,
+      "pts": 70,
+      "tag": "Must-Have"
+    },
+    {
+      "name": "Haaland",
+      "team": "MCI",
+      "pos": "FWD",
+      "cost": 15.8,
+      "xgi_90": 0.8,
+      "form": 6.2,
+      "value": 4.43,
+      "pts": 70,
+      "tag": "Must-Have"
+    },
+    {
+      "name": "Gabriel",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 8.1,
+      "xgi_90": 0.17,
+      "form": 9.8,
+      "value": 8.15,
+      "pts": 66,
+      "tag": "Must-Have"
+    },
+    {
+      "name": "Evanilson",
+      "team": "BOU",
+      "pos": "FWD",
+      "cost": 6.5,
+      "xgi_90": 0.59,
+      "form": 9.0,
+      "value": 9.38,
+      "pts": 61,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "Isak",
+      "team": "LIV",
+      "pos": "FWD",
+      "cost": 9.3,
+      "xgi_90": 0.62,
+      "form": 5.6,
+      "value": 6.56,
+      "pts": 61,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "Raya",
+      "team": "ARS",
+      "pos": "GKP",
+      "cost": 6.2,
+      "xgi_90": 0.0,
+      "form": 6.8,
+      "value": 9.68,
+      "pts": 60,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Tavernier",
+      "team": "BOU",
+      "pos": "MID",
+      "cost": 6.7,
+      "xgi_90": 0.61,
+      "form": 6.5,
+      "value": 8.66,
+      "pts": 58,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "Bogle",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 4.8,
+      "xgi_90": 0.29,
+      "form": 3.8,
+      "value": 12.08,
+      "pts": 58,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Calafiori",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 5.9,
+      "xgi_90": 0.26,
+      "form": 4.8,
+      "value": 9.66,
+      "pts": 57,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Konsa",
+      "team": "ARS",
+      "pos": "DEF",
+      "cost": 4.8,
+      "xgi_90": 0.08,
+      "form": 10.2,
+      "value": 11.88,
+      "pts": 57,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Verbruggen",
+      "team": "BHA",
+      "pos": "GKP",
+      "cost": 4.6,
+      "xgi_90": 0.02,
+      "form": 6.2,
+      "value": 12.39,
+      "pts": 57,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Van Hecke",
+      "team": "TOT",
+      "pos": "DEF",
+      "cost": 5.1,
+      "xgi_90": 0.24,
+      "form": 7.5,
+      "value": 11.18,
+      "pts": 57,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Tarkowski",
+      "team": "EVE",
+      "pos": "DEF",
+      "cost": 6.2,
+      "xgi_90": 0.03,
+      "form": 2.6,
+      "value": 9.03,
+      "pts": 56,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Muharemović",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 5.1,
+      "xgi_90": 0.09,
+      "form": 6.8,
+      "value": 10.98,
+      "pts": 56,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Barry",
+      "team": "EVE",
+      "pos": "FWD",
+      "cost": 5.7,
+      "xgi_90": 0.82,
+      "form": 7.0,
+      "value": 9.65,
+      "pts": 55,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "N.Jackson",
+      "team": "AVL",
+      "pos": "FWD",
+      "cost": 7.1,
+      "xgi_90": 0.54,
+      "form": 8.8,
+      "value": 7.61,
+      "pts": 54,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "Trafford",
+      "team": "LEE",
+      "pos": "GKP",
+      "cost": 5.0,
+      "xgi_90": 0.0,
+      "form": 6.0,
+      "value": 10.8,
+      "pts": 54,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Cherki",
+      "team": "MCI",
+      "pos": "MID",
+      "cost": 7.9,
+      "xgi_90": 0.61,
+      "form": 4.0,
+      "value": 6.84,
+      "pts": 54,
+      "tag": "Hàng Hot xGI"
+    },
+    {
+      "name": "Rogers",
+      "team": "CHE",
+      "pos": "MID",
+      "cost": 8.2,
+      "xgi_90": 0.47,
+      "form": 3.5,
+      "value": 6.34,
+      "pts": 52,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Gomez",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 5.0,
+      "xgi_90": 0.26,
+      "form": 5.5,
+      "value": 10.2,
+      "pts": 51,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Justin",
+      "team": "LEE",
+      "pos": "DEF",
+      "cost": 4.5,
+      "xgi_90": 0.17,
+      "form": 4.8,
+      "value": 11.33,
+      "pts": 51,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Rice",
+      "team": "ARS",
+      "pos": "MID",
+      "cost": 7.5,
+      "xgi_90": 0.29,
+      "form": 5.8,
+      "value": 6.67,
+      "pts": 50,
+      "tag": "Trụ Cột"
+    },
+    {
+      "name": "Ødegaard",
+      "team": "ARS",
+      "pos": "MID",
+      "cost": 6.7,
+      "xgi_90": 0.53,
+      "form": 5.0,
+      "value": 7.46,
+      "pts": 50,
+      "tag": "Hàng Hot xGI"
+    }
+  ]
+}
