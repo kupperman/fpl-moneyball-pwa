@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 06:41 UTC",
+  "updated_at": "2026-11-10 06:46 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "gw_headers": [
@@ -78,11 +78,11 @@
       "is_last": false
     },
     {
-      "entry": 772578,
+      "entry": 6938534,
       "rank": 6,
-      "team": "Ngocdao",
-      "manager": "Ngoc Dao",
-      "gw_pts": 49,
+      "team": "XOẠC-UNITED",
+      "manager": "Cường Tệ",
+      "gw_pts": 59,
       "total": 535,
       "chips": [
         "3XC(GW10)"
@@ -91,11 +91,11 @@
       "is_last": true
     },
     {
-      "entry": 6938534,
+      "entry": 772578,
       "rank": 6,
-      "team": "XOẠC-UNITED",
-      "manager": "Cường Tệ",
-      "gw_pts": 59,
+      "team": "Ngocdao",
+      "manager": "Ngoc Dao",
+      "gw_pts": 49,
       "total": 535,
       "chips": [
         "3XC(GW10)"
@@ -226,18 +226,6 @@
       5,
       5
     ],
-    "Ngocdao": [
-      6,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      6,
-      6
-    ],
     "XOẠC-UNITED": [
       5,
       6,
@@ -248,6 +236,18 @@
       6,
       6,
       7,
+      6
+    ],
+    "Ngocdao": [
+      6,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      6,
       7
     ]
   },
