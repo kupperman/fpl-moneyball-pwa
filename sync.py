@@ -29,7 +29,9 @@ def main():
     # Determine current and next GW
     events = bs['events']
     current_gw = next((e['id'] for e in events if e.get('is_current')), 10)
-    next_gw = next((e['id'] for e in events if e.get('is_next')), current_gw + 1)
+    next_gw_obj = next((e for e in events if e.get('is_next')), None)
+    next_gw = next_gw_obj['id'] if next_gw_obj else current_gw + 1
+    next_deadline = next_gw_obj.get('deadline_time', '2026-11-21T11:00:00Z') if next_gw_obj else '2026-11-21T11:00:00Z'
     gw_range = list(range(next_gw, min(next_gw + 5, 39)))
 
     # 1. TEAM TOP STARS (for fixture strategy)
@@ -190,9 +192,23 @@ def main():
     for s in l124_res['standings']['results']:
         eid = s['entry']
         hist = fetch_json(f"entry/{eid}/history/")
-        chips = [f"{c['name'].upper()}(GW{c['event']})" for c in hist.get('chips', [])]
-        gw_totals = {h['event']: h['total_points'] for h in hist.get('current', [])}
+        raw_chips = hist.get('chips', [])
+        chips = [f"{c['name'].upper()}(GW{c['event']})" for c in raw_chips]
+        used_chip_keys = {c['name'] for c in raw_chips if c['event'] <= 19}
+        
+        cur_list = hist.get('current', [])
+        gw_totals = {h['event']: h['total_points'] for h in cur_list}
         histories[eid] = gw_totals
+
+        # Calculate Turn 2 points (GW11 - GW19)
+        t2_pts = sum((h['points'] - h['event_transfers_cost']) for h in cur_list if 11 <= h['event'] <= 19)
+        # Turn 1 stats (GW1 - GW10)
+        t1_list = [h for h in cur_list if h['event'] <= 10]
+        best_gw_item = max(t1_list, key=lambda x: x['points']) if t1_list else {'points': 0, 'event': 0}
+        bench_wasted = sum(h.get('points_on_bench', 0) for h in cur_list)
+        total_hits = sum(h.get('event_transfers_cost', 0) for h in cur_list)
+        last_val = round(cur_list[-1].get('value', 1000) / 10, 1) if cur_list else 100.0
+
         l124_standings.append({
             "entry": eid,
             "rank": s['rank'],
@@ -200,7 +216,19 @@ def main():
             "manager": s['player_name'],
             "gw_pts": s['event_total'],
             "total": s['total'],
-            "chips": chips
+            "turn2_pts": t2_pts,
+            "chips": chips,
+            "chips_map": {
+                "wc": "wildcard" in used_chip_keys,
+                "tc": "3xc" in used_chip_keys,
+                "bb": "bboost" in used_chip_keys,
+                "fh": "freehit" in used_chip_keys
+            },
+            "best_gw": best_gw_item['points'],
+            "best_gw_num": best_gw_item['event'],
+            "bench_wasted": bench_wasted,
+            "total_hits": total_hits,
+            "team_value": last_val
         })
 
     leader_pts = l124_standings[0]['total'] if l124_standings else 0
@@ -209,6 +237,19 @@ def main():
     for item in l124_standings:
         item["gap_leader"] = item["total"] - leader_pts
         item["is_last"] = (item["total"] == last_pts)
+
+    # Turn 1 Superlatives / Awards
+    top_gw_king = max(l124_standings, key=lambda x: x['best_gw'])
+    bench_king = max(l124_standings, key=lambda x: x['bench_wasted'])
+    hit_king = max(l124_standings, key=lambda x: x['total_hits'])
+    richest_club = max(l124_standings, key=lambda x: x['team_value'])
+
+    turn1_awards = {
+        "best_gw": {"team": top_gw_king['team'], "manager": top_gw_king['manager'], "val": f"{top_gw_king['best_gw']}đ (GW{top_gw_king['best_gw_num']})"},
+        "bench_king": {"team": bench_king['team'], "manager": bench_king['manager'], "val": f"{bench_king['bench_wasted']}đ"},
+        "hit_king": {"team": hit_king['team'], "manager": hit_king['manager'], "val": f"-{hit_king['total_hits']}đ"},
+        "richest": {"team": richest_club['team'], "manager": richest_club['manager'], "val": f"£{richest_club['team_value']}m"}
+    }
 
     # Rank progression for GW1 to current_gw
     rank_prog = {item['team']: [] for item in l124_standings}
@@ -302,8 +343,10 @@ def main():
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "current_gw": current_gw,
         "next_gw": next_gw,
+        "next_deadline": next_deadline,
         "gw_headers": [f"GW{g}" for g in gw_range],
         "league_124": l124_standings,
+        "turn1_awards": turn1_awards,
         "league_ioc": ioc_standings,
         "rank_progression": rank_prog,
         "fixtures": fixtures_table,

@@ -105,42 +105,83 @@
 
     <!-- TAB 1: 🏆 ĐẤU TRƯỜNG & BẢNG XẾP HẠNG -->
     <div id="tab-standings" class="tab-content space-y-5">
-      <!-- HERO CARDS -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="hero-cards-container">
-        <!-- Populated dynamically -->
+      
+      <!-- COUNTDOWN BANNER CHẶNG 2 (RESET 0-0) -->
+      <div class="vip-card rounded-2xl p-4 border border-cyan-500/30 bg-gradient-to-r from-cyan-950/30 via-slate-900/90 to-indigo-950/30 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-lg shadow-inner">
+            <i class="fa-solid fa-stopwatch"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-black text-cyan-300 uppercase tracking-wider">CHẶNG 2 (TURN 2: GW11 – GW19) • RESET ĐIỂM 0 – 0</span>
+              <span class="text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-1.5 py-0.5 rounded font-bold animate-pulse">SẮP KHỞI TRANH</span>
+            </div>
+            <p class="text-[11px] text-slate-400 mt-0.5">Mọi HLV trở lại vạch xuất phát 0đ. Hạn chót xả hết 4 Chip Phase 1 trước Deadline GW19!</p>
+          </div>
+        </div>
+        <div class="bg-slate-950/90 border border-slate-800 rounded-xl px-4 py-2 text-center">
+          <p class="text-[9px] text-slate-400 uppercase tracking-widest font-bold">Deadline GW11 (21/11)</p>
+          <p id="gw-countdown" class="text-sm sm:text-base font-black text-amber-400 font-mono-numbers tracking-wider mt-0.5">--d : --h : --m : --s</p>
+        </div>
       </div>
 
-      <!-- 2 COLUMNS: BXH 124+ & BIỂU ĐỒ LỊCH SỬ THỨ HẠNG -->
+      <!-- HERO CARDS -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="hero-cards-container"></div>
+
+      <!-- KỶ LỤC CHẶNG 1 (TURN 1 AWARDS) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="turn1-awards-container"></div>
+
+      <!-- 2 COLUMNS: BXH CHUYỂN ĐỔI 3 CHẾ ĐỘ & BIỂU ĐỒ + GIẢ LẬP KÈO -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5">
-          <div class="flex items-center justify-between mb-3">
-            <div>
-              <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
-                <i class="fa-solid fa-trophy text-amber-400"></i> BẢNG XẾP HẠNG CHÍNH THỨC — 124+ | NÁT
-              </h2>
-              <p class="text-[11px] text-slate-400">Số liệu chính xác 100% từ hệ thống FPL (Bao gồm Chip & Bonus)</p>
+        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-trophy text-amber-400"></i> BẢNG XẾP HẠNG — 124+ | NÁT
+                </h2>
+                <p class="text-[11px] text-slate-400" id="standings-subtitle">Chế độ xem: Tổng Tích Lũy Cả Mùa (GW1 – GW10)</p>
+              </div>
+              <div class="flex items-center space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-[10px]">
+                <button onclick="setStandingMode('turn2')" id="mode-turn2" class="px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold transition">⚡ Chặng 2 (Reset)</button>
+                <button onclick="setStandingMode('overall')" id="mode-overall" class="px-2.5 py-1 rounded-lg bg-cyan-600 text-white font-bold transition">🏆 Cả Mùa</button>
+              </div>
             </div>
-            <span class="text-[10px] bg-slate-900 text-slate-300 font-mono px-2 py-1 rounded-lg border border-slate-700">ID: 1473576</span>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-slate-300">
+                <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800" id="league-124-thead"></thead>
+                <tbody id="league-124-tbody" class="divide-y divide-slate-800/50"></tbody>
+              </table>
+            </div>
           </div>
-          <div class="overflow-x-auto">
-            <table class="w-full text-left text-xs text-slate-300">
-              <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase tracking-wider border-b border-slate-800">
-                <tr>
-                  <th class="p-2.5 text-center w-12">Hạng</th>
-                  <th class="p-2.5">Đội Bóng / HLV</th>
-                  <th class="p-2.5 text-right">Điểm GW</th>
-                  <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
-                  <th class="p-2.5 text-right">Cách Top 1</th>
-                  <th class="p-2.5 text-center">Chip Đã Dùng</th>
-                  <th class="p-2.5 text-center">Trạng Thái Chặng</th>
-                </tr>
-              </thead>
-              <tbody id="league-124-tbody" class="divide-y divide-slate-800/50"></tbody>
-            </table>
+
+          <!-- MA TRẬN KHO VŨ KHÍ CHIP TOÀN GIẢI -->
+          <div class="pt-3 border-t border-slate-800/80">
+            <h3 class="text-xs font-extrabold text-purple-300 mb-2 flex items-center justify-between">
+              <span><i class="fa-solid fa-microchip text-purple-400 mr-1.5"></i> KHO VŨ KHÍ CHIP PHASE 1 (HẠN CHÓT GW19)</span>
+              <span class="text-[10px] text-slate-400 font-normal">Xanh = Còn đạn • Đỏ = Đã bắn</span>
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-center text-[11px] text-slate-300">
+                <thead class="text-[9px] text-slate-400 uppercase bg-slate-950/60">
+                  <tr>
+                    <th class="p-1.5 text-left">Đội</th>
+                    <th class="p-1.5">Wildcard 1</th>
+                    <th class="p-1.5">Triple Cap 1</th>
+                    <th class="p-1.5">Bench Boost 1</th>
+                    <th class="p-1.5">Free Hit 1</th>
+                    <th class="p-1.5 text-right">Giá Đội (£)</th>
+                  </tr>
+                </thead>
+                <tbody id="chip-matrix-tbody" class="divide-y divide-slate-800/40"></tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        <!-- CỘT PHẢI: BIỂU ĐỒ & WHAT-IF SIMULATOR -->
+        <!-- CỘT PHẢI: BIỂU ĐỒ & BỘ GIẢ LẬP KÈO CHẶNG 2 VIP PRO -->
         <div class="lg:col-span-5 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
           <div>
             <div class="flex items-center justify-between mb-2">
@@ -148,31 +189,61 @@
                 <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
                   <i class="fa-solid fa-chart-line text-cyan-400"></i> QUỸ ĐẠO THỨ HẠNG (GW1 – GW10)
                 </h3>
-                <p class="text-[11px] text-slate-400">Diễn biến thứ hạng thực tế qua từng vòng đấu</p>
+                <p class="text-[11px] text-slate-400">Diễn biến thứ hạng thực tế suốt Chặng 1</p>
               </div>
               <span class="text-[10px] text-cyan-300 bg-cyan-950 px-2 py-0.5 rounded border border-cyan-800">Real History</span>
             </div>
-            <div class="w-full h-56 sm:h-64">
+            <div class="w-full h-52 sm:h-60">
               <canvas id="rankHistoryChart"></canvas>
             </div>
           </div>
 
-          <div class="pt-3 border-t border-slate-800/80">
-            <div class="flex items-center justify-between text-xs font-bold mb-2">
-              <span class="text-indigo-300 flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> What-If Simulator (Giả Lập Tuần Tới)</span>
+          <!-- ĐẤU TRƯỜNG GIẢ LẬP KÈO & CHIP CHẶNG 2 -->
+          <div class="pt-3 border-t border-slate-800/80 space-y-2.5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-extrabold text-indigo-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-cyan-400"></i> ĐẤU TRƯỜNG GIẢ LẬP KÈO GW11
+              </span>
+              <select id="sim-mode" onchange="runWhatIfSim()" class="bg-slate-900 border border-slate-700 text-[10px] font-bold text-cyan-300 rounded-lg px-2 py-1">
+                <option value="turn2" selected>Chế độ: Chặng 2 (Reset 0đ)</option>
+                <option value="overall">Chế độ: Cộng dồn Cả Mùa</option>
+              </select>
             </div>
-            <div class="grid grid-cols-2 gap-2 text-[11px] mb-2 font-mono-numbers">
-              <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
-                <span class="text-slate-400 text-[10px] block">Cận VIP: <b id="sim-my-pts" class="text-cyan-400">75đ</b></span>
-                <input type="range" min="30" max="110" value="75" id="slider-my-pts" oninput="runWhatIfSim()" class="w-full accent-cyan-400 mt-1">
+
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
+              <!-- HLV A -->
+              <div class="bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 space-y-1.5">
+                <select id="sim-manager-a" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-cyan-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
+                <div class="flex justify-between items-center font-mono-numbers">
+                  <span class="text-[10px] text-slate-400">Điểm GW11:</span>
+                  <b id="sim-pts-a" class="text-cyan-400">65đ</b>
+                </div>
+                <input type="range" min="25" max="115" value="65" id="slider-a" oninput="runWhatIfSim()" class="w-full accent-cyan-400">
+                <select id="sim-chip-a" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
+                  <option value="0">Chip: Không (+0đ)</option>
+                  <option value="12">Triple Captain (+12đ)</option>
+                  <option value="18">Bench Boost (+18đ)</option>
+                </select>
               </div>
-              <div class="bg-slate-900/80 p-2 rounded-lg border border-slate-800">
-                <span class="text-slate-400 text-[10px] block">Bao Bui: <b id="sim-rival-pts" class="text-amber-400">45đ</b></span>
-                <input type="range" min="30" max="110" value="45" id="slider-rival-pts" oninput="runWhatIfSim()" class="w-full accent-amber-400 mt-1">
+
+              <!-- HLV B -->
+              <div class="bg-slate-900/90 p-2.5 rounded-xl border border-slate-800 space-y-1.5">
+                <select id="sim-manager-b" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-amber-400 font-bold text-[11px] rounded p-1 border border-slate-700"></select>
+                <div class="flex justify-between items-center font-mono-numbers">
+                  <span class="text-[10px] text-slate-400">Điểm GW11:</span>
+                  <b id="sim-pts-b" class="text-amber-400">55đ</b>
+                </div>
+                <input type="range" min="25" max="115" value="55" id="slider-b" oninput="runWhatIfSim()" class="w-full accent-amber-400">
+                <select id="sim-chip-b" onchange="runWhatIfSim()" class="w-full bg-slate-950 text-[10px] text-slate-300 rounded p-1 border border-slate-800">
+                  <option value="0">Chip: Không (+0đ)</option>
+                  <option value="12">Triple Captain (+12đ)</option>
+                  <option value="18">Bench Boost (+18đ)</option>
+                </select>
               </div>
             </div>
-            <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-between text-[11px]">
-              <span class="text-slate-300" id="sim-status-text">Đang tính...</span>
+
+            <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-[11px]">
+              <span class="text-slate-300 font-mono-numbers" id="sim-status-text">Đang tính toán...</span>
               <span class="font-extrabold text-emerald-400" id="sim-gap-badge">...</span>
             </div>
           </div>
@@ -473,6 +544,8 @@
     let DATA = null;
     let isVipUnlocked = false;
     let currentPosFilter = 'ALL';
+    let standingMode = 'overall';
+    let countdownInterval = null;
     let radarChart = null;
     let rankChart = null;
     const VALID_PASSWORDS = ['tit67', '6767', 'canvip'];
@@ -496,10 +569,14 @@
     function renderAll() {
       if (!DATA) return;
       document.getElementById('sync-timestamp').textContent = `Đồng bộ tự động: ${DATA.updated_at} • Sau GW${DATA.current_gw}`;
+      startCountdown();
       renderHeroCards();
-      renderLeague124();
+      renderTurn1Awards();
+      setStandingMode(standingMode);
+      renderChipMatrix();
       renderLeagueIOC();
       renderRankHistoryChart();
+      populateSimManagers();
       runWhatIfSim();
       renderDreamTeam();
       populateRadarSelectors();
@@ -508,6 +585,65 @@
       renderMarketTable();
       renderFixtureTable();
       renderVipVault();
+    }
+
+    function startCountdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      const targetTime = new Date(DATA.next_deadline || '2026-11-21T11:00:00Z').getTime();
+      const update = () => {
+        const now = Date.now();
+        const diff = targetTime - now;
+        const el = document.getElementById('gw-countdown');
+        if (!el) return;
+        if (diff <= 0) {
+          el.textContent = "ĐANG THI ĐẤU LIVE!";
+          return;
+        }
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / (1000 * 60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        el.textContent = `${String(d).padStart(2,'0')}d : ${String(h).padStart(2,'0')}h : ${String(m).padStart(2,'0')}m : ${String(s).padStart(2,'0')}s`;
+      };
+      update();
+      countdownInterval = setInterval(update, 1000);
+    }
+
+    function renderTurn1Awards() {
+      if (!DATA.turn1_awards) return;
+      const a = DATA.turn1_awards;
+      const card = (icon, title, item, color) => `
+        <div class="vip-card rounded-2xl p-3 border border-slate-800 flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl ${color} flex items-center justify-center text-base shrink-0">${icon}</div>
+          <div class="min-w-0">
+            <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400 truncate">${title}</p>
+            <p class="text-xs font-black text-white truncate">${item.team} <span class="text-amber-400 font-mono-numbers">${item.val}</span></p>
+            <p class="text-[10px] text-slate-400 truncate">${item.manager}</p>
+          </div>
+        </div>
+      `;
+      document.getElementById('turn1-awards-container').innerHTML =
+        card('🔥', 'Kỷ Lục Điểm 1 Vòng', a.best_gw, 'bg-orange-500/20 text-orange-400 border border-orange-500/30') +
+        card('🪑', 'Chúa Tể Dự Bị', a.bench_king, 'bg-purple-500/20 text-purple-400 border border-purple-500/30') +
+        card('💸', 'Chuyên Gia Đi Chợ (-Hit)', a.hit_king, 'bg-rose-500/20 text-rose-400 border border-rose-500/30') +
+        card('💎', 'Đội Hình Đắt Giá Nhất', a.richest, 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30');
+    }
+
+    function setStandingMode(mode) {
+      standingMode = mode;
+      const btnT2 = document.getElementById('mode-turn2');
+      const btnOv = document.getElementById('mode-overall');
+      const sub = document.getElementById('standings-subtitle');
+      if (mode === 'turn2') {
+        btnT2.className = "px-2.5 py-1 rounded-lg bg-cyan-600 text-white font-bold transition";
+        btnOv.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold transition";
+        sub.textContent = "Chế độ: Đua Chặng 2 (GW11 – GW19) • Toàn Giải Reset 0 – 0";
+      } else {
+        btnOv.className = "px-2.5 py-1 rounded-lg bg-cyan-600 text-white font-bold transition";
+        btnT2.className = "px-2.5 py-1 rounded-lg text-slate-400 hover:text-white font-bold transition";
+        sub.textContent = "Chế độ: Bảng Tổng Sắp Toàn Mùa Giải (GW1 – GW38)";
+      }
+      renderLeague124();
     }
 
     function renderHeroCards() {
@@ -522,7 +658,7 @@
           <div class="absolute -right-2 -bottom-2 opacity-10 text-5xl text-cyan-400"><i class="fa-solid fa-flag-checkered"></i></div>
           <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Chặng 1 (Turn 1)</p>
           <p class="text-2xl font-black text-emerald-400 mt-1">CHỐT SỔ</p>
-          <span class="text-[11px] text-slate-400 font-mono-numbers">Hoàn tất GW1 – GW${DATA.current_gw}</span>
+          <span class="text-[11px] text-slate-400 font-mono-numbers">Chuẩn bị Reset Turn 2 (GW11)</span>
         </div>
         <div class="vip-card rounded-2xl p-4 vip-gold-glow relative overflow-hidden">
           <div class="absolute -right-2 -bottom-2 opacity-10 text-5xl text-amber-400"><i class="fa-solid fa-crown"></i></div>
@@ -549,7 +685,48 @@
     }
 
     function renderLeague124() {
+      const thead = document.getElementById('league-124-thead');
       const tbody = document.getElementById('league-124-tbody');
+
+      if (standingMode === 'turn2') {
+        thead.innerHTML = `
+          <tr>
+            <th class="p-2.5 text-center w-12">Hạng</th>
+            <th class="p-2.5">Đội Bóng / HLV</th>
+            <th class="p-2.5 text-right font-black text-cyan-400">Điểm Turn 2</th>
+            <th class="p-2.5 text-right">Điểm Turn 1</th>
+            <th class="p-2.5 text-center">Trạng Thái Chặng 2</th>
+          </tr>
+        `;
+        const sortedT2 = [...DATA.league_124].sort((a, b) => b.turn2_pts - a.turn2_pts);
+        tbody.innerHTML = sortedT2.map((s, idx) => `
+          <tr class="hover:bg-slate-800/30 transition">
+            <td class="p-2.5 text-center font-black text-cyan-400">#${idx + 1}</td>
+            <td class="p-2.5">
+              <div class="font-extrabold text-white">${s.team}</div>
+              <div class="text-[10px] text-slate-400">${s.manager}</div>
+            </td>
+            <td class="p-2.5 text-right font-mono-numbers font-black text-cyan-400 text-sm">${s.turn2_pts}đ</td>
+            <td class="p-2.5 text-right font-mono-numbers text-slate-400">${s.total}đ</td>
+            <td class="p-2.5 text-center">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 font-bold">⚡ Xuất Phát 0 – 0</span>
+            </td>
+          </tr>
+        `).join('');
+        return;
+      }
+
+      thead.innerHTML = `
+        <tr>
+          <th class="p-2.5 text-center w-12">Hạng</th>
+          <th class="p-2.5">Đội Bóng / HLV</th>
+          <th class="p-2.5 text-right">GW10</th>
+          <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
+          <th class="p-2.5 text-right">Cách Top 1</th>
+          <th class="p-2.5 text-center">Trạng Thái Chặng 1</th>
+        </tr>
+      `;
+
       tbody.innerHTML = DATA.league_124.map(s => {
         let rankBadge = `#${s.rank}`;
         let rowStyle = 'hover:bg-slate-800/30';
@@ -570,10 +747,6 @@
           statusTag = '<span onclick="openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50">🎖️ Nhà Hảo Tâm Turn 1</span>';
         }
 
-        const chipsHtml = (s.chips && s.chips.length > 0)
-          ? s.chips.map(c => `<span class="px-1.5 py-0.5 rounded bg-purple-950/60 text-purple-300 border border-purple-700/50 text-[9px] font-mono mr-1">${c}</span>`).join('')
-          : '<span class="text-slate-500 text-[10px]">Chưa dùng</span>';
-
         return `
           <tr class="${rowStyle} transition">
             <td class="p-2.5 text-center font-black ${s.rank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
@@ -584,8 +757,29 @@
             <td class="p-2.5 text-right font-mono-numbers font-bold ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
             <td class="p-2.5 text-right font-mono-numbers font-black text-white">${s.total}</td>
             <td class="p-2.5 text-right font-mono-numbers text-slate-400">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
-            <td class="p-2.5 text-center">${chipsHtml}</td>
             <td class="p-2.5 text-center">${statusTag}</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function renderChipMatrix() {
+      const tbody = document.getElementById('chip-matrix-tbody');
+      if (!tbody) return;
+      const chipBadge = (used) => used
+        ? '<span class="text-rose-400/80 font-bold text-[10px]"><i class="fa-solid fa-xmark"></i> Hết</span>'
+        : '<span class="text-emerald-400 font-bold text-[10px]"><i class="fa-solid fa-check"></i> Còn</span>';
+
+      tbody.innerHTML = DATA.league_124.map(s => {
+        const cm = s.chips_map || { wc: false, tc: false, bb: false, fh: false };
+        return `
+          <tr class="hover:bg-slate-800/30">
+            <td class="p-1.5 text-left font-bold text-white">${s.team}</td>
+            <td class="p-1.5">${chipBadge(cm.wc)}</td>
+            <td class="p-1.5">${chipBadge(cm.tc)}</td>
+            <td class="p-1.5">${chipBadge(cm.bb)}</td>
+            <td class="p-1.5">${chipBadge(cm.fh)}</td>
+            <td class="p-1.5 text-right font-mono-numbers text-amber-300 font-bold">£${s.team_value}m</td>
           </tr>
         `;
       }).join('');
@@ -641,32 +835,58 @@
       });
     }
 
+    function populateSimManagers() {
+      const sA = document.getElementById('sim-manager-a');
+      const sB = document.getElementById('sim-manager-b');
+      if (!sA || !sB || !DATA) return;
+      const opts = DATA.league_124.map(s => `<option value="${s.team}">${s.team} (${s.manager})</option>`).join('');
+      sA.innerHTML = opts;
+      sB.innerHTML = opts;
+      if (DATA.league_124.length >= 2) {
+        sA.value = DATA.league_124[1].team;
+        sB.value = DATA.league_124[0].team;
+      }
+    }
+
     function runWhatIfSim() {
       if (!DATA) return;
-      const myPts = parseInt(document.getElementById('slider-my-pts').value);
-      const rivalPts = parseInt(document.getElementById('slider-rival-pts').value);
-      document.getElementById('sim-my-pts').textContent = myPts + 'đ';
-      document.getElementById('sim-rival-pts').textContent = rivalPts + 'đ';
+      const mode = document.getElementById('sim-mode').value;
+      const teamAName = document.getElementById('sim-manager-a').value || DATA.league_124[1].team;
+      const teamBName = document.getElementById('sim-manager-b').value || DATA.league_124[0].team;
 
-      const baseLeader = DATA.league_124[0].total;
-      const baseRunner = DATA.league_124[1].total;
-      const myTotal = baseRunner + myPts;
-      const rivalTotal = baseLeader + rivalPts;
-      const diff = myTotal - rivalTotal;
+      const objA = DATA.league_124.find(x => x.team === teamAName) || DATA.league_124[1];
+      const objB = DATA.league_124.find(x => x.team === teamBName) || DATA.league_124[0];
+
+      const ptsA = parseInt(document.getElementById('slider-a').value);
+      const ptsB = parseInt(document.getElementById('slider-b').value);
+      const chipA = parseInt(document.getElementById('sim-chip-a').value);
+      const chipB = parseInt(document.getElementById('sim-chip-b').value);
+
+      const gwTotalA = ptsA + chipA;
+      const gwTotalB = ptsB + chipB;
+      document.getElementById('sim-pts-a').textContent = `${gwTotalA}đ` + (chipA > 0 ? ` (+${chipA})` : '');
+      document.getElementById('sim-pts-b').textContent = `${gwTotalB}đ` + (chipB > 0 ? ` (+${chipB})` : '');
+
+      const baseA = mode === 'turn2' ? (objA.turn2_pts || 0) : objA.total;
+      const baseB = mode === 'turn2' ? (objB.turn2_pts || 0) : objB.total;
+
+      const finalA = baseA + gwTotalA;
+      const finalB = baseB + gwTotalB;
+      const diff = finalA - finalB;
 
       const textEl = document.getElementById('sim-status-text');
       const badgeEl = document.getElementById('sim-gap-badge');
-      textEl.textContent = `${DATA.league_124[1].team}: ${myTotal}đ vs ${DATA.league_124[0].team}: ${rivalTotal}đ`;
+      textEl.textContent = `${objA.team} (${finalA}đ) vs ${objB.team} (${finalB}đ)`;
 
       if (diff > 0) {
         badgeEl.className = 'font-black text-emerald-400';
-        badgeEl.textContent = `🎉 VƯỢT LÊN #1 (+${diff}đ)`;
+        badgeEl.textContent = `🏆 ${objA.team} THẮNG KÈO (+${diff}đ)`;
       } else if (diff === 0) {
         badgeEl.className = 'font-black text-amber-400';
-        badgeEl.textContent = '🤝 HÒA ĐIỂM CHẰN CHẶN';
+        badgeEl.textContent = '🤝 HÒA KÈO KHÔNG PHÂN THẮNG BẠI';
       } else {
         badgeEl.className = 'font-black text-rose-400';
-        badgeEl.textContent = `⚠️ Vẫn kém ${Math.abs(diff)}đ`;
+        badgeEl.textContent = `🏆 ${objB.team} THẮNG KÈO (+${Math.abs(diff)}đ)`;
       }
     }
 

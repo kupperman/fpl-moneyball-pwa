@@ -1,7 +1,8 @@
 {
-  "updated_at": "2026-11-10 06:46 UTC",
+  "updated_at": "2026-11-10 07:02 UTC",
   "current_gw": 10,
   "next_gw": 11,
+  "next_deadline": "2026-11-21T11:00:00Z",
   "gw_headers": [
     "GW11",
     "GW12",
@@ -17,10 +18,22 @@
       "manager": "Bao Bui",
       "gw_pts": 71,
       "total": 605,
+      "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)",
         "BBOOST(GW10)"
       ],
+      "chips_map": {
+        "wc": true,
+        "tc": false,
+        "bb": true,
+        "fh": false
+      },
+      "best_gw": 78,
+      "best_gw_num": 2,
+      "bench_wasted": 110,
+      "total_hits": 4,
+      "team_value": 103.5,
       "gap_leader": 0,
       "is_last": false
     },
@@ -31,9 +44,21 @@
       "manager": "Trung TíT",
       "gw_pts": 64,
       "total": 578,
+      "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)"
       ],
+      "chips_map": {
+        "wc": true,
+        "tc": false,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 85,
+      "best_gw_num": 2,
+      "bench_wasted": 105,
+      "total_hits": 12,
+      "team_value": 101.5,
       "gap_leader": -27,
       "is_last": false
     },
@@ -44,9 +69,21 @@
       "manager": "paper man",
       "gw_pts": 60,
       "total": 568,
+      "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)"
       ],
+      "chips_map": {
+        "wc": true,
+        "tc": false,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 94,
+      "best_gw_num": 2,
+      "bench_wasted": 106,
+      "total_hits": 4,
+      "team_value": 102.2,
       "gap_leader": -37,
       "is_last": false
     },
@@ -57,10 +94,22 @@
       "manager": "iKen Dang",
       "gw_pts": 69,
       "total": 564,
+      "turn2_pts": 0,
       "chips": [
         "3XC(GW9)",
         "BBOOST(GW10)"
       ],
+      "chips_map": {
+        "wc": false,
+        "tc": true,
+        "bb": true,
+        "fh": false
+      },
+      "best_gw": 81,
+      "best_gw_num": 2,
+      "bench_wasted": 59,
+      "total_hits": 0,
+      "team_value": 100.3,
       "gap_leader": -41,
       "is_last": false
     },
@@ -71,9 +120,21 @@
       "manager": "Ninh Dang",
       "gw_pts": 65,
       "total": 554,
+      "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW5)"
       ],
+      "chips_map": {
+        "wc": true,
+        "tc": false,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 105,
+      "best_gw_num": 2,
+      "bench_wasted": 31,
+      "total_hits": 0,
+      "team_value": 101.3,
       "gap_leader": -51,
       "is_last": false
     },
@@ -84,9 +145,21 @@
       "manager": "Cường Tệ",
       "gw_pts": 59,
       "total": 535,
+      "turn2_pts": 0,
       "chips": [
         "3XC(GW10)"
       ],
+      "chips_map": {
+        "wc": false,
+        "tc": true,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 74,
+      "best_gw_num": 6,
+      "bench_wasted": 95,
+      "total_hits": 4,
+      "team_value": 100.3,
       "gap_leader": -70,
       "is_last": true
     },
@@ -97,13 +170,47 @@
       "manager": "Ngoc Dao",
       "gw_pts": 49,
       "total": 535,
+      "turn2_pts": 0,
       "chips": [
         "3XC(GW10)"
       ],
+      "chips_map": {
+        "wc": false,
+        "tc": true,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 84,
+      "best_gw_num": 4,
+      "bench_wasted": 39,
+      "total_hits": 4,
+      "team_value": 100.1,
       "gap_leader": -70,
       "is_last": true
     }
   ],
+  "turn1_awards": {
+    "best_gw": {
+      "team": "Ninh SS",
+      "manager": "Ninh Dang",
+      "val": "105đ (GW2)"
+    },
+    "bench_king": {
+      "team": "Bao Bui",
+      "manager": "Bao Bui",
+      "val": "110đ"
+    },
+    "hit_king": {
+      "team": "Cận VIP",
+      "manager": "Trung TíT",
+      "val": "-12đ"
+    },
+    "richest": {
+      "team": "Bao Bui",
+      "manager": "Bao Bui",
+      "val": "£103.5m"
+    }
+  },
   "league_ioc": [
     {
       "rank": 1,
@@ -1412,21 +1519,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+252,440",
+        "net_transfers": "+252,730",
         "pts": 54
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+187,917",
+        "net_transfers": "+188,027",
         "pts": 55
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+172,201",
+        "net_transfers": "+172,406",
         "pts": 61
       }
     ],
@@ -1435,21 +1542,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-266,221",
+        "net_transfers": "-266,452",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-248,122",
+        "net_transfers": "-248,319",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-116,456",
+        "net_transfers": "-116,597",
         "pts": 37
       }
     ]
