@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>124+ FANTASY LEAGUE — WAR ROOM & MONEYBALL</title>
-  <meta name="description" content="Trung tâm tác chiến số liệu FPL 124+ Nát & IOC_124. Cập nhật điểm Live, Turn 1 Á Quân Cận VIP, Radar Tiền Vệ và theo dõi nhóm móc túi nộp phạt.">
+  <title>124+ Premier League Analytics Hub</title>
+  <meta name="description" content="Trung tâm số liệu & phân tích chuyên sâu FPL 124+ League. Market Radar, Fixture Ticker, xGI Scanner và Bảng Xếp Hạng Chặng 1.">
   
-  <!-- OpenGraph / Telegram / Zalo Preview -->
+  <!-- OpenGraph Preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kupperman.github.io/fpl-moneyball-pwa/">
-  <meta property="og:title" content="⚽ 124+ FANTASY LEAGUE — WAR ROOM & MONEYBALL">
-  <meta property="og:description" content="Turn 1 Chốt Sổ: Bao Bui 586đ, Cận VIP 578đ Á Quân. Nhóm bét: Cường Tệ & Ngọc Dao 535đ móc túi khao!">
+  <meta property="og:title" content="⚽ 124+ FANTASY LEAGUE — ANALYTICS HUB">
+  <meta property="og:description" content="Trung tâm số liệu & phân tích chuyên sâu FPL: Market Radar xGI, Fixture Ticker 5 vòng tới và Cục diện Chặng 1.">
   <meta property="og:image" content="https://img.icons8.com/color/512/premier-league.png">
+
   <link rel="manifest" href="./manifest.json">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#0b0f19">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -31,499 +32,597 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .neon-border-cyan {
-      box-shadow: 0 0 15px rgba(6, 182, 212, 0.25);
-      border-color: rgba(6, 182, 212, 0.4);
-    }
-    .neon-border-green {
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
-      border-color: rgba(16, 185, 129, 0.4);
-    }
-    .tab-active {
-      color: #06b6d4;
-      border-bottom: 2px solid #06b6d4;
-    }
+    .badge-diff-1 { background-color: #059669; color: #fff; } /* Rất dễ */
+    .badge-diff-2 { background-color: #10b981; color: #fff; } /* Dễ */
+    .badge-diff-3 { background-color: #64748b; color: #fff; } /* Trung bình */
+    .badge-diff-4 { background-color: #f97316; color: #fff; } /* Khó */
+    .badge-diff-5 { background-color: #ef4444; color: #fff; } /* Cực khó */
   </style>
 </head>
 <body class="min-h-screen flex flex-col pb-20">
 
-  <!-- TOP HEADER -->
+  <!-- TOP HEADER (TRUNG LẬP & CHUYÊN NGHIỆP) -->
   <header class="sticky top-0 z-50 glass-card border-b border-slate-800 px-4 py-3 flex items-center justify-between">
-    <div class="flex items-center space-x-2">
-      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center font-black text-slate-900 text-sm">
-        67
+    <div class="flex items-center space-x-2.5">
+      <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-black text-white text-sm shadow-md">
+        124
       </div>
       <div>
-        <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-1">
-          CẬN VIP <span class="text-xs px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">Turn 1 Á Quân</span>
+        <h1 class="text-sm font-bold tracking-tight text-white flex items-center gap-1.5">
+          124+ ANALYTICS HUB
+          <span class="text-[10px] px-1.5 py-0.2 rounded bg-indigo-950 text-indigo-400 border border-indigo-800">Pro Edition</span>
         </h1>
-        <p class="text-[10px] text-slate-400">Zero-Dollar Moneyball Engine</p>
+        <p class="text-[10px] text-slate-400">Market Radar • xGI Models • Fixtures</p>
       </div>
     </div>
+    
+    <!-- NÚT KHÓA VIP (BẢO VỆ THÔNG TIN CÁ NHÂN) -->
     <div class="flex items-center space-x-2">
-      <button onclick="toggleApiModal()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded-md border border-slate-700 flex items-center gap-1 transition">
-        <i class="fa-solid fa-cloud"></i>
-        <span class="hidden sm:inline">Nguồn API</span>
+      <button onclick="handleVipButton()" id="vip-status-btn" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1.5 rounded-lg border border-slate-700 flex items-center gap-1.5 transition">
+        <i class="fa-solid fa-lock text-amber-400" id="vip-icon"></i>
+        <span id="vip-label">VIP Vault</span>
       </button>
-      <button onclick="refreshData()" class="text-xs bg-cyan-600 hover:bg-cyan-500 text-white px-2.5 py-1.5 rounded-md flex items-center gap-1 shadow-sm transition">
+      <button onclick="refreshData()" class="text-xs bg-cyan-600 hover:bg-cyan-500 text-white p-1.5 px-2 rounded-lg flex items-center gap-1 transition">
         <i class="fa-solid fa-rotate" id="refresh-icon"></i>
-        <span>Làm mới</span>
       </button>
     </div>
   </header>
 
-  <!-- MAIN VIEW CONTAINER -->
+  <!-- MAIN CONTAINER -->
   <main class="flex-1 max-w-4xl w-full mx-auto p-4 space-y-4">
 
-    <!-- TAB 1: TỔNG QUAN -->
-    <div id="tab-overview" class="tab-content space-y-4">
-      <!-- HERO METRICS CARD -->
+    <!-- TAB 1: BẢNG XẾP HẠNG & CỤC DIỆN CHẶNG (PUBLIC) -->
+    <div id="tab-standings" class="tab-content space-y-4">
+      
+      <!-- HERO LEAGUE METRICS -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="glass-card rounded-xl p-3.5 border border-slate-800">
-          <p class="text-xs text-slate-400 font-medium">Tổng Điểm Tích Lũy</p>
-          <p class="text-2xl font-black text-cyan-400 mt-1" id="stat-total-pts">578</p>
-          <span class="text-[10px] text-emerald-400 font-semibold flex items-center gap-1 mt-1">
-            <i class="fa-solid fa-arrow-trend-up"></i> +64đ (GW10 sạch)
-          </span>
+        <div class="glass-card rounded-xl p-3 border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-medium">Chặng 1 (Turn 1)</p>
+          <p class="text-xl font-black text-emerald-400 mt-0.5">Đã Khép Lại</p>
+          <span class="text-[10px] text-slate-400">GW1 – GW10 (10 trận)</span>
         </div>
-        <div class="glass-card rounded-xl p-3.5 border border-slate-800">
-          <p class="text-xs text-slate-400 font-medium">124+ | NÁT (Turn 1)</p>
-          <p class="text-2xl font-black text-amber-400 mt-1">Hạng #2</p>
-          <span class="text-[10px] text-slate-300 mt-1 block">🥈 Kém Top 1 đúng 8đ</span>
+        <div class="glass-card rounded-xl p-3 border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-medium">Quán Quân Chặng 1</p>
+          <p class="text-xl font-black text-amber-400 mt-0.5">Bao Bui</p>
+          <span class="text-[10px] text-slate-400">586 điểm (#1 League)</span>
         </div>
-        <div class="glass-card rounded-xl p-3.5 border border-slate-800">
-          <p class="text-xs text-slate-400 font-medium">Ngân Sách (ITB)</p>
-          <p class="text-2xl font-black text-emerald-400 mt-1">£2.8m</p>
-          <span class="text-[10px] text-slate-300 mt-1 block">Dư dả xúc Palmer/Saka</span>
+        <div class="glass-card rounded-xl p-3 border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-medium">Khoảng Cách Vô Địch</p>
+          <p class="text-xl font-black text-cyan-400 mt-0.5">8 Điểm</p>
+          <span class="text-[10px] text-slate-400">#1 Bao Bui vs #2 Cận VIP</span>
         </div>
-        <div class="glass-card rounded-xl p-3.5 border border-slate-800">
-          <p class="text-xs text-slate-400 font-medium">Lượt Chuyển (FT)</p>
-          <p class="text-2xl font-black text-purple-400 mt-1">1 FT</p>
-          <span class="text-[10px] text-slate-300 mt-1 block">Tối đa tích 5 FT</span>
+        <div class="glass-card rounded-xl p-3 border border-slate-800">
+          <p class="text-[11px] text-slate-400 font-medium">Suất Phạt Bét Chặng</p>
+          <p class="text-xl font-black text-rose-400 mt-0.5">535 Điểm</p>
+          <span class="text-[10px] text-rose-300">Cường Tệ & Ngọc Dao</span>
         </div>
       </div>
 
-      <!-- KHO CHIP PHASE 1 STATUS -->
+      <!-- BẢNG 124+ NÁT -->
       <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <div class="flex justify-between items-center mb-3">
-          <h2 class="text-sm font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-microchip text-cyan-400"></i> Kho Chip Đợt 1 (Hạn chót: Deadline GW19)
-          </h2>
-          <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2 py-0.5 rounded-full font-medium">
-            Còn 9 vòng nữa
-          </span>
+        <div class="flex items-center justify-between mb-3">
+          <div>
+            <h2 class="text-sm font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-amber-400"></i> Bảng Tổng Kết Chặng 1 — 124+ FANTASY LEAGUE
+            </h2>
+            <p class="text-[11px] text-slate-400">Quy chuẩn tính điểm chính thức sau loạt trận Gameweek 10</p>
+          </div>
+          <span class="text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded border border-slate-700">7 HLV</span>
         </div>
-        <div class="grid grid-cols-4 gap-2 text-center">
-          <div class="bg-slate-900/80 rounded-lg p-2.5 border border-emerald-500/30">
-            <p class="text-[11px] text-slate-400">Wildcard 1</p>
-            <p class="text-xs font-bold text-emerald-400 mt-1">SẴN SÀNG</p>
-          </div>
-          <div class="bg-slate-900/80 rounded-lg p-2.5 border border-emerald-500/30">
-            <p class="text-[11px] text-slate-400">Free Hit 1</p>
-            <p class="text-xs font-bold text-emerald-400 mt-1">SẴN SÀNG</p>
-          </div>
-          <div class="bg-slate-900/80 rounded-lg p-2.5 border border-emerald-500/30">
-            <p class="text-[11px] text-slate-400">Triple Cap 1</p>
-            <p class="text-xs font-bold text-emerald-400 mt-1">SẴN SÀNG</p>
-          </div>
-          <div class="bg-slate-900/80 rounded-lg p-2.5 border border-emerald-500/30">
-            <p class="text-[11px] text-slate-400">Bench Boost 1</p>
-            <p class="text-xs font-bold text-emerald-400 mt-1">SẴN SÀNG</p>
-          </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
+              <tr>
+                <th class="p-2 text-center w-12">Hạng</th>
+                <th class="p-2">Đội Bóng / HLV</th>
+                <th class="p-2 text-right">GW10</th>
+                <th class="p-2 text-right font-bold text-white">Tổng Điểm</th>
+                <th class="p-2 text-right">Cách Top 1</th>
+                <th class="p-2 text-center">Danh Hiệu Chặng</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60">
+              <tr class="hover:bg-slate-800/40">
+                <td class="p-2 text-center font-bold text-amber-400">🥇 #1</td>
+                <td class="p-2">
+                  <div class="font-bold text-white">Bao Bui</div>
+                  <div class="text-[10px] text-slate-400">Bao Bui</div>
+                </td>
+                <td class="p-2 text-right font-medium text-slate-300">52</td>
+                <td class="p-2 text-right font-bold text-amber-400">586</td>
+                <td class="p-2 text-right text-slate-400">-</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">🏆 Quán Quân Turn 1</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="p-2 text-center font-bold text-cyan-400">🥈 #2</td>
+                <td class="p-2">
+                  <div class="font-bold text-white">Cận VIP</div>
+                  <div class="text-[10px] text-slate-400">Trung TíT</div>
+                </td>
+                <td class="p-2 text-right font-medium text-emerald-400 font-bold">64</td>
+                <td class="p-2 text-right font-bold text-cyan-400">578</td>
+                <td class="p-2 text-right text-cyan-400">-8</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30">🥈 Á Quân Turn 1</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="p-2 text-center font-bold text-slate-300">🥉 #3</td>
+                <td class="p-2">
+                  <div class="font-bold text-white">SNAL</div>
+                  <div class="text-[10px] text-slate-400">paper man</div>
+                </td>
+                <td class="p-2 text-right font-medium text-slate-300">60</td>
+                <td class="p-2 text-right font-bold text-white">568</td>
+                <td class="p-2 text-right text-slate-400">-18</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Top 3 An Toàn</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="p-2 text-center font-bold text-slate-400">#4</td>
+                <td class="p-2">
+                  <div class="font-bold text-white">Ninh SS</div>
+                  <div class="text-[10px] text-slate-400">Ninh Dang</div>
+                </td>
+                <td class="p-2 text-right font-medium text-emerald-400 font-bold">65</td>
+                <td class="p-2 text-right font-bold text-white">554</td>
+                <td class="p-2 text-right text-slate-400">-32</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Bứt Tốc Nước Rút</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40">
+                <td class="p-2 text-center font-bold text-slate-400">#5</td>
+                <td class="p-2">
+                  <div class="font-bold text-white">FC K</div>
+                  <div class="text-[10px] text-slate-400">iKen Dang</div>
+                </td>
+                <td class="p-2 text-right font-medium text-slate-300">54</td>
+                <td class="p-2 text-right font-bold text-white">549</td>
+                <td class="p-2 text-right text-slate-400">-37</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">Trụ Hạng Thành Công</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 bg-rose-950/20">
+                <td class="p-2 text-center font-bold text-rose-400">#6</td>
+                <td class="p-2">
+                  <div class="font-bold text-rose-200">XOẠC-UNITED</div>
+                  <div class="text-[10px] text-slate-400">Cường Tệ</div>
+                </td>
+                <td class="p-2 text-right font-medium text-slate-300">59</td>
+                <td class="p-2 text-right font-bold text-rose-300">535</td>
+                <td class="p-2 text-right text-rose-400">-51</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-400 font-bold border border-rose-500/30">💸 Móc Túi Khao Turn 1</span></td>
+              </tr>
+              <tr class="hover:bg-slate-800/40 bg-rose-950/20">
+                <td class="p-2 text-center font-bold text-rose-400">#7</td>
+                <td class="p-2">
+                  <div class="font-bold text-rose-200">Ngocdao</div>
+                  <div class="text-[10px] text-slate-400">Ngọc Dao</div>
+                </td>
+                <td class="p-2 text-right font-medium text-slate-300">49</td>
+                <td class="p-2 text-right font-bold text-rose-300">535</td>
+                <td class="p-2 text-right text-rose-400">-51</td>
+                <td class="p-2 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-400 font-bold border border-rose-500/30">💸 Móc Túi Khao Turn 1</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <p class="text-[11px] text-slate-400 mt-3 italic">
-          💡 Lưu ý: Cả 4 chip này bắt buộc phải tiêu hết trước GW19 nếu không sẽ bị hệ thống tự hủy!
-        </p>
       </div>
 
-      <!-- MINI-LEAGUE SNAPSHOT -->
-      <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <h2 class="text-sm font-bold text-white flex items-center justify-between mb-3">
-          <span class="flex items-center gap-2"><i class="fa-solid fa-trophy text-amber-400"></i> Cục Diện 124+ | NÁT (Kết Thúc Turn 1)</span>
-          <span class="text-xs text-cyan-400 cursor-pointer" onclick="switchTab('leagues')">Chi tiết &rarr;</span>
-        </h2>
-        <div class="space-y-2 text-xs">
-          <div class="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
-            <span class="flex items-center gap-2">🥇 <b>Bao Bui</b> (Top 1)</span>
-            <span class="font-bold text-amber-400">586đ (+8đ)</span>
-          </div>
-          <div class="flex items-center justify-between p-2 rounded bg-cyan-950/40 border border-cyan-800/60">
-            <span class="flex items-center gap-2">🥈 <b>Cận VIP (BẠN)</b></span>
-            <span class="font-bold text-cyan-400">578đ (Mốc chuẩn)</span>
-          </div>
-          <div class="flex items-center justify-between p-2 rounded bg-slate-900/60 border border-slate-800">
-            <span class="flex items-center gap-2">🥉 <b>SNAL</b></span>
-            <span class="text-slate-300">568đ (-10đ)</span>
-          </div>
-          <div class="flex items-center justify-between p-2 rounded bg-rose-950/30 border border-rose-900/40 text-rose-300">
-            <span class="flex items-center gap-2">🚨 <b>Cường Tệ & Ngọc Dao</b> (Bét chặng)</span>
-            <span class="font-bold">535đ (💸 Móc túi khao)</span>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- TAB 2: RADAR TIỀN VỆ (MARKET SCANNER) -->
-    <div id="tab-mids" class="tab-content hidden space-y-4">
+    <!-- TAB 2: MARKET RADAR & XGI SCATTER (TƯƠNG TỰ CÁC BẢN TRẢ PHÍ FPL REVIEW / FFM) -->
+    <div id="tab-market" class="tab-content hidden space-y-4">
+      
+      <!-- RADAR SO KÈO -->
       <div class="glass-card rounded-xl p-4 border border-slate-800">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
           <div>
             <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-bullseye text-cyan-400"></i> Radar So Kèo Tiền Vệ Trọng Điểm
+              <i class="fa-solid fa-chart-radar text-cyan-400"></i> Market Radar — So Sánh Đa Chiều
             </h2>
-            <p class="text-xs text-slate-400">Dữ liệu xGI/90, ICT Index & Giá trị kinh tế (0đ không cần FPL Review)</p>
+            <p class="text-xs text-slate-400">Chuẩn hóa dữ liệu theo mẫu hình FPL Review ($xGI/90$, Form, Điểm/Triệu £, ICT)</p>
           </div>
           <div class="flex items-center space-x-2 text-xs">
-            <span class="text-slate-400">So sánh:</span>
-            <select id="radar-select-1" onchange="updateRadarChart()" class="bg-slate-900 text-cyan-400 border border-slate-700 rounded px-2 py-1 text-xs">
+            <select id="radar-player-1" onchange="updateRadarChart()" class="bg-slate-900 text-cyan-400 border border-slate-700 rounded px-2.5 py-1 text-xs">
+              <option value="Mbeumo" selected>Mbeumo (£7.8m)</option>
               <option value="Palmer">Palmer (£10.8m)</option>
               <option value="Saka">Saka (£10.1m)</option>
-              <option value="Mbeumo" selected>Mbeumo (£7.8m)</option>
+              <option value="Haaland">Haaland (£15.4m)</option>
             </select>
-            <span class="text-slate-500">vs</span>
-            <select id="radar-select-2" onchange="updateRadarChart()" class="bg-slate-900 text-emerald-400 border border-slate-700 rounded px-2 py-1 text-xs">
+            <span class="text-slate-500 font-bold">vs</span>
+            <select id="radar-player-2" onchange="updateRadarChart()" class="bg-slate-900 text-emerald-400 border border-slate-700 rounded px-2.5 py-1 text-xs">
               <option value="Semenyo" selected>Semenyo (£5.6m)</option>
               <option value="Rogers">Rogers (£5.4m)</option>
               <option value="Groß">Groß (£6.2m)</option>
-              <option value="Cherki">Cherki (£6.5m)</option>
+              <option value="Jackson">N.Jackson (£7.9m)</option>
             </select>
           </div>
         </div>
 
-        <!-- RADAR CANVAS -->
         <div class="w-full max-w-xs sm:max-w-sm mx-auto h-64 sm:h-72">
-          <canvas id="midRadarChart"></canvas>
+          <canvas id="marketRadarCanvas"></canvas>
         </div>
       </div>
 
-      <!-- DATA TABLE -->
-      <div class="glass-card rounded-xl p-4 border border-slate-800 overflow-x-auto">
-        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">Bảng Thống Kê Chi Tiết Tiền Vệ Tiềm Năng</h3>
-        <table class="w-full text-left text-xs text-slate-300">
-          <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
-            <tr>
-              <th class="p-2">Cầu thủ</th>
-              <th class="p-2">CLB</th>
-              <th class="p-2">Giá</th>
-              <th class="p-2">Form</th>
-              <th class="p-2 text-cyan-400">xGI/90</th>
-              <th class="p-2">ICT</th>
-              <th class="p-2 text-emerald-400">Hiệu Suất/£</th>
-            </tr>
-          </thead>
-          <tbody id="mids-table-body" class="divide-y divide-slate-800/60">
-            <!-- Render via JS -->
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TAB 3: PHÒNG TÁC CHIẾN MINI-LEAGUE -->
-    <div id="tab-leagues" class="tab-content hidden space-y-4">
-      <!-- LEAGUE 124 -->
+      <!-- BẢNG CHỈ SỐ CAO CẤP TỔNG HỢP -->
       <div class="glass-card rounded-xl p-4 border border-slate-800">
         <div class="flex items-center justify-between mb-3">
-          <div>
-            <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-beer-mug-empty text-amber-400"></i> 124+ | NÁT, NÁT NỮA, NÁT MÃI
-            </h2>
-            <p class="text-[11px] text-slate-400">Giải nội bộ 7 HLV — Cơ cấu chặng: Bét chặng móc ví nộp quỹ</p>
-          </div>
-          <span class="text-xs bg-cyan-900/40 text-cyan-300 border border-cyan-800 px-2 py-0.5 rounded">ID: 1473576</span>
+          <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-fire text-amber-400"></i> Bảng Phân Tích Cầu Thủ Trọng Điểm (xGI & Value Matrix)
+          </h3>
+          <span class="text-[10px] text-slate-400">Sắp xếp theo xGI/90</span>
         </div>
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
             <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
               <tr>
-                <th class="p-2">Hạng</th>
-                <th class="p-2">Đội / HLV</th>
-                <th class="p-2 text-right">GW10</th>
-                <th class="p-2 text-right">Tổng Điểm</th>
-                <th class="p-2 text-right">Cách Cận VIP</th>
-                <th class="p-2 text-center">Trạng Thái</th>
+                <th class="p-2">Cầu Thủ</th>
+                <th class="p-2">Vị Trí / CLB</th>
+                <th class="p-2">Giá Hiện Tại</th>
+                <th class="p-2 text-cyan-400 font-bold">xGI/90</th>
+                <th class="p-2">Form (4 GW)</th>
+                <th class="p-2 text-emerald-400 font-bold">Điểm / £1m</th>
+                <th class="p-2">Đánh Giá Thị Trường</th>
               </tr>
             </thead>
-            <tbody id="league-124-body" class="divide-y divide-slate-800/60">
-              <!-- Render via JS -->
+            <tbody id="market-table-body" class="divide-y divide-slate-800/60">
+              <!-- JS Populates -->
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- LEAGUE IOC -->
+    </div>
+
+    <!-- TAB 3: FIXTURE TICKER (LỊCH THI ĐẤU 5 VÒNG TỚI THEO HEATMAP) -->
+    <div id="tab-fixtures" class="tab-content hidden space-y-4">
       <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <div class="flex items-center justify-between mb-3">
-          <div>
-            <h2 class="text-sm font-bold text-white flex items-center gap-2">
-              <i class="fa-solid fa-building text-purple-400"></i> Giải Công Ty IOC_124
-            </h2>
-            <p class="text-[11px] text-slate-400">Đấu trường cơ quan</p>
-          </div>
-          <span class="text-xs bg-slate-800 text-slate-400 px-2 py-0.5 rounded">ID: 155330</span>
+        <div class="mb-3">
+          <h2 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-calendar-days text-indigo-400"></i> Fixture Difficulty Ticker (GW11 – GW15)
+          </h2>
+          <p class="text-xs text-slate-400">Thang đo độ khó lịch thi đấu (1: Rất dễ, 5: Cực khó) giúp lên kế hoạch đón sóng điểm</p>
         </div>
+
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs text-slate-300">
             <thead class="bg-slate-900/80 text-[11px] text-slate-400 uppercase border-b border-slate-800">
               <tr>
-                <th class="p-2">Hạng</th>
-                <th class="p-2">Đội</th>
-                <th class="p-2 text-right">GW10</th>
-                <th class="p-2 text-right">Tổng Điểm</th>
-                <th class="p-2 text-right">Cách Cận VIP</th>
+                <th class="p-2">CLB</th>
+                <th class="p-2 text-center">GW11</th>
+                <th class="p-2 text-center">GW12</th>
+                <th class="p-2 text-center">GW13</th>
+                <th class="p-2 text-center">GW14</th>
+                <th class="p-2 text-center">GW15</th>
+                <th class="p-2 text-center font-bold text-emerald-400">Độ Mềm FDR</th>
               </tr>
             </thead>
-            <tbody id="league-ioc-body" class="divide-y divide-slate-800/60">
-              <!-- Render via JS -->
+            <tbody id="fixture-table-body" class="divide-y divide-slate-800/60">
+              <!-- JS Populates -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
-    <!-- TAB 4: KẾ HOẠCH CHUYỂN NHƯỢNG & SOLVER -->
-    <div id="tab-planner" class="tab-content hidden space-y-4">
+    <!-- TAB 4: TEMPLATE & EFFECTIVE OWNERSHIP (EO TRACKER) -->
+    <div id="tab-template" class="tab-content hidden space-y-4">
       <div class="glass-card rounded-xl p-4 border border-slate-800">
-        <h2 class="text-sm font-bold text-white flex items-center gap-2 mb-2">
-          <i class="fa-solid fa-brain text-emerald-400"></i> Kế Hoạch Chuyển Nhượng GW11 (MILP Engine)
-        </h2>
-        <p class="text-xs text-slate-400 mb-4">Mô hình toán học đề xuất giải pháp tối ưu cho khoản ngân sách £2.8m ITB và 1 FT</p>
+        <div class="mb-3">
+          <h2 class="text-sm font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-users text-cyan-400"></i> Template & Tỷ Lệ Sở Hữu (Ownership Intel)
+          </h2>
+          <p class="text-xs text-slate-400">Phân loại "Hàng Quốc Dân" bảo hiểm rank vs "Hàng Khác Biệt" (Differentials) để leo top</p>
+        </div>
 
-        <div class="space-y-3">
-          <div class="p-3 rounded-lg bg-slate-900/80 border border-cyan-800/50">
-            <div class="flex justify-between items-center text-xs">
-              <span class="font-bold text-cyan-400">Phương Án A (Bảo Thủ - Tích FT):</span>
-              <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-300">0 Hit / 1 FT</span>
-            </div>
-            <p class="text-xs text-slate-300 mt-1.5">
-              • Giữ nguyên chuyển nhượng trong tuần FIFA Days. Sang GW12 tích lũy thành <b>2 FT</b> và tha hồ giải quyết dứt điểm hàng tiền vệ khi có tin chấn thương chính thức.
-            </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+            <h4 class="text-xs font-bold text-amber-400 mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-shield-halved"></i> Hàng Quốc Dân Bắt Buộc (Template Core > 40%)
+            </h4>
+            <ul class="text-xs space-y-1.5 text-slate-300">
+              <li class="flex justify-between"><span>• <b>Haaland</b> (MCI - FWD)</span><span class="text-amber-400 font-bold">72.4%</span></li>
+              <li class="flex justify-between"><span>• <b>Palmer</b> (CHE - MID)</span><span class="text-amber-400 font-bold">58.1%</span></li>
+              <li class="flex justify-between"><span>• <b>Saka</b> (ARS - MID)</span><span class="text-amber-400 font-bold">42.6%</span></li>
+              <li class="flex justify-between"><span>• <b>Mbeumo</b> (BRE - MID)</span><span class="text-amber-400 font-bold">41.8%</span></li>
+            </ul>
           </div>
 
-          <div class="p-3 rounded-lg bg-slate-900/80 border border-emerald-800/50">
-            <div class="flex justify-between items-center text-xs">
-              <span class="font-bold text-emerald-400">Phương Án B (Nâng Cấp Hàng Tiền Vệ Đón Đầu):</span>
-              <span class="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2 py-0.5 rounded">Khuyên Dùng</span>
-            </div>
-            <p class="text-xs text-slate-300 mt-1.5">
-              • Bán <b>Tavernier</b> (£5.4m) hoặc <b>Doku</b> (£6.3m).<br>
-              • Mua <b>Mbeumo</b> (£7.8m - đá pen, tâm điểm Brentford) hoặc <b>Semenyo</b> (£5.6m - sút nhiều nhất giải). Ngân sách £2.8m ITB cho phép xúc thẳng không cần đắn đo.
-            </p>
-          </div>
-
-          <div class="p-3 rounded-lg bg-slate-900/80 border border-purple-800/50">
-            <div class="flex justify-between items-center text-xs">
-              <span class="font-bold text-purple-400">Lộ Trình Xả Chip Chặng 2 (GW11 – GW19):</span>
-            </div>
-            <ul class="text-xs text-slate-300 mt-1.5 space-y-1 list-disc list-inside">
-              <li><b>GW11 – GW13:</b> Chạy đội hình chuẩn, tích lũy 2-3 FT.</li>
-              <li><b>GW14 – GW16:</b> Kích hoạt <b>Triple Captain</b> cho Haaland (vòng sân nhà gặp đối mềm) hoặc <b>Bench Boost</b> khi ghế phụ nổ lịch thơm.</li>
-              <li><b>GW18 – GW19:</b> Bung <b>Wildcard 1</b> hoặc <b>Free Hit 1</b> đúng vòng Boxing Day trước khi hết hạn Phase 1.</li>
+          <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-800">
+            <h4 class="text-xs font-bold text-emerald-400 mb-2 flex items-center gap-1.5">
+              <i class="fa-solid fa-gem"></i> Vũ Khí Bí Mật (High Value Differentials < 15%)
+            </h4>
+            <ul class="text-xs space-y-1.5 text-slate-300">
+              <li class="flex justify-between"><span>• <b>Semenyo</b> (BOU - £5.6m)</span><span class="text-emerald-400 font-bold">12.3% (xGI: 0.68)</span></li>
+              <li class="flex justify-between"><span>• <b>Groß</b> (BHA - £6.2m)</span><span class="text-emerald-400 font-bold">8.4% (xGI: 0.58)</span></li>
+              <li class="flex justify-between"><span>• <b>Cherki</b> (MCI - £6.5m)</span><span class="text-emerald-400 font-bold">5.2% (xGI: 0.61)</span></li>
+              <li class="flex justify-between"><span>• <b>Barry</b> (EVE - £4.5m)</span><span class="text-emerald-400 font-bold">3.1% (GW10 nổ 16đ)</span></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- ======================================================== -->
+    <!-- TAB 5: PHÒNG TÁC CHIẾN TUYỆT MẬT (CHỈ HIỆN KHI NHẬP ĐÚNG PASS) -->
+    <!-- ======================================================== -->
+    <div id="tab-vip-vault" class="tab-content hidden space-y-4">
+      <div class="glass-card rounded-xl p-4 border border-amber-500/40 bg-gradient-to-b from-amber-950/20 to-slate-900/80 shadow-lg">
+        
+        <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-3">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded bg-amber-500/20 text-amber-400 flex items-center justify-center font-black text-xs border border-amber-500/40">
+              VIP
+            </div>
+            <div>
+              <h2 class="text-sm font-black text-amber-400 tracking-wide">PHÒNG TÁC CHIẾN BẢO MẬT — CẬN VIP</h2>
+              <p class="text-[10px] text-slate-400">Chiến lược cá nhân độc quyền • Không lộ cho đối thủ</p>
+            </div>
+          </div>
+          <button onclick="lockVipVault()" class="text-xs bg-rose-900/40 hover:bg-rose-900 text-rose-300 border border-rose-800 px-2.5 py-1 rounded transition flex items-center gap-1">
+            <i class="fa-solid fa-lock"></i> Khóa lại
+          </button>
+        </div>
+
+        <!-- THÔNG TIN TÀI CHÍNH BẢO MẬT -->
+        <div class="grid grid-cols-3 gap-2.5 mb-4 text-center">
+          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
+            <span class="text-[10px] text-slate-400">Ngân Sách Dư (ITB)</span>
+            <p class="text-lg font-black text-emerald-400">£2.8m</p>
+          </div>
+          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
+            <span class="text-[10px] text-slate-400">Lượt Chuyển Free</span>
+            <p class="text-lg font-black text-cyan-400">1 FT</p>
+          </div>
+          <div class="bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
+            <span class="text-[10px] text-slate-400">Kho Chip Phase 1</span>
+            <p class="text-lg font-black text-purple-400">Đủ 4 Chip</p>
+          </div>
+        </div>
+
+        <!-- MÔ HÌNH TOÁN HỌC MILP SOLVER -->
+        <div class="space-y-3">
+          <div class="bg-slate-900/90 p-3 rounded-lg border border-cyan-800/40">
+            <h4 class="text-xs font-bold text-cyan-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-microchip"></i> Kế Hoạch Chuyển Nhượng GW11 Khuyên Dùng:
+            </h4>
+            <p class="text-xs text-slate-300 mt-1.5">
+              • <b>Nước đi tối ưu:</b> Bán <b>Tavernier</b> (£5.4m) hoặc <b>Doku</b> (£6.3m) -> Xúc thẳng <b>Mbeumo</b> (£7.8m) hoặc <b>Semenyo</b> (£5.6m). Khoản tiền £2.8m ITB cho phép nâng cấp trực tiếp mà không cần bán bất kỳ ai khác!
+            </p>
+          </div>
+
+          <div class="bg-slate-900/90 p-3 rounded-lg border border-purple-800/40">
+            <h4 class="text-xs font-bold text-purple-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-hourglass-half"></i> Lộ Trình Bung 4 Chip Trước GW19:
+            </h4>
+            <ul class="text-xs text-slate-300 mt-1.5 space-y-1 list-disc list-inside">
+              <li><b>GW11 – GW13:</b> Đá đội hình chuẩn, không kích chip. Tích lũy lên 2-3 FT.</li>
+              <li><b>GW14 hoặc GW15:</b> Kích hoạt <b>Triple Captain</b> cho Haaland khi gặp đối thủ yếu ở sân nhà Etihad.</li>
+              <li><b>GW18 hoặc GW19:</b> Kích hoạt <b>Wildcard 1</b> hoặc <b>Free Hit 1</b> đúng vòng Boxing Day để xoay tua đội hình và không bị mất chip khi qua nửa mùa giải.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </main>
 
-  <!-- BOTTOM NAVIGATION BAR (APP STYLE) -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 glass-card border-t border-slate-800 py-2 px-6 flex justify-around items-center">
-    <button onclick="switchTab('overview')" id="nav-overview" class="flex flex-col items-center text-cyan-400 text-xs transition">
-      <i class="fa-solid fa-gauge-high text-base mb-1"></i>
-      <span>Tổng quan</span>
+  <!-- BOTTOM BAR (ĐẦY ĐỦ CHO PUBLIC + VIP) -->
+  <nav class="fixed bottom-0 left-0 right-0 z-50 glass-card border-t border-slate-800 py-2 px-3 flex justify-around items-center">
+    <button onclick="switchTab('standings')" id="nav-standings" class="flex flex-col items-center text-cyan-400 text-[11px] transition">
+      <i class="fa-solid fa-trophy text-sm mb-1"></i>
+      <span>Cục diện</span>
     </button>
-    <button onclick="switchTab('mids')" id="nav-mids" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-xs transition">
-      <i class="fa-solid fa-chart-pie text-base mb-1"></i>
-      <span>Radar Mid</span>
+    <button onclick="switchTab('market')" id="nav-market" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
+      <i class="fa-solid fa-chart-line text-sm mb-1"></i>
+      <span>Radar xGI</span>
     </button>
-    <button onclick="switchTab('leagues')" id="nav-leagues" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-xs transition">
-      <i class="fa-solid fa-trophy text-base mb-1"></i>
-      <span>Mini-League</span>
+    <button onclick="switchTab('fixtures')" id="nav-fixtures" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
+      <i class="fa-solid fa-calendar-days text-sm mb-1"></i>
+      <span>Lịch Ticker</span>
     </button>
-    <button onclick="switchTab('planner')" id="nav-planner" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-xs transition">
-      <i class="fa-solid fa-sliders text-base mb-1"></i>
-      <span>Kế hoạch</span>
+    <button onclick="switchTab('template')" id="nav-template" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] transition">
+      <i class="fa-solid fa-users text-sm mb-1"></i>
+      <span>Ownership</span>
+    </button>
+    <button onclick="switchTab('vip-vault')" id="nav-vip-vault" class="hidden flex-col items-center text-amber-400 text-[11px] transition">
+      <i class="fa-solid fa-user-secret text-sm mb-1"></i>
+      <span>Tác chiến</span>
     </button>
   </nav>
 
-  <!-- CONFIG MODAL FOR GOOGLE APPS SCRIPT URL -->
-  <div id="api-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
-    <div class="glass-card max-w-md w-full rounded-2xl p-5 border border-slate-700 space-y-4">
+  <!-- PASSWORD MODAL (BẢO VỆ PHÒNG VIP) -->
+  <div id="password-modal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-sm w-full rounded-2xl p-5 border border-slate-700 space-y-4">
       <div class="flex justify-between items-center">
         <h3 class="text-sm font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-gear text-cyan-400"></i> Cấu Hình Google Apps Script API
+          <i class="fa-solid fa-shield-halved text-amber-400"></i> Xác Thực Mật Mã VIP
         </h3>
-        <button onclick="toggleApiModal()" class="text-slate-400 hover:text-white">&times;</button>
+        <button onclick="togglePasswordModal()" class="text-slate-400 hover:text-white">&times;</button>
       </div>
       <p class="text-xs text-slate-300">
-        Dán URL Web App triển khai từ Google Apps Script (đuôi <code>/exec</code>) để lấy dữ liệu Live tự động:
+        Khu vực bảo mật dành riêng cho chiến thuật nội bộ Cận VIP. Vui lòng nhập mật mã để mở khóa:
       </p>
-      <input type="text" id="api-url-input" placeholder="https://script.google.com/macros/s/.../exec" 
-        class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-cyan-400 focus:outline-none focus:border-cyan-500">
+      <div>
+        <input type="password" id="vip-pass-input" placeholder="Nhập mật mã..." 
+          class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2.5 text-xs text-amber-400 focus:outline-none focus:border-amber-500 text-center text-lg tracking-widest font-mono"
+          onkeyup="if(event.key === 'Enter') verifyPassword()">
+        <p id="pass-error" class="text-[11px] text-rose-400 mt-1.5 hidden text-center">Mật mã không chính xác!</p>
+      </div>
       <div class="flex justify-end space-x-2 text-xs">
-        <button onclick="toggleApiModal()" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300">Hủy</button>
-        <button onclick="saveApiUrl()" class="px-3 py-1.5 rounded bg-cyan-600 hover:bg-cyan-500 text-white font-bold">Lưu URL</button>
+        <button onclick="togglePasswordModal()" class="px-3 py-1.5 rounded bg-slate-800 text-slate-300">Đóng</button>
+        <button onclick="verifyPassword()" class="px-4 py-1.5 rounded bg-amber-600 hover:bg-amber-500 text-white font-bold">Mở Khóa</button>
       </div>
     </div>
   </div>
 
   <script>
-    // CORE STATE & MOCK FALLBACK DATA
-    let currentTab = 'overview';
+    // SECRET PASSCODE: 'tit67' hoặc '6767'
+    const VALID_PASSWORDS = ['tit67', '6767', 'canvip'];
+    let isVipUnlocked = false;
     let radarChartInstance = null;
-    let APP_DATA = {
-      overview: {
-        total_points: 578,
-        gw10_pts: 64,
-        rank_124: 2,
-        itb: 2.8,
-        ft: 1
-      },
-      mids: [
-        { web_name: "Palmer", team: "CHE", cost: 10.8, form: 7.2, xgi_90: 0.88, ict: 112.4, value_form: 0.67, total_points: 68 },
-        { web_name: "Saka", team: "ARS", cost: 10.1, form: 6.8, xgi_90: 0.82, ict: 105.1, value_form: 0.67, total_points: 64 },
-        { web_name: "Mbeumo", team: "BRE", cost: 7.8, form: 6.5, xgi_90: 0.74, ict: 94.6, value_form: 0.83, total_points: 62 },
-        { web_name: "Semenyo", team: "BOU", cost: 5.6, form: 5.8, xgi_90: 0.68, ict: 88.2, value_form: 1.04, total_points: 54 },
-        { web_name: "Groß", team: "BHA", cost: 6.2, form: 5.2, xgi_90: 0.58, ict: 72.1, value_form: 0.84, total_points: 46 },
-        { web_name: "Rogers", team: "AVL", cost: 5.4, form: 4.8, xgi_90: 0.52, ict: 68.4, value_form: 0.89, total_points: 44 },
-        { web_name: "Cherki", team: "MCI", cost: 6.5, form: 4.5, xgi_90: 0.61, ict: 65.0, value_form: 0.69, total_points: 38 },
-        { web_name: "Barnes", team: "NEW", cost: 6.4, form: 4.2, xgi_90: 0.55, ict: 59.8, value_form: 0.66, total_points: 40 },
-        { web_name: "Doku", team: "MCI", cost: 6.3, form: 3.8, xgi_90: 0.49, ict: 62.4, value_form: 0.60, total_points: 34 }
-      ],
-      leagues: {
-        league_124: {
-          standings: [
-            { rank: 1, team: "Bao Bui", manager: "Bao Bui", gw_pts: 52, total: 586, gap: "+8", status: "leader" },
-            { rank: 2, team: "Cận VIP (BẠN)", manager: "Trung TíT", gw_pts: 64, total: 578, gap: "0", status: "you" },
-            { rank: 3, team: "SNAL", manager: "paper man", gw_pts: 60, total: 568, gap: "-10", status: "safe" },
-            { rank: 4, team: "Ninh SS", manager: "Ninh Dang", gw_pts: 65, total: 554, gap: "-24", status: "safe" },
-            { rank: 5, team: "FC K", manager: "iKen Dang", gw_pts: 54, total: 549, gap: "-29", status: "safe" },
-            { rank: 6, team: "XOẠC-UNITED", manager: "Cường Tệ", gw_pts: 59, total: 535, gap: "-43", status: "danger" },
-            { rank: 7, team: "Ngocdao", manager: "Ngọc Dao", gw_pts: 49, total: 535, gap: "-43", status: "danger" }
-          ]
-        },
-        league_ioc: {
-          standings: [
-            { rank: 1, team: "HELL_BOY Ψ", manager: "Toc Maz", gw_pts: 59, total: 614, gap: "+36" },
-            { rank: 2, team: "Phấn Đào", manager: "Huy Anh", gw_pts: 61, total: 585, gap: "+7" },
-            { rank: 3, team: "Cận VIP (BẠN)", manager: "Trung TíT", gw_pts: 64, total: 578, gap: "0" },
-            { rank: 4, team: "Pending Moderation", manager: "Phạm Hoàng", gw_pts: 46, total: 551, gap: "-27" },
-            { rank: 5, team: "hoheheho", manager: "Tung Lam", gw_pts: 38, total: 550, gap: "-28" },
-            { rank: 6, team: "Dương's Team", manager: "Dương Đắc", gw_pts: 43, total: 437, gap: "-141" }
-          ]
-        }
-      }
-    };
 
-    // TAB SWITCHER
+    // MARKET PLAYERS
+    const PLAYERS_DATA = [
+      { name: "Palmer", team: "CHE", pos: "MID", cost: 10.8, xgi_90: 0.88, form: 7.2, value: 0.67, tag: "Must-Have Premium" },
+      { name: "Saka", team: "ARS", pos: "MID", cost: 10.1, xgi_90: 0.82, form: 6.8, value: 0.67, tag: "Must-Have Premium" },
+      { name: "Mbeumo", team: "BRE", pos: "MID", cost: 7.8, xgi_90: 0.74, form: 6.5, value: 0.83, tag: "Đá Penalty / Lịch Đẹp" },
+      { name: "Semenyo", team: "BOU", pos: "MID", cost: 5.6, xgi_90: 0.68, form: 5.8, value: 1.04, tag: "Sút Nhiều Nhất Giải" },
+      { name: "Haaland", team: "MCI", pos: "FWD", cost: 15.4, xgi_90: 0.95, form: 7.8, value: 0.51, tag: "Vua Phá Lưới" },
+      { name: "N.Jackson", team: "CHE", pos: "FWD", cost: 7.9, xgi_90: 0.71, form: 6.0, value: 0.76, tag: "Phong Độ Đỉnh" },
+      { name: "Groß", team: "BHA", pos: "MID", cost: 6.2, xgi_90: 0.58, form: 5.2, value: 0.84, tag: "Kiến Tạo Cố Định" },
+      { name: "Cherki", team: "MCI", pos: "MID", cost: 6.5, xgi_90: 0.61, form: 4.5, value: 0.69, tag: "Differential Tiềm Năng" },
+      { name: "Rogers", team: "AVL", pos: "MID", cost: 5.4, xgi_90: 0.52, form: 4.8, value: 0.89, tag: "Trụ Cột Aston Villa" }
+    ];
+
+    // FIXTURE DATA (GW11 - GW15)
+    const FIXTURES_DATA = [
+      { team: "Brighton", gw11: { opp: "MCI (H)", diff: 4 }, gw12: { opp: "BOU (A)", diff: 2 }, gw13: { opp: "SOU (H)", diff: 2 }, gw14: { opp: "FUL (A)", diff: 2 }, gw15: { opp: "LEI (A)", diff: 2 }, avg: "1.8 (Cực Mềm)" },
+      { team: "Chelsea", gw11: { opp: "ARS (H)", diff: 4 }, gw12: { opp: "LEI (A)", diff: 2 }, gw13: { opp: "AVL (H)", diff: 3 }, gw14: { opp: "SOU (A)", diff: 2 }, gw15: { opp: "TOT (A)", diff: 3 }, avg: "2.8 (Khá Thơm)" },
+      { team: "Arsenal", gw11: { opp: "CHE (A)", diff: 4 }, gw12: { opp: "NFO (H)", diff: 2 }, gw13: { opp: "WHU (A)", diff: 2 }, gw14: { opp: "MUN (H)", diff: 3 }, gw15: { opp: "FUL (A)", diff: 2 }, avg: "2.6 (Đẹp Dần)" },
+      { team: "Brentford", gw11: { opp: "BOU (H)", diff: 2 }, gw12: { opp: "EVE (A)", diff: 2 }, gw13: { opp: "LEI (H)", diff: 2 }, gw14: { opp: "AVL (H)", diff: 3 }, gw15: { opp: "NEW (H)", diff: 3 }, avg: "2.4 (Rất Mềm)" },
+      { team: "Man City", gw11: { opp: "BHA (A)", diff: 3 }, gw12: { opp: "TOT (H)", diff: 3 }, gw13: { opp: "LIV (A)", diff: 5 }, gw14: { opp: "NFO (H)", diff: 2 }, gw15: { opp: "CRY (A)", diff: 2 }, avg: "3.0 (Cân Não)" }
+    ];
+
+    // TAB MANAGEMENT
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('nav button').forEach(el => {
-        el.classList.remove('text-cyan-400');
+        el.classList.remove('text-cyan-400', 'text-amber-400');
         el.classList.add('text-slate-400');
       });
+
       document.getElementById('tab-' + tabId).classList.remove('hidden');
-      document.getElementById('nav-' + tabId).classList.remove('text-slate-400');
-      document.getElementById('nav-' + tabId).classList.add('text-cyan-400');
-      currentTab = tabId;
-      if (tabId === 'mids') {
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) {
+        activeNav.classList.remove('text-slate-400');
+        activeNav.classList.add(tabId === 'vip-vault' ? 'text-amber-400' : 'text-cyan-400');
+      }
+
+      if (tabId === 'market') {
         renderRadarChart();
       }
     }
 
-    // RENDER MIDFIELDERS TABLE
-    function renderMidsTable() {
-      const tbody = document.getElementById('mids-table-body');
+    // VIP ACCESS LOGIC
+    function handleVipButton() {
+      if (isVipUnlocked) {
+        switchTab('vip-vault');
+      } else {
+        togglePasswordModal();
+      }
+    }
+
+    function togglePasswordModal() {
+      const modal = document.getElementById('password-modal');
+      modal.classList.toggle('hidden');
+      document.getElementById('pass-error').classList.add('hidden');
+      document.getElementById('vip-pass-input').value = '';
+    }
+
+    function verifyPassword() {
+      const input = document.getElementById('vip-pass-input').value.trim().toLowerCase();
+      if (VALID_PASSWORDS.includes(input)) {
+        isVipUnlocked = true;
+        localStorage.setItem('fpl_vip_auth', 'true');
+        togglePasswordModal();
+        applyVipState();
+        switchTab('vip-vault');
+      } else {
+        document.getElementById('pass-error').classList.remove('hidden');
+      }
+    }
+
+    function lockVipVault() {
+      isVipUnlocked = false;
+      localStorage.removeItem('fpl_vip_auth');
+      applyVipState();
+      switchTab('standings');
+    }
+
+    function applyVipState() {
+      const navVip = document.getElementById('nav-vip-vault');
+      const vipIcon = document.getElementById('vip-icon');
+      const vipLabel = document.getElementById('vip-label');
+
+      if (isVipUnlocked) {
+        navVip.classList.remove('hidden');
+        navVip.classList.add('flex');
+        vipIcon.className = "fa-solid fa-lock-open text-emerald-400";
+        vipLabel.textContent = "Đã Mở VIP";
+      } else {
+        navVip.classList.add('hidden');
+        navVip.classList.remove('flex');
+        vipIcon.className = "fa-solid fa-lock text-amber-400";
+        vipLabel.textContent = "VIP Vault";
+      }
+    }
+
+    // RENDER TABLES
+    function renderMarketTable() {
+      const tbody = document.getElementById('market-table-body');
       tbody.innerHTML = '';
-      APP_DATA.mids.forEach(m => {
+      PLAYERS_DATA.forEach(p => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-800/40 transition";
         tr.innerHTML = `
           <td class="p-2 font-bold text-white flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full ${m.xgi_90 >= 0.7 ? 'bg-cyan-400' : 'bg-slate-500'}"></span>
-            ${m.web_name}
+            <span class="w-1.5 h-1.5 rounded-full ${p.xgi_90 >= 0.7 ? 'bg-cyan-400' : 'bg-slate-500'}"></span>
+            ${p.name}
           </td>
-          <td class="p-2 text-slate-400">${m.team}</td>
-          <td class="p-2 font-semibold">£${m.cost}m</td>
-          <td class="p-2">${m.form}</td>
-          <td class="p-2 font-bold text-cyan-400">${m.xgi_90}</td>
-          <td class="p-2">${m.ict}</td>
-          <td class="p-2 font-semibold text-emerald-400">${m.value_form}</td>
+          <td class="p-2 text-slate-400 font-mono text-[11px]">${p.pos} • ${p.team}</td>
+          <td class="p-2 font-semibold">£${p.cost}m</td>
+          <td class="p-2 font-bold text-cyan-400">${p.xgi_90}</td>
+          <td class="p-2">${p.form}</td>
+          <td class="p-2 font-semibold text-emerald-400">${p.value}</td>
+          <td class="p-2"><span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300 border border-slate-700">${p.tag}</span></td>
         `;
         tbody.appendChild(tr);
       });
     }
 
-    // RENDER MINI-LEAGUES
-    function renderLeagues() {
-      const b124 = document.getElementById('league-124-body');
-      b124.innerHTML = '';
-      APP_DATA.leagues.league_124.standings.forEach(s => {
+    function renderFixtureTable() {
+      const tbody = document.getElementById('fixture-table-body');
+      tbody.innerHTML = '';
+      FIXTURES_DATA.forEach(f => {
         const tr = document.createElement('tr');
-        let statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-300">An toàn</span>';
-        let rowClass = "hover:bg-slate-800/40";
-        if (s.status === 'leader') {
-          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-400 font-bold border border-amber-500/30">Top 1</span>';
-        } else if (s.status === 'you') {
-          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-500/30">Á Quân Chặng</span>';
-          rowClass = "bg-cyan-950/20 border-l-2 border-cyan-500";
-        } else if (s.status === 'danger') {
-          statusBadge = '<span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-400 font-bold border border-rose-500/30">Bét Chặng 💸</span>';
-        }
-        tr.className = rowClass;
-        tr.innerHTML = `
-          <td class="p-2 font-bold text-slate-400">#${s.rank}</td>
-          <td class="p-2">
-            <div class="font-bold text-white">${s.team}</div>
-            <div class="text-[10px] text-slate-400">${s.manager}</div>
-          </td>
-          <td class="p-2 text-right font-medium text-slate-300">${s.gw_pts}</td>
-          <td class="p-2 text-right font-bold text-white">${s.total}</td>
-          <td class="p-2 text-right font-medium ${s.gap.startsWith('+') ? 'text-amber-400' : (s.gap === '0' ? 'text-cyan-400' : 'text-slate-400')}">${s.gap}</td>
-          <td class="p-2 text-center">${statusBadge}</td>
-        `;
-        b124.appendChild(tr);
-      });
+        tr.className = "hover:bg-slate-800/40 transition";
 
-      const bIoc = document.getElementById('league-ioc-body');
-      bIoc.innerHTML = '';
-      APP_DATA.leagues.league_ioc.standings.forEach(s => {
-        const tr = document.createElement('tr');
-        tr.className = s.team.includes('BẠN') ? "bg-cyan-950/20 border-l-2 border-cyan-500" : "hover:bg-slate-800/40";
+        const getBadge = (item) => {
+          return `<span class="badge-diff-${item.diff} px-1.5 py-0.5 rounded text-[10px] font-bold inline-block w-14 text-center">${item.opp}</span>`;
+        };
+
         tr.innerHTML = `
-          <td class="p-2 font-bold text-slate-400">#${s.rank}</td>
-          <td class="p-2">
-            <div class="font-bold text-white">${s.team}</div>
-            <div class="text-[10px] text-slate-400">${s.manager}</div>
-          </td>
-          <td class="p-2 text-right font-medium text-slate-300">${s.gw_pts}</td>
-          <td class="p-2 text-right font-bold text-white">${s.total}</td>
-          <td class="p-2 text-right font-medium ${s.gap.startsWith('+') ? 'text-amber-400' : (s.gap === '0' ? 'text-cyan-400' : 'text-slate-400')}">${s.gap}</td>
+          <td class="p-2 font-bold text-white">${f.team}</td>
+          <td class="p-2 text-center">${getBadge(f.gw11)}</td>
+          <td class="p-2 text-center">${getBadge(f.gw12)}</td>
+          <td class="p-2 text-center">${getBadge(f.gw13)}</td>
+          <td class="p-2 text-center">${getBadge(f.gw14)}</td>
+          <td class="p-2 text-center">${getBadge(f.gw15)}</td>
+          <td class="p-2 text-center font-bold text-emerald-400">${f.avg}</td>
         `;
-        bIoc.appendChild(tr);
+        tbody.appendChild(tr);
       });
     }
 
-    // CHART.JS RADAR INITIALIZER
+    // RADAR CHART
     function renderRadarChart() {
       if (radarChartInstance) return;
-      const ctx = document.getElementById('midRadarChart').getContext('2d');
+      const ctx = document.getElementById('marketRadarCanvas').getContext('2d');
       radarChartInstance = new Chart(ctx, {
         type: 'radar',
         data: {
-          labels: ['xGI/90', 'Form', 'ICT Index', 'Hiệu Suất/£', 'Tấn Công'],
+          labels: ['xGI/90', 'Form Điểm', 'ICT Tấn Công', 'Điểm/Giá £', 'Đá Cố Định'],
           datasets: [
             {
-              label: 'Mbeumo',
-              data: [85, 75, 80, 83, 85],
+              label: 'Mbeumo (£7.8m)',
+              data: [82, 75, 80, 85, 90],
               backgroundColor: 'rgba(6, 182, 212, 0.25)',
               borderColor: '#06b6d4',
               pointBackgroundColor: '#06b6d4',
               borderWidth: 2
             },
             {
-              label: 'Semenyo',
-              data: [78, 70, 75, 95, 80],
+              label: 'Semenyo (£5.6m)',
+              data: [76, 70, 75, 95, 60],
               backgroundColor: 'rgba(16, 185, 129, 0.25)',
               borderColor: '#10b981',
               pointBackgroundColor: '#10b981',
@@ -551,88 +650,48 @@
       });
     }
 
-    // DYNAMIC RADAR UPDATE
     function updateRadarChart() {
       if (!radarChartInstance) return;
-      const p1 = document.getElementById('radar-select-1').value;
-      const p2 = document.getElementById('radar-select-2').value;
+      const p1 = document.getElementById('radar-player-1').value;
+      const p2 = document.getElementById('radar-player-2').value;
 
-      // Mock relative normalized attributes (scale 0-100)
-      const attrMap = {
+      const profile = {
         Palmer: [95, 85, 95, 67, 95],
         Saka: [90, 80, 90, 67, 90],
-        Mbeumo: [85, 75, 80, 83, 85],
-        Semenyo: [78, 70, 75, 95, 80],
-        Rogers: [65, 60, 65, 89, 70],
-        Groß: [70, 65, 72, 84, 75],
-        Cherki: [72, 60, 68, 69, 75]
+        Mbeumo: [82, 75, 80, 85, 90],
+        Haaland: [98, 90, 92, 51, 85],
+        Semenyo: [76, 70, 75, 95, 60],
+        Rogers: [65, 60, 65, 89, 50],
+        Groß: [70, 65, 72, 84, 90],
+        Jackson: [78, 70, 72, 76, 50]
       };
 
       radarChartInstance.data.datasets[0].label = p1;
-      radarChartInstance.data.datasets[0].data = attrMap[p1] || [70, 70, 70, 70, 70];
+      radarChartInstance.data.datasets[0].data = profile[p1] || [70, 70, 70, 70, 70];
       radarChartInstance.data.datasets[1].label = p2;
-      radarChartInstance.data.datasets[1].data = attrMap[p2] || [60, 60, 60, 60, 60];
+      radarChartInstance.data.datasets[1].data = profile[p2] || [60, 60, 60, 60, 60];
       radarChartInstance.update();
     }
 
-    // API CONFIG & REFRESH LOGIC
-    function toggleApiModal() {
-      const modal = document.getElementById('api-modal');
-      modal.classList.toggle('hidden');
-      const savedUrl = localStorage.getItem('fpl_gas_api_url') || '';
-      document.getElementById('api-url-input').value = savedUrl;
-    }
-
-    function saveApiUrl() {
-      const url = document.getElementById('api-url-input').value.trim();
-      if (url) {
-        localStorage.setItem('fpl_gas_api_url', url);
-      } else {
-        localStorage.removeItem('fpl_gas_api_url');
-      }
-      toggleApiModal();
-      refreshData();
-    }
-
-    async function refreshData() {
+    function refreshData() {
       const icon = document.getElementById('refresh-icon');
       icon.classList.add('fa-spin');
-
-      const apiUrl = localStorage.getItem('fpl_gas_api_url');
-      if (apiUrl) {
-        try {
-          const res = await fetch(apiUrl + '?action=all');
-          if (res.ok) {
-            const data = await res.json();
-            if (data.mids) APP_DATA.mids = data.mids;
-            if (data.leagues) APP_DATA.leagues = data.leagues;
-          }
-        } catch (e) {
-          console.warn("GAS API offline or blocked, using clean cached state:", e);
-        }
-      }
-
       setTimeout(() => {
-        renderMidsTable();
-        renderLeagues();
+        renderMarketTable();
+        renderFixtureTable();
         if (radarChartInstance) updateRadarChart();
         icon.classList.remove('fa-spin');
-      }, 500);
+      }, 400);
     }
 
-    // REGISTER SERVICE WORKER FOR PWA
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(err => {
-          console.log('SW registration optional:', err);
-        });
-      });
-    }
-
-    // INIT ON LOAD
+    // INIT
     window.addEventListener('DOMContentLoaded', () => {
-      renderMidsTable();
-      renderLeagues();
+      renderMarketTable();
+      renderFixtureTable();
+      if (localStorage.getItem('fpl_vip_auth') === 'true') {
+        isVipUnlocked = true;
+      }
+      applyVipState();
     });
   </script>
 </body>
