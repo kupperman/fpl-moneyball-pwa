@@ -34,6 +34,29 @@ def main():
     next_deadline = next_gw_obj.get('deadline_time', '2026-11-21T11:00:00Z') if next_gw_obj else '2026-11-21T11:00:00Z'
     gw_range = list(range(next_gw, min(next_gw + 5, 39)))
 
+    # 1.5 Fetch GW live points for current_gw
+    print(f"Fetching event/{current_gw}/live/...")
+    live_res = fetch_json(f"event/{current_gw}/live/")
+    live_pts_map = {e['id']: e['stats']['total_points'] for e in live_res.get('elements', [])}
+
+    def fmt_dt(p):
+        xg = float(p.get('expected_goals') or 0)
+        xa = float(p.get('expected_assists') or 0)
+        mins = p.get('minutes') or 0
+        xgi_90 = round(((xg + xa) / mins) * 90, 2) if mins > 0 else 0.0
+        return {
+            "id": p['id'],
+            "name": p['web_name'],
+            "team": teams_short[p['team']],
+            "cost": round(p['now_cost'] / 10, 1),
+            "pts": p['total_points'],
+            "gw_pts": live_pts_map.get(p['id'], 0),
+            "form": float(p.get('form') or 0),
+            "xgi_90": xgi_90,
+            "ict": float(p.get('ict_index') or 0),
+            "selected_by": float(p.get('selected_by_percent') or 0)
+        }
+
     # 1. TEAM TOP STARS (for fixture strategy)
     team_stars = {}
     for t_id in teams_short:
@@ -156,14 +179,6 @@ def main():
     mids = sorted([e for e in elements if e['element_type'] == 3], key=lambda x: x['total_points'], reverse=True)
     fwds = sorted([e for e in elements if e['element_type'] == 4], key=lambda x: x['total_points'], reverse=True)
 
-    def fmt_dt(p):
-        return {
-            "name": p['web_name'],
-            "team": teams_short[p['team']],
-            "cost": round(p['now_cost'] / 10, 1),
-            "pts": p['total_points']
-        }
-
     dream_team = {
         "gk": fmt_dt(gks[0]),
         "defs": [fmt_dt(d) for d in defs[:3]],
@@ -187,11 +202,40 @@ def main():
     print("Fetching League 124+ & histories...")
     l124_res = fetch_json(f"leagues-classic/{LEAGUE_124_ID}/standings/")
     l124_standings = []
+    l124_squads = {}
     histories = {}
 
     for s in l124_res['standings']['results']:
         eid = s['entry']
         hist = fetch_json(f"entry/{eid}/history/")
+        picks_res = fetch_json(f"entry/{eid}/event/{current_gw}/picks/")
+        
+        raw_picks = picks_res.get('picks', [])
+        active_chip = picks_res.get('active_chip')
+        squad_starting = {'GKP': [], 'DEF': [], 'MID': [], 'FWD': []}
+        squad_bench = []
+        for pk in raw_picks:
+            el = el_map[pk['element']]
+            p_pos = pos_map[el['element_type']]
+            p_obj = fmt_dt(el)
+            p_obj['pos'] = p_pos
+            p_obj['is_captain'] = pk['is_captain']
+            p_obj['is_vc'] = pk['is_vice_captain']
+            p_obj['multiplier'] = pk['multiplier']
+            # Effective GW points including multiplier (unless bench)
+            p_obj['eff_gw_pts'] = p_obj['gw_pts'] * (pk['multiplier'] if pk['multiplier'] > 0 else 1)
+            if pk['position'] <= 11:
+                squad_starting[p_pos].append(p_obj)
+            else:
+                squad_bench.append(p_obj)
+
+        l124_squads[s['entry_name']] = {
+            "manager": s['player_name'],
+            "gw_pts": s['event_total'],
+            "active_chip": active_chip,
+            "starting": squad_starting,
+            "bench": squad_bench
+        }
         raw_chips = hist.get('chips', [])
         chips = [f"{c['name'].upper()}(GW{c['event']})" for c in raw_chips]
         used_chip_keys = {c['name'] for c in raw_chips if c['event'] <= 19}
@@ -351,6 +395,7 @@ def main():
         "next_deadline": next_deadline,
         "gw_headers": [f"GW{g}" for g in gw_range],
         "league_124": l124_standings,
+        "league_124_squads": l124_squads,
         "turn1_awards": turn1_awards,
         "league_ioc": ioc_standings,
         "rank_progression": rank_prog,

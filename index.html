@@ -251,46 +251,109 @@
       </div>
     </div>
 
-    <!-- TAB 2: 🏟️ SA BÀN 2D (DREAM TEAM THỰC TẾ 2026/27) -->
-    <div id="tab-pitch" class="tab-content hidden space-y-5">
+    <!-- TAB 2: 🏟️ SA BÀN CHIẾN THUẬT SÂN CỎ SVG (DREAM TEAM & 7 ĐỘI HÌNH 124+) -->
+    <div id="tab-pitch" class="tab-content hidden space-y-4">
+      
+      <!-- SQUAD SELECTOR BAR -->
+      <div class="vip-card rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-500/30">
+        <div>
+          <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
+            <i class="fa-solid fa-futbol text-emerald-400"></i> SA BÀN CHIẾN THUẬT SÂN CỎ — XEM ĐỘI HÌNH & ÁO ĐẤU CLB
+          </h2>
+          <p class="text-[11px] text-slate-400">Bấm chọn HLV để soi đội hình ra sân GW10 hoặc Dream Team • Chạm vào từng cầu thủ để soi chỉ số</p>
+        </div>
+        <div class="flex items-center space-x-2">
+          <select id="pitch-squad-selector" onchange="renderPitchView()" class="bg-slate-950 text-emerald-400 font-bold border border-emerald-500/40 rounded-xl px-3 py-2 text-xs shadow-sm focus:outline-none">
+            <option value="DREAM_TEAM">🏆 Dream Team Mùa 2026/27 (697đ)</option>
+          </select>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5">
+        <!-- CỘT TRÁI: SÂN CỎ CHUẨN NGOẠI HẠNG ANH VỚI ĐƯỜNG KẺ SVG & ÁO ĐẤU CLB -->
+        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between">
           <div class="flex items-center justify-between mb-3">
             <div>
-              <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
-                <i class="fa-solid fa-futbol text-emerald-400"></i> DREAM TEAM CHẶNG 1 — CHÍNH THỨC MÙA 2026/27
-              </h2>
-              <p class="text-[11px] text-slate-400">11 ngôi sao ghi nhiều điểm nhất Premier League thực tế sau GW10</p>
+              <h3 class="text-sm font-black text-white" id="pitch-title">DREAM TEAM CHẶNG 1</h3>
+              <p class="text-[11px] text-slate-400" id="pitch-subtitle">11 cầu thủ điểm cao nhất FPL 2026/27</p>
             </div>
-            <span class="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-2.5 py-1 rounded-full font-extrabold" id="dt-total-badge">Tổng: ...</span>
+            <div class="flex items-center gap-2">
+              <span id="pitch-chip-badge" class="hidden text-[10px] bg-purple-950 text-purple-300 border border-purple-700/60 px-2.5 py-1 rounded-full font-black"></span>
+              <span class="text-[11px] bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1 rounded-full font-extrabold font-mono-numbers" id="dt-total-badge">Tổng: ...</span>
+            </div>
           </div>
 
-          <div class="football-pitch rounded-2xl p-3 sm:p-5 w-full min-h-[440px] flex flex-col justify-between" id="dt-pitch-container">
-            <!-- Rendered by JS from data.json -->
+          <!-- STADIUM PITCH WITH REAL SVG MARKINGS -->
+          <div class="football-pitch rounded-2xl p-3 sm:p-5 w-full min-h-[480px] flex flex-col justify-between relative overflow-hidden">
+            <!-- SVG PITCH LINES OVERLAY -->
+            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-35" viewBox="0 0 400 500" preserveAspectRatio="none">
+              <rect x="10" y="10" width="380" height="480" fill="none" stroke="white" stroke-width="2" />
+              <line x1="10" y1="250" x2="390" y2="250" stroke="white" stroke-width="2" />
+              <circle cx="200" cy="250" r="45" fill="none" stroke="white" stroke-width="2" />
+              <circle cx="200" cy="250" r="3" fill="white" />
+              <!-- Top Penalty Area -->
+              <rect x="95" y="10" width="210" height="75" fill="none" stroke="white" stroke-width="2" />
+              <rect x="145" y="10" width="110" height="28" fill="none" stroke="white" stroke-width="2" />
+              <path d="M 160 85 A 45 45 0 0 0 240 85" fill="none" stroke="white" stroke-width="2" />
+              <!-- Bottom Penalty Area -->
+              <rect x="95" y="415" width="210" height="75" fill="none" stroke="white" stroke-width="2" />
+              <rect x="145" y="462" width="110" height="28" fill="none" stroke="white" stroke-width="2" />
+              <path d="M 160 415 A 45 45 0 0 1 240 415" fill="none" stroke="white" stroke-width="2" />
+            </svg>
+
+            <!-- PLAYERS CONTAINER (Z-10 ABOVE SVG LINES) -->
+            <div id="dt-pitch-container" class="relative z-10 flex-1 flex flex-col justify-between py-2">
+              <!-- Rendered dynamically by JS -->
+            </div>
           </div>
 
-          <div class="mt-3 p-3 bg-slate-950/70 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-            <span class="font-bold text-slate-400 uppercase tracking-wider text-[10px]">Ghế Dự Bị Dream Team:</span>
-            <div class="flex flex-wrap gap-3 text-[11px]" id="dt-bench-container"></div>
+          <!-- BENCH ROW -->
+          <div class="mt-3 p-3 bg-slate-950/80 rounded-xl border border-slate-800">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-bold text-slate-400 uppercase tracking-wider text-[10px]"><i class="fa-solid fa-chair mr-1"></i> Băng Ghế Dự Bị (4 Cầu Thủ)</span>
+              <span class="text-[10px] text-slate-500">Chạm vào cầu thủ để soi thông số</span>
+            </div>
+            <div class="grid grid-cols-4 gap-2" id="dt-bench-container"></div>
           </div>
         </div>
 
-        <div class="lg:col-span-5 vip-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between space-y-4">
-          <div>
-            <h3 class="text-sm font-extrabold text-white flex items-center gap-2 mb-2">
-              <i class="fa-solid fa-pie-chart text-cyan-400"></i> PHÂN TÍCH TỶ TRỌNG ĐIỂM SỐ TUYẾN
+        <!-- CỘT PHẢI: 3 CARD PHÂN TÍCH ĐẦY ĐẶN KHÔNG MỘT KHOẢNG TRỐNG -->
+        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+          
+          <!-- CARD 1: PLAYER TACTICAL INSPECTOR -->
+          <div class="vip-card rounded-2xl p-4 border border-cyan-500/30" id="pitch-inspector-card">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2.5 mb-3">
+              <h3 class="text-xs font-extrabold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i class="fa-solid fa-crosshairs"></i> Hồ Sơ Cầu Thủ Đang Chọn
+              </h3>
+              <span class="text-[10px] text-slate-400">Chạm áo đấu trên sân</span>
+            </div>
+            <div id="pitch-inspector-body" class="text-xs">
+              <!-- Populated when clicking any player -->
+            </div>
+          </div>
+
+          <!-- CARD 2: DOUGHNUT + BREAKDOWN BARS -->
+          <div class="vip-card rounded-2xl p-4 border border-slate-800">
+            <h3 class="text-xs font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5 mb-3">
+              <i class="fa-solid fa-chart-pie text-indigo-400"></i> Phân Bổ Điểm Số Theo Tuyến
             </h3>
-            <p class="text-[11px] text-slate-400 mb-4">Cơ cấu điểm số thực tế của 11 cầu thủ Dream Team</p>
-            <div class="space-y-3 text-xs" id="dt-breakdown-bars"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
+              <div class="sm:col-span-5 h-32">
+                <canvas id="pitchDoughnutChart"></canvas>
+              </div>
+              <div class="sm:col-span-7 space-y-2.5 text-xs" id="dt-breakdown-bars"></div>
+            </div>
           </div>
-          <div class="p-3.5 rounded-xl bg-slate-950/80 border border-cyan-800/40 text-xs">
-            <h4 class="font-bold text-cyan-400 mb-1 flex items-center gap-1.5">
-              <i class="fa-solid fa-lightbulb"></i> Xu Hướng Mùa Giải 2026/27:
-            </h4>
-            <p class="text-slate-300 leading-relaxed text-[11px]">
-              Brighton (BHA) đang thống trị bảng điểm với <b>De Cuyper (75đ)</b>, <b>Groß (70đ)</b> và <b>Vuskovic (70đ)</b>. Hàng thủ đang ghi điểm cực cao nhờ Clean Sheet và điểm Bonus từ các tình huống cố định (Arsenal: Gabriel 66đ, Raya 60đ).
-            </p>
+
+          <!-- CARD 3: CLUB EXPOSURE MATRIX -->
+          <div class="vip-card rounded-2xl p-4 border border-slate-800">
+            <h3 class="text-xs font-extrabold text-white uppercase tracking-wider flex items-center gap-1.5 mb-2.5">
+              <i class="fa-solid fa-shield-halved text-emerald-400"></i> Độ Phủ Câu Lạc Bộ Trong Đội Hình
+            </h3>
+            <div id="pitch-club-exposure" class="flex flex-wrap gap-2 text-xs"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -585,6 +648,9 @@
       }
     }
 
+    let pitchDoughnut = null;
+    let currentPitchPlayers = {};
+
     function renderAll() {
       if (!DATA) return;
       document.getElementById('sync-timestamp').textContent = `Đồng bộ tự động: ${DATA.updated_at} • Sau GW${DATA.current_gw}`;
@@ -597,7 +663,8 @@
       renderRankHistoryChart();
       populateSimManagers();
       runWhatIfSim();
-      renderDreamTeam();
+      populatePitchSelector();
+      renderPitchView();
       populateRadarSelectors();
       renderWatchdog();
       renderCaptaincy();
@@ -929,55 +996,249 @@
       }
     }
 
-    function renderDreamTeam() {
-      const dt = DATA.dream_team;
-      document.getElementById('dt-total-badge').textContent = `Tổng: ${dt.total_pts} điểm`;
+    const CLUB_KITS = {
+      ARS: { main: '#EF0107', sleeve: '#FFFFFF', collar: '#FFFFFF' },
+      AVL: { main: '#670E36', sleeve: '#95BFE5', collar: '#95BFE5' },
+      BHA: { main: '#0057B8', sleeve: '#FFFFFF', collar: '#FFFFFF' },
+      BOU: { main: '#DA291C', sleeve: '#111827', collar: '#111827' },
+      BRE: { main: '#E30613', sleeve: '#FFFFFF', collar: '#111827' },
+      CHE: { main: '#034694', sleeve: '#034694', collar: '#FFFFFF' },
+      COV: { main: '#7AD0F6', sleeve: '#7AD0F6', collar: '#0F172A' },
+      CRY: { main: '#1B458F', sleeve: '#C4122E', collar: '#FFFFFF' },
+      EVE: { main: '#003399', sleeve: '#003399', collar: '#FFFFFF' },
+      FUL: { main: '#FFFFFF', sleeve: '#111827', collar: '#111827' },
+      HUL: { main: '#F5A12D', sleeve: '#111827', collar: '#111827' },
+      IPS: { main: '#3A64A3', sleeve: '#3A64A3', collar: '#FFFFFF' },
+      LEE: { main: '#F8FAFC', sleeve: '#FACC15', collar: '#1D4ED8' },
+      LIV: { main: '#C8102E', sleeve: '#C8102E', collar: '#FFFFFF' },
+      MCI: { main: '#6CABDD', sleeve: '#6CABDD', collar: '#FFFFFF' },
+      MUN: { main: '#DA291C', sleeve: '#DA291C', collar: '#111827' },
+      NEW: { main: '#1E293B', sleeve: '#F8FAFC', collar: '#F8FAFC' },
+      NFO: { main: '#DD0000', sleeve: '#DD0000', collar: '#FFFFFF' },
+      SUN: { main: '#EB172B', sleeve: '#FFFFFF', collar: '#111827' },
+      TOT: { main: '#F8FAFC', sleeve: '#F8FAFC', collar: '#132257' }
+    };
 
-      const node = (p, colorClass, label) => `
-        <div class="pitch-player text-center cursor-pointer">
-          <div class="w-9 h-9 rounded-full ${colorClass} border-2 border-white mx-auto flex items-center justify-center font-black text-[10px] shadow-md">${label}</div>
-          <div class="mt-1 bg-slate-950/90 rounded px-1.5 py-0.5 text-[9px] font-bold text-white shadow">${p.name} (${p.team})</div>
-          <div class="text-[9px] text-amber-300 font-mono-numbers font-bold">${p.pts}đ • £${p.cost}m</div>
+    function getClubJerseySVG(team, isGK, badge) {
+      const kit = isGK ? { main: '#F59E0B', sleeve: '#D97706', collar: '#111827' } : (CLUB_KITS[team] || { main: '#64748B', sleeve: '#475569', collar: '#FFFFFF' });
+      const badgeHtml = badge ? `<span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-amber-400 text-slate-950 font-black text-[9px] flex items-center justify-center border border-white shadow">${badge}</span>` : '';
+      return `
+        <div class="relative w-10 h-10 sm:w-11 sm:h-11 mx-auto drop-shadow-md">
+          <svg viewBox="0 0 64 64" class="w-full h-full">
+            <path d="M18 10 L26 6 L38 6 L46 10 L58 20 L51 30 L44 25 L44 56 L20 56 L20 25 L13 30 L6 20 Z" fill="${kit.main}" stroke="#0F172A" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M18 10 L6 20 L13 30 L20 25 Z" fill="${kit.sleeve}" stroke="#0F172A" stroke-width="1.5"/>
+            <path d="M46 10 L58 20 L51 30 L44 25 Z" fill="${kit.sleeve}" stroke="#0F172A" stroke-width="1.5"/>
+            <path d="M26 6 Q32 14 38 6" fill="none" stroke="${kit.collar}" stroke-width="2.5"/>
+          </svg>
+          ${badgeHtml}
         </div>
       `;
+    }
+
+    function populatePitchSelector() {
+      const sel = document.getElementById('pitch-squad-selector');
+      if (!sel || !DATA) return;
+      let opts = `<option value="DREAM_TEAM">🏆 Dream Team Mùa 2026/27 (${DATA.dream_team.total_pts}đ)</option>`;
+      if (DATA.league_124_squads) {
+        DATA.league_124.forEach(s => {
+          const sq = DATA.league_124_squads[s.team];
+          if (sq) {
+            const chipTag = sq.active_chip ? ` • ${sq.active_chip.toUpperCase()}` : '';
+            opts += `<option value="${s.team}">🛡️ ${s.team} (${s.manager}) — GW10: ${sq.gw_pts}đ${chipTag}</option>`;
+          }
+        });
+      }
+      sel.innerHTML = opts;
+    }
+
+    function inspectPitchPlayer(pid) {
+      const p = currentPitchPlayers[pid];
+      if (!p) return;
+      const body = document.getElementById('pitch-inspector-body');
+      body.innerHTML = `
+        <div class="flex items-center gap-3 mb-3">
+          <div class="shrink-0">${getClubJerseySVG(p.team, p.pos === 'GKP', p.is_captain ? 'C' : (p.is_vc ? 'V' : ''))}</div>
+          <div>
+            <h4 class="text-base font-black text-white">${p.name} <span class="text-xs font-semibold text-cyan-400">(${p.team} • ${p.pos || 'PL'})</span></h4>
+            <p class="text-[11px] text-slate-400">Giá thị trường: <b class="text-emerald-400 font-mono-numbers">£${p.cost}m</b> • Sở hữu: <b class="text-white font-mono-numbers">${p.selected_by}%</b></p>
+          </div>
+        </div>
+        <div class="grid grid-cols-4 gap-2 text-center font-mono-numbers">
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">GW10</span>
+            <b class="text-sm text-amber-400">${p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts}đ</b>
+          </div>
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">Tổng Mùa</span>
+            <b class="text-sm text-white">${p.pts}đ</b>
+          </div>
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">xGI / 90'</span>
+            <b class="text-sm text-cyan-400">${p.xgi_90}</b>
+          </div>
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">Form</span>
+            <b class="text-sm text-emerald-400">${p.form}</b>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderPitchView() {
+      if (!DATA) return;
+      const selVal = document.getElementById('pitch-squad-selector')?.value || 'DREAM_TEAM';
+      currentPitchPlayers = {};
+
+      let gkList = [], defList = [], midList = [], fwdList = [], benchList = [];
+      let isSeasonMode = true;
+      let totalLabel = '';
+
+      if (selVal === 'DREAM_TEAM' || !DATA.league_124_squads || !DATA.league_124_squads[selVal]) {
+        const dt = DATA.dream_team;
+        gkList = [{ ...dt.gk, pos: 'GKP' }];
+        defList = dt.defs.map(x => ({ ...x, pos: 'DEF' }));
+        midList = dt.mids.map(x => ({ ...x, pos: 'MID' }));
+        fwdList = dt.fwds.map(x => ({ ...x, pos: 'FWD' }));
+        benchList = dt.bench;
+        totalLabel = `Tổng Mùa: ${dt.total_pts}đ`;
+        document.getElementById('pitch-title').textContent = 'DREAM TEAM CHẶNG 1 — CHÍNH THỨC 2026/27';
+        document.getElementById('pitch-subtitle').textContent = '11 ngôi sao ghi nhiều điểm nhất Premier League thực tế sau 10 vòng';
+        document.getElementById('pitch-chip-badge').classList.add('hidden');
+      } else {
+        isSeasonMode = false;
+        const sq = DATA.league_124_squads[selVal];
+        gkList = sq.starting.GKP || [];
+        defList = sq.starting.DEF || [];
+        midList = sq.starting.MID || [];
+        fwdList = sq.starting.FWD || [];
+        benchList = sq.bench || [];
+        totalLabel = `Điểm GW10: ${sq.gw_pts}đ`;
+        document.getElementById('pitch-title').textContent = `ĐỘI HÌNH RA SÂN GW10 — ${selVal.toUpperCase()}`;
+        document.getElementById('pitch-subtitle').textContent = `HLV: ${sq.manager} • Dữ liệu thực tế sau khi chốt sổ Auto-Sub`;
+        const chipBadge = document.getElementById('pitch-chip-badge');
+        if (sq.active_chip) {
+          chipBadge.textContent = `⚡ CHIP: ${sq.active_chip.toUpperCase()}`;
+          chipBadge.classList.remove('hidden');
+        } else {
+          chipBadge.classList.add('hidden');
+        }
+      }
+
+      document.getElementById('dt-total-badge').textContent = totalLabel;
+
+      const makeNode = (p, isGK) => {
+        const pid = 'p_' + p.id + '_' + Math.random().toString(36).slice(2, 6);
+        currentPitchPlayers[pid] = p;
+        const ptsShow = isSeasonMode ? p.pts : (p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts);
+        const capTag = p.is_captain ? 'C' : (p.is_vc ? 'V' : '');
+        const pillColor = (isSeasonMode ? ptsShow >= 65 : ptsShow >= 10)
+          ? 'bg-amber-400 text-slate-950 font-black'
+          : ((isSeasonMode ? ptsShow >= 55 : ptsShow >= 6) ? 'bg-emerald-500 text-white font-bold' : 'bg-slate-900/95 text-slate-200');
+
+        return `
+          <div onclick="inspectPitchPlayer('${pid}')" class="pitch-player text-center cursor-pointer w-16 sm:w-20">
+            ${getClubJerseySVG(p.team, isGK, capTag)}
+            <div class="mt-0.5 bg-slate-950/90 rounded-t px-1 py-0.5 text-[9px] sm:text-[10px] font-bold text-white truncate border-x border-t border-slate-700/60">${p.name}</div>
+            <div class="${pillColor} rounded-b px-1 py-0.5 text-[9px] font-mono-numbers shadow-sm">${ptsShow}đ • ${p.team}</div>
+          </div>
+        `;
+      };
 
       document.getElementById('dt-pitch-container').innerHTML = `
-        <div class="flex justify-center">${node(dt.gk, 'bg-amber-400 text-slate-950', 'GK')}</div>
-        <div class="flex justify-around">${dt.defs.map(d => node(d, 'bg-cyan-500 text-slate-950', 'DEF')).join('')}</div>
-        <div class="flex justify-around">${dt.mids.map(m => node(m, 'bg-indigo-500 text-white', 'MID')).join('')}</div>
-        <div class="flex justify-around">${dt.fwds.map(f => node(f, 'bg-rose-500 text-white', 'FWD')).join('')}</div>
+        <div class="flex justify-center">${gkList.map(p => makeNode(p, true)).join('')}</div>
+        <div class="flex justify-around items-center">${defList.map(p => makeNode(p, false)).join('')}</div>
+        <div class="flex justify-around items-center">${midList.map(p => makeNode(p, false)).join('')}</div>
+        <div class="flex justify-around items-center">${fwdList.map(p => makeNode(p, false)).join('')}</div>
       `;
 
-      document.getElementById('dt-bench-container').innerHTML = dt.bench.map(b =>
-        `<span><b>${b.name}</b> (${b.team} - ${b.pts}đ)</span>`
-      ).join('');
+      // Render Bench
+      document.getElementById('dt-bench-container').innerHTML = benchList.map(b => {
+        const pid = 'b_' + b.id + '_' + Math.random().toString(36).slice(2, 6);
+        currentPitchPlayers[pid] = b;
+        const ptsShow = isSeasonMode ? b.pts : b.gw_pts;
+        return `
+          <div onclick="inspectPitchPlayer('${pid}')" class="cursor-pointer bg-slate-900/90 hover:bg-slate-800 border border-slate-800 rounded-xl p-2 text-center transition">
+            <span class="text-[9px] text-slate-400 block font-mono">${b.pos} • ${b.team}</span>
+            <p class="text-[11px] font-bold text-white truncate">${b.name}</p>
+            <span class="text-[10px] font-mono-numbers font-bold ${ptsShow >= 6 ? 'text-emerald-400' : 'text-slate-400'}">${ptsShow}đ</span>
+          </div>
+        `;
+      }).join('');
 
-      const gkPts = dt.gk.pts;
-      const defPts = dt.defs.reduce((a, b) => a + b.pts, 0);
-      const midPts = dt.mids.reduce((a, b) => a + b.pts, 0);
-      const fwdPts = dt.fwds.reduce((a, b) => a + b.pts, 0);
-      const total = dt.total_pts;
+      // Calculate Breakdown by Position
+      const sumPts = (arr) => arr.reduce((acc, p) => acc + (isSeasonMode ? p.pts : (p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts)), 0);
+      const gkPts = sumPts(gkList);
+      const defPts = sumPts(defList);
+      const midPts = sumPts(midList);
+      const fwdPts = sumPts(fwdList);
+      const totalAll = Math.max(1, gkPts + defPts + midPts + fwdPts);
 
       const bar = (title, pts, color) => {
-        const pct = ((pts / total) * 100).toFixed(1);
+        const pct = ((pts / totalAll) * 100).toFixed(1);
         return `
           <div>
             <div class="flex justify-between font-bold mb-1">
               <span class="text-slate-200">${title}</span>
               <span class="font-mono-numbers text-white">${pts}đ (${pct}%)</span>
             </div>
-            <div class="w-full bg-slate-800 rounded-full h-2">
-              <div class="${color} h-2 rounded-full" style="width: ${pct}%"></div>
+            <div class="w-full bg-slate-800 rounded-full h-1.5">
+              <div class="${color} h-1.5 rounded-full" style="width: ${pct}%"></div>
             </div>
           </div>
         `;
       };
 
       document.getElementById('dt-breakdown-bars').innerHTML =
-        bar('Hậu Vệ (3 DEF)', defPts, 'bg-cyan-500') +
-        bar('Tiền Vệ (4 MID)', midPts, 'bg-indigo-500') +
-        bar('Tiền Đạo (3 FWD)', fwdPts, 'bg-rose-500') +
-        bar('Thủ Môn (1 GKP)', gkPts, 'bg-amber-500');
+        bar('Hậu Vệ', defPts, 'bg-cyan-500') +
+        bar('Tiền Vệ', midPts, 'bg-indigo-500') +
+        bar('Tiền Đạo', fwdPts, 'bg-rose-500') +
+        bar('Thủ Môn', gkPts, 'bg-amber-500');
+
+      // Render Doughnut Chart
+      const dCtx = document.getElementById('pitchDoughnutChart').getContext('2d');
+      if (pitchDoughnut) pitchDoughnut.destroy();
+      pitchDoughnut = new Chart(dCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['DEF', 'MID', 'FWD', 'GKP'],
+          datasets: [{
+            data: [defPts, midPts, fwdPts, gkPts],
+            backgroundColor: ['#06b6d4', '#6366f1', '#f43f5e', '#f59e0b'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          plugins: { legend: { display: false } }
+        }
+      });
+
+      // Render Club Exposure
+      const allStarters = [...gkList, ...defList, ...midList, ...fwdList];
+      const clubCounts = {};
+      allStarters.forEach(p => {
+        const pts = isSeasonMode ? p.pts : (p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts);
+        if (!clubCounts[p.team]) clubCounts[p.team] = { count: 0, pts: 0 };
+        clubCounts[p.team].count += 1;
+        clubCounts[p.team].pts += pts;
+      });
+      const sortedClubs = Object.entries(clubCounts).sort((a, b) => b[1].pts - a[1].pts);
+      document.getElementById('pitch-club-exposure').innerHTML = sortedClubs.map(([team, stat]) => `
+        <span class="px-2.5 py-1 rounded-xl bg-slate-950/90 border border-slate-800 text-[11px] flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full" style="background-color: ${(CLUB_KITS[team]?.main) || '#94a3b8'}"></span>
+          <b class="text-white">${team}</b> <span class="text-slate-400">(${stat.count} người)</span>: <b class="text-emerald-400 font-mono-numbers">${stat.pts}đ</b>
+        </span>
+      `).join('');
+
+      // Auto inspect highest scorer
+      const topId = Object.keys(currentPitchPlayers).sort((a, b) => {
+        const pa = currentPitchPlayers[a];
+        const pb = currentPitchPlayers[b];
+        return (isSeasonMode ? pb.pts - pa.pts : (pb.eff_gw_pts || pb.gw_pts) - (pa.eff_gw_pts || pa.gw_pts));
+      })[0];
+      if (topId) inspectPitchPlayer(topId);
     }
 
     function populateRadarSelectors() {
@@ -1210,6 +1471,7 @@
         activeNav.classList.add(tabId === 'vip-vault' ? 'text-amber-400' : 'text-cyan-400');
       }
       if (tabId === 'market' && DATA) updateComparison();
+      if (tabId === 'pitch' && DATA) renderPitchView();
     }
 
     function handleVipButton() { isVipUnlocked ? switchTab('vip-vault') : togglePasswordModal(); }
