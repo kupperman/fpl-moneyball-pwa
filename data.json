@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 07:02 UTC",
+  "updated_at": "2026-11-10 07:54 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
@@ -31,6 +31,8 @@
       },
       "best_gw": 78,
       "best_gw_num": 2,
+      "worst_gw": 29,
+      "worst_gw_num": 5,
       "bench_wasted": 110,
       "total_hits": 4,
       "team_value": 103.5,
@@ -56,6 +58,8 @@
       },
       "best_gw": 85,
       "best_gw_num": 2,
+      "worst_gw": 42,
+      "worst_gw_num": 5,
       "bench_wasted": 105,
       "total_hits": 12,
       "team_value": 101.5,
@@ -81,6 +85,8 @@
       },
       "best_gw": 94,
       "best_gw_num": 2,
+      "worst_gw": 27,
+      "worst_gw_num": 3,
       "bench_wasted": 106,
       "total_hits": 4,
       "team_value": 102.2,
@@ -107,6 +113,8 @@
       },
       "best_gw": 81,
       "best_gw_num": 2,
+      "worst_gw": 30,
+      "worst_gw_num": 1,
       "bench_wasted": 59,
       "total_hits": 0,
       "team_value": 100.3,
@@ -132,36 +140,13 @@
       },
       "best_gw": 105,
       "best_gw_num": 2,
+      "worst_gw": 35,
+      "worst_gw_num": 9,
       "bench_wasted": 31,
       "total_hits": 0,
       "team_value": 101.3,
       "gap_leader": -51,
       "is_last": false
-    },
-    {
-      "entry": 6938534,
-      "rank": 6,
-      "team": "XOẠC-UNITED",
-      "manager": "Cường Tệ",
-      "gw_pts": 59,
-      "total": 535,
-      "turn2_pts": 0,
-      "chips": [
-        "3XC(GW10)"
-      ],
-      "chips_map": {
-        "wc": false,
-        "tc": true,
-        "bb": false,
-        "fh": false
-      },
-      "best_gw": 74,
-      "best_gw_num": 6,
-      "bench_wasted": 95,
-      "total_hits": 4,
-      "team_value": 100.3,
-      "gap_leader": -70,
-      "is_last": true
     },
     {
       "entry": 772578,
@@ -182,9 +167,38 @@
       },
       "best_gw": 84,
       "best_gw_num": 4,
+      "worst_gw": 33,
+      "worst_gw_num": 5,
       "bench_wasted": 39,
       "total_hits": 4,
       "team_value": 100.1,
+      "gap_leader": -70,
+      "is_last": true
+    },
+    {
+      "entry": 6938534,
+      "rank": 6,
+      "team": "XOẠC-UNITED",
+      "manager": "Cường Tệ",
+      "gw_pts": 59,
+      "total": 535,
+      "turn2_pts": 0,
+      "chips": [
+        "3XC(GW10)"
+      ],
+      "chips_map": {
+        "wc": false,
+        "tc": true,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 74,
+      "best_gw_num": 6,
+      "worst_gw": 40,
+      "worst_gw_num": 5,
+      "bench_wasted": 95,
+      "total_hits": 4,
+      "team_value": 100.3,
       "gap_leader": -70,
       "is_last": true
     }
@@ -194,6 +208,11 @@
       "team": "Ninh SS",
       "manager": "Ninh Dang",
       "val": "105đ (GW2)"
+    },
+    "worst_gw": {
+      "team": "SNAL",
+      "manager": "paper man",
+      "val": "27đ (GW3)"
     },
     "bench_king": {
       "team": "Bao Bui",
@@ -333,18 +352,6 @@
       5,
       5
     ],
-    "XOẠC-UNITED": [
-      5,
-      6,
-      6,
-      6,
-      6,
-      5,
-      6,
-      6,
-      7,
-      6
-    ],
     "Ngocdao": [
       6,
       7,
@@ -355,6 +362,18 @@
       7,
       7,
       6,
+      6
+    ],
+    "XOẠC-UNITED": [
+      5,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      6,
+      7,
       7
     ]
   },
@@ -1519,21 +1538,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+252,730",
+        "net_transfers": "+254,046",
         "pts": 54
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+188,027",
+        "net_transfers": "+188,527",
         "pts": 55
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+172,406",
+        "net_transfers": "+173,292",
         "pts": 61
       }
     ],
@@ -1542,21 +1561,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-266,452",
+        "net_transfers": "-267,557",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-248,319",
+        "net_transfers": "-249,271",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-116,597",
+        "net_transfers": "-117,257",
         "pts": 37
       }
     ]

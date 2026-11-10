@@ -521,6 +521,25 @@
     </div>
   </div>
 
+  <!-- MODAL ĐẶC QUYỀN XANH SAMSUNG (CHO NINH SS) -->
+  <div id="samsung-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
+    <div class="vip-card max-w-sm w-full rounded-3xl p-5 border border-blue-500/50 text-center space-y-3">
+      <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-[#1428A0] to-blue-500 mx-auto flex items-center justify-center text-2xl text-white shadow-lg shadow-blue-500/40">📱</div>
+      <h3 class="text-base font-black text-blue-400">ĐẶC QUYỀN MÀU XANH SAMSUNG</h3>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Chúc mừng HLV <b>Ninh Ca Vivas (Ninh SS)</b> đã chính thức được nâng cấp lên gói màu <b>Xanh Samsung Hoàng Gia</b> thoát kiếp xám xịt bạc nhược!
+      </p>
+      <div class="bg-slate-950/80 p-3 rounded-2xl border border-blue-500/30 text-[11px] text-slate-300 space-y-1">
+        <p>⚡ Đỉnh cao: <b>Tuyển Trạch Viên Cao Thủ</b> (105đ ở GW2 - Kỷ lục giải!)</p>
+        <p>📉 Pha hụt hơi nhẹ: 35đ (GW9) — Rớt từ #1 GW3 xuống #5</p>
+      </div>
+      <p class="text-[11px] text-cyan-300 italic font-semibold">
+        "Cam kết: Khi nào anh Ninh xuống làm Nhà Hảo Tâm, hệ thống tự động nâng cấp miễn phí lên màu Xanh Poseidon!"
+      </p>
+      <button onclick="closeSamsungModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#1428A0] to-blue-600 text-white font-bold text-xs shadow-md">Đã Hiểu, Giữ Phong Độ Nhé Sếp 💙</button>
+    </div>
+  </div>
+
   <!-- MODAL MẬT MÃ VIP -->
   <div id="password-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex items-center justify-center p-4">
     <div class="vip-card max-w-sm w-full rounded-3xl p-5 border border-amber-500/40 space-y-4">
@@ -612,21 +631,22 @@
     function renderTurn1Awards() {
       if (!DATA.turn1_awards) return;
       const a = DATA.turn1_awards;
-      const card = (icon, title, item, color) => `
+      const card = (icon, title, subtitle, item, color) => `
         <div class="vip-card rounded-2xl p-3 border border-slate-800 flex items-center gap-3">
           <div class="w-10 h-10 rounded-xl ${color} flex items-center justify-center text-base shrink-0">${icon}</div>
           <div class="min-w-0">
             <p class="text-[9px] font-bold uppercase tracking-wider text-slate-400 truncate">${title}</p>
             <p class="text-xs font-black text-white truncate">${item.team} <span class="text-amber-400 font-mono-numbers">${item.val}</span></p>
-            <p class="text-[10px] text-slate-400 truncate">${item.manager}</p>
+            <p class="text-[10px] text-slate-400 truncate">${subtitle}</p>
           </div>
         </div>
       `;
+      const worstCard = a.worst_gw ? card('📉', 'Chiến Thuật Điểm Kém', 'Tụt huyết áp bất thình lình', a.worst_gw, 'bg-rose-500/20 text-rose-400 border border-rose-500/30') : '';
       document.getElementById('turn1-awards-container').innerHTML =
-        card('🔥', 'Kỷ Lục Điểm 1 Vòng', a.best_gw, 'bg-orange-500/20 text-orange-400 border border-orange-500/30') +
-        card('🪑', 'Chúa Tể Dự Bị', a.bench_king, 'bg-purple-500/20 text-purple-400 border border-purple-500/30') +
-        card('💸', 'Chuyên Gia Đi Chợ (-Hit)', a.hit_king, 'bg-rose-500/20 text-rose-400 border border-rose-500/30') +
-        card('💎', 'Đội Hình Đắt Giá Nhất', a.richest, 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30');
+        card('🎯', 'Tuyển Trạch Viên Cao Thủ', 'Kỷ lục nổ to nhất 1 vòng', a.best_gw, 'bg-blue-500/20 text-blue-400 border border-blue-500/40') +
+        worstCard +
+        card('🪑', 'Chúa Tể Bỏ Rơi Dự Bị', 'Tuyển hàng xịn để ghế sub', a.bench_king, 'bg-purple-500/20 text-purple-400 border border-purple-500/30') +
+        card('💸', 'Chuyên Gia Đi Chợ (-Hit)', 'Đam mê mua sắm bất chấp', a.hit_king, 'bg-amber-500/20 text-amber-400 border border-amber-500/30');
     }
 
     function setStandingMode(mode) {
@@ -730,6 +750,7 @@
       tbody.innerHTML = DATA.league_124.map(s => {
         let rankBadge = `#${s.rank}`;
         let rowStyle = 'hover:bg-slate-800/30';
+        let teamNameStyle = 'text-white';
         let statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700">An Toàn</span>';
 
         if (s.rank === 1) {
@@ -747,11 +768,18 @@
           statusTag = '<span onclick="openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50">🎖️ Nhà Hảo Tâm Turn 1</span>';
         }
 
+        // ĐẶC QUYỀN MÀU XANH SAMSUNG CHO ANH NINH (NINH SS)
+        if (s.team === 'Ninh SS') {
+          rowStyle = 'bg-blue-950/25 border-l-2 border-blue-500 hover:bg-blue-950/40';
+          teamNameStyle = 'text-blue-400';
+          statusTag = '<span onclick="openSamsungModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-[#1428A0] to-blue-600 text-white font-bold border border-blue-400/50 shadow-sm hover:scale-105 transition inline-block">📱 Xanh Samsung • Cao Thủ GW2</span>';
+        }
+
         return `
           <tr class="${rowStyle} transition">
-            <td class="p-2.5 text-center font-black ${s.rank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
+            <td class="p-2.5 text-center font-black ${s.rank <= 2 ? 'text-amber-400' : (s.team === 'Ninh SS' ? 'text-blue-400' : 'text-slate-400')}">${rankBadge}</td>
             <td class="p-2.5">
-              <div class="font-extrabold text-white">${s.team}</div>
+              <div class="font-extrabold ${teamNameStyle}">${s.team}</div>
               <div class="text-[10px] text-slate-400">${s.manager}</div>
             </td>
             <td class="p-2.5 text-right font-mono-numbers font-bold ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
@@ -809,16 +837,27 @@
     function renderRankHistoryChart() {
       const ctx = document.getElementById('rankHistoryChart').getContext('2d');
       if (rankChart) rankChart.destroy();
-      const colors = ['#f59e0b', '#06b6d4', '#a855f7', '#10b981', '#64748b', '#f43f5e', '#ec4899'];
+      const teamColorMap = {
+        'Bao Bui': '#f59e0b',
+        'Cận VIP': '#06b6d4',
+        'SNAL': '#a855f7',
+        'FC K': '#10b981',
+        'Ninh SS': '#2563eb', // Xanh Samsung Hoàng Gia
+        'Ngocdao': '#f43f5e',
+        'XOẠC-UNITED': '#ec4899'
+      };
       const labels = Array.from({ length: DATA.current_gw }, (_, i) => `GW${i + 1}`);
-      const datasets = Object.entries(DATA.rank_progression).map(([team, ranks], idx) => ({
-        label: team,
-        data: ranks,
-        borderColor: colors[idx % colors.length],
-        backgroundColor: colors[idx % colors.length],
-        borderWidth: idx <= 1 ? 3 : 1.5,
-        tension: 0.25
-      }));
+      const datasets = Object.entries(DATA.rank_progression).map(([team, ranks], idx) => {
+        const col = teamColorMap[team] || '#94a3b8';
+        return {
+          label: team === 'Ninh SS' ? 'Ninh SS (Xanh Samsung)' : team,
+          data: ranks,
+          borderColor: col,
+          backgroundColor: col,
+          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 3 : 1.5,
+          tension: 0.25
+        };
+      });
 
       rankChart = new Chart(ctx, {
         type: 'line',
@@ -1206,6 +1245,8 @@
     }
     function openHaoTamModal() { document.getElementById('haotam-modal').classList.remove('hidden'); }
     function closeHaoTamModal() { document.getElementById('haotam-modal').classList.add('hidden'); }
+    function openSamsungModal() { document.getElementById('samsung-modal').classList.remove('hidden'); }
+    function closeSamsungModal() { document.getElementById('samsung-modal').classList.add('hidden'); }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('fpl_vip_auth') === 'true') isVipUnlocked = true;

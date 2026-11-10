@@ -204,7 +204,8 @@ def main():
         t2_pts = sum((h['points'] - h['event_transfers_cost']) for h in cur_list if 11 <= h['event'] <= 19)
         # Turn 1 stats (GW1 - GW10)
         t1_list = [h for h in cur_list if h['event'] <= 10]
-        best_gw_item = max(t1_list, key=lambda x: x['points']) if t1_list else {'points': 0, 'event': 0}
+        best_gw_item = max(t1_list, key=lambda x: x['points'] - x['event_transfers_cost']) if t1_list else {'points': 0, 'event': 0, 'event_transfers_cost': 0}
+        worst_gw_item = min(t1_list, key=lambda x: x['points'] - x['event_transfers_cost']) if t1_list else {'points': 0, 'event': 0, 'event_transfers_cost': 0}
         bench_wasted = sum(h.get('points_on_bench', 0) for h in cur_list)
         total_hits = sum(h.get('event_transfers_cost', 0) for h in cur_list)
         last_val = round(cur_list[-1].get('value', 1000) / 10, 1) if cur_list else 100.0
@@ -224,8 +225,10 @@ def main():
                 "bb": "bboost" in used_chip_keys,
                 "fh": "freehit" in used_chip_keys
             },
-            "best_gw": best_gw_item['points'],
+            "best_gw": best_gw_item['points'] - best_gw_item['event_transfers_cost'],
             "best_gw_num": best_gw_item['event'],
+            "worst_gw": worst_gw_item['points'] - worst_gw_item['event_transfers_cost'],
+            "worst_gw_num": worst_gw_item['event'],
             "bench_wasted": bench_wasted,
             "total_hits": total_hits,
             "team_value": last_val
@@ -240,12 +243,14 @@ def main():
 
     # Turn 1 Superlatives / Awards
     top_gw_king = max(l124_standings, key=lambda x: x['best_gw'])
+    worst_gw_king = min(l124_standings, key=lambda x: x['worst_gw'])
     bench_king = max(l124_standings, key=lambda x: x['bench_wasted'])
     hit_king = max(l124_standings, key=lambda x: x['total_hits'])
     richest_club = max(l124_standings, key=lambda x: x['team_value'])
 
     turn1_awards = {
         "best_gw": {"team": top_gw_king['team'], "manager": top_gw_king['manager'], "val": f"{top_gw_king['best_gw']}đ (GW{top_gw_king['best_gw_num']})"},
+        "worst_gw": {"team": worst_gw_king['team'], "manager": worst_gw_king['manager'], "val": f"{worst_gw_king['worst_gw']}đ (GW{worst_gw_king['worst_gw_num']})"},
         "bench_king": {"team": bench_king['team'], "manager": bench_king['manager'], "val": f"{bench_king['bench_wasted']}đ"},
         "hit_king": {"team": hit_king['team'], "manager": hit_king['manager'], "val": f"-{hit_king['total_hits']}đ"},
         "richest": {"team": richest_club['team'], "manager": richest_club['manager'], "val": f"£{richest_club['team_value']}m"}
