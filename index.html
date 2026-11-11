@@ -105,6 +105,10 @@
     </div>
 
     <div class="flex items-center space-x-2">
+      <button onclick="copyBanterReport()" id="btn-copy-banter" class="text-xs bg-gradient-to-r from-amber-500/20 to-rose-500/20 hover:from-amber-500/35 hover:to-rose-500/35 text-amber-300 px-3 py-2 rounded-xl border border-amber-500/40 flex items-center gap-1.5 transition shadow-md">
+        <i class="fa-solid fa-bullhorn text-amber-400"></i>
+        <span class="font-extrabold text-xs hidden sm:inline" id="copy-banter-label">Copy Bản Tin Khịa</span>
+      </button>
       <button onclick="handleVipButton()" class="text-xs bg-slate-900/90 hover:bg-slate-800 text-slate-200 px-3 py-2 rounded-xl border border-amber-500/40 flex items-center gap-1.5 transition shadow-md">
         <i class="fa-solid fa-lock text-amber-400" id="vip-icon"></i>
         <span id="vip-label" class="font-bold text-xs">VIP Vault</span>
@@ -114,6 +118,14 @@
       </button>
     </div>
   </header>
+
+  <!-- LIVE BANTER BROADCAST TICKER -->
+  <div class="bg-slate-950/90 border-b border-slate-800/80 px-4 py-1.5 overflow-hidden">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 text-[11px]">
+      <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40 font-black text-[9px] uppercase tracking-wider shrink-0">🎙️ ĐÀI 124+</span>
+      <div id="live-banter-ticker" class="text-slate-300 font-medium truncate">Đang tải điểm tin nóng giải 124+ | NÁT...</div>
+    </div>
+  </div>
 
   <!-- MAIN CONTAINER -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-3 sm:p-6 space-y-5">
@@ -341,6 +353,62 @@
         </div>
 
       </div>
+
+      <!-- KHU VỰC MỚI: CỖ MÁY THỜI GIAN TỪNG VÒNG (GW REPLAY) & HỒ SƠ NỖI ĐAU 7 HLV -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- CỖ MÁY THỜI GIAN VÒNG ĐẤU (GW1 - GW10 REPLAY RACE) -->
+        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-emerald-500/25 flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-film text-emerald-400"></i> CỖ MÁY THỜI GIAN VÒNG ĐẤU (GW REPLAY)
+                </h3>
+                <p class="text-[11px] text-slate-400">Bấm chọn vòng hoặc bấm <b class="text-emerald-300">Tua Tự Động</b> để xem lại cuộc đua từng tuần</p>
+              </div>
+              <button onclick="toggleGwReplayAuto()" id="btn-gw-replay" class="px-3 py-1 rounded-xl bg-emerald-600/25 hover:bg-emerald-600/40 text-emerald-300 border border-emerald-500/40 text-[11px] font-extrabold transition flex items-center gap-1.5">
+                <i class="fa-solid fa-play" id="gw-replay-icon"></i><span id="gw-replay-label">Tua GW1 → 10</span>
+              </button>
+            </div>
+            <!-- GW PILLS SELECTOR -->
+            <div id="gw-replay-pills" class="flex flex-wrap gap-1.5 mb-3"></div>
+            <!-- MVP & WORST OF SELECTED GW -->
+            <div id="gw-replay-highlights" class="grid grid-cols-2 gap-2.5 mb-3"></div>
+            <!-- BAR RACE FOR SELECTED GW -->
+            <div id="gw-replay-bars" class="space-y-2"></div>
+          </div>
+        </div>
+
+        <!-- BẢNG GIẢI PHẪU NỖI ĐAU & ĐỘ CHỊU CHƠI 7 HLV (PAIN & GLORY INDEX) -->
+        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-rose-500/25 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-fire-flame-curved text-rose-400"></i> HỒ SƠ NỖI ĐAU & ĐỘ CHỊU CHƠI CHẶNG 1
+                </h3>
+                <p class="text-[11px] text-slate-400">Ai bỏ quên nhiều điểm dự bị nhất? Ai vung tay trừ Hit? Đỉnh & Đáy từng HLV</p>
+              </div>
+              <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-950/70 text-rose-300 border border-rose-500/30 font-bold">Số Liệu Thật 100%</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-slate-300">
+                <thead class="bg-slate-950/70 text-[10px] text-slate-400 uppercase border-b border-slate-800">
+                  <tr>
+                    <th class="p-2">HLV / Đội</th>
+                    <th class="p-2 text-center">🚀 Đỉnh Vòng</th>
+                    <th class="p-2 text-center">🕳️ Đáy Vòng</th>
+                    <th class="p-2 text-right">🪑 Rơi Ghế Sub</th>
+                    <th class="p-2 text-right">💸 Trừ Hit</th>
+                  </tr>
+                </thead>
+                <tbody id="pain-glory-tbody" class="divide-y divide-slate-800/50"></tbody>
+              </table>
+            </div>
+          </div>
+          <div id="pain-glory-insight" class="mt-3 p-2.5 rounded-xl bg-slate-950/90 border border-slate-800 text-[11px] text-slate-300"></div>
+        </div>
+      </div>
     </div>
 
     <!-- TAB 2: 🏟️ SA BÀN CHIẾN THUẬT SÂN CỎ SVG (DREAM TEAM & 7 ĐỘI HÌNH 124+) -->
@@ -446,6 +514,60 @@
             <div id="pitch-club-exposure" class="flex flex-wrap gap-2 text-xs"></div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- KHU VỰC MỚI TRONG TAB SA BÀN: ĐÀI SO GĂNG ĐỘI HÌNH 1v1 & BẢN ĐỒ SỞ HỮU NỘI BỘ 124+ -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- CỘT TRÁI (7 COLS): ĐÀI SO GĂNG ĐỘI HÌNH 1v1 (SQUAD CLASH & DIFFERENTIALS) -->
+        <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 border border-cyan-500/30 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+                <i class="fa-solid fa-bolt-lightning text-amber-400"></i> ĐÀI SO GĂNG ĐỘI HÌNH 1v1 (SQUAD CLASH)
+              </h3>
+              <p class="text-[11px] text-slate-400">Bóc tách <b>Hàng Độc Khác Biệt (Differentials)</b> và <b>Hàng Trùng Máu (Template)</b> giữa bất kỳ 2 HLV nào</p>
+            </div>
+            <div class="flex items-center gap-1.5 text-[11px]">
+              <select id="clash-manager-a" onchange="renderSquadClash()" class="bg-slate-950 border border-cyan-500/40 text-cyan-300 font-bold rounded-xl px-2.5 py-1.5"></select>
+              <span class="text-slate-500 font-black">VS</span>
+              <select id="clash-manager-b" onchange="renderSquadClash()" class="bg-slate-950 border border-amber-500/40 text-amber-300 font-bold rounded-xl px-2.5 py-1.5"></select>
+            </div>
+          </div>
+          <div id="clash-summary-banner" class="p-3 rounded-xl bg-slate-950/90 border border-slate-800 text-xs"></div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+            <div class="bg-slate-950/80 rounded-xl p-3 border border-cyan-500/30">
+              <p class="text-[10px] font-black uppercase tracking-wider text-cyan-300 mb-2" id="clash-col-a-title">🔥 Hàng Độc Bên A</p>
+              <div id="clash-diff-a" class="space-y-1.5"></div>
+            </div>
+            <div class="bg-slate-950/80 rounded-xl p-3 border border-slate-700/80">
+              <p class="text-[10px] font-black uppercase tracking-wider text-slate-300 mb-2" id="clash-col-shared-title">🤝 Trùng Máu (Khiên)</p>
+              <div id="clash-shared" class="space-y-1.5"></div>
+            </div>
+            <div class="bg-slate-950/80 rounded-xl p-3 border border-amber-500/30">
+              <p class="text-[10px] font-black uppercase tracking-wider text-amber-300 mb-2" id="clash-col-b-title">⚡ Hàng Độc Bên B</p>
+              <div id="clash-diff-b" class="space-y-1.5"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI (5 COLS): BẢN ĐỒ META NỘI BỘ 124+ (QUỐC DÂN VS ĐỘC DƯỢC & BĂNG CAPTAIN) -->
+        <div class="lg:col-span-5 vip-card rounded-2xl p-4 sm:p-5 border border-purple-500/30 space-y-3">
+          <div>
+            <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
+              <i class="fa-solid fa-dna text-purple-400"></i> META NỘI BỘ 124+ (QUỐC DÂN & ĐỘC DƯỢC)
+            </h3>
+            <p class="text-[11px] text-slate-400">Quét toàn bộ 105 cầu thủ trong tay 7 HLV để lộ diện bài chung & bài tẩy</p>
+          </div>
+          <div id="league-meta-captains" class="p-3 rounded-xl bg-slate-950/90 border border-amber-500/30 space-y-1.5 text-xs"></div>
+          <div class="space-y-2 text-xs">
+            <p class="text-[10px] font-black uppercase tracking-wider text-emerald-400"><i class="fa-solid fa-users mr-1"></i>Hàng Quốc Dân Giải 124+ (Từ 4/7 HLV Sở Hữu)</p>
+            <div id="league-meta-template" class="space-y-1.5 max-h-44 overflow-y-auto pr-1"></div>
+          </div>
+          <div class="space-y-2 text-xs">
+            <p class="text-[10px] font-black uppercase tracking-wider text-rose-400"><i class="fa-solid fa-bomb mr-1"></i>Con Bài Tẩy Độc Dược (1–2/7 HLV Ôm Mà Nổ To)</p>
+            <div id="league-meta-diffs" class="space-y-1.5 max-h-44 overflow-y-auto pr-1"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -745,10 +867,16 @@
     let turnChart = null;
     let allSeasonChart = null;
 
+    let selectedReplayGw = 10;
+    let gwReplayTimer = null;
+    let banterTickerTimer = null;
+
     function renderAll() {
       if (!DATA) return;
       document.getElementById('sync-timestamp').textContent = `Đồng bộ tự động: ${DATA.updated_at} • Sau GW${DATA.current_gw}`;
+      selectedReplayGw = DATA.current_gw || 10;
       startCountdown();
+      startBanterTicker();
       renderHeroCards();
       renderTurn1Awards();
       setStandingMode(standingMode);
@@ -756,16 +884,370 @@
       renderLeagueIOC();
       renderTurnChart();
       renderAllSeasonChart();
+      renderGwReplay(selectedReplayGw);
+      renderPainGloryTable();
       populateSimManagers();
       runWhatIfSim();
       populatePitchSelector();
       renderPitchView();
+      populateClashManagers();
+      renderSquadClash();
+      renderLeagueOwnershipMeta();
       populateRadarSelectors();
       renderWatchdog();
       renderCaptaincy();
       renderMarketTable();
       renderFixtureTable();
       renderVipVault();
+    }
+
+    function getBanterLines() {
+      if (!DATA || !DATA.league_124) return [];
+      const l = DATA.league_124;
+      const top1 = l[0];
+      const top2 = l[1];
+      const ninh = l.find(x => x.team === 'Ninh SS') || l[4];
+      const haoTam = l.filter(x => x.is_last).map(x => `${x.team} (${x.manager})`).join(' & ');
+      const maxBench = [...l].sort((a, b) => (b.bench_wasted || 0) - (a.bench_wasted || 0))[0];
+      const maxHit = [...l].sort((a, b) => (b.total_hits || 0) - (a.total_hits || 0))[0];
+      return [
+        `🏆 Chốt sổ Chặng 1: ${top1.team} (${top1.total}đ) lên ngôi nhờ nổ Bench Boost GW10 • ${top2.team} (${top2.total}đ) bám sát và còn nguyên 3 Chip hạng nặng (TC, BB, FH) cho Chặng 2!`,
+        `🎖️ Vinh danh hai Nhà Hảo Tâm Turn 1: ${haoTam} cùng chốt sổ 535đ — cảm ơn hai sếp tài trợ kèo tổng kết!`,
+        `📱 Đặc quyền Xanh Samsung (#2563EB): ${ninh.team} giữ kỷ lục vô tiền khoáng hậu ${ninh.best_gw}đ ở GW${ninh.best_gw_num} trước khi hạ cánh ở hạng #${ninh.rank} (${ninh.total}đ).`,
+        `🪑 Chúa tể bỏ rơi ghế dự bị: ${maxBench.team} để mốc tới ${maxBench.bench_wasted}đ trên băng ghế sub sau 10 vòng!`,
+        `💸 Đam mê đi chợ trừ Hit: ${maxHit.team} đã đốt tổng cộng -${maxHit.total_hits}đ tiền chuyển nhượng trong Chặng 1!`,
+        `⚡ Chặng 2 (GW11 – GW19) chính thức RESET điểm chặng về 0 – 0! Mọi HLV phải xả sạch 4 Chip Phase 1 trước Deadline GW19!`
+      ];
+    }
+
+    function startBanterTicker() {
+      if (banterTickerTimer) clearInterval(banterTickerTimer);
+      const lines = getBanterLines();
+      const el = document.getElementById('live-banter-ticker');
+      if (!el || !lines.length) return;
+      let idx = 0;
+      el.textContent = lines[0];
+      banterTickerTimer = setInterval(() => {
+        idx = (idx + 1) % lines.length;
+        el.textContent = lines[idx];
+      }, 4800);
+    }
+
+    function copyBanterReport() {
+      if (!DATA) return;
+      const l = DATA.league_124;
+      const haoTam = l.filter(x => x.is_last).map(x => `${x.team} (${x.manager})`).join(' & ');
+      const rows = l.map(s => {
+        const chipStr = (s.chips && s.chips.length) ? s.chips.join(', ') : 'Chưa dùng';
+        return `#${s.rank} ${s.team} (${s.manager}): ${s.total}đ (GW10: ${s.gw_pts}đ | Rơi sub: ${s.bench_wasted}đ | Chip: ${chipStr})`;
+      }).join('\n');
+      const text = [
+        `⚡ BẢN TIN ĐÀI PHÁT THANH 124+ | NÁT (SAU GW${DATA.current_gw}) ⚡`,
+        `━━━━━━━━━━━━━━━━━━━━━━`,
+        rows,
+        `━━━━━━━━━━━━━━━━━━━━━━`,
+        `🏆 Quán Quân Chặng 1: ${l[0].team} (${l[0].total}đ)`,
+        `🥈 Á Quân Chặng 1: ${l[1].team} (${l[1].total}đ — Còn nguyên 3 Chip TC, BB, FH!)`,
+        `🎖️ Nhà Hảo Tâm Turn 1: ${haoTam} (535đ)`,
+        `🔥 Chặng 2 (GW11–GW19): RESET ĐIỂM CHẶNG 0 – 0! Anh em nhớ xả hết Chip Phase 1 trước GW19!`,
+        `👉 Soi biểu đồ & so găng đội hình 1v1 tại: https://kupperman.github.io/fpl-moneyball-pwa/`
+      ].join('\n');
+
+      navigator.clipboard.writeText(text).then(() => {
+        const lbl = document.getElementById('copy-banter-label');
+        if (lbl) {
+          const old = lbl.textContent;
+          lbl.textContent = 'Đã Copy Kèo Zalo!';
+          setTimeout(() => { lbl.textContent = old; }, 2200);
+        }
+      });
+    }
+
+    function renderGwReplay(gwNum) {
+      if (!DATA || !DATA.gw_points_progression) return;
+      selectedReplayGw = gwNum;
+      const maxGw = DATA.current_gw || 10;
+      const pillsEl = document.getElementById('gw-replay-pills');
+      if (pillsEl) {
+        pillsEl.innerHTML = Array.from({ length: maxGw }, (_, i) => {
+          const g = i + 1;
+          const active = g === gwNum;
+          return `<button onclick="stopGwReplayAuto(); renderGwReplay(${g})" class="px-2.5 py-1 rounded-lg text-[10px] font-mono-numbers font-extrabold border transition ${active ? 'bg-emerald-500 text-slate-950 border-emerald-300 shadow-md shadow-emerald-500/30' : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'}">GW${g}</button>`;
+        }).join('');
+      }
+
+      const gwIdx = gwNum - 1;
+      const entries = DATA.league_124.map(s => {
+        const pts = (DATA.gw_points_progression[s.team] || [])[gwIdx] || 0;
+        const cumPts = (DATA.points_progression && DATA.points_progression[s.team]) ? (DATA.points_progression[s.team][gwIdx] || 0) : 0;
+        const rnk = (DATA.rank_progression && DATA.rank_progression[s.team]) ? (DATA.rank_progression[s.team][gwIdx] || '-') : '-';
+        return { team: s.team, manager: s.manager, pts, cumPts, rnk, color: TEAM_COLOR_MAP[s.team] || '#94a3b8' };
+      }).sort((a, b) => b.pts - a.pts);
+
+      const mvp = entries[0];
+      const worst = entries[entries.length - 1];
+      const maxPts = Math.max(...entries.map(x => x.pts), 1);
+
+      const hlEl = document.getElementById('gw-replay-highlights');
+      if (hlEl && mvp && worst) {
+        hlEl.innerHTML = `
+          <div class="p-2.5 rounded-xl bg-emerald-950/25 border border-emerald-500/40 flex items-center justify-between">
+            <div>
+              <span class="text-[9px] font-black uppercase text-emerald-400 block">👑 Vua Vòng GW${gwNum}</span>
+              <b class="text-xs text-white">${mvp.team}</b> <span class="text-[10px] text-slate-400">(${mvp.manager})</span>
+            </div>
+            <span class="text-sm font-black font-mono-numbers text-emerald-300">${mvp.pts}đ</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-rose-950/25 border border-rose-500/40 flex items-center justify-between">
+            <div>
+              <span class="text-[9px] font-black uppercase text-rose-400 block">💀 Hấp Hối GW${gwNum}</span>
+              <b class="text-xs text-white">${worst.team}</b> <span class="text-[10px] text-slate-400">(${worst.manager})</span>
+            </div>
+            <span class="text-sm font-black font-mono-numbers text-rose-300">${worst.pts}đ</span>
+          </div>
+        `;
+      }
+
+      const barsEl = document.getElementById('gw-replay-bars');
+      if (barsEl) {
+        barsEl.innerHTML = entries.map((e, idx) => {
+          const w = Math.max(14, Math.round((e.pts / maxPts) * 100));
+          return `
+            <div onclick="focusSpotlightTeam('${e.team}', false)" class="cursor-pointer group">
+              <div class="flex justify-between items-center text-[11px] mb-0.5">
+                <span class="font-bold text-white group-hover:text-cyan-300 transition">${idx === 0 ? '🔥 ' : ''}${e.team} <span class="text-[9px] text-slate-400 font-normal">(Hạng #${e.rnk} • Tích lũy ${e.cumPts}đ)</span></span>
+                <span class="font-mono-numbers font-extrabold text-white">${e.pts}đ</span>
+              </div>
+              <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800/80">
+                <div class="h-full rounded-full transition-all duration-500" style="width:${w}%; background-color:${e.color}; box-shadow: 0 0 10px ${e.color}"></div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    function stopGwReplayAuto() {
+      if (gwReplayTimer) {
+        clearInterval(gwReplayTimer);
+        gwReplayTimer = null;
+      }
+      const icon = document.getElementById('gw-replay-icon');
+      const lbl = document.getElementById('gw-replay-label');
+      if (icon) icon.className = 'fa-solid fa-play';
+      if (lbl) lbl.textContent = 'Tua GW1 → 10';
+    }
+
+    function toggleGwReplayAuto() {
+      if (gwReplayTimer) {
+        stopGwReplayAuto();
+        return;
+      }
+      const maxGw = DATA?.current_gw || 10;
+      let cur = 1;
+      renderGwReplay(cur);
+      const icon = document.getElementById('gw-replay-icon');
+      const lbl = document.getElementById('gw-replay-label');
+      if (icon) icon.className = 'fa-solid fa-pause';
+      if (lbl) lbl.textContent = 'Đang Tua...';
+      gwReplayTimer = setInterval(() => {
+        cur++;
+        if (cur > maxGw) {
+          stopGwReplayAuto();
+          return;
+        }
+        renderGwReplay(cur);
+      }, 1100);
+    }
+
+    function renderPainGloryTable() {
+      const tbody = document.getElementById('pain-glory-tbody');
+      const insightEl = document.getElementById('pain-glory-insight');
+      if (!tbody || !DATA) return;
+
+      const maxBench = Math.max(...DATA.league_124.map(x => x.bench_wasted || 0));
+      const maxHit = Math.max(...DATA.league_124.map(x => x.total_hits || 0));
+
+      tbody.innerHTML = DATA.league_124.map(s => {
+        const col = TEAM_COLOR_MAP[s.team] || '#94a3b8';
+        const isBenchKing = s.bench_wasted === maxBench;
+        const isHitKing = s.total_hits === maxHit && maxHit > 0;
+        return `
+          <tr onclick="focusSpotlightTeam('${s.team}', true)" class="hover:bg-slate-800/40 cursor-pointer transition">
+            <td class="p-2">
+              <div class="flex items-center gap-1.5 font-extrabold text-white">
+                <span class="w-2 h-2 rounded-full" style="background-color:${col}"></span>${s.team}
+              </div>
+              <span class="text-[10px] text-slate-400 pl-3.5">Giá đội: £${s.team_value}m</span>
+            </td>
+            <td class="p-2 text-center font-mono-numbers">
+              <span class="px-2 py-0.5 rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30 font-bold text-[10px]">${s.best_gw}đ (GW${s.best_gw_num})</span>
+            </td>
+            <td class="p-2 text-center font-mono-numbers">
+              <span class="px-2 py-0.5 rounded bg-rose-950/70 text-rose-300 border border-rose-500/30 font-bold text-[10px]">${s.worst_gw}đ (GW${s.worst_gw_num})</span>
+            </td>
+            <td class="p-2 text-right font-mono-numbers font-black ${isBenchKing ? 'text-purple-300' : 'text-slate-200'}">
+              ${isBenchKing ? '🪑 ' : ''}${s.bench_wasted}đ
+            </td>
+            <td class="p-2 text-right font-mono-numbers font-bold ${isHitKing ? 'text-amber-400' : (s.total_hits > 0 ? 'text-rose-400' : 'text-emerald-400')}">
+              ${s.total_hits > 0 ? '-' + s.total_hits + 'đ' : '0đ'}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      if (insightEl) {
+        const totalBenchAll = DATA.league_124.reduce((a, b) => a + (b.bench_wasted || 0), 0);
+        const totalHitsAll = DATA.league_124.reduce((a, b) => a + (b.total_hits || 0), 0);
+        insightEl.innerHTML = `💡 <b>Tổng kết độ phung phí cả giải 124+:</b> 7 HLV đã bỏ quên tổng cộng <b class="text-purple-300 font-mono-numbers">${totalBenchAll} điểm</b> trên ghế dự bị và nộp cho FPL <b class="text-amber-400 font-mono-numbers">-${totalHitsAll} điểm</b> tiền đi chợ (-Hit) trong Chặng 1!`;
+      }
+    }
+
+    function populateClashManagers() {
+      const sA = document.getElementById('clash-manager-a');
+      const sB = document.getElementById('clash-manager-b');
+      if (!sA || !sB || !DATA) return;
+      const opts = DATA.league_124.map(s => `<option value="${s.team}">${s.team} (#${s.rank})</option>`).join('');
+      sA.innerHTML = opts;
+      sB.innerHTML = opts;
+      if (DATA.league_124.length >= 2) {
+        sA.value = DATA.league_124[1].team; // Cận VIP
+        sB.value = DATA.league_124[0].team; // Bao Bui
+      }
+    }
+
+    function renderSquadClash() {
+      if (!DATA || !DATA.league_124_squads) return;
+      const teamA = document.getElementById('clash-manager-a')?.value || DATA.league_124[1]?.team;
+      const teamB = document.getElementById('clash-manager-b')?.value || DATA.league_124[0]?.team;
+      const sqA = DATA.league_124_squads[teamA];
+      const sqB = DATA.league_124_squads[teamB];
+      if (!sqA || !sqB) return;
+
+      const flattenStarters = (sq) => [...(sq.starting.GKP || []), ...(sq.starting.DEF || []), ...(sq.starting.MID || []), ...(sq.starting.FWD || [])];
+      const startA = flattenStarters(sqA);
+      const startB = flattenStarters(sqB);
+
+      const idsA = new Set(startA.map(p => p.id));
+      const idsB = new Set(startB.map(p => p.id));
+
+      const diffA = startA.filter(p => !idsB.has(p.id)).sort((a, b) => (b.eff_gw_pts ?? b.gw_pts) - (a.eff_gw_pts ?? a.gw_pts));
+      const diffB = startB.filter(p => !idsA.has(p.id)).sort((a, b) => (b.eff_gw_pts ?? b.gw_pts) - (a.eff_gw_pts ?? a.gw_pts));
+      const shared = startA.filter(p => idsB.has(p.id)).map(pA => {
+        const pB = startB.find(x => x.id === pA.id);
+        return { ...pA, capA: pA.is_captain, capB: pB?.is_captain };
+      });
+
+      const sumEff = (arr) => arr.reduce((s, p) => s + (p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts), 0);
+      const ptsDiffA = sumEff(diffA);
+      const ptsDiffB = sumEff(diffB);
+      const swing = ptsDiffA - ptsDiffB;
+
+      document.getElementById('clash-col-a-title').textContent = `🔥 Hàng Độc ${teamA} (${diffA.length} cầu thủ • ${ptsDiffA}đ)`;
+      document.getElementById('clash-col-shared-title').textContent = `🤝 Trùng Máu (${shared.length}/11 vị trí)`;
+      document.getElementById('clash-col-b-title').textContent = `⚡ Hàng Độc ${teamB} (${diffB.length} cầu thủ • ${ptsDiffB}đ)`;
+
+      const bannerEl = document.getElementById('clash-summary-banner');
+      if (bannerEl) {
+        const capA = startA.find(x => x.is_captain);
+        const capB = startB.find(x => x.is_captain);
+        const swingBadge = swing > 0
+          ? `<span class="text-cyan-300 font-black"> Hàng độc ${teamA} gác +${swing}đ</span>`
+          : (swing < 0 ? `<span class="text-amber-300 font-black"> Hàng độc ${teamB} gác +${Math.abs(swing)}đ</span>` : `<span class="text-emerald-300 font-black">Hàng độc 2 bên hòa điểm!</span>`);
+        bannerEl.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span>⚔️ <b>Độ giống nhau:</b> Trùng <b>${shared.length}/11</b> vị trí đá chính (${Math.round((shared.length/11)*100)}%) • ${swingBadge}</span>
+            <span class="font-mono-numbers text-[11px] text-slate-300">Cap: <b class="text-cyan-300">${capA ? capA.name + ' (' + capA.eff_gw_pts + 'đ)' : '-'}</b> vs <b class="text-amber-300">${capB ? capB.name + ' (' + capB.eff_gw_pts + 'đ)' : '-'}</b></span>
+          </div>
+        `;
+      }
+
+      const itemHtml = (p, accent) => {
+        const pts = p.eff_gw_pts !== undefined ? p.eff_gw_pts : p.gw_pts;
+        return `
+          <div class="p-2 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+            <div class="min-w-0">
+              <p class="font-bold text-white truncate">${p.name} ${p.is_captain ? '<span class="text-amber-400 font-black">(C)</span>' : ''}</p>
+              <p class="text-[10px] text-slate-400">${p.pos} • ${p.team} • £${p.cost}m</p>
+            </div>
+            <span class="font-mono-numbers font-black ${pts >= 6 ? accent : 'text-slate-300'}">${pts}đ</span>
+          </div>
+        `;
+      };
+
+      document.getElementById('clash-diff-a').innerHTML = diffA.length ? diffA.map(p => itemHtml(p, 'text-cyan-300')).join('') : '<p class="text-slate-500 italic">Không có hàng khác biệt</p>';
+      document.getElementById('clash-diff-b').innerHTML = diffB.length ? diffB.map(p => itemHtml(p, 'text-amber-300')).join('') : '<p class="text-slate-500 italic">Không có hàng khác biệt</p>';
+      document.getElementById('clash-shared').innerHTML = shared.length ? shared.map(p => `
+        <div class="p-2 rounded-lg bg-slate-900/60 border border-slate-800/80 flex items-center justify-between">
+          <div class="min-w-0">
+            <p class="font-bold text-slate-200 truncate">${p.name} ${p.capA ? '<span class="text-cyan-400">(C-' + teamA + ')</span>' : ''} ${p.capB ? '<span class="text-amber-400">(C-' + teamB + ')</span>' : ''}</p>
+            <p class="text-[10px] text-slate-500">${p.pos} • ${p.team}</p>
+          </div>
+          <span class="font-mono-numbers font-bold text-slate-300">${p.gw_pts}đ</span>
+        </div>
+      `).join('') : '<p class="text-slate-500 italic">Không trùng cầu thủ nào</p>';
+    }
+
+    function renderLeagueOwnershipMeta() {
+      if (!DATA || !DATA.league_124_squads) return;
+      const playerMap = {};
+      const capChoices = [];
+
+      DATA.league_124.forEach(s => {
+        const sq = DATA.league_124_squads[s.team];
+        if (!sq) return;
+        const starters = [...(sq.starting.GKP || []), ...(sq.starting.DEF || []), ...(sq.starting.MID || []), ...(sq.starting.FWD || [])];
+        const all15 = [...starters, ...(sq.bench || [])];
+        starters.forEach(p => {
+          if (p.is_captain) capChoices.push({ managerTeam: s.team, name: p.name, club: p.team, effPts: p.eff_gw_pts ?? (p.gw_pts * 2) });
+        });
+        all15.forEach(p => {
+          if (!playerMap[p.id]) {
+            playerMap[p.id] = { id: p.id, name: p.name, club: p.team, pos: p.pos, pts: p.pts, gw_pts: p.gw_pts, cost: p.cost, owners: [] };
+          }
+          playerMap[p.id].owners.push(s.team);
+        });
+      });
+
+      const allPlayers = Object.values(playerMap);
+      const templates = allPlayers.filter(p => p.owners.length >= 4).sort((a, b) => b.owners.length - a.owners.length || b.pts - a.pts);
+      const diffs = allPlayers.filter(p => p.owners.length <= 2 && p.pts >= 42).sort((a, b) => b.pts - a.pts).slice(0, 8);
+
+      const capEl = document.getElementById('league-meta-captains');
+      if (capEl) {
+        capEl.innerHTML = `
+          <p class="text-[10px] font-black uppercase tracking-wider text-amber-400"><i class="fa-solid fa-crown mr-1"></i>Lựa Chọn Băng Captain GW10 Của 7 HLV</p>
+          <div class="flex flex-wrap gap-1.5">
+            ${capChoices.map(c => `<span class="px-2 py-0.5 rounded-lg bg-slate-900 border border-amber-500/30 text-[10px]"><b>${c.managerTeam}:</b> <span class="text-amber-300 font-bold">${c.name}</span> <span class="font-mono-numbers text-emerald-400">(${c.effPts}đ)</span></span>`).join('')}
+          </div>
+        `;
+      }
+
+      const tplEl = document.getElementById('league-meta-template');
+      if (tplEl) {
+        tplEl.innerHTML = templates.map(p => `
+          <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <p class="font-bold text-white truncate">${p.name} <span class="text-[10px] text-cyan-400">(${p.club} • ${p.pts}đ mùa)</span></p>
+              <p class="text-[10px] text-slate-400 truncate">Sở hữu: ${p.owners.join(', ')}</p>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.owners.length}/7 HLV</span>
+          </div>
+        `).join('');
+      }
+
+      const diffEl = document.getElementById('league-meta-diffs');
+      if (diffEl) {
+        diffEl.innerHTML = diffs.map(p => `
+          <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between gap-2">
+            <div class="min-w-0">
+              <p class="font-bold text-white truncate">${p.name} <span class="text-[10px] text-rose-400">(${p.club} • £${p.cost}m)</span></p>
+              <p class="text-[10px] text-slate-400 truncate">Hàng riêng của: <b class="text-amber-300">${p.owners.join(', ')}</b></p>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.pts}đ (${p.owners.length}/7)</span>
+          </div>
+        `).join('');
+      }
     }
 
     function startCountdown() {
