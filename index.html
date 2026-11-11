@@ -29,21 +29,29 @@
   <style>
     * { font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
     .font-mono-numbers { font-family: 'JetBrains Mono', monospace; }
-    body { background-color: #060911; color: #f1f5f9; -webkit-tap-highlight-color: transparent; }
+    body { background-color: #04070e; color: #f1f5f9; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
     .bg-ambient {
       position: fixed; inset: 0; z-index: -1;
-      background:
-        radial-gradient(circle at 10% 12%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
-        radial-gradient(circle at 50% 85%, rgba(16, 185, 129, 0.08) 0%, transparent 55%),
-        #060911;
+      background-color: #04070e;
+      background-image:
+        radial-gradient(circle at 12% 10%, rgba(6, 182, 212, 0.16) 0%, transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(139, 92, 246, 0.15) 0%, transparent 42%),
+        radial-gradient(circle at 50% 88%, rgba(16, 185, 129, 0.10) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 36px 36px, 36px 36px;
     }
     .vip-card {
-      background: rgba(13, 19, 33, 0.78);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      background: linear-gradient(165deg, rgba(17, 25, 44, 0.86) 0%, rgba(9, 14, 26, 0.92) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 10px 32px -4px rgba(0, 0, 0, 0.72), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+    .vip-card:hover {
+      border-color: rgba(6, 182, 212, 0.28);
+      box-shadow: 0 14px 36px -4px rgba(0, 0, 0, 0.82), 0 0 24px -8px rgba(6, 182, 212, 0.22), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
     }
     .text-gold-gradient {
       background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
@@ -53,9 +61,16 @@
       background: linear-gradient(135deg, #a5f3fc 0%, #06b6d4 50%, #0891b2 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .vip-gold-glow { box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.35); border-color: rgba(245, 158, 11, 0.45); }
-    .vip-cyan-glow { box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35); border-color: rgba(6, 182, 212, 0.45); }
-    .vip-rose-glow { box-shadow: 0 0 20px -4px rgba(244, 63, 94, 0.35); border-color: rgba(244, 63, 94, 0.45); }
+    .vip-gold-glow { box-shadow: 0 0 28px -4px rgba(245, 158, 11, 0.38), inset 0 1px 0 0 rgba(254, 240, 138, 0.25); border-color: rgba(245, 158, 11, 0.5); }
+    .vip-cyan-glow { box-shadow: 0 0 28px -4px rgba(6, 182, 212, 0.38), inset 0 1px 0 0 rgba(165, 243, 252, 0.25); border-color: rgba(6, 182, 212, 0.5); }
+    .vip-rose-glow { box-shadow: 0 0 24px -4px rgba(244, 63, 94, 0.38), inset 0 1px 0 0 rgba(253, 164, 175, 0.22); border-color: rgba(244, 63, 94, 0.5); }
+    .legend-pill {
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .legend-pill:hover { transform: translateY(-1.5px) scale(1.03); }
+    .legend-pill:active { transform: scale(0.97); }
     .football-pitch {
       background: repeating-linear-gradient(to bottom, #15803d, #15803d 34px, #166534 34px, #166534 68px);
       border: 2px solid rgba(255, 255, 255, 0.3);
@@ -158,7 +173,7 @@
           </div>
 
           <div class="mt-4 pt-3 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
-            <span><i class="fa-solid fa-circle-info text-cyan-400 mr-1"></i> Bấm vào huy hiệu <b class="text-blue-400">Xanh Samsung</b> hoặc <b class="text-rose-400">Nhà Hảo Tâm</b> để xem chi tiết</span>
+            <span><i class="fa-solid fa-hand-pointer text-cyan-400 mr-1"></i> Bấm vào <b>dòng HLV bất kỳ</b> để khóa Spotlight quỹ đạo biểu đồ • Bấm huy hiệu <b class="text-blue-400">Xanh Samsung</b> / <b class="text-rose-400">Nhà Hảo Tâm</b> xem chi tiết</span>
             <span class="font-mono-numbers text-[10px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ID: 1473576</span>
           </div>
         </div>
@@ -238,19 +253,35 @@
         </div>
       </div>
 
+      <!-- THANH ĐIỀU KHIỂN SPOTLIGHT TƯƠNG TÁC BIỂU ĐỒ (HIỆN KHI CHỌN 1 HLV HOẶC LỌC) -->
+      <div id="chart-spotlight-banner" class="hidden vip-card rounded-2xl px-4 py-2.5 border border-cyan-400/50 bg-gradient-to-r from-cyan-950/50 via-slate-900/95 to-indigo-950/50 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-2 text-xs">
+          <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <span class="text-slate-300">Đang khóa tiêu điểm quỹ đạo: <b id="spotlight-team-label" class="text-cyan-300 font-black">...</b></span>
+        </div>
+        <div class="flex items-center gap-2 text-[11px]">
+          <button onclick="openSpotlightSquadOnPitch()" class="px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border border-emerald-500/40 font-bold transition">
+            <i class="fa-solid fa-shirt mr-1"></i>Soi Đội Hình GW10
+          </button>
+          <button onclick="resetAllChartsFilter()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold transition">
+            <i class="fa-solid fa-rotate-left mr-1"></i>Hiện Lại Cả 7 HLV
+          </button>
+        </div>
+      </div>
+
       <!-- FULL-WIDTH LUXURY ANALYTICS CHARTS SECTION (2 BIỂU ĐỒ CHUYÊN NGHIỆP: CÁC TURN & ALL SEASON) -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         
         <!-- BIỂU ĐỒ 1: PHÂN TÍCH THEO TỪNG CHẶNG (TURN 1 / TURN 2) -->
-        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-cyan-500/20">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+        <div id="charts-section-anchor" class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-cyan-500/25">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
             <div>
               <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
                 <i class="fa-solid fa-layer-group text-cyan-400"></i> BIỂU ĐỒ THEO CHẶNG (TURN ANALYTICS)
               </h3>
               <p class="text-[11px] text-slate-400" id="turn-chart-subtitle">Diễn biến thứ hạng qua từng vòng trong Chặng 1 (GW1 – GW10)</p>
             </div>
-            <div class="flex items-center space-x-1.5 text-[10px]">
+            <div class="flex flex-wrap items-center gap-1.5 text-[10px]">
               <select id="turn-chart-stage" onchange="renderTurnChart()" class="bg-slate-950 border border-slate-700 text-cyan-300 font-bold rounded-lg px-2 py-1">
                 <option value="turn1" selected>Chặng 1 (GW1–10)</option>
                 <option value="turn2">Chặng 2 (GW11–19)</option>
@@ -261,7 +292,16 @@
               </select>
             </div>
           </div>
-          <!-- SLEEK CUSTOM PILL LEGEND -->
+          <!-- THANH LỌC NHANH & HƯỚNG DẪN BẤM TỪNG NGƯỜI -->
+          <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2 text-[10px]">
+            <span class="text-slate-400"><i class="fa-solid fa-sliders text-cyan-400 mr-1"></i>Bấm tên để <b>bật/tắt dòng</b> • Bấm <i class="fa-solid fa-crosshairs text-cyan-300"></i> để <b>soi riêng 1 người</b>:</span>
+            <div class="flex items-center gap-1">
+              <button onclick="setChartPreset('turn', 'all')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 font-bold transition">Tất cả (7)</button>
+              <button onclick="setChartPreset('turn', 'top2')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 font-bold transition">Đua Top 2</button>
+              <button onclick="setChartPreset('turn', 'none')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-400 border border-slate-700 font-semibold transition">Ẩn hết</button>
+            </div>
+          </div>
+          <!-- SLEEK INTERACTIVE PILL LEGEND -->
           <div id="turn-chart-legend" class="flex flex-wrap gap-1.5 mb-3"></div>
           <div class="w-full h-64 sm:h-72">
             <canvas id="turnAnalyticsChart"></canvas>
@@ -269,8 +309,8 @@
         </div>
 
         <!-- BIỂU ĐỒ 2: ĐUA ĐIỂM TOÀN MÙA (ALL-SEASON CUMULATIVE RACE) -->
-        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-amber-500/20">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+        <div class="lg:col-span-6 vip-card rounded-2xl p-4 sm:p-5 border border-amber-500/25">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
             <div>
               <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
                 <i class="fa-solid fa-rocket text-amber-400"></i> BIỂU ĐỒ TOÀN MÙA (ALL-SEASON RACE)
@@ -284,7 +324,16 @@
               </select>
             </div>
           </div>
-          <!-- SLEEK CUSTOM PILL LEGEND -->
+          <!-- THANH LỌC NHANH & HƯỚNG DẪN BẤM TỪNG NGƯỜI -->
+          <div class="flex flex-wrap items-center justify-between gap-1.5 mb-2 text-[10px]">
+            <span class="text-slate-400"><i class="fa-solid fa-sliders text-amber-400 mr-1"></i>Bấm tên để <b>bật/tắt dòng</b> • Bấm <i class="fa-solid fa-crosshairs text-amber-300"></i> để <b>soi riêng 1 người</b>:</span>
+            <div class="flex items-center gap-1">
+              <button onclick="setChartPreset('all', 'all')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-amber-300 border border-amber-500/30 font-bold transition">Tất cả (7)</button>
+              <button onclick="setChartPreset('all', 'top2')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-cyan-300 border border-cyan-500/30 font-bold transition">Đua Top 2</button>
+              <button onclick="setChartPreset('all', 'none')" class="px-2 py-0.5 rounded-md bg-slate-900 hover:bg-slate-800 text-slate-400 border border-slate-700 font-semibold transition">Ẩn hết</button>
+            </div>
+          </div>
+          <!-- SLEEK INTERACTIVE PILL LEGEND -->
           <div id="all-chart-legend" class="flex flex-wrap gap-1.5 mb-3"></div>
           <div class="w-full h-64 sm:h-72">
             <canvas id="allSeasonChart"></canvas>
@@ -593,22 +642,22 @@
 
   </main>
 
-  <!-- BOTTOM BAR -->
-  <nav class="fixed bottom-0 left-0 right-0 z-50 vip-card border-t border-slate-800/80 py-2.5 px-4 flex justify-around items-center">
-    <button onclick="switchTab('standings')" id="nav-standings" class="flex flex-col items-center text-cyan-400 text-[11px] font-semibold transition">
-      <i class="fa-solid fa-trophy text-sm mb-1"></i><span>Đấu trường</span>
+  <!-- FLOATING GLASS DOCK NAVIGATION -->
+  <nav class="fixed bottom-3 left-1/2 -translate-x-1/2 w-[95%] max-w-xl z-50 vip-card rounded-2xl border border-cyan-500/25 py-2 px-3 flex justify-around items-center shadow-2xl">
+    <button onclick="switchTab('standings')" id="nav-standings" class="flex flex-col items-center text-cyan-400 text-[11px] font-bold px-3 py-1 rounded-xl transition">
+      <i class="fa-solid fa-trophy text-sm mb-0.5"></i><span>Đấu trường</span>
     </button>
-    <button onclick="switchTab('pitch')" id="nav-pitch" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
-      <i class="fa-solid fa-futbol text-sm mb-1"></i><span>Sa bàn 2D</span>
+    <button onclick="switchTab('pitch')" id="nav-pitch" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-bold px-3 py-1 rounded-xl transition">
+      <i class="fa-solid fa-futbol text-sm mb-0.5"></i><span>Sa bàn 2D</span>
     </button>
-    <button onclick="switchTab('market')" id="nav-market" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
-      <i class="fa-solid fa-chart-line text-sm mb-1"></i><span>Market Radar</span>
+    <button onclick="switchTab('market')" id="nav-market" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-bold px-3 py-1 rounded-xl transition">
+      <i class="fa-solid fa-chart-line text-sm mb-0.5"></i><span>Market Radar</span>
     </button>
-    <button onclick="switchTab('fixtures')" id="nav-fixtures" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-semibold transition">
-      <i class="fa-solid fa-calendar-days text-sm mb-1"></i><span>Heatmap 20 CLB</span>
+    <button onclick="switchTab('fixtures')" id="nav-fixtures" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 text-[11px] font-bold px-3 py-1 rounded-xl transition">
+      <i class="fa-solid fa-calendar-days text-sm mb-0.5"></i><span>Heatmap 20 CLB</span>
     </button>
-    <button onclick="switchTab('vip-vault')" id="nav-vip-vault" class="hidden flex-col items-center text-amber-400 text-[11px] font-semibold transition">
-      <i class="fa-solid fa-user-secret text-sm mb-1"></i><span>Tác chiến</span>
+    <button onclick="switchTab('vip-vault')" id="nav-vip-vault" class="hidden flex-col items-center text-amber-400 text-[11px] font-bold px-3 py-1 rounded-xl transition">
+      <i class="fa-solid fa-user-secret text-sm mb-0.5"></i><span>Tác chiến</span>
     </button>
   </nav>
 
@@ -853,6 +902,7 @@
         <tr>
           <th class="p-2.5 text-center w-12">Hạng</th>
           <th class="p-2.5">Đội Bóng / HLV</th>
+          <th class="p-2.5 text-center hidden sm:table-cell">Phong Độ 3 Vòng</th>
           <th class="p-2.5 text-right">GW10</th>
           <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
           <th class="p-2.5 text-right">Cách Top 1</th>
@@ -860,43 +910,72 @@
         </tr>
       `;
 
+      const maxPts = Math.max(...DATA.league_124.map(x => x.total), 1);
+      const minPts = Math.min(...DATA.league_124.map(x => x.total), 0);
+
       tbody.innerHTML = DATA.league_124.map(s => {
         let rankBadge = `#${s.rank}`;
-        let rowStyle = 'hover:bg-slate-800/30';
+        let rowStyle = 'hover:bg-slate-800/40 cursor-pointer';
         let teamNameStyle = 'text-white';
         let statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700">An Toàn</span>';
+        const teamCol = TEAM_COLOR_MAP[s.team] || '#94a3b8';
+        const isSpot = spotlightTeam === s.team;
 
         if (s.rank === 1) {
           rankBadge = '🥇 #1';
           statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-extrabold border border-amber-500/40">🏆 Quán Quân Turn 1</span>';
         } else if (s.rank === 2) {
           rankBadge = '🥈 #2';
-          rowStyle = 'bg-cyan-950/15 border-l-2 border-cyan-400 hover:bg-slate-800/30';
+          rowStyle = 'bg-cyan-950/15 border-l-2 border-cyan-400 hover:bg-cyan-950/30 cursor-pointer';
           statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-extrabold border border-cyan-500/40">🥈 Á Quân Turn 1</span>';
         } else if (s.rank === 3) {
           rankBadge = '🥉 #3';
           statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700">Top 3</span>';
         } else if (s.is_last) {
-          rowStyle = 'bg-rose-950/15 hover:bg-rose-950/25';
-          statusTag = '<span onclick="openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50">🎖️ Nhà Hảo Tâm Turn 1</span>';
+          rowStyle = 'bg-rose-950/15 hover:bg-rose-950/30 cursor-pointer';
+          statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50">🎖️ Nhà Hảo Tâm Turn 1</span>';
         }
 
         // ĐẶC QUYỀN MÀU XANH SAMSUNG CHO ANH NINH (NINH SS)
         if (s.team === 'Ninh SS') {
-          rowStyle = 'bg-blue-950/25 border-l-2 border-blue-500 hover:bg-blue-950/40';
+          rowStyle = 'bg-blue-950/25 border-l-2 border-blue-500 hover:bg-blue-950/45 cursor-pointer';
           teamNameStyle = 'text-blue-400';
-          statusTag = '<span onclick="openSamsungModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-[#1428A0] to-blue-600 text-white font-bold border border-blue-400/50 shadow-sm hover:scale-105 transition inline-block">📱 Xanh Samsung • Cao Thủ GW2</span>';
+          statusTag = '<span onclick="event.stopPropagation(); openSamsungModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-gradient-to-r from-[#1428A0] to-blue-600 text-white font-bold border border-blue-400/50 shadow-sm hover:scale-105 transition inline-block">📱 Xanh Samsung • Cao Thủ GW2</span>';
         }
 
+        if (isSpot) {
+          rowStyle = 'bg-cyan-500/15 border-l-4 border-cyan-400 ring-1 ring-cyan-400/40 cursor-pointer';
+        }
+
+        const gwArr = (DATA.gw_points_progression && DATA.gw_points_progression[s.team]) ? DATA.gw_points_progression[s.team].slice(-3) : [];
+        const formHtml = gwArr.map(v => {
+          const c = v >= 65 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : (v <= 45 ? 'bg-rose-500/20 text-rose-300 border-rose-500/40' : 'bg-slate-900 text-slate-300 border-slate-700');
+          return `<span class="px-1.5 py-0.5 rounded border text-[9px] font-mono-numbers font-bold ${c}">${v}</span>`;
+        }).join('');
+
+        const pctBar = Math.max(18, Math.round(((s.total - (minPts - 25)) / Math.max(1, maxPts - (minPts - 25))) * 100));
+
         return `
-          <tr class="${rowStyle} transition">
+          <tr onclick="focusSpotlightTeam('${s.team}', true)" title="Bấm để soi riêng đường biểu đồ của ${s.team}" class="${rowStyle} transition">
             <td class="p-2.5 text-center font-black ${s.rank <= 2 ? 'text-amber-400' : (s.team === 'Ninh SS' ? 'text-blue-400' : 'text-slate-400')}">${rankBadge}</td>
             <td class="p-2.5">
-              <div class="font-extrabold ${teamNameStyle}">${s.team}</div>
-              <div class="text-[10px] text-slate-400">${s.manager}</div>
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full shrink-0" style="background-color:${teamCol}; box-shadow: 0 0 6px ${teamCol}"></span>
+                <span class="font-extrabold ${teamNameStyle}">${s.team}</span>
+                ${isSpot ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/30 text-cyan-200 font-black">ĐANG SOI</span>' : ''}
+              </div>
+              <div class="text-[10px] text-slate-400 pl-3.5">${s.manager}</div>
+            </td>
+            <td class="p-2.5 text-center hidden sm:table-cell">
+              <div class="inline-flex items-center gap-1">${formHtml}</div>
             </td>
             <td class="p-2.5 text-right font-mono-numbers font-bold ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
-            <td class="p-2.5 text-right font-mono-numbers font-black text-white">${s.total}</td>
+            <td class="p-2.5 text-right">
+              <div class="font-mono-numbers font-black text-white">${s.total}</div>
+              <div class="w-16 ml-auto bg-slate-800/90 h-1 rounded-full overflow-hidden mt-0.5">
+                <div class="h-1 rounded-full" style="width:${pctBar}%; background-color:${teamCol}"></div>
+              </div>
+            </td>
             <td class="p-2.5 text-right font-mono-numbers text-slate-400">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
             <td class="p-2.5 text-center">${statusTag}</td>
           </tr>
@@ -957,17 +1036,194 @@
       'XOẠC-UNITED': '#ec4899'
     };
 
-    function buildCustomLegend(containerId, teams) {
+    // Trạng thái bật/tắt từng người & Spotlight trên 2 biểu đồ
+    const chartVisibility = {
+      turn: {},
+      all: {}
+    };
+    let spotlightTeam = null;
+
+    // Plugin Broadcast: Vẽ đường gióng dọc Crosshair & hiện số trực tiếp trên từng điểm khi lọc <= 3 người hoặc đang Spotlight
+    const broadcastChartPlugin = {
+      id: 'broadcastOverlay',
+      afterDatasetsDraw(chart, args, pluginOptions) {
+        const { ctx, chartArea } = chart;
+        if (!chartArea) return;
+
+        // 1. Vẽ đường Crosshair dọc khi hover
+        if (chart.tooltip?._active && chart.tooltip._active.length) {
+          const activePoint = chart.tooltip._active[0];
+          const x = activePoint.element.x;
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(x, chartArea.top);
+          ctx.lineTo(x, chartArea.bottom);
+          ctx.lineWidth = 1.2;
+          ctx.strokeStyle = 'rgba(165, 243, 252, 0.35)';
+          ctx.setLineDash([4, 4]);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 2. Vẽ nhãn điểm/hạng trực tiếp trên đỉnh từng nút khi số dòng đang bật <= 3 hoặc có Spotlight
+        const visibleCount = chart.data.datasets.filter((_, i) => chart.isDatasetVisible(i)).length;
+        if (visibleCount === 0 || (visibleCount > 3 && !spotlightTeam)) return;
+
+        const isRankMode = pluginOptions?.isRank === true;
+        ctx.save();
+        ctx.font = '700 9.5px "JetBrains Mono", monospace';
+        ctx.textAlign = 'center';
+
+        chart.data.datasets.forEach((ds, dsIdx) => {
+          if (!chart.isDatasetVisible(dsIdx)) return;
+          if (spotlightTeam && ds.label !== spotlightTeam && visibleCount > 2) return;
+          const meta = chart.getDatasetMeta(dsIdx);
+          meta.data.forEach((pt, i) => {
+            const val = ds.data[i];
+            if (val === undefined || val === null) return;
+            const txt = isRankMode ? `#${val}` : `${val}`;
+            const yPos = Math.max(chartArea.top + 10, pt.y - 9);
+            const w = ctx.measureText(txt).width + 8;
+            ctx.fillStyle = 'rgba(6, 9, 17, 0.88)';
+            ctx.beginPath();
+            ctx.roundRect(pt.x - w / 2, yPos - 8, w, 13, 4);
+            ctx.fill();
+            ctx.strokeStyle = ds.borderColor;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillText(txt, pt.x, yPos + 1.5);
+          });
+        });
+        ctx.restore();
+      }
+    };
+
+    function ensureChartVisibilityInit(teams) {
+      ['turn', 'all'].forEach(k => {
+        teams.forEach(t => {
+          if (chartVisibility[k][t] === undefined) chartVisibility[k][t] = true;
+        });
+      });
+    }
+
+    function updateSpotlightBanner() {
+      const banner = document.getElementById('chart-spotlight-banner');
+      const lbl = document.getElementById('spotlight-team-label');
+      if (!banner || !lbl) return;
+      if (spotlightTeam) {
+        const obj = DATA?.league_124?.find(x => x.team === spotlightTeam);
+        lbl.textContent = obj ? `${obj.team} (${obj.manager} • #${obj.rank} • ${obj.total}đ)` : spotlightTeam;
+        banner.classList.remove('hidden');
+      } else {
+        banner.classList.add('hidden');
+      }
+    }
+
+    function toggleChartTeam(chartKey, team) {
+      spotlightTeam = null;
+      chartVisibility[chartKey][team] = !chartVisibility[chartKey][team];
+      updateSpotlightBanner();
+      renderLeague124();
+      if (chartKey === 'turn') renderTurnChart();
+      else renderAllSeasonChart();
+    }
+
+    function soloChartTeam(chartKey, team, evt) {
+      if (evt) evt.stopPropagation();
+      const teams = DATA.league_124.map(s => s.team);
+      const onlyThisVisible = teams.every(t => t === team ? chartVisibility[chartKey][t] : !chartVisibility[chartKey][t]);
+      if (onlyThisVisible) {
+        teams.forEach(t => { chartVisibility[chartKey][t] = true; });
+        spotlightTeam = null;
+      } else {
+        teams.forEach(t => { chartVisibility[chartKey][t] = (t === team); });
+        spotlightTeam = team;
+      }
+      updateSpotlightBanner();
+      renderLeague124();
+      if (chartKey === 'turn') renderTurnChart();
+      else renderAllSeasonChart();
+    }
+
+    function focusSpotlightTeam(team, scrollToChart = false) {
+      const teams = DATA.league_124.map(s => s.team);
+      if (spotlightTeam === team) {
+        spotlightTeam = null;
+        ['turn', 'all'].forEach(k => teams.forEach(t => { chartVisibility[k][t] = true; }));
+      } else {
+        spotlightTeam = team;
+        ['turn', 'all'].forEach(k => teams.forEach(t => { chartVisibility[k][t] = (t === team); }));
+      }
+      updateSpotlightBanner();
+      renderLeague124();
+      renderTurnChart();
+      renderAllSeasonChart();
+      if (scrollToChart && spotlightTeam) {
+        document.getElementById('charts-section-anchor')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    function resetAllChartsFilter() {
+      const teams = DATA.league_124.map(s => s.team);
+      spotlightTeam = null;
+      ['turn', 'all'].forEach(k => teams.forEach(t => { chartVisibility[k][t] = true; }));
+      updateSpotlightBanner();
+      renderLeague124();
+      renderTurnChart();
+      renderAllSeasonChart();
+    }
+
+    function openSpotlightSquadOnPitch() {
+      if (!spotlightTeam) return;
+      const sel = document.getElementById('pitch-squad-selector');
+      if (sel) sel.value = spotlightTeam;
+      switchTab('pitch');
+    }
+
+    function setChartPreset(chartKey, preset) {
+      if (!DATA) return;
+      const teams = DATA.league_124.map(s => s.team);
+      spotlightTeam = null;
+      if (preset === 'all') {
+        teams.forEach(t => { chartVisibility[chartKey][t] = true; });
+      } else if (preset === 'top2') {
+        teams.forEach((t, idx) => { chartVisibility[chartKey][t] = (idx < 2); });
+      } else if (preset === 'none') {
+        teams.forEach(t => { chartVisibility[chartKey][t] = false; });
+      }
+      updateSpotlightBanner();
+      renderLeague124();
+      if (chartKey === 'turn') renderTurnChart();
+      else renderAllSeasonChart();
+    }
+
+    function buildCustomLegend(containerId, teams, chartKey) {
       const container = document.getElementById(containerId);
       if (!container) return;
+      ensureChartVisibilityInit(teams);
       container.innerHTML = teams.map(team => {
         const col = TEAM_COLOR_MAP[team] || '#94a3b8';
-        const display = team === 'Ninh SS' ? 'Ninh SS (Samsung)' : team;
+        const isVisible = chartVisibility[chartKey][team] !== false;
+        const obj = DATA.league_124.find(x => x.team === team);
+        const statTag = obj ? `#${obj.rank} • ${obj.total}đ` : '';
+        const display = team === 'Ninh SS' ? 'Ninh SS 💙' : team;
+        const activeStyle = isVisible
+          ? `background: rgba(15, 23, 42, 0.92); border-color: ${col}88; box-shadow: 0 0 12px -3px ${col}66;`
+          : `background: rgba(9, 13, 22, 0.55); border-color: rgba(51, 65, 85, 0.45); opacity: 0.38;`;
         return `
-          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-950/90 border border-slate-800 text-[10px] font-bold text-slate-200">
-            <span class="w-2 h-2 rounded-full" style="background-color: ${col}; box-shadow: 0 0 6px ${col};"></span>
-            ${display}
-          </span>
+          <div onclick="toggleChartTeam('${chartKey}', '${team}')"
+               ondblclick="soloChartTeam('${chartKey}', '${team}', event)"
+               style="${activeStyle}"
+               title="Bấm để ẩn/hiện dòng của ${team} • Bấm tâm ngắm để soi riêng 1 mình ${team}"
+               class="legend-pill inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[10px] font-bold ${isVisible ? 'text-white' : 'text-slate-500 line-through'}">
+            <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color: ${col}; box-shadow: ${isVisible ? '0 0 8px ' + col : 'none'};"></span>
+            <span>${display}</span>
+            <span class="text-[9px] font-mono-numbers ${isVisible ? 'text-slate-300' : 'text-slate-600'}">${statTag}</span>
+            <button type="button" onclick="soloChartTeam('${chartKey}', '${team}', event)" title="Chỉ hiện riêng đường của ${team}" class="ml-0.5 text-[9px] text-slate-400 hover:text-cyan-300 transition px-0.5">
+              <i class="fa-solid fa-crosshairs"></i>
+            </button>
+          </div>
         `;
       }).join('');
     }
@@ -981,7 +1237,8 @@
       const subEl = document.getElementById('turn-chart-subtitle');
 
       const teams = DATA.league_124.map(s => s.team);
-      buildCustomLegend('turn-chart-legend', teams);
+      ensureChartVisibilityInit(teams);
+      buildCustomLegend('turn-chart-legend', teams, 'turn');
 
       let startIdx = 0;
       let endIdx = Math.min(10, DATA.current_gw);
@@ -1001,8 +1258,11 @@
         ? ['GW11 (Start)']
         : Array.from({ length: endIdx - startIdx }, (_, i) => `GW${startIdx + i + 1}`);
 
+      const visibleCount = teams.filter(t => chartVisibility.turn[t] !== false).length;
+
       const datasets = teams.map((team, idx) => {
         const col = TEAM_COLOR_MAP[team] || '#94a3b8';
+        const isVis = chartVisibility.turn[team] !== false;
         let rawData = [];
         if (stage === 'turn2' && DATA.current_gw < 11) {
           rawData = [metric === 'rank' ? 1 : 0];
@@ -1011,18 +1271,25 @@
           rawData = (source || []).slice(startIdx, endIdx);
         }
 
+        const isHighlighted = (visibleCount <= 2 && isVis) || spotlightTeam === team;
+        const grad = ctx.createLinearGradient(0, 0, 0, 260);
+        grad.addColorStop(0, col + (isHighlighted ? '40' : '18'));
+        grad.addColorStop(1, col + '00');
+
         return {
           label: team,
           data: rawData,
+          hidden: !isVis,
           borderColor: col,
-          backgroundColor: col,
-          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.6,
-          tension: 0.35,
-          pointRadius: 4,
-          pointHoverRadius: 7,
+          backgroundColor: grad,
+          fill: isHighlighted && metric !== 'rank',
+          borderWidth: isHighlighted ? 3.6 : ((idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.8),
+          tension: 0.36,
+          pointRadius: isHighlighted ? 5 : 4,
+          pointHoverRadius: 8,
           pointBackgroundColor: col,
-          pointBorderColor: '#060911',
-          pointBorderWidth: 1.8
+          pointBorderColor: '#04070e',
+          pointBorderWidth: 2
         };
       });
 
@@ -1030,39 +1297,42 @@
       turnChart = new Chart(ctx, {
         type: 'line',
         data: { labels, datasets },
+        plugins: [broadcastChartPlugin],
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          layout: { padding: { top: 14, bottom: 8, left: 4, right: 14 } },
+          layout: { padding: { top: 20, bottom: 8, left: 6, right: 16 } },
           interaction: { mode: 'index', intersect: false },
           scales: {
             y: isRank ? {
               reverse: true,
               min: 1,
               max: 7,
-              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => '#' + v },
-              grid: { color: 'rgba(255,255,255,0.05)', tickBorderDash: [4, 4] }
+              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => '#' + v },
+              grid: { color: 'rgba(255,255,255,0.06)', tickBorderDash: [4, 4] }
             } : {
               beginAtZero: true,
-              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => v + 'đ' },
-              grid: { color: 'rgba(255,255,255,0.05)' }
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => v + 'đ' },
+              grid: { color: 'rgba(255,255,255,0.06)' }
             },
             x: {
               offset: true,
-              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' } },
-              grid: { display: false }
+              ticks: { color: '#cbd5e1', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' } },
+              grid: { color: 'rgba(255,255,255,0.03)' }
             }
           },
           plugins: {
+            broadcastOverlay: { isRank },
             legend: { display: false },
             tooltip: {
-              backgroundColor: 'rgba(13, 19, 33, 0.96)',
-              borderColor: 'rgba(6, 182, 212, 0.45)',
+              backgroundColor: 'rgba(9, 14, 26, 0.96)',
+              borderColor: 'rgba(6, 182, 212, 0.55)',
               borderWidth: 1,
-              padding: 10,
-              cornerRadius: 10,
-              titleFont: { family: 'Plus Jakarta Sans', weight: 'bold', size: 12 },
+              padding: 11,
+              cornerRadius: 12,
+              titleFont: { family: 'Plus Jakarta Sans', weight: '800', size: 12 },
               bodyFont: { family: 'JetBrains Mono', size: 11 },
+              itemSort: (a, b) => isRank ? a.parsed.y - b.parsed.y : b.parsed.y - a.parsed.y,
               callbacks: {
                 label: (c) => ` ${c.dataset.label}: ${isRank ? '#' + c.parsed.y : c.parsed.y + 'đ'}`
               }
@@ -1083,23 +1353,26 @@
         : `Quỹ đạo thứ hạng chung cuộc toàn mùa (GW1 – GW${DATA.current_gw})`;
 
       const teams = DATA.league_124.map(s => s.team);
-      buildCustomLegend('all-chart-legend', teams);
+      ensureChartVisibilityInit(teams);
+      buildCustomLegend('all-chart-legend', teams, 'all');
 
       const labels = Array.from({ length: DATA.current_gw }, (_, i) => `GW${i + 1}`);
       const isTotal = metric === 'total_pts';
+      const visibleCount = teams.filter(t => chartVisibility.all[t] !== false).length;
 
       const datasets = teams.map((team, idx) => {
         const col = TEAM_COLOR_MAP[team] || '#94a3b8';
+        const isVis = chartVisibility.all[team] !== false;
         const dataArr = isTotal
           ? (DATA.points_progression ? DATA.points_progression[team] : [])
           : (DATA.rank_progression[team] || []);
 
-        // Create sleek vertical gradient fill for top 3 + Ninh SS in total_pts mode
+        const isHighlighted = (visibleCount <= 2 && isVis) || spotlightTeam === team;
         let bgFill = col;
         let fillMode = false;
-        if (isTotal && (idx <= 1 || team === 'Ninh SS')) {
+        if (isTotal && (isHighlighted || idx <= 1 || team === 'Ninh SS')) {
           const grad = ctx.createLinearGradient(0, 0, 0, 260);
-          grad.addColorStop(0, col + '33');
+          grad.addColorStop(0, col + (isHighlighted ? '48' : '30'));
           grad.addColorStop(1, col + '00');
           bgFill = grad;
           fillMode = true;
@@ -1108,54 +1381,57 @@
         return {
           label: team,
           data: dataArr,
+          hidden: !isVis,
           borderColor: col,
           backgroundColor: bgFill,
           fill: fillMode,
-          borderWidth: (idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.6,
-          tension: 0.35,
-          pointRadius: 3.5,
-          pointHoverRadius: 6.5,
+          borderWidth: isHighlighted ? 3.6 : ((idx <= 1 || team === 'Ninh SS') ? 2.8 : 1.7),
+          tension: 0.36,
+          pointRadius: isHighlighted ? 5 : 3.8,
+          pointHoverRadius: 8,
           pointBackgroundColor: col,
-          pointBorderColor: '#060911',
-          pointBorderWidth: 1.5
+          pointBorderColor: '#04070e',
+          pointBorderWidth: 1.8
         };
       });
 
       allSeasonChart = new Chart(ctx, {
         type: 'line',
         data: { labels, datasets },
+        plugins: [broadcastChartPlugin],
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          layout: { padding: { top: 14, bottom: 8, left: 4, right: 14 } },
+          layout: { padding: { top: 20, bottom: 8, left: 6, right: 16 } },
           interaction: { mode: 'index', intersect: false },
           scales: {
             y: isTotal ? {
               beginAtZero: false,
-              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => v + 'đ' },
-              grid: { color: 'rgba(255,255,255,0.05)' }
+              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => v + 'đ' },
+              grid: { color: 'rgba(255,255,255,0.06)' }
             } : {
               reverse: true,
               min: 1,
               max: 7,
-              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' }, callback: v => '#' + v },
-              grid: { color: 'rgba(255,255,255,0.05)' }
+              ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => '#' + v },
+              grid: { color: 'rgba(255,255,255,0.06)' }
             },
             x: {
               offset: true,
-              ticks: { color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono' } },
-              grid: { display: false }
+              ticks: { color: '#cbd5e1', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' } },
+              grid: { color: 'rgba(255,255,255,0.03)' }
             }
           },
           plugins: {
+            broadcastOverlay: { isRank: !isTotal },
             legend: { display: false },
             tooltip: {
-              backgroundColor: 'rgba(13, 19, 33, 0.96)',
-              borderColor: 'rgba(245, 158, 11, 0.45)',
+              backgroundColor: 'rgba(9, 14, 26, 0.96)',
+              borderColor: 'rgba(245, 158, 11, 0.55)',
               borderWidth: 1,
-              padding: 10,
-              cornerRadius: 10,
-              titleFont: { family: 'Plus Jakarta Sans', weight: 'bold', size: 12 },
+              padding: 11,
+              cornerRadius: 12,
+              titleFont: { family: 'Plus Jakarta Sans', weight: '800', size: 12 },
               bodyFont: { family: 'JetBrains Mono', size: 11 },
               itemSort: (a, b) => isTotal ? b.parsed.y - a.parsed.y : a.parsed.y - b.parsed.y,
               callbacks: {
