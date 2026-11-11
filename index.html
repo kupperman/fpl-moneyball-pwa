@@ -269,7 +269,7 @@
         </div>
         <div class="flex items-center gap-2 text-[11px]">
           <button id="btn-spotlight-pitch" onclick="openSpotlightSquadOnPitch()" class="hidden px-2.5 py-1 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 border border-emerald-500/40 font-bold transition">
-            <i class="fa-solid fa-shirt mr-1"></i>Soi Đội Hình GW10 (VIP)
+            <i class="fa-solid fa-shirt mr-1"></i>Soi Đội Hình GW10
           </button>
           <button onclick="resetAllChartsFilter()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-600 font-bold transition">
             <i class="fa-solid fa-rotate-left mr-1"></i>Hiện Lại Cả 7 HLV
@@ -414,9 +414,9 @@
       <div class="vip-card rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border border-emerald-500/30">
         <div>
           <h2 class="text-sm font-extrabold text-white flex items-center gap-2">
-            <i class="fa-solid fa-futbol text-emerald-400"></i> SA BÀN CHIẾN THUẬT SÂN CỎ — XEM ĐỘI HÌNH & ÁO ĐẤU CLB
+            <i class="fa-solid fa-futbol text-emerald-400"></i> SA BÀN CHIẾN THUẬT SÂN CỎ — ĐỘI HÌNH TIÊU BIỂU & ÁO ĐẤU CLB
           </h2>
-          <p class="text-[11px] text-slate-400" id="pitch-selector-hint">Chế độ Công Khai: Xem Dream Team tiêu biểu toàn giải • Mở khóa <b class="text-amber-400">VIP Vault</b> để soi chi tiết 15 cầu thủ từng HLV</p>
+          <p class="text-[11px] text-slate-400" id="pitch-selector-hint">Đội hình 11 ngôi sao xuất sắc nhất mùa giải 2026/27 • Chạm vào từng cầu thủ trên sân để xem thông số</p>
         </div>
         <div class="flex items-center space-x-2">
           <select id="pitch-squad-selector" onchange="renderPitchView()" class="bg-slate-950 text-emerald-400 font-bold border border-emerald-500/40 rounded-xl px-3 py-2 text-xs shadow-sm focus:outline-none">
@@ -513,32 +513,14 @@
         </div>
       </div>
 
-      <!-- KHU VỰC BẢO MẬT TRONG TAB SA BÀN: CHỈ HIỆN CHI TIẾT KHI ĐÃ MỞ KHÓA VIP VAULT (CHỐNG COPY ĐỘI HÌNH) -->
-      <div id="pitch-vip-locked-banner" class="vip-card rounded-2xl p-5 border border-amber-500/35 bg-gradient-to-r from-amber-950/25 via-slate-900/95 to-indigo-950/25 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/50 flex items-center justify-center text-amber-400 text-xl shrink-0 shadow-lg shadow-amber-500/15">
-            <i class="fa-solid fa-user-shield"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h3 class="text-sm font-black text-amber-300 uppercase tracking-wider">KHU VỰC CHỐNG ĐẠO NHÁI CHIẾN THUẬT (OPSEC LOCK)</h3>
-              <span class="text-[9px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-black">CHỈ DÀNH CHO VIP</span>
-            </div>
-            <p class="text-xs text-slate-300 mt-1">Danh sách 15 cầu thủ từng đội trong giải 124+, Đài So Găng Hàng Độc 1v1 và Bản Đồ Sở Hữu Nội Bộ đã được khóa bảo mật để tránh lộ bài & copy đội hình nhau.</p>
-          </div>
-        </div>
-        <button onclick="handleVipButton()" class="shrink-0 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-white font-black text-xs shadow-lg shadow-amber-500/20 transition flex items-center gap-2">
-          <i class="fa-solid fa-key"></i> Mở Khóa VIP Để Soi Chi Tiết
-        </button>
-      </div>
-
+      <!-- KHU VỰC TÀNG HÌNH: HOÀN TOÀN KHÔNG TỒN TẠI Ở GIAO DIỆN CHUNG, CHỈ HIỆN KHI MỞ KHÓA -->
       <div id="pitch-vip-deep-analytics" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-5">
         <!-- CỘT TRÁI (7 COLS): ĐÀI SO GĂNG ĐỘI HÌNH 1v1 (SQUAD CLASH & DIFFERENTIALS) -->
         <div class="lg:col-span-7 vip-card rounded-2xl p-4 sm:p-5 border border-cyan-500/30 space-y-3">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
-                <i class="fa-solid fa-bolt-lightning text-amber-400"></i> ĐÀI SO GĂNG ĐỘI HÌNH 1v1 (SQUAD CLASH • VIP ONLY)
+                <i class="fa-solid fa-bolt-lightning text-amber-400"></i> ĐÀI SO GĂNG ĐỘI HÌNH 1v1 (SQUAD CLASH)
               </h3>
               <p class="text-[11px] text-slate-400">Bóc tách <b>Hàng Độc Khác Biệt (Differentials)</b> và <b>Hàng Trùng Máu (Template)</b> giữa bất kỳ 2 HLV nào</p>
             </div>
@@ -569,7 +551,7 @@
         <div class="lg:col-span-5 vip-card rounded-2xl p-4 sm:p-5 border border-purple-500/30 space-y-3">
           <div>
             <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
-              <i class="fa-solid fa-dna text-purple-400"></i> META NỘI BỘ 124+ (VIP ONLY)
+              <i class="fa-solid fa-dna text-purple-400"></i> META NỘI BỘ 124+ (QUỐC DÂN & ĐỘC DƯỢC)
             </h3>
             <p class="text-[11px] text-slate-400">Quét toàn bộ 105 cầu thủ trong tay 7 HLV để lộ diện bài chung & bài tẩy</p>
           </div>
@@ -628,24 +610,17 @@
         </div>
       </div>
 
-      <!-- CAPTAIN PICKER MATRIX (CHỈ HIỆN KHI ĐÃ MỞ KHÓA VIP VAULT) -->
+      <!-- CAPTAIN PICKER MATRIX (CHỈ HIỆN TÀNG HÌNH KHI ĐÃ MỞ KHÓA) -->
       <div id="market-vip-captaincy-card" class="hidden vip-card rounded-2xl p-4 sm:p-5 border border-indigo-500/30">
         <div class="flex items-center justify-between mb-3">
           <div>
             <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
-              <i class="fa-solid fa-crown text-amber-400"></i> CAPTAINCY INDEX — MA TRẬN ĐEO BĂNG ĐỘI TRƯỞNG VÒNG TỚI (VIP ONLY)
+              <i class="fa-solid fa-crown text-amber-400"></i> CAPTAINCY INDEX — MA TRẬN ĐEO BĂNG ĐỘI TRƯỞNG VÒNG TỚI
             </h3>
-            <p class="text-[11px] text-slate-400">Tính toán trực tiếp từ dữ liệu xGI/90, Form và độ khó đối thủ thực tế — Đã ẩn khỏi bản Public</p>
+            <p class="text-[11px] text-slate-400">Tính toán trực tiếp từ dữ liệu xGI/90, Form và độ khó đối thủ thực tế</p>
           </div>
-          <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black">MẬT THÁM VIP</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3" id="captaincy-container"></div>
-      </div>
-
-      <!-- THÔNG BÁO BẢO MẬT CHỈ SỐ NÂNG CAO TRONG TAB MARKET -->
-      <div id="market-vip-lock-banner" class="vip-card rounded-2xl p-3.5 border border-amber-500/30 bg-slate-950/90 flex flex-wrap items-center justify-between gap-2 text-xs">
-        <span class="text-slate-300"><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i><b>Chế độ Tổng Quan Công Khai:</b> Chỉ số ngầm (<b class="text-cyan-300">xGI/90</b>, <b class="text-emerald-300">Hiệu suất Điểm/£1m</b>, <b class="text-amber-300">Captaincy Index</b> và <b class="text-purple-300">Chiến lược CLB</b>) chỉ mở khi đăng nhập <b>VIP Vault</b>.</span>
-        <button onclick="handleVipButton()" class="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/35 text-amber-300 border border-amber-500/40 font-bold text-[11px] transition">Mở Khóa VIP</button>
       </div>
 
       <!-- MARKET TABLE 35 PLAYERS -->
@@ -655,7 +630,7 @@
             <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
               <i class="fa-solid fa-database text-cyan-400"></i> KHO DỮ LIỆU TOP 35 NGÔI SAO FPL 2026/27
             </h3>
-            <p class="text-[11px] text-slate-400" id="market-table-subtitle">Bảng tổng quan công khai (Mở khóa VIP để hiện cột xGI/90, Điểm/£1m và Nhận định Moneyball)</p>
+            <p class="text-[11px] text-slate-400" id="market-table-subtitle">Lọc theo vị trí hoặc tìm tên cầu thủ để tra cứu phong độ & tỷ lệ sở hữu</p>
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <input type="text" id="player-search" oninput="renderMarketTable()" placeholder="Tìm cầu thủ..." class="bg-slate-950 border border-slate-700 rounded-lg px-2.5 py-1 text-xs text-white focus:outline-none focus:border-cyan-500 w-36">
@@ -2036,10 +2011,9 @@
             opts += `<option value="${s.team}">🛡️ ${s.team} (${s.manager}) — GW10: ${sq.gw_pts}đ${chipTag}</option>`;
           }
         });
-        if (hint) hint.innerHTML = '🔓 <b class="text-emerald-400">Chế độ VIP Đã Mở Khóa:</b> Tự do soi 15 cầu thủ từng đội trong giải 124+, So Găng 1v1 và Meta Sở Hữu Nội Bộ';
+        if (hint) hint.innerHTML = 'Chọn đội bóng bất kỳ để soi 15 cầu thủ ra sân GW10, So Găng 1v1 và Meta Sở Hữu Nội Bộ';
       } else {
-        opts += `<option value="VIP_LOCKED">🔒 [Chỉ VIP] Soi 7 Đội Hình Giải 124+ (Chống Copy Bài)</option>`;
-        if (hint) hint.innerHTML = 'Chế độ Công Khai: Xem Dream Team tiêu biểu toàn giải • Mở khóa <b class="text-amber-400">VIP Vault</b> để soi chi tiết 15 cầu thủ từng HLV';
+        if (hint) hint.innerHTML = 'Đội hình 11 ngôi sao xuất sắc nhất mùa giải 2026/27 • Chạm vào từng cầu thủ trên sân để xem thông số';
       }
       sel.innerHTML = opts;
     }
@@ -2048,9 +2022,15 @@
       const p = currentPitchPlayers[pid];
       if (!p) return;
       const body = document.getElementById('pitch-inspector-body');
-      const xgiCell = isVipUnlocked
-        ? `<b class="text-sm text-cyan-400">${p.xgi_90}</b>`
-        : `<b onclick="handleVipButton()" class="text-xs text-amber-400 cursor-pointer"><i class="fa-solid fa-lock mr-0.5"></i>VIP</b>`;
+      const fourthCell = isVipUnlocked ? `
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">xGI / 90'</span>
+            <b class="text-sm text-cyan-400">${p.xgi_90}</b>
+          </div>` : `
+          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
+            <span class="text-[9px] text-slate-400 block font-sans">Giá (£)</span>
+            <b class="text-sm text-cyan-400">£${p.cost}m</b>
+          </div>`;
       body.innerHTML = `
         <div class="flex items-center gap-3 mb-3">
           <div class="shrink-0">${getClubJerseySVG(p.team, p.pos === 'GKP', p.is_captain ? 'C' : (p.is_vc ? 'V' : ''))}</div>
@@ -2068,10 +2048,7 @@
             <span class="text-[9px] text-slate-400 block font-sans">Tổng Mùa</span>
             <b class="text-sm text-white">${p.pts}đ</b>
           </div>
-          <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
-            <span class="text-[9px] text-slate-400 block font-sans">xGI / 90'</span>
-            ${xgiCell}
-          </div>
+          ${fourthCell}
           <div class="bg-slate-950/90 p-2 rounded-xl border border-slate-800">
             <span class="text-[9px] text-slate-400 block font-sans">Form</span>
             <b class="text-sm text-emerald-400">${p.form}</b>
@@ -2084,8 +2061,7 @@
       if (!DATA) return;
       const selEl = document.getElementById('pitch-squad-selector');
       let selVal = selEl?.value || 'DREAM_TEAM';
-      if (selVal === 'VIP_LOCKED' || (!isVipUnlocked && selVal !== 'DREAM_TEAM')) {
-        if (selVal === 'VIP_LOCKED') togglePasswordModal();
+      if (!isVipUnlocked && selVal !== 'DREAM_TEAM') {
         selVal = 'DREAM_TEAM';
         if (selEl) selEl.value = 'DREAM_TEAM';
       }
@@ -2289,16 +2265,16 @@
       if (isVipUnlocked) {
         document.getElementById('h2h-bars-container').innerHTML =
           compRow('Tổng Điểm Mùa', p1.pts, p2.pts, 'đ') +
-          compRow('xGI / 90 Phút (VIP)', p1.xgi_90, p2.xgi_90, '') +
+          compRow('xGI / 90 Phút', p1.xgi_90, p2.xgi_90, '') +
           compRow('Form (4 Vòng)', p1.form, p2.form, '') +
-          compRow('ICT Tấn Công (VIP)', p1.ict, p2.ict, '') +
-          compRow('Hiệu Suất Điểm/£1m (VIP)', p1.value, p2.value, '');
+          compRow('ICT Tấn Công', p1.ict, p2.ict, '') +
+          compRow('Hiệu Suất Điểm/£1m', p1.value, p2.value, '');
       } else {
         document.getElementById('h2h-bars-container').innerHTML =
           compRow('Tổng Điểm Mùa', p1.pts, p2.pts, 'đ') +
           compRow('Form (4 Vòng)', p1.form, p2.form, '') +
           compRow('Tỷ Lệ Sở Hữu (%)', p1.selected_by, p2.selected_by, '%') +
-          `<div onclick="handleVipButton()" class="p-2 rounded-xl bg-slate-950/80 border border-amber-500/30 text-[11px] text-center text-amber-300 cursor-pointer hover:bg-slate-900 transition"><i class="fa-solid fa-lock mr-1"></i>Mở khóa <b>VIP Vault</b> để soi chỉ số ngầm xGI/90, ICT & Điểm/£1m</div>`;
+          compRow('Giá Chuyển Nhượng (£m)', p1.cost, p2.cost, 'm');
       }
 
       // Update Radar
@@ -2390,11 +2366,11 @@
             <th class="p-2.5">CLB / Vị Trí</th>
             <th class="p-2.5 text-right">Giá (£)</th>
             <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
-            <th class="p-2.5 text-right text-cyan-400 font-bold">xGI/90 (VIP)</th>
+            <th class="p-2.5 text-right text-cyan-400 font-bold">xGI/90</th>
             <th class="p-2.5 text-right">Form</th>
-            <th class="p-2.5 text-right font-bold text-emerald-400">Điểm/£1m (VIP)</th>
+            <th class="p-2.5 text-right font-bold text-emerald-400">Điểm/£1m</th>
             <th class="p-2.5 text-right">Sở Hữu (%)</th>
-            <th class="p-2.5 text-center">Nhận Định VIP</th>
+            <th class="p-2.5 text-center">Nhận Định</th>
           </tr>
         ` : `
           <tr>
@@ -2404,14 +2380,13 @@
             <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
             <th class="p-2.5 text-right">Form</th>
             <th class="p-2.5 text-right">Sở Hữu (%)</th>
-            <th class="p-2.5 text-center text-amber-400"><i class="fa-solid fa-lock mr-1"></i>Phân Tích Sâu</th>
           </tr>
         `;
       }
       if (subEl) {
         subEl.textContent = isVipUnlocked
-          ? '🔓 Chế độ VIP: Đang hiển thị đầy đủ chỉ số Moneyball (xGI/90, Điểm/£1m & Nhận định chuyên sâu)'
-          : 'Bảng tổng quan công khai (Mở khóa VIP để hiện cột xGI/90, Điểm/£1m và Nhận định Moneyball)';
+          ? 'Đang hiển thị đầy đủ chỉ số Moneyball (xGI/90, Điểm/£1m & Nhận định chuyên sâu)'
+          : 'Lọc theo vị trí hoặc tìm tên cầu thủ để tra cứu phong độ & tỷ lệ sở hữu';
       }
 
       document.getElementById('market-table-body').innerHTML = filtered.map(p => isVipUnlocked ? `
@@ -2434,7 +2409,6 @@
           <td class="p-2.5 text-right font-mono-numbers font-black text-white">${p.pts}</td>
           <td class="p-2.5 text-right font-mono-numbers">${p.form}</td>
           <td class="p-2.5 text-right font-mono-numbers text-slate-400">${p.selected_by}%</td>
-          <td class="p-2.5 text-center"><button onclick="handleVipButton()" class="px-2 py-0.5 rounded-full text-[10px] bg-amber-950/60 text-amber-300 border border-amber-500/30 font-bold hover:bg-amber-900/60 transition"><i class="fa-solid fa-lock mr-1"></i>VIP Only</button></td>
         </tr>
       `).join('');
     }
@@ -2447,7 +2421,7 @@
           <th class="p-3 w-36">Câu Lạc Bộ</th>
           ${headers}
           <th class="p-3 text-center font-bold text-emerald-400">FDR TB</th>
-          ${isVipUnlocked ? '<th class="p-3 text-left text-amber-300">🎯 Mục Tiêu Khai Thác (VIP)</th>' : '<th class="p-3 text-center text-slate-500"><i class="fa-solid fa-lock mr-1"></i>Gợi Ý Mua</th>'}
+          ${isVipUnlocked ? '<th class="p-3 text-left text-amber-300">Ngôi Sao Trọng Tâm</th>' : ''}
         </tr>
       `;
 
@@ -2460,7 +2434,7 @@
         ).join('');
         const stratCell = isVipUnlocked
           ? `<td class="p-3 text-[11px] text-slate-300">${f.strat}</td>`
-          : `<td class="p-3 text-center"><button onclick="handleVipButton()" class="text-[10px] text-amber-400/80 hover:text-amber-300 font-bold"><i class="fa-solid fa-lock mr-1"></i>Khóa VIP</button></td>`;
+          : '';
 
         return `
           <tr class="hover:bg-slate-800/40 transition">
@@ -2560,24 +2534,18 @@
       const navVip = document.getElementById('nav-vip-vault');
       const vipIcon = document.getElementById('vip-icon');
       const vipLabel = document.getElementById('vip-label');
-      const pitchLockedBanner = document.getElementById('pitch-vip-locked-banner');
       const pitchDeepAnalytics = document.getElementById('pitch-vip-deep-analytics');
-      const marketLockBanner = document.getElementById('market-vip-lock-banner');
       const marketCapCard = document.getElementById('market-vip-captaincy-card');
 
       if (isVipUnlocked) {
         navVip.classList.remove('hidden'); navVip.classList.add('flex');
         vipIcon.className = "fa-solid fa-lock-open text-emerald-400"; vipLabel.textContent = "VIP Mở";
-        pitchLockedBanner?.classList.add('hidden');
         pitchDeepAnalytics?.classList.remove('hidden');
-        marketLockBanner?.classList.add('hidden');
         marketCapCard?.classList.remove('hidden');
       } else {
         navVip.classList.add('hidden'); navVip.classList.remove('flex');
         vipIcon.className = "fa-solid fa-lock text-amber-400"; vipLabel.textContent = "VIP Vault";
-        pitchLockedBanner?.classList.remove('hidden');
         pitchDeepAnalytics?.classList.add('hidden');
-        marketLockBanner?.classList.remove('hidden');
         marketCapCard?.classList.add('hidden');
       }
       updateSpotlightBanner();
