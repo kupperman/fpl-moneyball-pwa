@@ -315,22 +315,117 @@ def main():
             points_prog[t_name].append(histories[eid].get(gw, 0))
             gw_points_prog[t_name].append(gw_histories[eid].get(gw, 0))
 
-    # 7. LEAGUE IOC_124
-    print("Fetching League IOC_124...")
+    # 7. LEAGUE IOC_124 (FULL ANALYTICS FOR STANDALONE IOC PAGE & VIP VAULT)
+    print("Fetching League IOC_124 & full histories...")
     ioc_res = fetch_json(f"leagues-classic/{LEAGUE_IOC_ID}/standings/")
     ioc_standings = []
+    ioc_squads = {}
+    ioc_histories = {}
+    ioc_gw_histories = {}
+
     for s in ioc_res['standings']['results']:
         eid = s['entry']
         hist = fetch_json(f"entry/{eid}/history/")
-        chips = [f"{c['name'].upper()}(GW{c['event']})" for c in hist.get('chips', [])]
+        picks_res = fetch_json(f"entry/{eid}/event/{current_gw}/picks/")
+
+        raw_picks = picks_res.get('picks', [])
+        active_chip = picks_res.get('active_chip')
+        squad_starting = {'GKP': [], 'DEF': [], 'MID': [], 'FWD': []}
+        squad_bench = []
+        for pk in raw_picks:
+            el = el_map[pk['element']]
+            p_pos = pos_map[el['element_type']]
+            p_obj = fmt_dt(el)
+            p_obj['pos'] = p_pos
+            p_obj['is_captain'] = pk['is_captain']
+            p_obj['is_vc'] = pk['is_vice_captain']
+            p_obj['multiplier'] = pk['multiplier']
+            p_obj['eff_gw_pts'] = p_obj['gw_pts'] * (pk['multiplier'] if pk['multiplier'] > 0 else 1)
+            if pk['position'] <= 11:
+                squad_starting[p_pos].append(p_obj)
+            else:
+                squad_bench.append(p_obj)
+
+        ioc_squads[s['entry_name']] = {
+            "manager": s['player_name'],
+            "gw_pts": s['event_total'],
+            "active_chip": active_chip,
+            "starting": squad_starting,
+            "bench": squad_bench
+        }
+
+        raw_chips = hist.get('chips', [])
+        chips = [f"{c['name'].upper()}(GW{c['event']})" for c in raw_chips]
+        used_chip_keys = {c['name'] for c in raw_chips if c['event'] <= 19}
+
+        cur_list = hist.get('current', [])
+        gw_totals = {h['event']: h['total_points'] for h in cur_list}
+        gw_nets = {h['event']: h['points'] - h['event_transfers_cost'] for h in cur_list}
+        ioc_histories[eid] = gw_totals
+        ioc_gw_histories[eid] = gw_nets
+
+        t2_pts = sum((h['points'] - h['event_transfers_cost']) for h in cur_list if 11 <= h['event'] <= 19)
+        t1_list = [h for h in cur_list if h['event'] <= 10]
+        best_gw_item = max(t1_list, key=lambda x: x['points'] - x['event_transfers_cost']) if t1_list else {'points': 0, 'event': 0, 'event_transfers_cost': 0}
+        worst_gw_item = min(t1_list, key=lambda x: x['points'] - x['event_transfers_cost']) if t1_list else {'points': 0, 'event': 0, 'event_transfers_cost': 0}
+        bench_wasted = sum(h.get('points_on_bench', 0) for h in cur_list)
+        total_hits = sum(h.get('event_transfers_cost', 0) for h in cur_list)
+        last_val = round(cur_list[-1].get('value', 1000) / 10, 1) if cur_list else 100.0
+
         ioc_standings.append({
+            "entry": eid,
             "rank": s['rank'],
             "team": s['entry_name'],
             "manager": s['player_name'],
             "gw_pts": s['event_total'],
             "total": s['total'],
-            "chips": chips
+            "turn2_pts": t2_pts,
+            "chips": chips,
+            "chips_map": {
+                "wc": "wildcard" in used_chip_keys,
+                "tc": "3xc" in used_chip_keys,
+                "bb": "bboost" in used_chip_keys,
+                "fh": "freehit" in used_chip_keys
+            },
+            "best_gw": best_gw_item['points'] - best_gw_item['event_transfers_cost'],
+            "best_gw_num": best_gw_item['event'],
+            "worst_gw": worst_gw_item['points'] - worst_gw_item['event_transfers_cost'],
+            "worst_gw_num": worst_gw_item['event'],
+            "bench_wasted": bench_wasted,
+            "total_hits": total_hits,
+            "team_value": last_val
         })
+
+    ioc_leader_pts = ioc_standings[0]['total'] if ioc_standings else 0
+    ioc_last_pts = min(x['total'] for x in ioc_standings) if ioc_standings else 0
+    for item in ioc_standings:
+        item["gap_leader"] = item["total"] - ioc_leader_pts
+        item["is_last"] = (item["total"] == ioc_last_pts)
+
+    ioc_top_gw = max(ioc_standings, key=lambda x: x['best_gw'])
+    ioc_worst_gw = min(ioc_standings, key=lambda x: x['worst_gw'])
+    ioc_bench_king = max(ioc_standings, key=lambda x: x['bench_wasted'])
+    ioc_hit_king = max(ioc_standings, key=lambda x: x['total_hits'])
+    ioc_richest = max(ioc_standings, key=lambda x: x['team_value'])
+
+    ioc_turn1_awards = {
+        "best_gw": {"team": ioc_top_gw['team'], "manager": ioc_top_gw['manager'], "val": f"{ioc_top_gw['best_gw']}đ (GW{ioc_top_gw['best_gw_num']})"},
+        "worst_gw": {"team": ioc_worst_gw['team'], "manager": ioc_worst_gw['manager'], "val": f"{ioc_worst_gw['worst_gw']}đ (GW{ioc_worst_gw['worst_gw_num']})"},
+        "bench_king": {"team": ioc_bench_king['team'], "manager": ioc_bench_king['manager'], "val": f"{ioc_bench_king['bench_wasted']}đ"},
+        "hit_king": {"team": ioc_hit_king['team'], "manager": ioc_hit_king['manager'], "val": f"-{ioc_hit_king['total_hits']}đ"},
+        "richest": {"team": ioc_richest['team'], "manager": ioc_richest['manager'], "val": f"£{ioc_richest['team_value']}m"}
+    }
+
+    ioc_rank_prog = {item['team']: [] for item in ioc_standings}
+    ioc_points_prog = {item['team']: [] for item in ioc_standings}
+    ioc_gw_points_prog = {item['team']: [] for item in ioc_standings}
+    for gw in range(1, current_gw + 1):
+        sorted_eids = sorted(ioc_histories.keys(), key=lambda eid: ioc_histories[eid].get(gw, 0), reverse=True)
+        for idx, eid in enumerate(sorted_eids):
+            t_name = next(x['team'] for x in ioc_standings if x['entry'] == eid)
+            ioc_rank_prog[t_name].append(idx + 1)
+            ioc_points_prog[t_name].append(ioc_histories[eid].get(gw, 0))
+            ioc_gw_points_prog[t_name].append(ioc_gw_histories[eid].get(gw, 0))
 
     # 8. CAPTAINCY INDEX (FOR NEXT GW)
     # Build top 4 candidates from real active players with upcoming easy fixtures
@@ -405,6 +500,11 @@ def main():
         "league_124_squads": l124_squads,
         "turn1_awards": turn1_awards,
         "league_ioc": ioc_standings,
+        "league_ioc_squads": ioc_squads,
+        "ioc_turn1_awards": ioc_turn1_awards,
+        "ioc_rank_progression": ioc_rank_prog,
+        "ioc_points_progression": ioc_points_prog,
+        "ioc_gw_points_progression": ioc_gw_points_prog,
         "rank_progression": rank_prog,
         "points_progression": points_prog,
         "gw_points_progression": gw_points_prog,

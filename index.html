@@ -719,14 +719,19 @@
 
         <!-- GIẢI CÔNG TY IOC_124 (ĐƯỢC BẢO MẬT TRONG VIP VAULT) -->
         <div class="bg-slate-950/80 p-4 rounded-xl border border-purple-500/30">
-          <div class="flex items-center justify-between mb-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
             <div>
               <h3 class="text-sm font-extrabold text-white flex items-center gap-2">
                 <i class="fa-solid fa-building text-purple-400"></i> BẢNG XẾP HẠNG GIẢI CÔNG TY — IOC_124
               </h3>
               <p class="text-[11px] text-slate-400">Đấu trường riêng cơ quan • Ẩn khỏi giao diện Public</p>
             </div>
-            <span class="text-[10px] bg-slate-900 text-slate-300 font-mono px-2 py-1 rounded-lg border border-slate-700">ID: 155330</span>
+            <div class="flex items-center gap-2">
+              <a href="./ioc.html" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-extrabold text-[11px] flex items-center gap-1.5 shadow-lg shadow-purple-500/20 transition whitespace-nowrap">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Đấu Trường IOC_124 Full
+              </a>
+              <span class="text-[10px] bg-slate-900 text-slate-300 font-mono px-2 py-1 rounded-lg border border-slate-700">ID: 155330</span>
+            </div>
           </div>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs text-slate-300">
@@ -774,8 +779,8 @@
       <h3 class="text-base font-black text-rose-300">VINH DANH NHÀ HẢO TÂM TURN 1</h3>
       <p class="text-xs text-slate-300">Ban tổ chức giải 124+ | NÁT xin trân trọng cảm ơn hai nhà tài trợ kim cương cho bữa tiệc tổng kết Chặng 1:</p>
       <div class="bg-slate-950/80 p-3 rounded-2xl border border-rose-500/30 text-xs font-bold text-white space-y-1">
-        <p>🥇 <b>Ngọc Dao</b> (Ngocdao): <span class="text-rose-400">535 điểm</span></p>
-        <p>🥇 <b>Cường Tệ</b> (XOẠC-UNITED): <span class="text-rose-400">535 điểm</span></p>
+        <p>🥇 <b>Ngocdao (HLV Ngọc)</b>: <span class="text-rose-400">535 điểm (#6)</span></p>
+        <p>🥇 <b>XOẠC-UNITED (HLV Tệ)</b>: <span class="text-rose-400">535 điểm (#7)</span></p>
       </div>
       <p class="text-[11px] text-slate-400 italic">"Túi ơi hãy đợi đấy! Thay mặt 5 HLV còn lại, xin đa tạ tấm lòng hảo tâm của 2 sếp!"</p>
       <button onclick="closeHaoTamModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 text-white font-bold text-xs">Xin Đa Tạ Hai Nhà Hảo Tâm 🙏</button>
@@ -788,7 +793,7 @@
       <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-blue-500/40 mx-auto flex items-center justify-center text-xl text-blue-400">💙</div>
       <h3 class="text-sm font-black text-blue-400 uppercase">HỖ TRỢ MÀU XANH SAMSUNG CHỐNG CHÌM</h3>
       <p class="text-xs text-slate-300 leading-relaxed">
-        Theo nguyện vọng thoát kiếp màu xám nhạt nhòa, BTC đã cấp riêng màu <b class="text-blue-400">Xanh Samsung</b> cho HLV <b>Ninh Dang (Ninh SS)</b> dễ tìm thấy mình ở nửa dưới bảng xếp hạng!
+        Theo nguyện vọng thoát kiếp màu xám nhạt nhòa, BTC đã cấp riêng màu <b class="text-blue-400">Xanh Samsung</b> cho <b>Ninh SS (HLV Ninh)</b> dễ tìm thấy mình ở nửa dưới bảng xếp hạng!
       </p>
       <div class="bg-slate-950/80 p-3 rounded-2xl border border-slate-800 text-[11px] text-slate-300 space-y-1">
         <p>📈 Lên đỉnh sớm: <b>#1 ở GW3</b> (nổ 105đ ở GW2)</p>
@@ -885,19 +890,46 @@
       renderVipVault();
     }
 
+    const HLV_LABEL_MAP = {
+      'Bao Bui': 'HLV Bảo',
+      'Cận VIP': 'HLV TíT',
+      'SNAL': 'HLV Cương',
+      'FC K': 'HLV iKen',
+      'Ninh SS': 'HLV Ninh',
+      'Ngocdao': 'HLV Ngọc',
+      'XOẠC-UNITED': 'HLV Tệ',
+      'HELL_BOY Ψ (☆ ｗ ☆) Ψ': 'HLV Tóc Maz',
+      'Phấn Đào': 'HLV Huy Anh',
+      'Pending Moderation': 'HLV Hoàng',
+      'hoheheho': 'HLV Tùng Lâm',
+      "Dương's Team": 'HLV Dương Đắc'
+    };
+
+    function getHlvLabel(teamName, rawManager) {
+      if (HLV_LABEL_MAP[teamName]) return HLV_LABEL_MAP[teamName];
+      if (!rawManager) return 'HLV';
+      return rawManager.startsWith('HLV ') ? rawManager : `HLV ${rawManager}`;
+    }
+
+    function getDisplayRank(teamName, fallbackRank) {
+      if (DATA && DATA.league_124) {
+        const idx = DATA.league_124.findIndex(x => x.team === teamName);
+        if (idx >= 0) return idx + 1;
+      }
+      return fallbackRank;
+    }
+
     function getManagerMap() {
       const m = {};
       if (DATA && DATA.league_124) {
-        DATA.league_124.forEach(s => { m[s.team] = s.manager; });
+        DATA.league_124.forEach(s => { m[s.team] = getHlvLabel(s.team, s.manager); });
       }
       return m;
     }
 
     function teamWithManager(teamName) {
-      const m = getManagerMap();
-      const mgr = m[teamName];
-      if (!mgr || mgr.toLowerCase() === teamName.toLowerCase()) return teamName;
-      return `${teamName} (${mgr})`;
+      const hlv = getHlvLabel(teamName, DATA?.league_124?.find(x => x.team === teamName)?.manager);
+      return `${teamName} (${hlv})`;
     }
 
     function getBanterLines() {
@@ -906,13 +938,13 @@
       const top1 = l[0];
       const top2 = l[1];
       const ninh = l.find(x => x.team === 'Ninh SS') || l[4];
-      const haoTam = l.filter(x => x.is_last).map(x => `${x.team} (${x.manager})`).join(' & ');
+      const haoTam = l.filter(x => x.is_last).map(x => teamWithManager(x.team)).join(' & ');
       const maxBench = [...l].sort((a, b) => (b.bench_wasted || 0) - (a.bench_wasted || 0))[0];
       const maxHit = [...l].sort((a, b) => (b.total_hits || 0) - (a.total_hits || 0))[0];
       return [
         `🏆 Chốt sổ Chặng 1: ${teamWithManager(top1.team)} (${top1.total}đ) lên ngôi nhờ nổ Bench Boost GW10 • ${teamWithManager(top2.team)} (${top2.total}đ) bám sát và còn nguyên 3 Chip hạng nặng (TC, BB, FH) cho Chặng 2!`,
         `🎖️ Vinh danh hai Nhà Hảo Tâm Turn 1: ${haoTam} cùng chốt sổ 535đ — cảm ơn hai sếp tài trợ kèo tổng kết!`,
-        `💙 Cà khịa Xanh Samsung: Đổi màu áo mới cho ${teamWithManager(ninh.team)} đỡ tủi thân khi trượt dài từ #1 (GW3) xuống hạng #${ninh.rank} (${ninh.total}đ — chỉ hơn đáy đúng 19đ)!`,
+        `💙 Cà khịa Xanh Samsung: Đổi màu áo mới cho ${teamWithManager(ninh.team)} đỡ tủi thân khi trượt dài từ #1 (GW3) xuống hạng #${getDisplayRank(ninh.team, ninh.rank)} (${ninh.total}đ — chỉ hơn đáy đúng 19đ)!`,
         `🪑 Chúa tể bỏ rơi ghế dự bị: ${teamWithManager(maxBench.team)} để mốc tới ${maxBench.bench_wasted}đ trên băng ghế sub sau 10 vòng!`,
         `💸 Đam mê đi chợ trừ Hit: ${teamWithManager(maxHit.team)} đã đốt tổng cộng -${maxHit.total_hits}đ tiền chuyển nhượng trong Chặng 1!`,
         `⚡ Chặng 2 (GW11 – GW19) chính thức RESET điểm chặng về 0 – 0! Mọi HLV phải xả sạch 4 Chip Phase 1 trước Deadline GW19!`
@@ -946,12 +978,16 @@
       }
 
       const gwIdx = gwNum - 1;
-      const entries = DATA.league_124.map(s => {
+      const rawEntries = DATA.league_124.map((s, teamIdx) => {
         const pts = (DATA.gw_points_progression[s.team] || [])[gwIdx] || 0;
         const cumPts = (DATA.points_progression && DATA.points_progression[s.team]) ? (DATA.points_progression[s.team][gwIdx] || 0) : 0;
-        const rnk = (DATA.rank_progression && DATA.rank_progression[s.team]) ? (DATA.rank_progression[s.team][gwIdx] || '-') : '-';
-        return { team: s.team, manager: s.manager, pts, cumPts, rnk, color: TEAM_COLOR_MAP[s.team] || '#94a3b8' };
-      }).sort((a, b) => b.pts - a.pts);
+        return { team: s.team, hlv: getHlvLabel(s.team, s.manager), teamIdx, pts, cumPts, color: TEAM_COLOR_MAP[s.team] || '#94a3b8' };
+      });
+      const byCum = [...rawEntries].sort((a, b) => (b.cumPts - a.cumPts) || (a.teamIdx - b.teamIdx));
+      const rankAtGwMap = {};
+      byCum.forEach((item, idx) => { rankAtGwMap[item.team] = idx + 1; });
+
+      const entries = rawEntries.map(e => ({ ...e, rnk: rankAtGwMap[e.team] || '-' })).sort((a, b) => (b.pts - a.pts) || (a.rnk - b.rnk));
 
       const mvp = entries[0];
       const worst = entries[entries.length - 1];
@@ -963,29 +999,29 @@
           <div class="p-2.5 rounded-xl bg-emerald-950/25 border border-emerald-500/40 flex items-center justify-between">
             <div>
               <span class="text-[9px] font-black uppercase text-emerald-400 block">👑 Vua Vòng GW${gwNum}</span>
-              <b class="text-xs text-white">${mvp.team}</b> <span class="text-[10px] text-slate-400">(${mvp.manager})</span>
+              <b class="text-xs text-white">${mvp.team}</b> <span class="text-[10px] text-slate-300 font-semibold">(${mvp.hlv})</span>
             </div>
             <span class="text-sm font-black font-mono-numbers text-emerald-300">${mvp.pts}đ</span>
           </div>
           <div class="p-2.5 rounded-xl bg-rose-950/25 border border-rose-500/40 flex items-center justify-between">
             <div>
               <span class="text-[9px] font-black uppercase text-rose-400 block">💀 Hấp Hối GW${gwNum}</span>
-              <b class="text-xs text-white">${worst.team}</b> <span class="text-[10px] text-slate-400">(${worst.manager})</span>
+              <b class="text-xs text-white">${worst.team}</b> <span class="text-[10px] text-slate-300 font-semibold">(${worst.hlv})</span>
             </div>
             <span class="text-sm font-black font-mono-numbers text-rose-300">${worst.pts}đ</span>
           </div>
         `;
       }
 
-        const barsEl = document.getElementById('gw-replay-bars');
+      const barsEl = document.getElementById('gw-replay-bars');
       if (barsEl) {
         barsEl.innerHTML = entries.map((e, idx) => {
           const w = Math.max(14, Math.round((e.pts / maxPts) * 100));
           return `
             <div onclick="focusSpotlightTeam('${e.team}', false)" class="cursor-pointer group">
-              <div class="flex justify-between items-center text-[11px] mb-0.5">
-                <span class="font-bold text-white group-hover:text-cyan-300 transition">${idx === 0 ? '🔥 ' : ''}${e.team} <span class="text-slate-300 font-semibold">(${e.manager})</span> <span class="text-[9px] text-slate-400 font-normal">• #${e.rnk} • Tổng ${e.cumPts}đ</span></span>
-                <span class="font-mono-numbers font-extrabold text-white">${e.pts}đ</span>
+              <div class="flex justify-between items-center text-[11px] mb-0.5 gap-2">
+                <span class="font-bold text-white group-hover:text-cyan-300 transition truncate">${idx === 0 ? '🔥 ' : ''}${e.team} <span class="text-slate-300 font-semibold">(${e.hlv})</span> <span class="text-[10px] text-slate-400 font-semibold">• #${e.rnk} • Tổng ${e.cumPts}đ</span></span>
+                <span class="font-mono-numbers font-extrabold text-white shrink-0">${e.pts}đ</span>
               </div>
               <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-slate-800/80">
                 <div class="h-full rounded-full transition-all duration-500" style="width:${w}%; background-color:${e.color}; box-shadow: 0 0 10px ${e.color}"></div>
@@ -1039,26 +1075,27 @@
 
       tbody.innerHTML = DATA.league_124.map(s => {
         const col = TEAM_COLOR_MAP[s.team] || '#94a3b8';
+        const hlv = getHlvLabel(s.team, s.manager);
         const isBenchKing = s.bench_wasted === maxBench;
         const isHitKing = s.total_hits === maxHit && maxHit > 0;
         return `
           <tr onclick="focusSpotlightTeam('${s.team}', true)" class="hover:bg-slate-800/40 cursor-pointer transition">
-            <td class="p-2">
+            <td class="p-2 whitespace-nowrap">
               <div class="flex items-center gap-1.5 font-extrabold text-white">
-                <span class="w-2 h-2 rounded-full" style="background-color:${col}"></span>${s.team}
+                <span class="w-2 h-2 rounded-full shrink-0" style="background-color:${col}"></span><span>${s.team}</span><span class="text-[11px] font-semibold text-slate-400">(${hlv})</span>
               </div>
-              <span class="text-[10px] text-slate-400 pl-3.5">HLV: <b class="text-slate-300">${s.manager}</b> • £${s.team_value}m</span>
+              <span class="text-[10px] text-slate-400 pl-3.5">Giá trị đội hình: <b class="text-amber-300 font-mono-numbers">£${s.team_value}m</b></span>
             </td>
-            <td class="p-2 text-center font-mono-numbers">
-              <span class="px-2 py-0.5 rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30 font-bold text-[10px]">${s.best_gw}đ (GW${s.best_gw_num})</span>
+            <td class="p-2 text-center font-mono-numbers whitespace-nowrap">
+              <span class="px-2 py-0.5 rounded bg-emerald-950/70 text-emerald-300 border border-emerald-500/30 font-bold text-[10px] inline-block">${s.best_gw}đ (GW${s.best_gw_num})</span>
             </td>
-            <td class="p-2 text-center font-mono-numbers">
-              <span class="px-2 py-0.5 rounded bg-rose-950/70 text-rose-300 border border-rose-500/30 font-bold text-[10px]">${s.worst_gw}đ (GW${s.worst_gw_num})</span>
+            <td class="p-2 text-center font-mono-numbers whitespace-nowrap">
+              <span class="px-2 py-0.5 rounded bg-rose-950/70 text-rose-300 border border-rose-500/30 font-bold text-[10px] inline-block">${s.worst_gw}đ (GW${s.worst_gw_num})</span>
             </td>
-            <td class="p-2 text-right font-mono-numbers font-black ${isBenchKing ? 'text-purple-300' : 'text-slate-200'}">
+            <td class="p-2 text-right font-mono-numbers font-black whitespace-nowrap ${isBenchKing ? 'text-purple-300' : 'text-slate-200'}">
               ${isBenchKing ? '🪑 ' : ''}${s.bench_wasted}đ
             </td>
-            <td class="p-2 text-right font-mono-numbers font-bold ${isHitKing ? 'text-amber-400' : (s.total_hits > 0 ? 'text-rose-400' : 'text-emerald-400')}">
+            <td class="p-2 text-right font-mono-numbers font-bold whitespace-nowrap ${isHitKing ? 'text-amber-400' : (s.total_hits > 0 ? 'text-rose-400' : 'text-emerald-400')}">
               ${s.total_hits > 0 ? '-' + s.total_hits + 'đ' : '0đ'}
             </td>
           </tr>
@@ -1068,7 +1105,7 @@
       if (insightEl) {
         const totalBenchAll = DATA.league_124.reduce((a, b) => a + (b.bench_wasted || 0), 0);
         const totalHitsAll = DATA.league_124.reduce((a, b) => a + (b.total_hits || 0), 0);
-        insightEl.innerHTML = `💡 <b>Tổng kết độ phung phí cả giải 124+:</b> 7 HLV đã bỏ quên tổng cộng <b class="text-purple-300 font-mono-numbers">${totalBenchAll} điểm</b> trên ghế dự bị và nộp cho FPL <b class="text-amber-400 font-mono-numbers">-${totalHitsAll} điểm</b> tiền đi chợ (-Hit) trong Chặng 1!`;
+        insightEl.innerHTML = `💡 <b>Tổng kết độ phung phí cả giải:</b> ${DATA.league_124.length} HLV đã bỏ quên tổng cộng <b class="text-purple-300 font-mono-numbers">${totalBenchAll} điểm</b> trên ghế dự bị và nộp cho FPL <b class="text-amber-400 font-mono-numbers">-${totalHitsAll} điểm</b> tiền đi chợ (-Hit) trong Chặng 1!`;
       }
     }
 
@@ -1076,7 +1113,7 @@
       const sA = document.getElementById('clash-manager-a');
       const sB = document.getElementById('clash-manager-b');
       if (!sA || !sB || !DATA) return;
-      const opts = DATA.league_124.map(s => `<option value="${s.team}">${s.team} — ${s.manager} (#${s.rank})</option>`).join('');
+      const opts = DATA.league_124.map((s, idx) => `<option value="${s.team}">${s.team} (${getHlvLabel(s.team, s.manager)}) — #${idx + 1}</option>`).join('');
       sA.innerHTML = opts;
       sB.innerHTML = opts;
       if (DATA.league_124.length >= 2) {
@@ -1178,16 +1215,17 @@
         });
       });
 
+      const totalMgrs = DATA.league_124.length;
       const allPlayers = Object.values(playerMap);
-      const templates = allPlayers.filter(p => p.owners.length >= 4).sort((a, b) => b.owners.length - a.owners.length || b.pts - a.pts);
+      const templates = allPlayers.filter(p => p.owners.length >= Math.ceil(totalMgrs / 2)).sort((a, b) => b.owners.length - a.owners.length || b.pts - a.pts);
       const diffs = allPlayers.filter(p => p.owners.length <= 2 && p.pts >= 42).sort((a, b) => b.pts - a.pts).slice(0, 8);
 
       const capEl = document.getElementById('league-meta-captains');
       if (capEl) {
         capEl.innerHTML = `
-          <p class="text-[10px] font-black uppercase tracking-wider text-amber-400"><i class="fa-solid fa-crown mr-1"></i>Lựa Chọn Băng Captain GW10 Của 7 HLV</p>
+          <p class="text-[10px] font-black uppercase tracking-wider text-amber-400"><i class="fa-solid fa-crown mr-1"></i>Lựa Chọn Băng Captain GW10 Của ${totalMgrs} HLV</p>
           <div class="flex flex-wrap gap-1.5">
-            ${capChoices.map(c => `<span class="px-2 py-0.5 rounded-lg bg-slate-900 border border-amber-500/30 text-[10px]"><b>${c.managerTeam}:</b> <span class="text-amber-300 font-bold">${c.name}</span> <span class="font-mono-numbers text-emerald-400">(${c.effPts}đ)</span></span>`).join('')}
+            ${capChoices.map(c => `<span class="px-2 py-0.5 rounded-lg bg-slate-900 border border-amber-500/30 text-[10px]"><b>${teamWithManager(c.managerTeam)}:</b> <span class="text-amber-300 font-bold">${c.name}</span> <span class="font-mono-numbers text-emerald-400">(${c.effPts}đ)</span></span>`).join('')}
           </div>
         `;
       }
@@ -1198,9 +1236,9 @@
           <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between gap-2">
             <div class="min-w-0">
               <p class="font-bold text-white truncate">${p.name} <span class="text-[10px] text-cyan-400">(${p.club} • ${p.pts}đ mùa)</span></p>
-              <p class="text-[10px] text-slate-400 truncate">Sở hữu: ${p.owners.join(', ')}</p>
+              <p class="text-[10px] text-slate-400 truncate">Sở hữu: ${p.owners.map(o => teamWithManager(o)).join(', ')}</p>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.owners.length}/7 HLV</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.owners.length}/${totalMgrs} HLV</span>
           </div>
         `).join('');
       }
@@ -1211,9 +1249,9 @@
           <div class="p-2 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between gap-2">
             <div class="min-w-0">
               <p class="font-bold text-white truncate">${p.name} <span class="text-[10px] text-rose-400">(${p.club} • £${p.cost}m)</span></p>
-              <p class="text-[10px] text-slate-400 truncate">Hàng riêng của: <b class="text-amber-300">${p.owners.join(', ')}</b></p>
+              <p class="text-[10px] text-slate-400 truncate">Hàng riêng của: <b class="text-amber-300">${p.owners.map(o => teamWithManager(o)).join(', ')}</b></p>
             </div>
-            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.pts}đ (${p.owners.length}/7)</span>
+            <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 font-mono-numbers font-black text-[10px] shrink-0">${p.pts}đ (${p.owners.length}/${totalMgrs})</span>
           </div>
         `).join('');
       }
@@ -1286,7 +1324,7 @@
       const l124 = DATA.league_124;
       const leader = l124[0];
       const runnerUp = l124[1];
-      const lastGroup = l124.filter(x => x.is_last).map(x => `${x.team} (${x.manager})`).join(' & ');
+      const lastGroup = l124.filter(x => x.is_last).map(x => `${x.team} (${getHlvLabel(x.team, x.manager)})`).join(' & ');
       const lastPts = l124.find(x => x.is_last)?.total || 0;
 
       document.getElementById('hero-cards-container').innerHTML = `
@@ -1299,13 +1337,13 @@
         <div class="vip-card rounded-2xl p-4 vip-gold-glow relative overflow-hidden">
           <div class="absolute -right-2 -bottom-2 opacity-10 text-5xl text-amber-400"><i class="fa-solid fa-crown"></i></div>
           <p class="text-[10px] font-bold uppercase tracking-wider text-amber-400">Quán Quân Turn 1</p>
-          <p class="text-xl sm:text-2xl font-black text-gold-gradient mt-1 truncate">${leader.team} <span class="text-xs font-bold text-amber-200/90">(${leader.manager})</span></p>
+          <p class="text-xl sm:text-2xl font-black text-gold-gradient mt-1 truncate">${leader.team} <span class="text-xs font-bold text-amber-200/90">(${getHlvLabel(leader.team, leader.manager)})</span></p>
           <span class="text-[11px] text-amber-300 font-mono-numbers">${leader.total} điểm (GW10: ${leader.gw_pts}đ)</span>
         </div>
         <div class="vip-card rounded-2xl p-4 vip-cyan-glow relative overflow-hidden">
           <div class="absolute -right-2 -bottom-2 opacity-10 text-5xl text-cyan-400"><i class="fa-solid fa-shield"></i></div>
           <p class="text-[10px] font-bold uppercase tracking-wider text-cyan-400">Á Quân Chặng 1</p>
-          <p class="text-xl sm:text-2xl font-black text-cyan-gradient mt-1 truncate">${runnerUp.team} <span class="text-xs font-bold text-cyan-200/90">(${runnerUp.manager})</span></p>
+          <p class="text-xl sm:text-2xl font-black text-cyan-gradient mt-1 truncate">${runnerUp.team} <span class="text-xs font-bold text-cyan-200/90">(${getHlvLabel(runnerUp.team, runnerUp.manager)})</span></p>
           <span class="text-[11px] text-cyan-300 font-mono-numbers">${runnerUp.total} điểm (Kém ${Math.abs(runnerUp.gap_leader)}đ)</span>
         </div>
         <div class="vip-card rounded-2xl p-4 vip-rose-glow relative overflow-hidden cursor-pointer" onclick="openHaoTamModal()">
@@ -1327,24 +1365,24 @@
       if (standingMode === 'turn2') {
         thead.innerHTML = `
           <tr>
-            <th class="p-2.5 text-center w-12">Hạng</th>
-            <th class="p-2.5">Đội Bóng & HLV</th>
-            <th class="p-2.5 text-right font-black text-cyan-400">Điểm Turn 2</th>
-            <th class="p-2.5 text-right">Điểm Turn 1</th>
-            <th class="p-2.5 text-center">Trạng Thái Chặng 2</th>
+            <th class="p-2.5 text-center w-14 whitespace-nowrap">Hạng</th>
+            <th class="p-2.5 whitespace-nowrap">Đội Bóng & HLV</th>
+            <th class="p-2.5 text-right font-black text-cyan-400 whitespace-nowrap">Điểm Turn 2</th>
+            <th class="p-2.5 text-right whitespace-nowrap">Điểm Turn 1</th>
+            <th class="p-2.5 text-center whitespace-nowrap">Trạng Thái Chặng 2</th>
           </tr>
         `;
         const sortedT2 = [...DATA.league_124].sort((a, b) => b.turn2_pts - a.turn2_pts);
         tbody.innerHTML = sortedT2.map((s, idx) => `
           <tr class="hover:bg-slate-800/30 transition">
-            <td class="p-2.5 text-center font-black text-cyan-400">#${idx + 1}</td>
-            <td class="p-2.5">
-              <div class="font-extrabold text-white">${s.team} <span class="text-[11px] font-semibold text-cyan-300/90">• ${s.manager}</span></div>
+            <td class="p-2.5 text-center font-black text-cyan-400 whitespace-nowrap">#${idx + 1}</td>
+            <td class="p-2.5 whitespace-nowrap">
+              <div class="font-extrabold text-white">${s.team} <span class="text-[11px] font-semibold text-cyan-300/90">(${getHlvLabel(s.team, s.manager)})</span></div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers font-black text-cyan-400 text-sm">${s.turn2_pts}đ</td>
-            <td class="p-2.5 text-right font-mono-numbers text-slate-400">${s.total}đ</td>
-            <td class="p-2.5 text-center">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 font-bold">⚡ Xuất Phát 0 – 0</span>
+            <td class="p-2.5 text-right font-mono-numbers font-black text-cyan-400 text-sm whitespace-nowrap">${s.turn2_pts}đ</td>
+            <td class="p-2.5 text-right font-mono-numbers text-slate-400 whitespace-nowrap">${s.total}đ</td>
+            <td class="p-2.5 text-center whitespace-nowrap">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-950/60 text-cyan-300 border border-cyan-800/60 font-bold inline-block whitespace-nowrap">⚡ Xuất Phát 0 – 0</span>
             </td>
           </tr>
         `).join('');
@@ -1353,46 +1391,48 @@
 
       thead.innerHTML = `
         <tr>
-          <th class="p-2.5 text-center w-12">Hạng</th>
-          <th class="p-2.5">Đội Bóng & HLV</th>
-          <th class="p-2.5 text-center hidden sm:table-cell">Phong Độ 3 Vòng</th>
-          <th class="p-2.5 text-right">GW10</th>
-          <th class="p-2.5 text-right font-black text-white">Tổng Điểm</th>
-          <th class="p-2.5 text-right">Cách Top 1</th>
-          <th class="p-2.5 text-center">Trạng Thái Chặng 1</th>
+          <th class="p-2.5 text-center w-14 whitespace-nowrap">Hạng</th>
+          <th class="p-2.5 whitespace-nowrap">Đội Bóng & HLV</th>
+          <th class="p-2.5 text-center hidden sm:table-cell whitespace-nowrap">Phong Độ 3 Vòng</th>
+          <th class="p-2.5 text-right whitespace-nowrap">GW10</th>
+          <th class="p-2.5 text-right font-black text-white whitespace-nowrap">Tổng Điểm</th>
+          <th class="p-2.5 text-right whitespace-nowrap">Cách Top 1</th>
+          <th class="p-2.5 text-center whitespace-nowrap">Trạng Thái Chặng 1</th>
         </tr>
       `;
 
       const maxPts = Math.max(...DATA.league_124.map(x => x.total), 1);
       const minPts = Math.min(...DATA.league_124.map(x => x.total), 0);
 
-      tbody.innerHTML = DATA.league_124.map(s => {
-        let rankBadge = `#${s.rank}`;
+      tbody.innerHTML = DATA.league_124.map((s, idx) => {
+        const dispRank = idx + 1;
+        const hlv = getHlvLabel(s.team, s.manager);
+        let rankBadge = `#${dispRank}`;
         let rowStyle = 'hover:bg-slate-800/40 cursor-pointer';
         let teamNameStyle = 'text-white';
-        let statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700">An Toàn</span>';
+        let statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700 inline-block whitespace-nowrap">An Toàn</span>';
         const teamCol = TEAM_COLOR_MAP[s.team] || '#94a3b8';
         const isSpot = spotlightTeam === s.team;
 
-        if (s.rank === 1) {
+        if (dispRank === 1) {
           rankBadge = '🥇 #1';
-          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-extrabold border border-amber-500/40">🏆 Quán Quân Turn 1</span>';
-        } else if (s.rank === 2) {
+          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-extrabold border border-amber-500/40 inline-block whitespace-nowrap">🏆 Quán Quân Turn 1</span>';
+        } else if (dispRank === 2) {
           rankBadge = '🥈 #2';
           rowStyle = 'bg-cyan-950/15 border-l-2 border-cyan-400 hover:bg-cyan-950/30 cursor-pointer';
-          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-extrabold border border-cyan-500/40">🥈 Á Quân Turn 1</span>';
-        } else if (s.rank === 3) {
+          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-extrabold border border-cyan-500/40 inline-block whitespace-nowrap">🥈 Á Quân Turn 1</span>';
+        } else if (dispRank === 3) {
           rankBadge = '🥉 #3';
-          statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700">Top 3</span>';
+          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700 inline-block whitespace-nowrap">Top 3</span>';
         } else if (s.is_last) {
           rowStyle = 'bg-rose-950/15 hover:bg-rose-950/30 cursor-pointer';
-          statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50">🎖️ Nhà Hảo Tâm Turn 1</span>';
+          statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50 inline-block whitespace-nowrap">🎖️ Nhà Hảo Tâm Turn 1</span>';
         }
 
         // MÀU XANH SAMSUNG CHO ANH NINH (NINH SS) — CHỈ ĐỔI MÀU CHỮ & TRẠNG THÁI TRÊU CHỌC NHẸ, KHÔNG LÀM BADGE TO LẤN ÁT TOP 1 & NHÀ HẢO TÂM
         if (s.team === 'Ninh SS') {
           teamNameStyle = 'text-blue-400';
-          statusTag = '<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition">Hạng 5 • Cách đáy 19đ</span>';
+          statusTag = '<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition inline-block whitespace-nowrap">Hạng 5 • Cách đáy 19đ</span>';
         }
 
         if (isSpot) {
@@ -1408,28 +1448,28 @@
         const pctBar = Math.max(18, Math.round(((s.total - (minPts - 25)) / Math.max(1, maxPts - (minPts - 25))) * 100));
 
         return `
-          <tr onclick="focusSpotlightTeam('${s.team}', true)" title="Bấm để soi riêng đường biểu đồ của ${s.team} (${s.manager})" class="${rowStyle} transition">
-            <td class="p-2.5 text-center font-black ${s.rank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
-            <td class="p-2.5">
-              <div class="flex flex-wrap items-center gap-1.5">
+          <tr onclick="focusSpotlightTeam('${s.team}', true)" title="Bấm để soi riêng đường biểu đồ của ${s.team} (${hlv})" class="${rowStyle} transition">
+            <td class="p-2.5 text-center font-black whitespace-nowrap ${dispRank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
+            <td class="p-2.5 whitespace-nowrap">
+              <div class="flex items-center gap-1.5 whitespace-nowrap">
                 <span class="w-2 h-2 rounded-full shrink-0" style="background-color:${teamCol}; box-shadow: 0 0 6px ${teamCol}"></span>
                 <span class="font-extrabold ${teamNameStyle}">${s.team}</span>
-                <span class="text-[11px] font-semibold text-slate-300">• ${s.manager}</span>
+                <span class="text-[11px] font-semibold text-slate-300">(${hlv})</span>
                 ${isSpot ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/30 text-cyan-200 font-black">ĐANG SOI</span>' : ''}
               </div>
             </td>
-            <td class="p-2.5 text-center hidden sm:table-cell">
+            <td class="p-2.5 text-center hidden sm:table-cell whitespace-nowrap">
               <div class="inline-flex items-center gap-1">${formHtml}</div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers font-bold ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
-            <td class="p-2.5 text-right">
+            <td class="p-2.5 text-right font-mono-numbers font-bold whitespace-nowrap ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
+            <td class="p-2.5 text-right whitespace-nowrap">
               <div class="font-mono-numbers font-black text-white">${s.total}</div>
               <div class="w-16 ml-auto bg-slate-800/90 h-1 rounded-full overflow-hidden mt-0.5">
                 <div class="h-1 rounded-full" style="width:${pctBar}%; background-color:${teamCol}"></div>
               </div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers text-slate-400">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
-            <td class="p-2.5 text-center">${statusTag}</td>
+            <td class="p-2.5 text-right font-mono-numbers text-slate-400 whitespace-nowrap">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
+            <td class="p-2.5 text-center whitespace-nowrap">${statusTag}</td>
           </tr>
         `;
       }).join('');
@@ -1439,22 +1479,22 @@
       const tbody = document.getElementById('chip-matrix-tbody');
       if (!tbody) return;
       const chipBadge = (used) => used
-        ? '<span class="text-rose-400/80 font-bold text-[10px]"><i class="fa-solid fa-xmark"></i> Hết</span>'
-        : '<span class="text-emerald-400 font-bold text-[10px]"><i class="fa-solid fa-check"></i> Còn</span>';
+        ? '<span class="text-rose-400/80 font-bold text-[10px] whitespace-nowrap"><i class="fa-solid fa-xmark"></i> Hết</span>'
+        : '<span class="text-emerald-400 font-bold text-[10px] whitespace-nowrap"><i class="fa-solid fa-check"></i> Còn</span>';
 
       tbody.innerHTML = DATA.league_124.map(s => {
         const cm = s.chips_map || { wc: false, tc: false, bb: false, fh: false };
         return `
           <tr class="hover:bg-slate-800/30">
-            <td class="p-1.5 text-left">
+            <td class="p-1.5 text-left whitespace-nowrap">
               <div class="font-bold text-white leading-tight">${s.team}</div>
-              <div class="text-[9px] text-slate-400 leading-tight">${s.manager}</div>
+              <div class="text-[9px] text-slate-400 leading-tight">${getHlvLabel(s.team, s.manager)}</div>
             </td>
             <td class="p-1.5">${chipBadge(cm.wc)}</td>
             <td class="p-1.5">${chipBadge(cm.tc)}</td>
             <td class="p-1.5">${chipBadge(cm.bb)}</td>
             <td class="p-1.5">${chipBadge(cm.fh)}</td>
-            <td class="p-1.5 text-right font-mono-numbers text-amber-300 font-bold">£${s.team_value}m</td>
+            <td class="p-1.5 text-right font-mono-numbers text-amber-300 font-bold whitespace-nowrap">£${s.team_value}m</td>
           </tr>
         `;
       }).join('');
@@ -1462,20 +1502,20 @@
 
     function renderLeagueIOC() {
       const tbody = document.getElementById('league-ioc-tbody');
-      tbody.innerHTML = DATA.league_ioc.map(s => {
+      if (!tbody || !DATA.league_ioc) return;
+      tbody.innerHTML = DATA.league_ioc.map((s, idx) => {
         const chipsHtml = (s.chips && s.chips.length > 0)
           ? s.chips.map(c => `<span class="px-1.5 py-0.5 rounded bg-indigo-950/60 text-indigo-300 border border-indigo-700/50 text-[9px] font-mono mr-1">${c}</span>`).join('')
           : '<span class="text-emerald-400 text-[10px] font-bold">Full 4 Chip</span>';
         return `
           <tr class="hover:bg-slate-800/30 transition">
-            <td class="p-2.5 text-center font-bold text-slate-400">#${s.rank}</td>
-            <td class="p-2.5">
-              <div class="font-bold text-white">${s.team}</div>
-              <div class="text-[10px] text-slate-400">${s.manager}</div>
+            <td class="p-2.5 text-center font-bold text-slate-400 whitespace-nowrap">#${idx + 1}</td>
+            <td class="p-2.5 whitespace-nowrap">
+              <div class="font-bold text-white">${s.team} <span class="text-[11px] font-semibold text-slate-400">(${getHlvLabel(s.team, s.manager)})</span></div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers text-slate-300">${s.gw_pts}</td>
-            <td class="p-2.5 text-right font-mono-numbers font-black text-white">${s.total}</td>
-            <td class="p-2.5 text-center">${chipsHtml}</td>
+            <td class="p-2.5 text-right font-mono-numbers text-slate-300 whitespace-nowrap">${s.gw_pts}</td>
+            <td class="p-2.5 text-right font-mono-numbers font-black text-white whitespace-nowrap">${s.total}</td>
+            <td class="p-2.5 text-center whitespace-nowrap">${chipsHtml}</td>
           </tr>
         `;
       }).join('');
@@ -1488,7 +1528,12 @@
       'FC K': '#10b981',
       'Ninh SS': '#2563eb', // Xanh Samsung Hoàng Gia
       'Ngocdao': '#f43f5e',
-      'XOẠC-UNITED': '#ec4899'
+      'XOẠC-UNITED': '#ec4899',
+      'HELL_BOY Ψ (☆ ｗ ☆) Ψ': '#f59e0b',
+      'Phấn Đào': '#10b981',
+      'Pending Moderation': '#a855f7',
+      'hoheheho': '#3b82f6',
+      "Dương's Team": '#f43f5e'
     };
 
     // Trạng thái bật/tắt từng người & Spotlight trên 2 biểu đồ
@@ -1572,8 +1617,9 @@
         else btnPitch.classList.add('hidden');
       }
       if (spotlightTeam) {
-        const obj = DATA?.league_124?.find(x => x.team === spotlightTeam);
-        lbl.textContent = obj ? `${obj.team} (${obj.manager} • #${obj.rank} • ${obj.total}đ)` : spotlightTeam;
+        const idx = DATA?.league_124?.findIndex(x => x.team === spotlightTeam);
+        const obj = idx >= 0 ? DATA.league_124[idx] : null;
+        lbl.textContent = obj ? `${obj.team} (${getHlvLabel(obj.team, obj.manager)} • #${idx + 1} • ${obj.total}đ)` : spotlightTeam;
         banner.classList.remove('hidden');
       } else {
         banner.classList.add('hidden');
@@ -1662,13 +1708,12 @@
       const container = document.getElementById(containerId);
       if (!container) return;
       ensureChartVisibilityInit(teams);
-      container.innerHTML = teams.map(team => {
+      container.innerHTML = teams.map((team, idx) => {
         const col = TEAM_COLOR_MAP[team] || '#94a3b8';
         const isVisible = chartVisibility[chartKey][team] !== false;
         const obj = DATA.league_124.find(x => x.team === team);
-        const statTag = obj ? `#${obj.rank} • ${obj.total}đ` : '';
-        const mgrShort = (obj && obj.manager && obj.manager.toLowerCase() !== team.toLowerCase()) ? ` (${obj.manager})` : '';
-        const display = `${team}${mgrShort}`;
+        const statTag = obj ? `#${idx + 1} • ${obj.total}đ` : '';
+        const display = `${team} (${getHlvLabel(team, obj?.manager)})`;
         const activeStyle = isVisible
           ? `background: rgba(15, 23, 42, 0.92); border-color: ${col}88; box-shadow: 0 0 12px -3px ${col}66;`
           : `background: rgba(9, 13, 22, 0.55); border-color: rgba(51, 65, 85, 0.45); opacity: 0.38;`;
@@ -1768,7 +1813,7 @@
             y: isRank ? {
               reverse: true,
               min: 1,
-              max: 7,
+              max: Math.max(2, teams.length),
               ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => '#' + v },
               grid: { color: 'rgba(255,255,255,0.06)', tickBorderDash: [4, 4] }
             } : {
@@ -1873,7 +1918,7 @@
             } : {
               reverse: true,
               min: 1,
-              max: 7,
+              max: Math.max(2, teams.length),
               ticks: { stepSize: 1, color: '#94a3b8', font: { size: 10, family: 'JetBrains Mono', weight: 'bold' }, callback: v => '#' + v },
               grid: { color: 'rgba(255,255,255,0.06)' }
             },
@@ -1908,7 +1953,7 @@
       const sA = document.getElementById('sim-manager-a');
       const sB = document.getElementById('sim-manager-b');
       if (!sA || !sB || !DATA) return;
-      const opts = DATA.league_124.map(s => `<option value="${s.team}">${s.team} (${s.manager})</option>`).join('');
+      const opts = DATA.league_124.map(s => `<option value="${s.team}">${s.team} (${getHlvLabel(s.team, s.manager)})</option>`).join('');
       sA.innerHTML = opts;
       sB.innerHTML = opts;
       if (DATA.league_124.length >= 2) {
@@ -2008,7 +2053,7 @@
           const sq = DATA.league_124_squads[s.team];
           if (sq) {
             const chipTag = sq.active_chip ? ` • ${sq.active_chip.toUpperCase()}` : '';
-            opts += `<option value="${s.team}">🛡️ ${s.team} (${s.manager}) — GW10: ${sq.gw_pts}đ${chipTag}</option>`;
+            opts += `<option value="${s.team}">🛡️ ${s.team} (${getHlvLabel(s.team, s.manager)}) — GW10: ${sq.gw_pts}đ${chipTag}</option>`;
           }
         });
         if (hint) hint.innerHTML = 'Chọn đội bóng bất kỳ để soi 15 cầu thủ ra sân GW10, So Găng 1v1 và Meta Sở Hữu Nội Bộ';
@@ -2092,7 +2137,7 @@
         benchList = sq.bench || [];
         totalLabel = `Điểm GW10: ${sq.gw_pts}đ`;
         document.getElementById('pitch-title').textContent = `ĐỘI HÌNH RA SÂN GW10 — ${selVal.toUpperCase()}`;
-        document.getElementById('pitch-subtitle').textContent = `HLV: ${sq.manager} • Dữ liệu thực tế sau khi chốt sổ Auto-Sub`;
+        document.getElementById('pitch-subtitle').textContent = `${getHlvLabel(selVal, sq.manager)} • Dữ liệu thực tế sau khi chốt sổ Auto-Sub`;
         const chipBadge = document.getElementById('pitch-chip-badge');
         if (sq.active_chip) {
           chipBadge.textContent = `⚡ CHIP: ${sq.active_chip.toUpperCase()}`;
