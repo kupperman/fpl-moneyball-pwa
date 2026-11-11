@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 08:26 UTC",
+  "updated_at": "2026-11-11 13:01 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
@@ -290,7 +290,7 @@
             "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 22.9,
+            "selected_by": 22.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -1011,7 +1011,7 @@
           "form": 3.5,
           "xgi_90": 0.09,
           "ict": 27.3,
-          "selected_by": 12.0,
+          "selected_by": 11.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -1178,7 +1178,7 @@
             "form": 1.4,
             "xgi_90": 0.46,
             "ict": 35.4,
-            "selected_by": 8.4,
+            "selected_by": 8.3,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
@@ -1669,7 +1669,7 @@
             "form": 3.2,
             "xgi_90": 0.6,
             "ict": 75.5,
-            "selected_by": 19.2,
+            "selected_by": 19.1,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
@@ -1810,7 +1810,7 @@
           "form": 3.5,
           "xgi_90": 0.09,
           "ict": 27.3,
-          "selected_by": 12.0,
+          "selected_by": 11.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -2220,7 +2220,7 @@
     {
       "entry": 7536458,
       "rank": 4,
-      "team": "Pending Moderation",
+      "team": "Hoàng Ti's Team",
       "manager": "Phạm Hoàng",
       "gw_pts": 46,
       "total": 551,
@@ -2529,7 +2529,7 @@
           "form": 0.8,
           "xgi_90": 0.23,
           "ict": 42.6,
-          "selected_by": 22.9,
+          "selected_by": 22.8,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -2624,7 +2624,7 @@
             "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 22.9,
+            "selected_by": 22.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -2818,7 +2818,7 @@
           "form": 0.5,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 32.0,
+          "selected_by": 31.9,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3116,7 +3116,7 @@
         }
       ]
     },
-    "Pending Moderation": {
+    "Hoàng Ti's Team": {
       "manager": "Phạm Hoàng",
       "gw_pts": 46,
       "active_chip": null,
@@ -3168,7 +3168,7 @@
             "form": 7.5,
             "xgi_90": 0.15,
             "ict": 41.6,
-            "selected_by": 9.1,
+            "selected_by": 9.2,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -3185,7 +3185,7 @@
             "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 22.9,
+            "selected_by": 22.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -3379,7 +3379,7 @@
           "form": 0.5,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 32.0,
+          "selected_by": 31.9,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3440,7 +3440,7 @@
             "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 22.9,
+            "selected_by": 22.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -3906,7 +3906,7 @@
           "form": 0.5,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 32.0,
+          "selected_by": 31.9,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3945,7 +3945,7 @@
       "val": "23đ (GW4)"
     },
     "bench_king": {
-      "team": "Pending Moderation",
+      "team": "Hoàng Ti's Team",
       "manager": "Phạm Hoàng",
       "val": "143đ"
     },
@@ -3997,7 +3997,7 @@
       3,
       3
     ],
-    "Pending Moderation": [
+    "Hoàng Ti's Team": [
       1,
       1,
       5,
@@ -4071,7 +4071,7 @@
       514,
       578
     ],
-    "Pending Moderation": [
+    "Hoàng Ti's Team": [
       76,
       157,
       185,
@@ -4145,7 +4145,7 @@
       47,
       64
     ],
-    "Pending Moderation": [
+    "Hoàng Ti's Team": [
       76,
       81,
       28,
@@ -5086,7 +5086,7 @@
       "xgi_90": 0.15,
       "ict": 41.6,
       "value": 13.21,
-      "selected_by": 9.1,
+      "selected_by": 9.2,
       "news": "",
       "tag": "👑 Vua Điểm Số"
     },
@@ -5530,7 +5530,7 @@
       "xgi_90": 0.58,
       "ict": 53.9,
       "value": 6.18,
-      "selected_by": 32.0,
+      "selected_by": 31.9,
       "news": "Thigh injury - Unknown return date",
       "tag": "🔥 Máy Cày xGI"
     },
@@ -5590,7 +5590,7 @@
       "xgi_90": 0.6,
       "ict": 75.5,
       "value": 5.82,
-      "selected_by": 19.2,
+      "selected_by": 19.1,
       "news": "",
       "tag": "🔥 Máy Cày xGI"
     }
@@ -5601,21 +5601,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+279,339",
+        "net_transfers": "+283,110",
         "pts": 54
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+198,484",
+        "net_transfers": "+199,849",
         "pts": 55
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+191,424",
+        "net_transfers": "+194,076",
         "pts": 61
       }
     ],
@@ -5624,21 +5624,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-289,252",
+        "net_transfers": "-292,559",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-268,058",
+        "net_transfers": "-270,982",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-128,948",
+        "net_transfers": "-130,720",
         "pts": 37
       }
     ]
@@ -5679,7 +5679,7 @@
         "form": 7.5,
         "xgi_90": 0.15,
         "ict": 41.6,
-        "selected_by": 9.1
+        "selected_by": 9.2
       },
       {
         "id": 4,
@@ -5912,7 +5912,7 @@
     "team_name": "Cận VIP",
     "manager": "Trung TíT",
     "total_points": 578,
-    "overall_rank": 3985428,
+    "overall_rank": 3985424,
     "gap_to_leader": -27,
     "leader_name": "Bao Bui",
     "leader_pts": 605,
