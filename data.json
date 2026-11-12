@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11 23:45 UTC",
+  "updated_at": "2026-11-12 04:29 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
@@ -5601,21 +5601,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+291,837",
+        "net_transfers": "+293,161",
         "pts": 54
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+203,352",
+        "net_transfers": "+203,861",
         "pts": 55
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+200,290",
+        "net_transfers": "+201,314",
         "pts": 61
       }
     ],
@@ -5624,21 +5624,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-300,350",
+        "net_transfers": "-301,567",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-277,397",
+        "net_transfers": "-278,394",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-134,795",
+        "net_transfers": "-135,410",
         "pts": 37
       }
     ]
@@ -5912,7 +5912,7 @@
     "team_name": "Cận VIP",
     "manager": "Trung TíT",
     "total_points": 578,
-    "overall_rank": 3985402,
+    "overall_rank": 3985403,
     "gap_to_leader": -27,
     "leader_name": "Bao Bui",
     "leader_pts": 605,
