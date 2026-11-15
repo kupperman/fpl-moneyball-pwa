@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15 03:19 UTC",
+  "updated_at": "2026-11-15 13:00 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
@@ -940,7 +940,7 @@
             "form": 9.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 23.9,
+            "selected_by": 24.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
@@ -1212,7 +1212,7 @@
             "form": 9.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 23.9,
+            "selected_by": 24.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
@@ -1266,7 +1266,7 @@
           "form": 3.5,
           "xgi_90": 0.24,
           "ict": 39.9,
-          "selected_by": 1.3,
+          "selected_by": 1.4,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
@@ -1484,7 +1484,7 @@
             "form": 9.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 23.9,
+            "selected_by": 24.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": true,
@@ -1739,7 +1739,7 @@
             "form": 9.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 23.9,
+            "selected_by": 24.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": true,
@@ -2475,7 +2475,7 @@
             "form": 9.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 23.9,
+            "selected_by": 24.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
@@ -3168,7 +3168,7 @@
             "form": 7.5,
             "xgi_90": 0.15,
             "ict": 41.6,
-            "selected_by": 9.4,
+            "selected_by": 9.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -5086,7 +5086,7 @@
       "xgi_90": 0.15,
       "ict": 41.6,
       "value": 13.21,
-      "selected_by": 9.4,
+      "selected_by": 9.5,
       "news": "",
       "tag": "👑 Vua Điểm Số"
     },
@@ -5133,7 +5133,7 @@
       "xgi_90": 0.59,
       "ict": 71.6,
       "value": 9.38,
-      "selected_by": 23.9,
+      "selected_by": 24.0,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
       "cap_index": 95.2,
@@ -5601,21 +5601,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+331,997",
+        "net_transfers": "+334,765",
         "pts": 54
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+228,624",
+        "net_transfers": "+230,543",
         "pts": 61
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+217,128",
+        "net_transfers": "+218,008",
         "pts": 55
       }
     ],
@@ -5624,21 +5624,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-335,160",
+        "net_transfers": "-337,446",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-305,788",
+        "net_transfers": "-307,624",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-153,172",
+        "net_transfers": "-154,494",
         "pts": 37
       }
     ]
@@ -5679,7 +5679,7 @@
         "form": 7.5,
         "xgi_90": 0.15,
         "ict": 41.6,
-        "selected_by": 9.4
+        "selected_by": 9.5
       },
       {
         "id": 4,
@@ -5767,7 +5767,7 @@
         "form": 9.0,
         "xgi_90": 0.59,
         "ict": 71.6,
-        "selected_by": 23.9
+        "selected_by": 24.0
       },
       {
         "id": 379,
@@ -5884,7 +5884,7 @@
       "xgi_90": 0.59,
       "ict": 71.6,
       "value": 9.38,
-      "selected_by": 23.9,
+      "selected_by": 24.0,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
       "cap_index": 95.2,
