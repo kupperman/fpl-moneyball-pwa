@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18 00:04 UTC",
+  "updated_at": "2026-11-18 09:58 UTC",
   "current_gw": 10,
   "next_gw": 11,
   "next_deadline": "2026-11-21T11:00:00Z",
@@ -739,7 +739,7 @@
           "form": 3.7,
           "xgi_90": 0.05,
           "ict": 22.6,
-          "selected_by": 0.6,
+          "selected_by": 0.5,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -783,7 +783,7 @@
             "form": 7.5,
             "xgi_90": 0.24,
             "ict": 67.3,
-            "selected_by": 15.0,
+            "selected_by": 15.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -1871,7 +1871,7 @@
             "form": 7.5,
             "xgi_90": 0.24,
             "ict": 67.3,
-            "selected_by": 15.0,
+            "selected_by": 15.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -2818,7 +2818,7 @@
           "form": 0.0,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 31.3,
+          "selected_by": 31.2,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3107,7 +3107,7 @@
           "form": 3.7,
           "xgi_90": 0.05,
           "ict": 22.6,
-          "selected_by": 0.6,
+          "selected_by": 0.5,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -3379,7 +3379,7 @@
           "form": 0.0,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 31.3,
+          "selected_by": 31.2,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3906,7 +3906,7 @@
           "form": 0.0,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 31.3,
+          "selected_by": 31.2,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -5259,7 +5259,7 @@
       "xgi_90": 0.24,
       "ict": 67.3,
       "value": 11.18,
-      "selected_by": 15.0,
+      "selected_by": 15.1,
       "news": "",
       "tag": "💎 Giá Siêu Hời"
     },
@@ -5530,7 +5530,7 @@
       "xgi_90": 0.58,
       "ict": 53.9,
       "value": 6.18,
-      "selected_by": 31.3,
+      "selected_by": 31.2,
       "news": "Thigh injury - Unknown return date",
       "tag": "🔥 Máy Cày xGI"
     },
@@ -5575,7 +5575,7 @@
       "xgi_90": 0.35,
       "ict": 70.5,
       "value": 6.39,
-      "selected_by": 5.8,
+      "selected_by": 5.9,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5601,21 +5601,21 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.1,
-        "net_transfers": "+374,093",
+        "net_transfers": "+381,610",
         "pts": 54
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+253,402",
+        "net_transfers": "+257,356",
         "pts": 61
       },
       {
         "name": "Barry",
         "team": "EVE",
         "cost": 5.7,
-        "net_transfers": "+228,721",
+        "net_transfers": "+230,564",
         "pts": 55
       }
     ],
@@ -5624,21 +5624,21 @@
         "name": "João Pedro",
         "team": "CHE",
         "cost": 7.6,
-        "net_transfers": "-365,578",
+        "net_transfers": "-370,195",
         "pts": 47
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-335,947",
+        "net_transfers": "-341,473",
         "pts": 44
       },
       {
         "name": "Guéhi",
         "team": "MCI",
         "cost": 6.0,
-        "net_transfers": "-170,611",
+        "net_transfers": "-173,381",
         "pts": 37
       }
     ]
@@ -5912,7 +5912,7 @@
     "team_name": "Cận VIP",
     "manager": "Trung TíT",
     "total_points": 578,
-    "overall_rank": 3985360,
+    "overall_rank": 3985358,
     "gap_to_leader": -27,
     "leader_name": "Bao Bui",
     "leader_pts": 605,
