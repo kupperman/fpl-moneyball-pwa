@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-11-21 04:25 UTC",
-  "current_gw": 10,
-  "next_gw": 11,
-  "next_deadline": "2026-11-21T11:00:00Z",
+  "updated_at": "2026-11-21 13:46 UTC",
+  "current_gw": 11,
+  "next_gw": 12,
+  "next_deadline": "2026-11-27T18:30:00Z",
   "gw_headers": [
-    "GW11",
     "GW12",
     "GW13",
     "GW14",
-    "GW15"
+    "GW15",
+    "GW16"
   ],
   "league_124": [
     {
@@ -16,8 +16,8 @@
       "rank": 1,
       "team": "Bao Bui",
       "manager": "Bao Bui",
-      "gw_pts": 71,
-      "total": 605,
+      "gw_pts": 2,
+      "total": 607,
       "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)",
@@ -35,7 +35,7 @@
       "worst_gw_num": 5,
       "bench_wasted": 110,
       "total_hits": 4,
-      "team_value": 103.5,
+      "team_value": 103.7,
       "gap_leader": 0,
       "is_last": false
     },
@@ -44,8 +44,8 @@
       "rank": 2,
       "team": "Cận VIP",
       "manager": "Trung TíT",
-      "gw_pts": 64,
-      "total": 578,
+      "gw_pts": 2,
+      "total": 580,
       "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)"
@@ -62,7 +62,7 @@
       "worst_gw_num": 5,
       "bench_wasted": 105,
       "total_hits": 12,
-      "team_value": 101.5,
+      "team_value": 102.0,
       "gap_leader": -27,
       "is_last": false
     },
@@ -71,8 +71,8 @@
       "rank": 3,
       "team": "SNAL",
       "manager": "paper man",
-      "gw_pts": 60,
-      "total": 568,
+      "gw_pts": 1,
+      "total": 569,
       "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)"
@@ -89,8 +89,8 @@
       "worst_gw_num": 3,
       "bench_wasted": 106,
       "total_hits": 4,
-      "team_value": 102.2,
-      "gap_leader": -37,
+      "team_value": 102.6,
+      "gap_leader": -38,
       "is_last": false
     },
     {
@@ -98,8 +98,8 @@
       "rank": 4,
       "team": "FC K",
       "manager": "iKen Dang",
-      "gw_pts": 69,
-      "total": 564,
+      "gw_pts": 3,
+      "total": 567,
       "turn2_pts": 0,
       "chips": [
         "3XC(GW9)",
@@ -117,8 +117,8 @@
       "worst_gw_num": 1,
       "bench_wasted": 59,
       "total_hits": 0,
-      "team_value": 100.3,
-      "gap_leader": -41,
+      "team_value": 100.4,
+      "gap_leader": -40,
       "is_last": false
     },
     {
@@ -126,8 +126,8 @@
       "rank": 5,
       "team": "Ninh SS",
       "manager": "Ninh Dang",
-      "gw_pts": 65,
-      "total": 554,
+      "gw_pts": 3,
+      "total": 557,
       "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW5)"
@@ -145,43 +145,16 @@
       "bench_wasted": 31,
       "total_hits": 0,
       "team_value": 101.3,
-      "gap_leader": -51,
+      "gap_leader": -50,
       "is_last": false
-    },
-    {
-      "entry": 6938534,
-      "rank": 6,
-      "team": "XOẠC-UNITED",
-      "manager": "Cường Tệ",
-      "gw_pts": 59,
-      "total": 535,
-      "turn2_pts": 0,
-      "chips": [
-        "3XC(GW10)"
-      ],
-      "chips_map": {
-        "wc": false,
-        "tc": true,
-        "bb": false,
-        "fh": false
-      },
-      "best_gw": 74,
-      "best_gw_num": 6,
-      "worst_gw": 40,
-      "worst_gw_num": 5,
-      "bench_wasted": 95,
-      "total_hits": 4,
-      "team_value": 100.3,
-      "gap_leader": -70,
-      "is_last": true
     },
     {
       "entry": 772578,
       "rank": 6,
       "team": "Ngocdao",
       "manager": "Ngoc Dao",
-      "gw_pts": 49,
-      "total": 535,
+      "gw_pts": 3,
+      "total": 538,
       "turn2_pts": 0,
       "chips": [
         "3XC(GW10)"
@@ -198,7 +171,34 @@
       "worst_gw_num": 5,
       "bench_wasted": 39,
       "total_hits": 4,
-      "team_value": 100.1,
+      "team_value": 100.4,
+      "gap_leader": -69,
+      "is_last": false
+    },
+    {
+      "entry": 6938534,
+      "rank": 7,
+      "team": "XOẠC-UNITED",
+      "manager": "Cường Tệ",
+      "gw_pts": 2,
+      "total": 537,
+      "turn2_pts": 0,
+      "chips": [
+        "3XC(GW10)"
+      ],
+      "chips_map": {
+        "wc": false,
+        "tc": true,
+        "bb": false,
+        "fh": false
+      },
+      "best_gw": 74,
+      "best_gw_num": 6,
+      "worst_gw": 40,
+      "worst_gw_num": 5,
+      "bench_wasted": 95,
+      "total_hits": 4,
+      "team_value": 100.4,
       "gap_leader": -70,
       "is_last": true
     }
@@ -206,8 +206,8 @@
   "league_124_squads": {
     "Bao Bui": {
       "manager": "Bao Bui",
-      "gw_pts": 71,
-      "active_chip": "bboost",
+      "gw_pts": 2,
+      "active_chip": null,
       "starting": {
         "GKP": [
           {
@@ -216,16 +216,16 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -235,16 +235,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -252,45 +252,28 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
-            "id": 229,
-            "name": "Tarkowski",
-            "team": "EVE",
-            "cost": 6.2,
-            "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
-            "xgi_90": 0.03,
-            "ict": 36.0,
-            "selected_by": 19.0,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 2
-          },
-          {
-            "id": 391,
-            "name": "Gvardiol",
-            "team": "MCI",
-            "cost": 5.6,
-            "pts": 44,
+            "id": 112,
+            "name": "Van Hecke",
+            "team": "TOT",
+            "cost": 5.1,
+            "pts": 57,
             "gw_pts": 0,
-            "form": 1.0,
-            "xgi_90": 0.23,
-            "ict": 42.6,
-            "selected_by": 20.7,
+            "form": 6.5,
+            "xgi_90": 0.24,
+            "ict": 67.3,
+            "selected_by": 18.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -305,16 +288,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -322,16 +305,16 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           },
           {
             "id": 68,
@@ -339,16 +322,33 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 399,
+            "name": "Cherki",
+            "team": "MCI",
+            "cost": 7.9,
+            "pts": 54,
+            "gw_pts": 0,
+            "form": 2.5,
+            "xgi_90": 0.61,
+            "ict": 81.5,
+            "selected_by": 33.6,
+            "pos": "MID",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -357,17 +357,17 @@
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 2
           },
           {
             "id": 166,
@@ -375,33 +375,33 @@
             "team": "AVL",
             "cost": 7.2,
             "pts": 54,
-            "gw_pts": 11,
-            "form": 11.0,
+            "gw_pts": 0,
+            "form": 8.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 34.5,
+            "selected_by": 35.7,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 11
+            "eff_gw_pts": 0
           },
           {
-            "id": 138,
-            "name": "Kostoulas",
-            "team": "BHA",
-            "cost": 5.8,
-            "pts": 47,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.35,
-            "ict": 54.5,
-            "selected_by": 9.4,
+            "id": 79,
+            "name": "Evanilson",
+            "team": "BOU",
+            "cost": 6.5,
+            "pts": 61,
+            "gw_pts": 0,
+            "form": 6.0,
+            "xgi_90": 0.59,
+            "ict": 71.6,
+            "selected_by": 26.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ]
       },
@@ -412,50 +412,16 @@
           "team": "HUL",
           "cost": 4.7,
           "pts": 49,
-          "gw_pts": 6,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.0,
           "ict": 32.9,
           "selected_by": 13.3,
           "pos": "GKP",
           "is_captain": false,
           "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 6
-        },
-        {
-          "id": 399,
-          "name": "Cherki",
-          "team": "MCI",
-          "cost": 7.9,
-          "pts": 54,
-          "gw_pts": 9,
-          "form": 3.3,
-          "xgi_90": 0.61,
-          "ict": 81.5,
-          "selected_by": 33.6,
-          "pos": "MID",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 9
-        },
-        {
-          "id": 449,
-          "name": "Hall",
-          "team": "NEW",
-          "cost": 5.2,
-          "pts": 46,
-          "gw_pts": 4,
-          "form": 3.7,
-          "xgi_90": 0.15,
-          "ict": 52.3,
-          "selected_by": 17.3,
-          "pos": "DEF",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 4
+          "multiplier": 0,
+          "eff_gw_pts": 0
         },
         {
           "id": 286,
@@ -464,21 +430,55 @@
           "cost": 5.3,
           "pts": 48,
           "gw_pts": 0,
-          "form": 3.0,
+          "form": 2.2,
           "xgi_90": 0.29,
           "ict": 51.9,
-          "selected_by": 8.9,
+          "selected_by": 8.8,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
-          "multiplier": 1,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 229,
+          "name": "Tarkowski",
+          "team": "EVE",
+          "cost": 6.2,
+          "pts": 56,
+          "gw_pts": 0,
+          "form": 2.5,
+          "xgi_90": 0.03,
+          "ict": 36.0,
+          "selected_by": 18.9,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 449,
+          "name": "Hall",
+          "team": "NEW",
+          "cost": 5.2,
+          "pts": 46,
+          "gw_pts": 0,
+          "form": 2.8,
+          "xgi_90": 0.15,
+          "ict": 52.3,
+          "selected_by": 16.9,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
           "eff_gw_pts": 0
         }
       ]
     },
     "Cận VIP": {
       "manager": "Trung TíT",
-      "gw_pts": 64,
+      "gw_pts": 2,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -488,16 +488,16 @@
             "team": "TOT",
             "cost": 4.4,
             "pts": 40,
-            "gw_pts": 2,
-            "form": 5.7,
+            "gw_pts": 0,
+            "form": 4.2,
             "xgi_90": 0.0,
             "ict": 21.4,
-            "selected_by": 15.8,
+            "selected_by": 15.9,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -507,16 +507,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 229,
@@ -524,16 +524,16 @@
             "team": "EVE",
             "cost": 6.2,
             "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.03,
             "ict": 36.0,
-            "selected_by": 19.0,
+            "selected_by": 18.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -541,16 +541,16 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -560,16 +560,16 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -577,33 +577,33 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
             "is_captain": false,
-            "is_vc": false,
+            "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           },
           {
             "id": 400,
             "name": "Doku",
             "team": "MCI",
             "cost": 7.5,
-            "pts": 25,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.58,
+            "pts": 26,
+            "gw_pts": 1,
+            "form": 1.8,
+            "xgi_90": 0.54,
             "ict": 47.0,
             "selected_by": 4.4,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 1
           },
           {
             "id": 40,
@@ -611,16 +611,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
-            "is_vc": true,
+            "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -630,16 +630,16 @@
             "team": "AVL",
             "cost": 7.2,
             "pts": 54,
-            "gw_pts": 11,
-            "form": 11.0,
+            "gw_pts": 0,
+            "form": 8.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 34.5,
+            "selected_by": 35.7,
             "pos": "FWD",
-            "is_captain": false,
+            "is_captain": true,
             "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 11
+            "multiplier": 2,
+            "eff_gw_pts": 0
           },
           {
             "id": 249,
@@ -647,33 +647,33 @@
             "team": "EVE",
             "cost": 5.7,
             "pts": 55,
-            "gw_pts": 16,
-            "form": 9.0,
+            "gw_pts": 0,
+            "form": 6.8,
             "xgi_90": 0.82,
             "ict": 89.0,
-            "selected_by": 11.4,
+            "selected_by": 11.5,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 16
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
-            "is_captain": true,
+            "is_captain": false,
             "is_vc": false,
-            "multiplier": 2,
-            "eff_gw_pts": 4
+            "multiplier": 1,
+            "eff_gw_pts": 1
           }
         ]
       },
@@ -683,9 +683,9 @@
           "name": "Leno",
           "team": "FUL",
           "cost": 4.5,
-          "pts": 39,
-          "gw_pts": 3,
-          "form": 4.3,
+          "pts": 40,
+          "gw_pts": 1,
+          "form": 3.5,
           "xgi_90": 0.0,
           "ict": 23.3,
           "selected_by": 4.3,
@@ -693,7 +693,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 3
+          "eff_gw_pts": 1
         },
         {
           "id": 453,
@@ -701,16 +701,16 @@
           "team": "NEW",
           "cost": 6.0,
           "pts": 44,
-          "gw_pts": 2,
-          "form": 4.0,
+          "gw_pts": 0,
+          "form": 3.0,
           "xgi_90": 0.32,
           "ict": 59.8,
-          "selected_by": 5.9,
+          "selected_by": 5.6,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 0
         },
         {
           "id": 330,
@@ -718,8 +718,8 @@
           "team": "LEE",
           "cost": 4.8,
           "pts": 58,
-          "gw_pts": 7,
-          "form": 4.3,
+          "gw_pts": 0,
+          "form": 3.2,
           "xgi_90": 0.29,
           "ict": 51.7,
           "selected_by": 11.3,
@@ -727,16 +727,16 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 7
+          "eff_gw_pts": 0
         },
         {
           "id": 650,
           "name": "Affengruber",
           "team": "FUL",
           "cost": 4.5,
-          "pts": 32,
-          "gw_pts": 2,
-          "form": 3.7,
+          "pts": 33,
+          "gw_pts": 1,
+          "form": 3.0,
           "xgi_90": 0.05,
           "ict": 22.6,
           "selected_by": 0.5,
@@ -744,13 +744,13 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 1
         }
       ]
     },
     "SNAL": {
       "manager": "paper man",
-      "gw_pts": 60,
+      "gw_pts": 1,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -760,16 +760,16 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -779,16 +779,16 @@
             "team": "TOT",
             "cost": 5.1,
             "pts": 57,
-            "gw_pts": 4,
-            "form": 8.7,
+            "gw_pts": 0,
+            "form": 6.5,
             "xgi_90": 0.24,
             "ict": 67.3,
-            "selected_by": 17.2,
+            "selected_by": 18.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 0
           },
           {
             "id": 8,
@@ -796,16 +796,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -813,16 +813,16 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -832,16 +832,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
-            "is_vc": true,
+            "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 236,
@@ -849,8 +849,8 @@
             "team": "EVE",
             "cost": 6.7,
             "pts": 50,
-            "gw_pts": 9,
-            "form": 5.0,
+            "gw_pts": 0,
+            "form": 3.8,
             "xgi_90": 0.32,
             "ict": 80.0,
             "selected_by": 7.2,
@@ -858,24 +858,24 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           },
           {
-            "id": 453,
-            "name": "Barnes",
-            "team": "NEW",
-            "cost": 6.0,
-            "pts": 44,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.32,
-            "ict": 59.8,
-            "selected_by": 5.9,
+            "id": 399,
+            "name": "Cherki",
+            "team": "MCI",
+            "cost": 7.9,
+            "pts": 54,
+            "gw_pts": 0,
+            "form": 2.5,
+            "xgi_90": 0.61,
+            "ict": 81.5,
+            "selected_by": 33.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -883,52 +883,52 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
           {
-            "id": 138,
-            "name": "Kostoulas",
-            "team": "BHA",
-            "cost": 5.8,
-            "pts": 47,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.35,
-            "ict": 54.5,
-            "selected_by": 9.4,
+            "id": 166,
+            "name": "N.Jackson",
+            "team": "AVL",
+            "cost": 7.2,
+            "pts": 54,
+            "gw_pts": 0,
+            "form": 8.2,
+            "xgi_90": 0.54,
+            "ict": 66.5,
+            "selected_by": 35.7,
             "pos": "FWD",
-            "is_captain": false,
+            "is_captain": true,
             "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 2
+            "multiplier": 2,
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
-            "is_captain": true,
+            "is_captain": false,
             "is_vc": false,
-            "multiplier": 2,
-            "eff_gw_pts": 4
+            "multiplier": 1,
+            "eff_gw_pts": 1
           },
           {
             "id": 79,
@@ -936,16 +936,16 @@
             "team": "BOU",
             "cost": 6.5,
             "pts": 61,
-            "gw_pts": 9,
-            "form": 8.0,
+            "gw_pts": 0,
+            "form": 6.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 25.4,
+            "selected_by": 26.0,
             "pos": "FWD",
             "is_captain": false,
-            "is_vc": false,
+            "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           }
         ]
       },
@@ -956,8 +956,8 @@
           "team": "HUL",
           "cost": 4.7,
           "pts": 49,
-          "gw_pts": 6,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.0,
           "ict": 32.9,
           "selected_by": 13.3,
@@ -965,24 +965,24 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 6
+          "eff_gw_pts": 0
         },
         {
-          "id": 399,
-          "name": "Cherki",
-          "team": "MCI",
-          "cost": 7.9,
-          "pts": 54,
-          "gw_pts": 9,
-          "form": 3.3,
-          "xgi_90": 0.61,
-          "ict": 81.5,
-          "selected_by": 33.6,
+          "id": 453,
+          "name": "Barnes",
+          "team": "NEW",
+          "cost": 6.0,
+          "pts": 44,
+          "gw_pts": 0,
+          "form": 3.0,
+          "xgi_90": 0.32,
+          "ict": 59.8,
+          "selected_by": 5.6,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 9
+          "eff_gw_pts": 0
         },
         {
           "id": 330,
@@ -990,8 +990,8 @@
           "team": "LEE",
           "cost": 4.8,
           "pts": 58,
-          "gw_pts": 7,
-          "form": 4.3,
+          "gw_pts": 0,
+          "form": 3.2,
           "xgi_90": 0.29,
           "ict": 51.7,
           "selected_by": 11.3,
@@ -999,7 +999,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 7
+          "eff_gw_pts": 0
         },
         {
           "id": 279,
@@ -1007,8 +1007,8 @@
           "team": "HUL",
           "cost": 4.2,
           "pts": 42,
-          "gw_pts": 6,
-          "form": 4.0,
+          "gw_pts": 0,
+          "form": 3.0,
           "xgi_90": 0.09,
           "ict": 27.3,
           "selected_by": 11.8,
@@ -1016,14 +1016,14 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 6
+          "eff_gw_pts": 0
         }
       ]
     },
     "FC K": {
       "manager": "iKen Dang",
-      "gw_pts": 69,
-      "active_chip": "bboost",
+      "gw_pts": 3,
+      "active_chip": null,
       "starting": {
         "GKP": [
           {
@@ -1032,52 +1032,35 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
           {
-            "id": 502,
-            "name": "Robertson",
-            "team": "TOT",
-            "cost": 4.3,
-            "pts": 38,
-            "gw_pts": 2,
-            "form": 5.3,
-            "xgi_90": 0.23,
-            "ict": 49.1,
-            "selected_by": 2.8,
+            "id": 116,
+            "name": "Dunk",
+            "team": "BHA",
+            "cost": 4.5,
+            "pts": 41,
+            "gw_pts": 0,
+            "form": 3.0,
+            "xgi_90": 0.02,
+            "ict": 26.5,
+            "selected_by": 1.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
-          },
-          {
-            "id": 503,
-            "name": "Van de Ven",
-            "team": "TOT",
-            "cost": 5.0,
-            "pts": 31,
-            "gw_pts": 1,
-            "form": 4.0,
-            "xgi_90": 0.1,
-            "ict": 22.9,
-            "selected_by": 4.0,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 1
+            "eff_gw_pts": 0
           },
           {
             "id": 31,
@@ -1085,16 +1068,33 @@
             "team": "ARS",
             "cost": 4.9,
             "pts": 57,
-            "gw_pts": 8,
-            "form": 10.7,
+            "gw_pts": 0,
+            "form": 8.0,
             "xgi_90": 0.08,
             "ict": 26.9,
-            "selected_by": 25.4,
+            "selected_by": 25.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 8
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 387,
+            "name": "O'Reilly",
+            "team": "MCI",
+            "cost": 6.2,
+            "pts": 16,
+            "gw_pts": 1,
+            "form": 0.8,
+            "xgi_90": 0.47,
+            "ict": 18.8,
+            "selected_by": 8.0,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 1
           }
         ],
         "MID": [
@@ -1104,8 +1104,8 @@
             "team": "MCI",
             "cost": 7.9,
             "pts": 54,
-            "gw_pts": 9,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.61,
             "ict": 81.5,
             "selected_by": 33.6,
@@ -1113,7 +1113,7 @@
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           },
           {
             "id": 40,
@@ -1121,16 +1121,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 94,
@@ -1138,16 +1138,16 @@
             "team": "BRE",
             "cost": 6.1,
             "pts": 46,
-            "gw_pts": 1,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.32,
             "ict": 42.8,
-            "selected_by": 12.4,
+            "selected_by": 12.2,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 1
+            "eff_gw_pts": 0
           },
           {
             "id": 45,
@@ -1155,52 +1155,52 @@
             "team": "AVL",
             "cost": 5.5,
             "pts": 44,
-            "gw_pts": 10,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.46,
             "ict": 55.5,
-            "selected_by": 4.6,
+            "selected_by": 4.9,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
-          }
-        ],
-        "FWD": [
+            "eff_gw_pts": 0
+          },
           {
-            "id": 464,
-            "name": "Wissa",
-            "team": "NEW",
-            "cost": 5.9,
-            "pts": 22,
-            "gw_pts": 2,
-            "form": 1.3,
-            "xgi_90": 0.46,
-            "ict": 35.4,
-            "selected_by": 7.8,
-            "pos": "FWD",
+            "id": 372,
+            "name": "Mac Allister",
+            "team": "LIV",
+            "cost": 5.4,
+            "pts": 27,
+            "gw_pts": 0,
+            "form": 3.2,
+            "xgi_90": 0.24,
+            "ict": 39.9,
+            "selected_by": 1.4,
+            "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
-          },
+            "eff_gw_pts": 0
+          }
+        ],
+        "FWD": [
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 2
           },
           {
             "id": 79,
@@ -1208,16 +1208,16 @@
             "team": "BOU",
             "cost": 6.5,
             "pts": 61,
-            "gw_pts": 9,
-            "form": 8.0,
+            "gw_pts": 0,
+            "form": 6.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 25.4,
+            "selected_by": 26.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           }
         ]
       },
@@ -1236,65 +1236,65 @@
           "pos": "GKP",
           "is_captain": false,
           "is_vc": false,
-          "multiplier": 1,
+          "multiplier": 0,
           "eff_gw_pts": 0
         },
         {
-          "id": 387,
-          "name": "O'Reilly",
-          "team": "MCI",
-          "cost": 6.2,
-          "pts": 15,
-          "gw_pts": 1,
-          "form": 0.7,
-          "xgi_90": 0.52,
-          "ict": 18.8,
-          "selected_by": 8.1,
-          "pos": "DEF",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 1
-        },
-        {
-          "id": 372,
-          "name": "Mac Allister",
-          "team": "LIV",
-          "cost": 5.4,
-          "pts": 27,
-          "gw_pts": 9,
-          "form": 4.3,
-          "xgi_90": 0.24,
-          "ict": 39.9,
-          "selected_by": 1.4,
-          "pos": "MID",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 9
-        },
-        {
-          "id": 116,
-          "name": "Dunk",
-          "team": "BHA",
-          "cost": 4.5,
-          "pts": 41,
-          "gw_pts": 5,
+          "id": 502,
+          "name": "Robertson",
+          "team": "TOT",
+          "cost": 4.3,
+          "pts": 38,
+          "gw_pts": 0,
           "form": 4.0,
-          "xgi_90": 0.02,
-          "ict": 26.5,
-          "selected_by": 1.5,
+          "xgi_90": 0.23,
+          "ict": 49.1,
+          "selected_by": 2.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
-          "multiplier": 1,
-          "eff_gw_pts": 5
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 503,
+          "name": "Van de Ven",
+          "team": "TOT",
+          "cost": 5.0,
+          "pts": 31,
+          "gw_pts": 0,
+          "form": 3.0,
+          "xgi_90": 0.1,
+          "ict": 22.9,
+          "selected_by": 4.0,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 464,
+          "name": "Wissa",
+          "team": "NEW",
+          "cost": 5.9,
+          "pts": 22,
+          "gw_pts": 0,
+          "form": 1.0,
+          "xgi_90": 0.46,
+          "ict": 35.4,
+          "selected_by": 7.6,
+          "pos": "FWD",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
         }
       ]
     },
     "Ninh SS": {
       "manager": "Ninh Dang",
-      "gw_pts": 65,
+      "gw_pts": 3,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -1304,69 +1304,69 @@
             "team": "BHA",
             "cost": 4.7,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 6.3,
+            "gw_pts": 0,
+            "form": 4.8,
             "xgi_90": 0.02,
             "ict": 24.8,
-            "selected_by": 24.2,
+            "selected_by": 24.3,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
-          {
-            "id": 449,
-            "name": "Hall",
-            "team": "NEW",
-            "cost": 5.2,
-            "pts": 46,
-            "gw_pts": 4,
-            "form": 3.7,
-            "xgi_90": 0.15,
-            "ict": 52.3,
-            "selected_by": 17.3,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 4
-          },
-          {
-            "id": 330,
-            "name": "Bogle",
-            "team": "LEE",
-            "cost": 4.8,
-            "pts": 58,
-            "gw_pts": 7,
-            "form": 4.3,
-            "xgi_90": 0.29,
-            "ict": 51.7,
-            "selected_by": 11.3,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 7
-          },
           {
             "id": 8,
             "name": "Calafiori",
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 173,
+            "name": "Thomas",
+            "team": "COV",
+            "cost": 4.0,
+            "pts": 32,
+            "gw_pts": 0,
+            "form": 0.2,
+            "xgi_90": 0.13,
+            "ict": 27.4,
+            "selected_by": 6.9,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 504,
+            "name": "Vuskovic",
+            "team": "BHA",
+            "cost": 5.3,
+            "pts": 70,
+            "gw_pts": 0,
+            "form": 4.8,
+            "xgi_90": 0.15,
+            "ict": 41.6,
+            "selected_by": 11.3,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -1376,8 +1376,8 @@
             "team": "MCI",
             "cost": 7.9,
             "pts": 54,
-            "gw_pts": 9,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.61,
             "ict": 81.5,
             "selected_by": 33.6,
@@ -1385,7 +1385,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           },
           {
             "id": 40,
@@ -1393,16 +1393,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 15,
@@ -1410,8 +1410,8 @@
             "team": "ARS",
             "cost": 6.7,
             "pts": 50,
-            "gw_pts": 11,
-            "form": 5.7,
+            "gw_pts": 0,
+            "form": 4.2,
             "xgi_90": 0.53,
             "ict": 77.4,
             "selected_by": 16.6,
@@ -1419,7 +1419,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 11
+            "eff_gw_pts": 0
           },
           {
             "id": 480,
@@ -1427,33 +1427,33 @@
             "team": "NFO",
             "cost": 7.8,
             "pts": 39,
-            "gw_pts": 5,
-            "form": 3.0,
+            "gw_pts": 0,
+            "form": 2.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 9.0,
+            "selected_by": 8.9,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 5
+            "eff_gw_pts": 0
           },
           {
             "id": 400,
             "name": "Doku",
             "team": "MCI",
             "cost": 7.5,
-            "pts": 25,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.58,
+            "pts": 26,
+            "gw_pts": 1,
+            "form": 1.8,
+            "xgi_90": 0.54,
             "ict": 47.0,
             "selected_by": 4.4,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 1
           }
         ],
         "FWD": [
@@ -1462,17 +1462,17 @@
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 2
           },
           {
             "id": 79,
@@ -1480,16 +1480,16 @@
             "team": "BOU",
             "cost": 6.5,
             "pts": 61,
-            "gw_pts": 9,
-            "form": 8.0,
+            "gw_pts": 0,
+            "form": 6.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 25.4,
+            "selected_by": 26.0,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           }
         ]
       },
@@ -1500,8 +1500,8 @@
           "team": "HUL",
           "cost": 4.7,
           "pts": 49,
-          "gw_pts": 6,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.0,
           "ict": 32.9,
           "selected_by": 13.3,
@@ -1509,36 +1509,19 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 6
+          "eff_gw_pts": 0
         },
         {
-          "id": 316,
-          "name": "Emersonn",
-          "team": "IPS",
-          "cost": 5.4,
-          "pts": 34,
-          "gw_pts": 1,
-          "form": 1.3,
-          "xgi_90": 0.4,
-          "ict": 35.0,
-          "selected_by": 2.7,
-          "pos": "FWD",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 0,
-          "eff_gw_pts": 1
-        },
-        {
-          "id": 173,
-          "name": "Thomas",
-          "team": "COV",
-          "cost": 4.0,
-          "pts": 32,
+          "id": 449,
+          "name": "Hall",
+          "team": "NEW",
+          "cost": 5.2,
+          "pts": 46,
           "gw_pts": 0,
-          "form": 0.3,
-          "xgi_90": 0.13,
-          "ict": 27.4,
-          "selected_by": 7.0,
+          "form": 2.8,
+          "xgi_90": 0.15,
+          "ict": 52.3,
+          "selected_by": 16.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -1546,300 +1529,45 @@
           "eff_gw_pts": 0
         },
         {
-          "id": 282,
-          "name": "Giles",
-          "team": "HUL",
-          "cost": 4.0,
-          "pts": 31,
-          "gw_pts": 1,
-          "form": 1.3,
-          "xgi_90": 0.07,
-          "ict": 27.4,
-          "selected_by": 2.4,
-          "pos": "DEF",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 0,
-          "eff_gw_pts": 1
-        }
-      ]
-    },
-    "XOẠC-UNITED": {
-      "manager": "Cường Tệ",
-      "gw_pts": 59,
-      "active_chip": "3xc",
-      "starting": {
-        "GKP": [
-          {
-            "id": 109,
-            "name": "Verbruggen",
-            "team": "BHA",
-            "cost": 4.7,
-            "pts": 57,
-            "gw_pts": 6,
-            "form": 6.3,
-            "xgi_90": 0.02,
-            "ict": 24.8,
-            "selected_by": 24.2,
-            "pos": "GKP",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 6
-          }
-        ],
-        "DEF": [
-          {
-            "id": 388,
-            "name": "Guéhi",
-            "team": "MCI",
-            "cost": 5.9,
-            "pts": 37,
-            "gw_pts": 0,
-            "form": 0.0,
-            "xgi_90": 0.23,
-            "ict": 35.1,
-            "selected_by": 12.8,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 0
-          },
-          {
-            "id": 115,
-            "name": "De Cuyper",
-            "team": "BHA",
-            "cost": 5.5,
-            "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
-            "xgi_90": 0.43,
-            "ict": 67.1,
-            "selected_by": 49.2,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 6
-          },
-          {
-            "id": 8,
-            "name": "Calafiori",
-            "team": "ARS",
-            "cost": 5.9,
-            "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
-            "xgi_90": 0.26,
-            "ict": 40.2,
-            "selected_by": 48.7,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 6
-          }
-        ],
-        "MID": [
-          {
-            "id": 15,
-            "name": "Ødegaard",
-            "team": "ARS",
-            "cost": 6.7,
-            "pts": 50,
-            "gw_pts": 11,
-            "form": 5.7,
-            "xgi_90": 0.53,
-            "ict": 77.4,
-            "selected_by": 16.6,
-            "pos": "MID",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 11
-          },
-          {
-            "id": 427,
-            "name": "Mbeumo",
-            "team": "MUN",
-            "cost": 7.8,
-            "pts": 46,
-            "gw_pts": 2,
-            "form": 1.7,
-            "xgi_90": 0.6,
-            "ict": 75.5,
-            "selected_by": 18.2,
-            "pos": "MID",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 2
-          },
-          {
-            "id": 399,
-            "name": "Cherki",
-            "team": "MCI",
-            "cost": 7.9,
-            "pts": 54,
-            "gw_pts": 9,
-            "form": 3.3,
-            "xgi_90": 0.61,
-            "ict": 81.5,
-            "selected_by": 33.6,
-            "pos": "MID",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 9
-          },
-          {
-            "id": 40,
-            "name": "Rogers",
-            "team": "CHE",
-            "cost": 8.2,
-            "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.47,
-            "ict": 74.0,
-            "selected_by": 54.4,
-            "pos": "MID",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 2
-          }
-        ],
-        "FWD": [
-          {
-            "id": 411,
-            "name": "Haaland",
-            "team": "MCI",
-            "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
-            "ict": 90.3,
-            "selected_by": 78.8,
-            "pos": "FWD",
-            "is_captain": true,
-            "is_vc": false,
-            "multiplier": 3,
-            "eff_gw_pts": 6
-          },
-          {
-            "id": 79,
-            "name": "Evanilson",
-            "team": "BOU",
-            "cost": 6.5,
-            "pts": 61,
-            "gw_pts": 9,
-            "form": 8.0,
-            "xgi_90": 0.59,
-            "ict": 71.6,
-            "selected_by": 25.4,
-            "pos": "FWD",
-            "is_captain": false,
-            "is_vc": true,
-            "multiplier": 1,
-            "eff_gw_pts": 9
-          },
-          {
-            "id": 138,
-            "name": "Kostoulas",
-            "team": "BHA",
-            "cost": 5.8,
-            "pts": 47,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.35,
-            "ict": 54.5,
-            "selected_by": 9.4,
-            "pos": "FWD",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 2
-          }
-        ]
-      },
-      "bench": [
-        {
-          "id": 250,
-          "name": "Leno",
-          "team": "FUL",
-          "cost": 4.5,
-          "pts": 39,
-          "gw_pts": 3,
-          "form": 4.3,
-          "xgi_90": 0.0,
-          "ict": 23.3,
-          "selected_by": 4.3,
-          "pos": "GKP",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 0,
-          "eff_gw_pts": 3
-        },
-        {
-          "id": 258,
-          "name": "Castagne",
-          "team": "FUL",
-          "cost": 4.5,
-          "pts": 44,
-          "gw_pts": 7,
-          "form": 5.3,
-          "xgi_90": 0.21,
-          "ict": 35.9,
-          "selected_by": 1.2,
-          "pos": "DEF",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 0,
-          "eff_gw_pts": 7
-        },
-        {
-          "id": 279,
-          "name": "Ajayi",
-          "team": "HUL",
-          "cost": 4.2,
-          "pts": 42,
-          "gw_pts": 6,
-          "form": 4.0,
-          "xgi_90": 0.09,
-          "ict": 27.3,
-          "selected_by": 11.8,
-          "pos": "DEF",
-          "is_captain": false,
-          "is_vc": false,
-          "multiplier": 0,
-          "eff_gw_pts": 6
-        },
-        {
-          "id": 565,
-          "name": "M.Sangaré",
-          "team": "BRE",
+          "id": 316,
+          "name": "Emersonn",
+          "team": "IPS",
           "cost": 5.4,
-          "pts": 32,
-          "gw_pts": 1,
-          "form": 2.7,
-          "xgi_90": 0.18,
-          "ict": 27.3,
-          "selected_by": 5.7,
-          "pos": "MID",
+          "pts": 34,
+          "gw_pts": 0,
+          "form": 1.0,
+          "xgi_90": 0.4,
+          "ict": 35.0,
+          "selected_by": 2.7,
+          "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 1
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 330,
+          "name": "Bogle",
+          "team": "LEE",
+          "cost": 4.8,
+          "pts": 58,
+          "gw_pts": 0,
+          "form": 3.2,
+          "xgi_90": 0.29,
+          "ict": 51.7,
+          "selected_by": 11.3,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
         }
       ]
     },
     "Ngocdao": {
       "manager": "Ngoc Dao",
-      "gw_pts": 49,
-      "active_chip": "3xc",
+      "gw_pts": 3,
+      "active_chip": null,
       "starting": {
         "GKP": [
           {
@@ -1848,16 +1576,16 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -1867,28 +1595,11 @@
             "team": "TOT",
             "cost": 5.1,
             "pts": 57,
-            "gw_pts": 4,
-            "form": 8.7,
+            "gw_pts": 0,
+            "form": 6.5,
             "xgi_90": 0.24,
             "ict": 67.3,
-            "selected_by": 17.2,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 4
-          },
-          {
-            "id": 388,
-            "name": "Guéhi",
-            "team": "MCI",
-            "cost": 5.9,
-            "pts": 37,
-            "gw_pts": 0,
-            "form": 0.0,
-            "xgi_90": 0.23,
-            "ict": 35.1,
-            "selected_by": 12.8,
+            "selected_by": 18.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -1896,13 +1607,30 @@
             "eff_gw_pts": 0
           },
           {
+            "id": 388,
+            "name": "Guéhi",
+            "team": "MCI",
+            "cost": 5.9,
+            "pts": 38,
+            "gw_pts": 1,
+            "form": 0.2,
+            "xgi_90": 0.21,
+            "ict": 35.1,
+            "selected_by": 12.5,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 1
+          },
+          {
             "id": 4,
             "name": "Gabriel",
             "team": "ARS",
             "cost": 8.1,
             "pts": 66,
-            "gw_pts": 8,
-            "form": 10.3,
+            "gw_pts": 0,
+            "form": 7.8,
             "xgi_90": 0.17,
             "ict": 47.8,
             "selected_by": 26.6,
@@ -1910,7 +1638,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 8
+            "eff_gw_pts": 0
           },
           {
             "id": 229,
@@ -1918,16 +1646,16 @@
             "team": "EVE",
             "cost": 6.2,
             "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.03,
             "ict": 36.0,
-            "selected_by": 19.0,
+            "selected_by": 18.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -1937,8 +1665,8 @@
             "team": "MCI",
             "cost": 6.9,
             "pts": 23,
-            "gw_pts": 2,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.43,
             "ict": 43.7,
             "selected_by": 3.5,
@@ -1946,7 +1674,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 68,
@@ -1954,16 +1682,16 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
           },
           {
             "id": 525,
@@ -1971,8 +1699,8 @@
             "team": "TOT",
             "cost": 5.6,
             "pts": 24,
-            "gw_pts": 5,
-            "form": 5.0,
+            "gw_pts": 0,
+            "form": 3.8,
             "xgi_90": 0.23,
             "ict": 33.8,
             "selected_by": 0.7,
@@ -1980,7 +1708,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 5
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -1990,16 +1718,16 @@
             "team": "BHA",
             "cost": 5.8,
             "pts": 47,
-            "gw_pts": 2,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.35,
             "ict": 54.5,
-            "selected_by": 9.4,
+            "selected_by": 9.3,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 166,
@@ -2007,33 +1735,33 @@
             "team": "AVL",
             "cost": 7.2,
             "pts": 54,
-            "gw_pts": 11,
-            "form": 11.0,
+            "gw_pts": 0,
+            "form": 8.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 34.5,
+            "selected_by": 35.7,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 11
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
-            "multiplier": 3,
-            "eff_gw_pts": 6
+            "multiplier": 2,
+            "eff_gw_pts": 2
           }
         ]
       },
@@ -2056,17 +1784,17 @@
           "eff_gw_pts": 0
         },
         {
-          "id": 417,
-          "name": "Dalot",
-          "team": "MUN",
-          "cost": 4.7,
-          "pts": 16,
+          "id": 101,
+          "name": "Henderson",
+          "team": "CHE",
+          "cost": 4.9,
+          "pts": 27,
           "gw_pts": 0,
-          "form": 1.3,
-          "xgi_90": 0.09,
-          "ict": 40.7,
-          "selected_by": 1.2,
-          "pos": "DEF",
+          "form": 1.0,
+          "xgi_90": 0.21,
+          "ict": 28.9,
+          "selected_by": 1.3,
+          "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
@@ -2079,10 +1807,10 @@
           "cost": 5.3,
           "pts": 48,
           "gw_pts": 0,
-          "form": 3.0,
+          "form": 2.2,
           "xgi_90": 0.29,
           "ict": 51.9,
-          "selected_by": 8.9,
+          "selected_by": 8.8,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
@@ -2090,21 +1818,293 @@
           "eff_gw_pts": 0
         },
         {
-          "id": 101,
-          "name": "Henderson",
-          "team": "CHE",
-          "cost": 4.9,
-          "pts": 27,
-          "gw_pts": 2,
-          "form": 1.3,
+          "id": 417,
+          "name": "Dalot",
+          "team": "MUN",
+          "cost": 4.7,
+          "pts": 16,
+          "gw_pts": 0,
+          "form": 1.0,
+          "xgi_90": 0.09,
+          "ict": 40.7,
+          "selected_by": 1.2,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        }
+      ]
+    },
+    "XOẠC-UNITED": {
+      "manager": "Cường Tệ",
+      "gw_pts": 2,
+      "active_chip": null,
+      "starting": {
+        "GKP": [
+          {
+            "id": 109,
+            "name": "Verbruggen",
+            "team": "BHA",
+            "cost": 4.7,
+            "pts": 57,
+            "gw_pts": 0,
+            "form": 4.8,
+            "xgi_90": 0.02,
+            "ict": 24.8,
+            "selected_by": 24.3,
+            "pos": "GKP",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          }
+        ],
+        "DEF": [
+          {
+            "id": 31,
+            "name": "Konsa",
+            "team": "ARS",
+            "cost": 4.9,
+            "pts": 57,
+            "gw_pts": 0,
+            "form": 8.0,
+            "xgi_90": 0.08,
+            "ict": 26.9,
+            "selected_by": 25.5,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 115,
+            "name": "De Cuyper",
+            "team": "BHA",
+            "cost": 5.5,
+            "pts": 75,
+            "gw_pts": 0,
+            "form": 4.0,
+            "xgi_90": 0.43,
+            "ict": 67.1,
+            "selected_by": 49.8,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 8,
+            "name": "Calafiori",
+            "team": "ARS",
+            "cost": 5.9,
+            "pts": 57,
+            "gw_pts": 0,
+            "form": 3.2,
+            "xgi_90": 0.26,
+            "ict": 40.2,
+            "selected_by": 48.6,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          }
+        ],
+        "MID": [
+          {
+            "id": 15,
+            "name": "Ødegaard",
+            "team": "ARS",
+            "cost": 6.7,
+            "pts": 50,
+            "gw_pts": 0,
+            "form": 4.2,
+            "xgi_90": 0.53,
+            "ict": 77.4,
+            "selected_by": 16.6,
+            "pos": "MID",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 427,
+            "name": "Mbeumo",
+            "team": "MUN",
+            "cost": 7.8,
+            "pts": 46,
+            "gw_pts": 0,
+            "form": 1.2,
+            "xgi_90": 0.6,
+            "ict": 75.5,
+            "selected_by": 17.9,
+            "pos": "MID",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 399,
+            "name": "Cherki",
+            "team": "MCI",
+            "cost": 7.9,
+            "pts": 54,
+            "gw_pts": 0,
+            "form": 2.5,
+            "xgi_90": 0.61,
+            "ict": 81.5,
+            "selected_by": 33.6,
+            "pos": "MID",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 40,
+            "name": "Rogers",
+            "team": "CHE",
+            "cost": 8.2,
+            "pts": 52,
+            "gw_pts": 0,
+            "form": 3.0,
+            "xgi_90": 0.47,
+            "ict": 74.0,
+            "selected_by": 54.6,
+            "pos": "MID",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          }
+        ],
+        "FWD": [
+          {
+            "id": 411,
+            "name": "Haaland",
+            "team": "MCI",
+            "cost": 15.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
+            "ict": 90.3,
+            "selected_by": 78.9,
+            "pos": "FWD",
+            "is_captain": true,
+            "is_vc": false,
+            "multiplier": 2,
+            "eff_gw_pts": 2
+          },
+          {
+            "id": 79,
+            "name": "Evanilson",
+            "team": "BOU",
+            "cost": 6.5,
+            "pts": 61,
+            "gw_pts": 0,
+            "form": 6.0,
+            "xgi_90": 0.59,
+            "ict": 71.6,
+            "selected_by": 26.0,
+            "pos": "FWD",
+            "is_captain": false,
+            "is_vc": true,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 138,
+            "name": "Kostoulas",
+            "team": "BHA",
+            "cost": 5.8,
+            "pts": 47,
+            "gw_pts": 0,
+            "form": 1.5,
+            "xgi_90": 0.35,
+            "ict": 54.5,
+            "selected_by": 9.3,
+            "pos": "FWD",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
+          }
+        ]
+      },
+      "bench": [
+        {
+          "id": 250,
+          "name": "Leno",
+          "team": "FUL",
+          "cost": 4.5,
+          "pts": 40,
+          "gw_pts": 1,
+          "form": 3.5,
+          "xgi_90": 0.0,
+          "ict": 23.3,
+          "selected_by": 4.3,
+          "pos": "GKP",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 1
+        },
+        {
+          "id": 258,
+          "name": "Castagne",
+          "team": "FUL",
+          "cost": 4.5,
+          "pts": 44,
+          "gw_pts": 0,
+          "form": 4.0,
           "xgi_90": 0.21,
-          "ict": 28.9,
-          "selected_by": 1.3,
+          "ict": 35.9,
+          "selected_by": 1.2,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 279,
+          "name": "Ajayi",
+          "team": "HUL",
+          "cost": 4.2,
+          "pts": 42,
+          "gw_pts": 0,
+          "form": 3.0,
+          "xgi_90": 0.09,
+          "ict": 27.3,
+          "selected_by": 11.8,
+          "pos": "DEF",
+          "is_captain": false,
+          "is_vc": false,
+          "multiplier": 0,
+          "eff_gw_pts": 0
+        },
+        {
+          "id": 565,
+          "name": "M.Sangaré",
+          "team": "BRE",
+          "cost": 5.4,
+          "pts": 32,
+          "gw_pts": 0,
+          "form": 2.0,
+          "xgi_90": 0.18,
+          "ict": 27.3,
+          "selected_by": 5.6,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 0
         }
       ]
     }
@@ -2133,7 +2133,7 @@
     "richest": {
       "team": "Bao Bui",
       "manager": "Bao Bui",
-      "val": "£103.5m"
+      "val": "£103.7m"
     }
   },
   "league_ioc": [
@@ -2142,8 +2142,8 @@
       "rank": 1,
       "team": "HELL_BOY Ψ (☆ ｗ ☆) Ψ",
       "manager": "Toc Maz",
-      "gw_pts": 67,
-      "total": 614,
+      "gw_pts": 1,
+      "total": 615,
       "turn2_pts": 0,
       "chips": [
         "FREEHIT(GW4)",
@@ -2161,7 +2161,7 @@
       "worst_gw_num": 8,
       "bench_wasted": 63,
       "total_hits": 8,
-      "team_value": 102.4,
+      "team_value": 103.0,
       "gap_leader": 0,
       "is_last": false
     },
@@ -2170,8 +2170,8 @@
       "rank": 2,
       "team": "Phấn Đào",
       "manager": "Huy Anh",
-      "gw_pts": 61,
-      "total": 585,
+      "gw_pts": 2,
+      "total": 587,
       "turn2_pts": 0,
       "chips": [],
       "chips_map": {
@@ -2186,8 +2186,8 @@
       "worst_gw_num": 8,
       "bench_wasted": 109,
       "total_hits": 8,
-      "team_value": 101.6,
-      "gap_leader": -29,
+      "team_value": 101.8,
+      "gap_leader": -28,
       "is_last": false
     },
     {
@@ -2195,8 +2195,8 @@
       "rank": 3,
       "team": "Cận VIP",
       "manager": "Trung TíT",
-      "gw_pts": 64,
-      "total": 578,
+      "gw_pts": 2,
+      "total": 580,
       "turn2_pts": 0,
       "chips": [
         "WILDCARD(GW6)"
@@ -2213,8 +2213,8 @@
       "worst_gw_num": 5,
       "bench_wasted": 105,
       "total_hits": 12,
-      "team_value": 101.5,
-      "gap_leader": -36,
+      "team_value": 102.0,
+      "gap_leader": -35,
       "is_last": false
     },
     {
@@ -2222,8 +2222,8 @@
       "rank": 4,
       "team": "Hoàng Ti's Team",
       "manager": "Phạm Hoàng",
-      "gw_pts": 46,
-      "total": 551,
+      "gw_pts": 2,
+      "total": 553,
       "turn2_pts": 0,
       "chips": [
         "3XC(GW1)"
@@ -2240,8 +2240,8 @@
       "worst_gw_num": 3,
       "bench_wasted": 143,
       "total_hits": 12,
-      "team_value": 102.2,
-      "gap_leader": -63,
+      "team_value": 102.1,
+      "gap_leader": -62,
       "is_last": false
     },
     {
@@ -2249,8 +2249,8 @@
       "rank": 5,
       "team": "hoheheho",
       "manager": "Tung Lam",
-      "gw_pts": 38,
-      "total": 550,
+      "gw_pts": 2,
+      "total": 552,
       "turn2_pts": 0,
       "chips": [
         "3XC(GW2)"
@@ -2267,8 +2267,8 @@
       "worst_gw_num": 9,
       "bench_wasted": 32,
       "total_hits": 4,
-      "team_value": 100.0,
-      "gap_leader": -64,
+      "team_value": 99.8,
+      "gap_leader": -63,
       "is_last": false
     },
     {
@@ -2276,8 +2276,8 @@
       "rank": 6,
       "team": "Dương's Team",
       "manager": "Dương Đắc",
-      "gw_pts": 43,
-      "total": 437,
+      "gw_pts": 1,
+      "total": 438,
       "turn2_pts": 0,
       "chips": [
         "FREEHIT(GW6)"
@@ -2294,7 +2294,7 @@
       "worst_gw_num": 4,
       "bench_wasted": 65,
       "total_hits": 32,
-      "team_value": 99.8,
+      "team_value": 99.7,
       "gap_leader": -177,
       "is_last": true
     }
@@ -2302,7 +2302,7 @@
   "league_ioc_squads": {
     "HELL_BOY Ψ (☆ ｗ ☆) Ψ": {
       "manager": "Toc Maz",
-      "gw_pts": 67,
+      "gw_pts": 1,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -2312,35 +2312,35 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
           {
-            "id": 229,
-            "name": "Tarkowski",
-            "team": "EVE",
-            "cost": 6.2,
-            "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
-            "xgi_90": 0.03,
-            "ict": 36.0,
-            "selected_by": 19.0,
+            "id": 391,
+            "name": "Gvardiol",
+            "team": "MCI",
+            "cost": 5.6,
+            "pts": 44,
+            "gw_pts": 0,
+            "form": 0.8,
+            "xgi_90": 0.23,
+            "ict": 42.6,
+            "selected_by": 20.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 31,
@@ -2348,16 +2348,16 @@
             "team": "ARS",
             "cost": 4.9,
             "pts": 57,
-            "gw_pts": 8,
-            "form": 10.7,
+            "gw_pts": 0,
+            "form": 8.0,
             "xgi_90": 0.08,
             "ict": 26.9,
-            "selected_by": 25.4,
+            "selected_by": 25.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 8
+            "eff_gw_pts": 0
           },
           {
             "id": 8,
@@ -2365,16 +2365,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -2382,16 +2382,16 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -2401,16 +2401,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 68,
@@ -2418,16 +2418,16 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -2435,16 +2435,16 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
-            "is_captain": false,
+            "is_captain": true,
             "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 10
+            "multiplier": 2,
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -2454,16 +2454,16 @@
             "team": "AVL",
             "cost": 7.2,
             "pts": 54,
-            "gw_pts": 11,
-            "form": 11.0,
+            "gw_pts": 0,
+            "form": 8.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 34.5,
+            "selected_by": 35.7,
             "pos": "FWD",
             "is_captain": false,
-            "is_vc": true,
+            "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 11
+            "eff_gw_pts": 0
           },
           {
             "id": 79,
@@ -2471,33 +2471,33 @@
             "team": "BOU",
             "cost": 6.5,
             "pts": 61,
-            "gw_pts": 9,
-            "form": 8.0,
+            "gw_pts": 0,
+            "form": 6.0,
             "xgi_90": 0.59,
             "ict": 71.6,
-            "selected_by": 25.4,
+            "selected_by": 26.0,
             "pos": "FWD",
             "is_captain": false,
-            "is_vc": false,
+            "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 9
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
-            "is_captain": true,
+            "is_captain": false,
             "is_vc": false,
-            "multiplier": 2,
-            "eff_gw_pts": 4
+            "multiplier": 1,
+            "eff_gw_pts": 1
           }
         ]
       },
@@ -2508,8 +2508,8 @@
           "team": "HUL",
           "cost": 4.7,
           "pts": 49,
-          "gw_pts": 6,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.0,
           "ict": 32.9,
           "selected_by": 13.3,
@@ -2517,19 +2517,19 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 6
+          "eff_gw_pts": 0
         },
         {
-          "id": 391,
-          "name": "Gvardiol",
-          "team": "MCI",
-          "cost": 5.6,
-          "pts": 44,
+          "id": 229,
+          "name": "Tarkowski",
+          "team": "EVE",
+          "cost": 6.2,
+          "pts": 56,
           "gw_pts": 0,
-          "form": 1.0,
-          "xgi_90": 0.23,
-          "ict": 42.6,
-          "selected_by": 20.7,
+          "form": 2.5,
+          "xgi_90": 0.03,
+          "ict": 36.0,
+          "selected_by": 18.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -2542,16 +2542,16 @@
           "team": "BRE",
           "cost": 6.1,
           "pts": 46,
-          "gw_pts": 1,
-          "form": 2.0,
+          "gw_pts": 0,
+          "form": 1.5,
           "xgi_90": 0.32,
           "ict": 42.8,
-          "selected_by": 12.4,
+          "selected_by": 12.2,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 1
+          "eff_gw_pts": 0
         },
         {
           "id": 286,
@@ -2560,10 +2560,10 @@
           "cost": 5.3,
           "pts": 48,
           "gw_pts": 0,
-          "form": 3.0,
+          "form": 2.2,
           "xgi_90": 0.29,
           "ict": 51.9,
-          "selected_by": 8.9,
+          "selected_by": 8.8,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
@@ -2574,7 +2574,7 @@
     },
     "Phấn Đào": {
       "manager": "Huy Anh",
-      "gw_pts": 61,
+      "gw_pts": 2,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -2584,16 +2584,16 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -2603,28 +2603,28 @@
             "team": "ARS",
             "cost": 4.9,
             "pts": 57,
-            "gw_pts": 8,
-            "form": 10.7,
+            "gw_pts": 0,
+            "form": 8.0,
             "xgi_90": 0.08,
             "ict": 26.9,
-            "selected_by": 25.4,
+            "selected_by": 25.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 8
+            "eff_gw_pts": 0
           },
           {
-            "id": 391,
-            "name": "Gvardiol",
-            "team": "MCI",
-            "cost": 5.6,
-            "pts": 44,
+            "id": 112,
+            "name": "Van Hecke",
+            "team": "TOT",
+            "cost": 5.1,
+            "pts": 57,
             "gw_pts": 0,
-            "form": 1.0,
-            "xgi_90": 0.23,
-            "ict": 42.6,
-            "selected_by": 20.7,
+            "form": 6.5,
+            "xgi_90": 0.24,
+            "ict": 67.3,
+            "selected_by": 18.1,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -2637,8 +2637,8 @@
             "team": "NFO",
             "cost": 5.5,
             "pts": 35,
-            "gw_pts": 4,
-            "form": 2.7,
+            "gw_pts": 0,
+            "form": 2.0,
             "xgi_90": 0.19,
             "ict": 48.7,
             "selected_by": 2.0,
@@ -2646,7 +2646,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -2654,16 +2654,16 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -2673,16 +2673,16 @@
             "team": "FUL",
             "cost": 5.4,
             "pts": 40,
-            "gw_pts": 2,
-            "form": 3.7,
-            "xgi_90": 0.47,
+            "gw_pts": 0,
+            "form": 2.8,
+            "xgi_90": 0.44,
             "ict": 70.3,
-            "selected_by": 1.5,
+            "selected_by": 1.4,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 13,
@@ -2690,8 +2690,8 @@
             "team": "ARS",
             "cost": 7.5,
             "pts": 50,
-            "gw_pts": 3,
-            "form": 4.7,
+            "gw_pts": 0,
+            "form": 3.5,
             "xgi_90": 0.29,
             "ict": 58.3,
             "selected_by": 13.7,
@@ -2699,7 +2699,7 @@
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
           },
           {
             "id": 40,
@@ -2707,16 +2707,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 45,
@@ -2724,16 +2724,16 @@
             "team": "AVL",
             "cost": 5.5,
             "pts": 44,
-            "gw_pts": 10,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.46,
             "ict": 55.5,
-            "selected_by": 4.6,
+            "selected_by": 4.9,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -2743,33 +2743,33 @@
             "team": "EVE",
             "cost": 5.7,
             "pts": 55,
-            "gw_pts": 16,
-            "form": 9.0,
+            "gw_pts": 0,
+            "form": 6.8,
             "xgi_90": 0.82,
             "ict": 89.0,
-            "selected_by": 11.4,
+            "selected_by": 11.5,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 16
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 2
           }
         ]
       },
@@ -2797,16 +2797,16 @@
           "team": "NEW",
           "cost": 5.2,
           "pts": 46,
-          "gw_pts": 4,
-          "form": 3.7,
+          "gw_pts": 0,
+          "form": 2.8,
           "xgi_90": 0.15,
           "ict": 52.3,
-          "selected_by": 17.3,
+          "selected_by": 16.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 4
+          "eff_gw_pts": 0
         },
         {
           "id": 165,
@@ -2818,7 +2818,7 @@
           "form": 0.0,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 29.5,
+          "selected_by": 28.7,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -2831,8 +2831,8 @@
           "team": "MCI",
           "cost": 7.9,
           "pts": 54,
-          "gw_pts": 9,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.61,
           "ict": 81.5,
           "selected_by": 33.6,
@@ -2840,13 +2840,13 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 9
+          "eff_gw_pts": 0
         }
       ]
     },
     "Cận VIP": {
       "manager": "Trung TíT",
-      "gw_pts": 64,
+      "gw_pts": 2,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -2856,16 +2856,16 @@
             "team": "TOT",
             "cost": 4.4,
             "pts": 40,
-            "gw_pts": 2,
-            "form": 5.7,
+            "gw_pts": 0,
+            "form": 4.2,
             "xgi_90": 0.0,
             "ict": 21.4,
-            "selected_by": 15.8,
+            "selected_by": 15.9,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -2875,16 +2875,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 229,
@@ -2892,16 +2892,16 @@
             "team": "EVE",
             "cost": 6.2,
             "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.03,
             "ict": 36.0,
-            "selected_by": 19.0,
+            "selected_by": 18.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 115,
@@ -2909,16 +2909,16 @@
             "team": "BHA",
             "cost": 5.5,
             "pts": 75,
-            "gw_pts": 6,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.43,
             "ict": 67.1,
-            "selected_by": 49.2,
+            "selected_by": 49.8,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -2928,16 +2928,16 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 3
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -2945,33 +2945,33 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
             "is_captain": false,
-            "is_vc": false,
+            "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           },
           {
             "id": 400,
             "name": "Doku",
             "team": "MCI",
             "cost": 7.5,
-            "pts": 25,
-            "gw_pts": 2,
-            "form": 2.0,
-            "xgi_90": 0.58,
+            "pts": 26,
+            "gw_pts": 1,
+            "form": 1.8,
+            "xgi_90": 0.54,
             "ict": 47.0,
             "selected_by": 4.4,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 1
           },
           {
             "id": 40,
@@ -2979,16 +2979,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
-            "is_vc": true,
+            "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -2998,16 +2998,16 @@
             "team": "AVL",
             "cost": 7.2,
             "pts": 54,
-            "gw_pts": 11,
-            "form": 11.0,
+            "gw_pts": 0,
+            "form": 8.2,
             "xgi_90": 0.54,
             "ict": 66.5,
-            "selected_by": 34.5,
+            "selected_by": 35.7,
             "pos": "FWD",
-            "is_captain": false,
+            "is_captain": true,
             "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 11
+            "multiplier": 2,
+            "eff_gw_pts": 0
           },
           {
             "id": 249,
@@ -3015,33 +3015,33 @@
             "team": "EVE",
             "cost": 5.7,
             "pts": 55,
-            "gw_pts": 16,
-            "form": 9.0,
+            "gw_pts": 0,
+            "form": 6.8,
             "xgi_90": 0.82,
             "ict": 89.0,
-            "selected_by": 11.4,
+            "selected_by": 11.5,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 16
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
-            "is_captain": true,
+            "is_captain": false,
             "is_vc": false,
-            "multiplier": 2,
-            "eff_gw_pts": 4
+            "multiplier": 1,
+            "eff_gw_pts": 1
           }
         ]
       },
@@ -3051,9 +3051,9 @@
           "name": "Leno",
           "team": "FUL",
           "cost": 4.5,
-          "pts": 39,
-          "gw_pts": 3,
-          "form": 4.3,
+          "pts": 40,
+          "gw_pts": 1,
+          "form": 3.5,
           "xgi_90": 0.0,
           "ict": 23.3,
           "selected_by": 4.3,
@@ -3061,7 +3061,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 3
+          "eff_gw_pts": 1
         },
         {
           "id": 453,
@@ -3069,16 +3069,16 @@
           "team": "NEW",
           "cost": 6.0,
           "pts": 44,
-          "gw_pts": 2,
-          "form": 4.0,
+          "gw_pts": 0,
+          "form": 3.0,
           "xgi_90": 0.32,
           "ict": 59.8,
-          "selected_by": 5.9,
+          "selected_by": 5.6,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 0
         },
         {
           "id": 330,
@@ -3086,8 +3086,8 @@
           "team": "LEE",
           "cost": 4.8,
           "pts": 58,
-          "gw_pts": 7,
-          "form": 4.3,
+          "gw_pts": 0,
+          "form": 3.2,
           "xgi_90": 0.29,
           "ict": 51.7,
           "selected_by": 11.3,
@@ -3095,16 +3095,16 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 7
+          "eff_gw_pts": 0
         },
         {
           "id": 650,
           "name": "Affengruber",
           "team": "FUL",
           "cost": 4.5,
-          "pts": 32,
-          "gw_pts": 2,
-          "form": 3.7,
+          "pts": 33,
+          "gw_pts": 1,
+          "form": 3.0,
           "xgi_90": 0.05,
           "ict": 22.6,
           "selected_by": 0.5,
@@ -3112,13 +3112,13 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 1
         }
       ]
     },
     "Hoàng Ti's Team": {
       "manager": "Phạm Hoàng",
-      "gw_pts": 46,
+      "gw_pts": 2,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -3128,16 +3128,16 @@
             "team": "TOT",
             "cost": 4.4,
             "pts": 40,
-            "gw_pts": 2,
-            "form": 5.7,
+            "gw_pts": 0,
+            "form": 4.2,
             "xgi_90": 0.0,
             "ict": 21.4,
-            "selected_by": 15.8,
+            "selected_by": 15.9,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -3147,16 +3147,16 @@
             "team": "NEW",
             "cost": 5.2,
             "pts": 46,
-            "gw_pts": 4,
-            "form": 3.7,
+            "gw_pts": 0,
+            "form": 2.8,
             "xgi_90": 0.15,
             "ict": 52.3,
-            "selected_by": 17.3,
+            "selected_by": 16.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 0
           },
           {
             "id": 504,
@@ -3164,16 +3164,16 @@
             "team": "BHA",
             "cost": 5.3,
             "pts": 70,
-            "gw_pts": 12,
-            "form": 6.3,
+            "gw_pts": 0,
+            "form": 4.8,
             "xgi_90": 0.15,
             "ict": 41.6,
-            "selected_by": 10.8,
+            "selected_by": 11.3,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 12
+            "eff_gw_pts": 0
           },
           {
             "id": 391,
@@ -3182,10 +3182,10 @@
             "cost": 5.6,
             "pts": 44,
             "gw_pts": 0,
-            "form": 1.0,
+            "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 20.7,
+            "selected_by": 20.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -3198,16 +3198,16 @@
             "team": "ARS",
             "cost": 5.9,
             "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
+            "gw_pts": 0,
+            "form": 3.2,
             "xgi_90": 0.26,
             "ict": 40.2,
-            "selected_by": 48.7,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -3217,16 +3217,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 154,
@@ -3234,16 +3234,16 @@
             "team": "CHE",
             "cost": 9.8,
             "pts": 47,
-            "gw_pts": 2,
-            "form": 3.0,
+            "gw_pts": 0,
+            "form": 2.2,
             "xgi_90": 0.38,
             "ict": 81.2,
-            "selected_by": 28.2,
+            "selected_by": 28.1,
             "pos": "MID",
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 124,
@@ -3251,16 +3251,16 @@
             "team": "BHA",
             "cost": 6.3,
             "pts": 70,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.54,
             "ict": 90.7,
-            "selected_by": 49.0,
+            "selected_by": 49.3,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           },
           {
             "id": 53,
@@ -3268,16 +3268,16 @@
             "team": "AVL",
             "cost": 6.2,
             "pts": 40,
-            "gw_pts": 2,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.5,
             "ict": 47.2,
-            "selected_by": 8.5,
+            "selected_by": 8.7,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
@@ -3287,33 +3287,33 @@
             "team": "BHA",
             "cost": 5.8,
             "pts": 47,
-            "gw_pts": 2,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.35,
             "ict": 54.5,
-            "selected_by": 9.4,
+            "selected_by": 9.3,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 411,
             "name": "Haaland",
             "team": "MCI",
             "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
             "ict": 90.3,
-            "selected_by": 78.8,
+            "selected_by": 78.9,
             "pos": "FWD",
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 2
           }
         ]
       },
@@ -3324,8 +3324,8 @@
           "team": "EVE",
           "cost": 5.5,
           "pts": 39,
-          "gw_pts": 3,
-          "form": 3.7,
+          "gw_pts": 0,
+          "form": 2.8,
           "xgi_90": 0.0,
           "ict": 22.5,
           "selected_by": 8.4,
@@ -3333,7 +3333,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 3
+          "eff_gw_pts": 0
         },
         {
           "id": 173,
@@ -3342,10 +3342,10 @@
           "cost": 4.0,
           "pts": 32,
           "gw_pts": 0,
-          "form": 0.3,
+          "form": 0.2,
           "xgi_90": 0.13,
           "ict": 27.4,
-          "selected_by": 7.0,
+          "selected_by": 6.9,
           "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
@@ -3357,17 +3357,17 @@
           "name": "Ndiaye",
           "team": "MCI",
           "cost": 5.8,
-          "pts": 37,
-          "gw_pts": 2,
-          "form": 3.0,
-          "xgi_90": 0.34,
+          "pts": 38,
+          "gw_pts": 1,
+          "form": 2.5,
+          "xgi_90": 0.37,
           "ict": 53.3,
-          "selected_by": 5.4,
+          "selected_by": 5.3,
           "pos": "MID",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 2
+          "eff_gw_pts": 1
         },
         {
           "id": 165,
@@ -3379,7 +3379,7 @@
           "form": 0.0,
           "xgi_90": 0.58,
           "ict": 53.9,
-          "selected_by": 29.5,
+          "selected_by": 28.7,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3390,26 +3390,26 @@
     },
     "hoheheho": {
       "manager": "Tung Lam",
-      "gw_pts": 38,
+      "gw_pts": 2,
       "active_chip": null,
       "starting": {
         "GKP": [
           {
-            "id": 496,
-            "name": "Kinsky",
-            "team": "TOT",
-            "cost": 4.4,
-            "pts": 40,
-            "gw_pts": 2,
-            "form": 5.7,
+            "id": 171,
+            "name": "Dovin",
+            "team": "COV",
+            "cost": 4.0,
+            "pts": 0,
+            "gw_pts": 0,
+            "form": 0.0,
             "xgi_90": 0.0,
-            "ict": 21.4,
-            "selected_by": 15.8,
+            "ict": 0.0,
+            "selected_by": 0.7,
             "pos": "GKP",
             "is_captain": false,
-            "is_vc": false,
+            "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
@@ -3419,8 +3419,8 @@
             "team": "AVL",
             "cost": 4.4,
             "pts": 10,
-            "gw_pts": 2,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.07,
             "ict": 8.8,
             "selected_by": 0.3,
@@ -3428,7 +3428,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 391,
@@ -3437,10 +3437,10 @@
             "cost": 5.6,
             "pts": 44,
             "gw_pts": 0,
-            "form": 1.0,
+            "form": 0.8,
             "xgi_90": 0.23,
             "ict": 42.6,
-            "selected_by": 20.7,
+            "selected_by": 20.5,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
@@ -3453,8 +3453,8 @@
             "team": "LIV",
             "cost": 6.4,
             "pts": 43,
-            "gw_pts": 4,
-            "form": 4.7,
+            "gw_pts": 0,
+            "form": 3.5,
             "xgi_90": 0.07,
             "ict": 36.8,
             "selected_by": 14.4,
@@ -3462,7 +3462,24 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 33,
+            "name": "Mings",
+            "team": "AVL",
+            "cost": 4.5,
+            "pts": 18,
+            "gw_pts": 0,
+            "form": 0.0,
+            "xgi_90": 0.05,
+            "ict": 12.9,
+            "selected_by": 0.4,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
           }
         ],
         "MID": [
@@ -3472,16 +3489,16 @@
             "team": "MUN",
             "cost": 11.6,
             "pts": 45,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.68,
             "ict": 86.0,
-            "selected_by": 20.1,
+            "selected_by": 20.0,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           },
           {
             "id": 68,
@@ -3489,33 +3506,16 @@
             "team": "BOU",
             "cost": 6.7,
             "pts": 58,
-            "gw_pts": 3,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.61,
             "ict": 81.0,
-            "selected_by": 32.2,
+            "selected_by": 32.5,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 3
-          },
-          {
-            "id": 544,
-            "name": "Xhaka",
-            "team": "SUN",
-            "cost": 5.3,
-            "pts": 33,
-            "gw_pts": 1,
-            "form": 2.7,
-            "xgi_90": 0.22,
-            "ict": 48.9,
-            "selected_by": 2.3,
-            "pos": "MID",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 1
+            "eff_gw_pts": 0
           },
           {
             "id": 210,
@@ -3523,8 +3523,8 @@
             "team": "CRY",
             "cost": 5.3,
             "pts": 29,
-            "gw_pts": 2,
-            "form": 2.7,
+            "gw_pts": 0,
+            "form": 2.0,
             "xgi_90": 0.18,
             "ict": 39.9,
             "selected_by": 0.6,
@@ -3532,93 +3532,93 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
-          }
-        ],
-        "FWD": [
+            "eff_gw_pts": 0
+          },
           {
-            "id": 222,
-            "name": "Strand Larsen",
-            "team": "CRY",
-            "cost": 5.9,
-            "pts": 23,
-            "gw_pts": 2,
-            "form": 0.7,
-            "xgi_90": 0.35,
-            "ict": 23.6,
-            "selected_by": 0.4,
-            "pos": "FWD",
+            "id": 544,
+            "name": "Xhaka",
+            "team": "SUN",
+            "cost": 5.3,
+            "pts": 33,
+            "gw_pts": 0,
+            "form": 2.0,
+            "xgi_90": 0.22,
+            "ict": 48.9,
+            "selected_by": 2.3,
+            "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
-          },
-          {
-            "id": 411,
-            "name": "Haaland",
-            "team": "MCI",
-            "cost": 15.8,
-            "pts": 70,
-            "gw_pts": 2,
-            "form": 4.0,
-            "xgi_90": 0.8,
-            "ict": 90.3,
-            "selected_by": 78.8,
-            "pos": "FWD",
-            "is_captain": true,
-            "is_vc": false,
-            "multiplier": 2,
-            "eff_gw_pts": 4
-          },
+            "eff_gw_pts": 0
+          }
+        ],
+        "FWD": [
           {
             "id": 379,
             "name": "Isak",
             "team": "LIV",
             "cost": 9.3,
             "pts": 61,
-            "gw_pts": 8,
-            "form": 6.3,
+            "gw_pts": 0,
+            "form": 4.8,
             "xgi_90": 0.62,
             "ict": 71.6,
-            "selected_by": 26.0,
+            "selected_by": 26.2,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 8
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 411,
+            "name": "Haaland",
+            "team": "MCI",
+            "cost": 15.8,
+            "pts": 71,
+            "gw_pts": 1,
+            "form": 3.2,
+            "xgi_90": 0.85,
+            "ict": 90.3,
+            "selected_by": 78.9,
+            "pos": "FWD",
+            "is_captain": true,
+            "is_vc": false,
+            "multiplier": 2,
+            "eff_gw_pts": 2
           }
         ]
       },
       "bench": [
         {
-          "id": 171,
-          "name": "Dovin",
-          "team": "COV",
-          "cost": 4.0,
-          "pts": 0,
+          "id": 496,
+          "name": "Kinsky",
+          "team": "TOT",
+          "cost": 4.4,
+          "pts": 40,
           "gw_pts": 0,
-          "form": 0.0,
+          "form": 4.2,
           "xgi_90": 0.0,
-          "ict": 0.0,
-          "selected_by": 0.7,
+          "ict": 21.4,
+          "selected_by": 15.9,
           "pos": "GKP",
           "is_captain": false,
-          "is_vc": true,
+          "is_vc": false,
           "multiplier": 0,
           "eff_gw_pts": 0
         },
         {
-          "id": 33,
-          "name": "Mings",
-          "team": "AVL",
-          "cost": 4.5,
-          "pts": 18,
+          "id": 222,
+          "name": "Strand Larsen",
+          "team": "CRY",
+          "cost": 5.9,
+          "pts": 23,
           "gw_pts": 0,
-          "form": 0.0,
-          "xgi_90": 0.05,
-          "ict": 12.9,
+          "form": 0.5,
+          "xgi_90": 0.35,
+          "ict": 23.6,
           "selected_by": 0.4,
-          "pos": "DEF",
+          "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
@@ -3630,8 +3630,8 @@
           "team": "CHE",
           "cost": 5.3,
           "pts": 14,
-          "gw_pts": 3,
-          "form": 2.7,
+          "gw_pts": 0,
+          "form": 2.0,
           "xgi_90": 0.03,
           "ict": 11.9,
           "selected_by": 1.0,
@@ -3639,7 +3639,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 3
+          "eff_gw_pts": 0
         },
         {
           "id": 499,
@@ -3647,8 +3647,8 @@
           "team": "TOT",
           "cost": 5.3,
           "pts": 16,
-          "gw_pts": 5,
-          "form": 2.3,
+          "gw_pts": 0,
+          "form": 1.8,
           "xgi_90": 0.24,
           "ict": 17.6,
           "selected_by": 5.0,
@@ -3656,13 +3656,13 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 5
+          "eff_gw_pts": 0
         }
       ]
     },
     "Dương's Team": {
       "manager": "Dương Đắc",
-      "gw_pts": 43,
+      "gw_pts": 1,
       "active_chip": null,
       "starting": {
         "GKP": [
@@ -3672,69 +3672,35 @@
             "team": "ARS",
             "cost": 6.3,
             "pts": 60,
-            "gw_pts": 6,
-            "form": 6.0,
+            "gw_pts": 0,
+            "form": 4.5,
             "xgi_90": 0.0,
             "ict": 19.7,
-            "selected_by": 47.7,
+            "selected_by": 47.8,
             "pos": "GKP",
             "is_captain": false,
             "is_vc": true,
             "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           }
         ],
         "DEF": [
-          {
-            "id": 387,
-            "name": "O'Reilly",
-            "team": "MCI",
-            "cost": 6.2,
-            "pts": 15,
-            "gw_pts": 1,
-            "form": 0.7,
-            "xgi_90": 0.52,
-            "ict": 18.8,
-            "selected_by": 8.1,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 1
-          },
           {
             "id": 229,
             "name": "Tarkowski",
             "team": "EVE",
             "cost": 6.2,
             "pts": 56,
-            "gw_pts": 2,
-            "form": 3.3,
+            "gw_pts": 0,
+            "form": 2.5,
             "xgi_90": 0.03,
             "ict": 36.0,
-            "selected_by": 19.0,
+            "selected_by": 18.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
-          },
-          {
-            "id": 8,
-            "name": "Calafiori",
-            "team": "ARS",
-            "cost": 5.9,
-            "pts": 57,
-            "gw_pts": 6,
-            "form": 4.3,
-            "xgi_90": 0.26,
-            "ict": 40.2,
-            "selected_by": 48.7,
-            "pos": "DEF",
-            "is_captain": false,
-            "is_vc": false,
-            "multiplier": 1,
-            "eff_gw_pts": 6
+            "eff_gw_pts": 0
           },
           {
             "id": 502,
@@ -3742,33 +3708,50 @@
             "team": "TOT",
             "cost": 4.3,
             "pts": 38,
-            "gw_pts": 2,
-            "form": 5.3,
+            "gw_pts": 0,
+            "form": 4.0,
             "xgi_90": 0.23,
             "ict": 49.1,
-            "selected_by": 2.8,
+            "selected_by": 2.9,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
-            "id": 469,
-            "name": "N.Williams",
-            "team": "NFO",
-            "cost": 4.9,
-            "pts": 34,
-            "gw_pts": 2,
-            "form": 3.7,
-            "xgi_90": 0.21,
-            "ict": 47.4,
-            "selected_by": 5.0,
+            "id": 8,
+            "name": "Calafiori",
+            "team": "ARS",
+            "cost": 5.9,
+            "pts": 57,
+            "gw_pts": 0,
+            "form": 3.2,
+            "xgi_90": 0.26,
+            "ict": 40.2,
+            "selected_by": 48.6,
             "pos": "DEF",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 387,
+            "name": "O'Reilly",
+            "team": "MCI",
+            "cost": 6.2,
+            "pts": 16,
+            "gw_pts": 1,
+            "form": 0.8,
+            "xgi_90": 0.47,
+            "ict": 18.8,
+            "selected_by": 8.0,
+            "pos": "DEF",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 1
           }
         ],
         "MID": [
@@ -3778,16 +3761,16 @@
             "team": "CHE",
             "cost": 8.2,
             "pts": 52,
-            "gw_pts": 2,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.47,
             "ict": 74.0,
-            "selected_by": 54.4,
+            "selected_by": 54.6,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 2
+            "eff_gw_pts": 0
           },
           {
             "id": 368,
@@ -3795,8 +3778,8 @@
             "team": "LIV",
             "cost": 6.7,
             "pts": 29,
-            "gw_pts": 7,
-            "form": 2.7,
+            "gw_pts": 0,
+            "form": 2.0,
             "xgi_90": 0.49,
             "ict": 49.8,
             "selected_by": 13.4,
@@ -3804,7 +3787,7 @@
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 7
+            "eff_gw_pts": 0
           },
           {
             "id": 155,
@@ -3812,8 +3795,8 @@
             "team": "MCI",
             "cost": 6.9,
             "pts": 23,
-            "gw_pts": 2,
-            "form": 2.0,
+            "gw_pts": 0,
+            "form": 1.5,
             "xgi_90": 0.43,
             "ict": 43.7,
             "selected_by": 3.5,
@@ -3821,7 +3804,7 @@
             "is_captain": true,
             "is_vc": false,
             "multiplier": 2,
-            "eff_gw_pts": 4
+            "eff_gw_pts": 0
           },
           {
             "id": 426,
@@ -3829,35 +3812,52 @@
             "team": "MUN",
             "cost": 11.6,
             "pts": 45,
-            "gw_pts": 10,
-            "form": 4.0,
+            "gw_pts": 0,
+            "form": 3.0,
             "xgi_90": 0.68,
             "ict": 86.0,
-            "selected_by": 20.1,
+            "selected_by": 20.0,
             "pos": "MID",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 10
+            "eff_gw_pts": 0
           }
         ],
         "FWD": [
           {
-            "id": 25,
-            "name": "Gyökeres",
-            "team": "ARS",
-            "cost": 7.0,
-            "pts": 11,
-            "gw_pts": 1,
-            "form": 2.3,
-            "xgi_90": 0.3,
-            "ict": 14.8,
-            "selected_by": 2.9,
+            "id": 165,
+            "name": "João Pedro",
+            "team": "CHE",
+            "cost": 7.6,
+            "pts": 47,
+            "gw_pts": 0,
+            "form": 0.0,
+            "xgi_90": 0.58,
+            "ict": 53.9,
+            "selected_by": 28.7,
             "pos": "FWD",
             "is_captain": false,
             "is_vc": false,
             "multiplier": 1,
-            "eff_gw_pts": 1
+            "eff_gw_pts": 0
+          },
+          {
+            "id": 608,
+            "name": "Jebbison",
+            "team": "BOU",
+            "cost": 5.0,
+            "pts": 3,
+            "gw_pts": 0,
+            "form": 0.0,
+            "xgi_90": 0.29,
+            "ict": 2.6,
+            "selected_by": 0.1,
+            "pos": "FWD",
+            "is_captain": false,
+            "is_vc": false,
+            "multiplier": 1,
+            "eff_gw_pts": 0
           }
         ]
       },
@@ -3868,8 +3868,8 @@
           "team": "HUL",
           "cost": 4.7,
           "pts": 49,
-          "gw_pts": 6,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.0,
           "ict": 32.9,
           "selected_by": 13.3,
@@ -3877,19 +3877,19 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 6
+          "eff_gw_pts": 0
         },
         {
-          "id": 608,
-          "name": "Jebbison",
-          "team": "BOU",
-          "cost": 5.0,
-          "pts": 3,
+          "id": 25,
+          "name": "Gyökeres",
+          "team": "ARS",
+          "cost": 7.0,
+          "pts": 11,
           "gw_pts": 0,
-          "form": 0.0,
-          "xgi_90": 0.29,
-          "ict": 2.6,
-          "selected_by": 0.1,
+          "form": 1.8,
+          "xgi_90": 0.3,
+          "ict": 14.8,
+          "selected_by": 2.9,
           "pos": "FWD",
           "is_captain": false,
           "is_vc": false,
@@ -3897,17 +3897,17 @@
           "eff_gw_pts": 0
         },
         {
-          "id": 165,
-          "name": "João Pedro",
-          "team": "CHE",
-          "cost": 7.6,
-          "pts": 47,
+          "id": 469,
+          "name": "N.Williams",
+          "team": "NFO",
+          "cost": 4.9,
+          "pts": 34,
           "gw_pts": 0,
-          "form": 0.0,
-          "xgi_90": 0.58,
-          "ict": 53.9,
-          "selected_by": 29.5,
-          "pos": "FWD",
+          "form": 2.8,
+          "xgi_90": 0.21,
+          "ict": 47.4,
+          "selected_by": 4.9,
+          "pos": "DEF",
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
@@ -3919,8 +3919,8 @@
           "team": "MCI",
           "cost": 7.9,
           "pts": 54,
-          "gw_pts": 9,
-          "form": 3.3,
+          "gw_pts": 0,
+          "form": 2.5,
           "xgi_90": 0.61,
           "ict": 81.5,
           "selected_by": 33.6,
@@ -3928,7 +3928,7 @@
           "is_captain": false,
           "is_vc": false,
           "multiplier": 0,
-          "eff_gw_pts": 9
+          "eff_gw_pts": 0
         }
       ]
     }
@@ -3957,7 +3957,7 @@
     "richest": {
       "team": "HELL_BOY Ψ (☆ ｗ ☆) Ψ",
       "manager": "Toc Maz",
-      "val": "£102.4m"
+      "val": "£103.0m"
     }
   },
   "ioc_rank_progression": {
@@ -3965,6 +3965,7 @@
       5,
       3,
       3,
+      1,
       1,
       1,
       1,
@@ -3983,6 +3984,7 @@
       2,
       4,
       2,
+      2,
       2
     ],
     "Cận VIP": [
@@ -3993,6 +3995,7 @@
       3,
       4,
       5,
+      3,
       3,
       3,
       3
@@ -4007,6 +4010,7 @@
       3,
       5,
       5,
+      4,
       4
     ],
     "hoheheho": [
@@ -4019,10 +4023,12 @@
       4,
       2,
       4,
+      5,
       5
     ],
     "Dương's Team": [
       4,
+      6,
       6,
       6,
       6,
@@ -4045,6 +4051,7 @@
       470,
       504,
       555,
+      614,
       614
     ],
     "Phấn Đào": [
@@ -4057,6 +4064,7 @@
       429,
       463,
       524,
+      585,
       585
     ],
     "Cận VIP": [
@@ -4069,6 +4077,7 @@
       413,
       467,
       514,
+      578,
       578
     ],
     "Hoàng Ti's Team": [
@@ -4081,6 +4090,7 @@
       423,
       456,
       505,
+      551,
       551
     ],
     "hoheheho": [
@@ -4093,6 +4103,7 @@
       415,
       479,
       512,
+      550,
       550
     ],
     "Dương's Team": [
@@ -4105,6 +4116,7 @@
       316,
       350,
       394,
+      437,
       437
     ]
   },
@@ -4119,7 +4131,8 @@
       59,
       34,
       51,
-      59
+      59,
+      0
     ],
     "Phấn Đào": [
       63,
@@ -4131,7 +4144,8 @@
       48,
       34,
       61,
-      61
+      61,
+      0
     ],
     "Cận VIP": [
       60,
@@ -4143,7 +4157,8 @@
       54,
       54,
       47,
-      64
+      64,
+      0
     ],
     "Hoàng Ti's Team": [
       76,
@@ -4155,7 +4170,8 @@
       46,
       33,
       49,
-      46
+      46,
+      0
     ],
     "hoheheho": [
       45,
@@ -4167,7 +4183,8 @@
       64,
       64,
       33,
-      38
+      38,
+      0
     ],
     "Dương's Team": [
       54,
@@ -4179,7 +4196,8 @@
       31,
       34,
       44,
-      43
+      43,
+      0
     ]
   },
   "rank_progression": {
@@ -4189,6 +4207,7 @@
       2,
       1,
       3,
+      1,
       1,
       1,
       1,
@@ -4205,6 +4224,7 @@
       4,
       2,
       2,
+      2,
       2
     ],
     "SNAL": [
@@ -4215,6 +4235,7 @@
       4,
       2,
       2,
+      3,
       3,
       3,
       3
@@ -4229,6 +4250,7 @@
       5,
       5,
       4,
+      4,
       4
     ],
     "Ninh SS": [
@@ -4241,19 +4263,8 @@
       3,
       4,
       5,
+      5,
       5
-    ],
-    "XOẠC-UNITED": [
-      5,
-      6,
-      6,
-      6,
-      6,
-      5,
-      6,
-      6,
-      7,
-      6
     ],
     "Ngocdao": [
       6,
@@ -4265,6 +4276,20 @@
       7,
       7,
       6,
+      6,
+      6
+    ],
+    "XOẠC-UNITED": [
+      5,
+      6,
+      6,
+      6,
+      6,
+      5,
+      6,
+      6,
+      7,
+      7,
       7
     ]
   },
@@ -4279,6 +4304,7 @@
       451,
       490,
       534,
+      605,
       605
     ],
     "Cận VIP": [
@@ -4291,6 +4317,7 @@
       413,
       467,
       514,
+      578,
       578
     ],
     "SNAL": [
@@ -4303,6 +4330,7 @@
       432,
       467,
       508,
+      568,
       568
     ],
     "FC K": [
@@ -4315,6 +4343,7 @@
       391,
       446,
       495,
+      564,
       564
     ],
     "Ninh SS": [
@@ -4327,19 +4356,8 @@
       415,
       454,
       489,
+      554,
       554
-    ],
-    "XOẠC-UNITED": [
-      42,
-      111,
-      160,
-      219,
-      259,
-      333,
-      391,
-      435,
-      476,
-      535
     ],
     "Ngocdao": [
       38,
@@ -4351,6 +4369,20 @@
       365,
       429,
       486,
+      535,
+      535
+    ],
+    "XOẠC-UNITED": [
+      42,
+      111,
+      160,
+      219,
+      259,
+      333,
+      391,
+      435,
+      476,
+      535,
       535
     ]
   },
@@ -4365,7 +4397,8 @@
       70,
       39,
       44,
-      71
+      71,
+      0
     ],
     "Cận VIP": [
       60,
@@ -4377,7 +4410,8 @@
       54,
       54,
       47,
-      64
+      64,
+      0
     ],
     "SNAL": [
       66,
@@ -4389,7 +4423,8 @@
       69,
       35,
       41,
-      60
+      60,
+      0
     ],
     "FC K": [
       30,
@@ -4401,7 +4436,8 @@
       72,
       55,
       49,
-      69
+      69,
+      0
     ],
     "Ninh SS": [
       49,
@@ -4413,19 +4449,8 @@
       57,
       39,
       35,
-      65
-    ],
-    "XOẠC-UNITED": [
-      42,
-      69,
-      49,
-      59,
-      40,
-      74,
-      58,
-      44,
-      41,
-      59
+      65,
+      0
     ],
     "Ngocdao": [
       38,
@@ -4437,7 +4462,21 @@
       73,
       64,
       57,
-      49
+      49,
+      0
+    ],
+    "XOẠC-UNITED": [
+      42,
+      69,
+      49,
+      59,
+      40,
+      74,
+      58,
+      44,
+      41,
+      59,
+      0
     ]
   },
   "fixtures": [
@@ -4445,14 +4484,10 @@
       "id": 2,
       "team": "Aston Villa",
       "short": "AVL",
-      "avg": 2.2,
-      "avg_label": "2.2 (Cực Mềm)",
+      "avg": 2.6,
+      "avg_label": "2.6 (Khá Mềm)",
       "strat": "Ngôi sao: N.Jackson (54đ), McGinn (44đ)",
       "matches": [
-        {
-          "opp": "SUN (H)",
-          "diff": 2
-        },
         {
           "opp": "IPS (A)",
           "diff": 2
@@ -4468,66 +4503,10 @@
         {
           "opp": "COV (A)",
           "diff": 2
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "team": "Coventry City",
-      "short": "COV",
-      "avg": 2.6,
-      "avg_label": "2.6 (Khá Mềm)",
-      "strat": "Ngôi sao: Rudoni (39đ), Thomas (32đ)",
-      "matches": [
-        {
-          "opp": "CRY (H)",
-          "diff": 2
         },
         {
-          "opp": "LEE (A)",
-          "diff": 3
-        },
-        {
-          "opp": "IPS (H)",
-          "diff": 2
-        },
-        {
-          "opp": "MUN (A)",
-          "diff": 3
-        },
-        {
-          "opp": "AVL (H)",
-          "diff": 3
-        }
-      ]
-    },
-    {
-      "id": 19,
-      "team": "Spurs",
-      "short": "TOT",
-      "avg": 2.6,
-      "avg_label": "2.6 (Khá Mềm)",
-      "strat": "Ngôi sao: Van Hecke (57đ), Kinsky (40đ)",
-      "matches": [
-        {
-          "opp": "IPS (H)",
-          "diff": 2
-        },
-        {
-          "opp": "SUN (A)",
-          "diff": 3
-        },
-        {
-          "opp": "FUL (H)",
-          "diff": 2
-        },
-        {
-          "opp": "ARS (H)",
+          "opp": "CHE (A)",
           "diff": 4
-        },
-        {
-          "opp": "HUL (A)",
-          "diff": 2
         }
       ]
     },
@@ -4539,10 +4518,6 @@
       "avg_label": "2.8 (Khá Mềm)",
       "strat": "Ngôi sao: De Cuyper (75đ), Groß (70đ)",
       "matches": [
-        {
-          "opp": "HUL (A)",
-          "diff": 2
-        },
         {
           "opp": "NEW (H)",
           "diff": 3
@@ -4558,6 +4533,40 @@
         {
           "opp": "EVE (H)",
           "diff": 3
+        },
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "team": "Coventry City",
+      "short": "COV",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Rudoni (39đ), Thomas (32đ)",
+      "matches": [
+        {
+          "opp": "LEE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        },
+        {
+          "opp": "MUN (A)",
+          "diff": 3
+        },
+        {
+          "opp": "AVL (H)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (A)",
+          "diff": 4
         }
       ]
     },
@@ -4565,14 +4574,10 @@
       "id": 8,
       "team": "Crystal Palace",
       "short": "CRY",
-      "avg": 2.8,
-      "avg_label": "2.8 (Khá Mềm)",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
       "strat": "Ngôi sao: Kamada (36đ), Mitchell (33đ)",
       "matches": [
-        {
-          "opp": "COV (A)",
-          "diff": 2
-        },
         {
           "opp": "HUL (H)",
           "diff": 2
@@ -4588,6 +4593,70 @@
         {
           "opp": "MUN (H)",
           "diff": 3
+        },
+        {
+          "opp": "SUN (A)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "team": "Everton",
+      "short": "EVE",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Tarkowski (56đ), Barry (55đ)",
+      "matches": [
+        {
+          "opp": "LIV (H)",
+          "diff": 4
+        },
+        {
+          "opp": "AVL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "FUL (H)",
+          "diff": 2
+        },
+        {
+          "opp": "BHA (A)",
+          "diff": 4
+        },
+        {
+          "opp": "NFO (A)",
+          "diff": 2
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "team": "Fulham",
+      "short": "FUL",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Castagne (44đ), Leno (40đ)",
+      "matches": [
+        {
+          "opp": "BOU (H)",
+          "diff": 3
+        },
+        {
+          "opp": "TOT (A)",
+          "diff": 3
+        },
+        {
+          "opp": "EVE (A)",
+          "diff": 3
+        },
+        {
+          "opp": "BRE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "LEE (A)",
+          "diff": 3
         }
       ]
     },
@@ -4595,14 +4664,10 @@
       "id": 12,
       "team": "Ipswich Town",
       "short": "IPS",
-      "avg": 2.8,
-      "avg_label": "2.8 (Khá Mềm)",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
       "strat": "Ngôi sao: Enciso (38đ), Emersonn (34đ)",
       "matches": [
-        {
-          "opp": "TOT (A)",
-          "diff": 3
-        },
         {
           "opp": "AVL (H)",
           "diff": 3
@@ -4618,35 +4683,39 @@
         {
           "opp": "NEW (H)",
           "diff": 3
+        },
+        {
+          "opp": "BHA (A)",
+          "diff": 4
         }
       ]
     },
     {
-      "id": 16,
-      "team": "Man Utd",
-      "short": "MUN",
-      "avg": 2.8,
-      "avg_label": "2.8 (Khá Mềm)",
-      "strat": "Ngôi sao: Mbeumo (46đ), B.Fernandes (45đ)",
+      "id": 13,
+      "team": "Leeds",
+      "short": "LEE",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Bogle (58đ), Muharemović (56đ)",
       "matches": [
-        {
-          "opp": "LIV (A)",
-          "diff": 4
-        },
-        {
-          "opp": "BRE (H)",
-          "diff": 3
-        },
-        {
-          "opp": "NEW (A)",
-          "diff": 3
-        },
         {
           "opp": "COV (H)",
           "diff": 2
         },
         {
-          "opp": "CRY (A)",
+          "opp": "MCI (A)",
+          "diff": 5
+        },
+        {
+          "opp": "IPS (H)",
+          "diff": 2
+        },
+        {
+          "opp": "LIV (A)",
+          "diff": 4
+        },
+        {
+          "opp": "FUL (H)",
           "diff": 2
         }
       ]
@@ -4660,10 +4729,6 @@
       "strat": "Ngôi sao: Isak (61đ), Wirtz (46đ)",
       "matches": [
         {
-          "opp": "MUN (H)",
-          "diff": 3
-        },
-        {
           "opp": "EVE (A)",
           "diff": 3
         },
@@ -4678,6 +4743,40 @@
         {
           "opp": "LEE (H)",
           "diff": 3
+        },
+        {
+          "opp": "TOT (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "team": "Man Utd",
+      "short": "MUN",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Mbeumo (46đ), B.Fernandes (45đ)",
+      "matches": [
+        {
+          "opp": "BRE (H)",
+          "diff": 3
+        },
+        {
+          "opp": "NEW (A)",
+          "diff": 3
+        },
+        {
+          "opp": "COV (H)",
+          "diff": 2
+        },
+        {
+          "opp": "CRY (A)",
+          "diff": 2
+        },
+        {
+          "opp": "ARS (A)",
+          "diff": 5
         }
       ]
     },
@@ -4689,10 +4788,6 @@
       "avg_label": "3.0 (Cân Não)",
       "strat": "Ngôi sao: Hall (46đ), Barnes (44đ)",
       "matches": [
-        {
-          "opp": "ARS (H)",
-          "diff": 4
-        },
         {
           "opp": "BHA (A)",
           "diff": 4
@@ -4708,66 +4803,40 @@
         {
           "opp": "IPS (A)",
           "diff": 2
+        },
+        {
+          "opp": "BRE (A)",
+          "diff": 4
         }
       ]
     },
     {
-      "id": 6,
-      "team": "Chelsea",
-      "short": "CHE",
-      "avg": 3.2,
-      "avg_label": "3.2 (Xương Xẩu)",
-      "strat": "Ngôi sao: Rogers (52đ), Palmer (47đ)",
+      "id": 19,
+      "team": "Spurs",
+      "short": "TOT",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
+      "strat": "Ngôi sao: Van Hecke (57đ), Kinsky (40đ)",
       "matches": [
         {
-          "opp": "LEE (H)",
+          "opp": "SUN (A)",
           "diff": 3
         },
         {
-          "opp": "NFO (A)",
+          "opp": "FUL (H)",
           "diff": 2
         },
         {
-          "opp": "CRY (H)",
+          "opp": "ARS (H)",
+          "diff": 4
+        },
+        {
+          "opp": "HUL (A)",
           "diff": 2
         },
         {
-          "opp": "LIV (H)",
+          "opp": "LIV (A)",
           "diff": 4
-        },
-        {
-          "opp": "MCI (A)",
-          "diff": 5
-        }
-      ]
-    },
-    {
-      "id": 11,
-      "team": "Hull City",
-      "short": "HUL",
-      "avg": 3.2,
-      "avg_label": "3.2 (Xương Xẩu)",
-      "strat": "Ngôi sao: Tzolakis (49đ), Belloumi (48đ)",
-      "matches": [
-        {
-          "opp": "BHA (H)",
-          "diff": 4
-        },
-        {
-          "opp": "CRY (A)",
-          "diff": 2
-        },
-        {
-          "opp": "NFO (H)",
-          "diff": 3
-        },
-        {
-          "opp": "BOU (A)",
-          "diff": 4
-        },
-        {
-          "opp": "TOT (H)",
-          "diff": 3
         }
       ]
     },
@@ -4775,14 +4844,10 @@
       "id": 20,
       "team": "Sunderland",
       "short": "SUN",
-      "avg": 3.2,
-      "avg_label": "3.2 (Xương Xẩu)",
+      "avg": 3.0,
+      "avg_label": "3.0 (Cân Não)",
       "strat": "Ngôi sao: E.Le Fée (46đ), Roefs (33đ)",
       "matches": [
-        {
-          "opp": "AVL (A)",
-          "diff": 3
-        },
         {
           "opp": "TOT (H)",
           "diff": 3
@@ -4798,36 +4863,10 @@
         {
           "opp": "NFO (H)",
           "diff": 3
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "team": "Arsenal",
-      "short": "ARS",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
-      "strat": "Ngôi sao: Gabriel (66đ), Raya (60đ)",
-      "matches": [
-        {
-          "opp": "NEW (A)",
-          "diff": 3
         },
         {
-          "opp": "MCI (H)",
-          "diff": 4
-        },
-        {
-          "opp": "BRE (A)",
-          "diff": 4
-        },
-        {
-          "opp": "TOT (A)",
-          "diff": 3
-        },
-        {
-          "opp": "BOU (H)",
-          "diff": 3
+          "opp": "CRY (H)",
+          "diff": 2
         }
       ]
     },
@@ -4835,14 +4874,10 @@
       "id": 3,
       "team": "Bournemouth",
       "short": "BOU",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
       "strat": "Ngôi sao: Evanilson (61đ), Tavernier (58đ)",
       "matches": [
-        {
-          "opp": "NFO (H)",
-          "diff": 3
-        },
         {
           "opp": "FUL (A)",
           "diff": 3
@@ -4858,126 +4893,40 @@
         {
           "opp": "ARS (A)",
           "diff": 5
+        },
+        {
+          "opp": "COV (H)",
+          "diff": 2
         }
       ]
     },
     {
-      "id": 4,
-      "team": "Brentford",
-      "short": "BRE",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
-      "strat": "Ngôi sao: Schade (46đ), Ajer (42đ)",
+      "id": 6,
+      "team": "Chelsea",
+      "short": "CHE",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
+      "strat": "Ngôi sao: Rogers (52đ), Palmer (47đ)",
       "matches": [
         {
-          "opp": "EVE (H)",
-          "diff": 3
+          "opp": "NFO (A)",
+          "diff": 2
         },
         {
-          "opp": "MUN (A)",
-          "diff": 3
-        },
-        {
-          "opp": "ARS (H)",
-          "diff": 4
-        },
-        {
-          "opp": "MCI (H)",
-          "diff": 4
-        },
-        {
-          "opp": "FUL (A)",
-          "diff": 3
-        }
-      ]
-    },
-    {
-      "id": 9,
-      "team": "Everton",
-      "short": "EVE",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
-      "strat": "Ngôi sao: Tarkowski (56đ), Barry (55đ)",
-      "matches": [
-        {
-          "opp": "BRE (A)",
-          "diff": 4
+          "opp": "CRY (H)",
+          "diff": 2
         },
         {
           "opp": "LIV (H)",
           "diff": 4
         },
         {
-          "opp": "AVL (A)",
-          "diff": 3
-        },
-        {
-          "opp": "FUL (H)",
-          "diff": 2
-        },
-        {
-          "opp": "BHA (A)",
-          "diff": 4
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "team": "Fulham",
-      "short": "FUL",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
-      "strat": "Ngôi sao: Castagne (44đ), Iwobi (40đ)",
-      "matches": [
-        {
           "opp": "MCI (A)",
           "diff": 5
         },
         {
-          "opp": "BOU (H)",
+          "opp": "AVL (H)",
           "diff": 3
-        },
-        {
-          "opp": "TOT (A)",
-          "diff": 3
-        },
-        {
-          "opp": "EVE (A)",
-          "diff": 3
-        },
-        {
-          "opp": "BRE (H)",
-          "diff": 3
-        }
-      ]
-    },
-    {
-      "id": 13,
-      "team": "Leeds",
-      "short": "LEE",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
-      "strat": "Ngôi sao: Bogle (58đ), Muharemović (56đ)",
-      "matches": [
-        {
-          "opp": "CHE (A)",
-          "diff": 4
-        },
-        {
-          "opp": "COV (H)",
-          "diff": 2
-        },
-        {
-          "opp": "MCI (A)",
-          "diff": 5
-        },
-        {
-          "opp": "IPS (H)",
-          "diff": 2
-        },
-        {
-          "opp": "LIV (A)",
-          "diff": 4
         }
       ]
     },
@@ -4985,14 +4934,10 @@
       "id": 18,
       "team": "Nott'm Forest",
       "short": "NFO",
-      "avg": 3.4,
-      "avg_label": "3.4 (Xương Xẩu)",
+      "avg": 3.2,
+      "avg_label": "3.2 (Xương Xẩu)",
       "strat": "Ngôi sao: Gibbs-White (39đ), Murillo (35đ)",
       "matches": [
-        {
-          "opp": "BOU (A)",
-          "diff": 4
-        },
         {
           "opp": "CHE (H)",
           "diff": 4
@@ -5008,6 +4953,100 @@
         {
           "opp": "SUN (A)",
           "diff": 3
+        },
+        {
+          "opp": "EVE (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "team": "Arsenal",
+      "short": "ARS",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Gabriel (66đ), Raya (60đ)",
+      "matches": [
+        {
+          "opp": "MCI (H)",
+          "diff": 4
+        },
+        {
+          "opp": "BRE (A)",
+          "diff": 4
+        },
+        {
+          "opp": "TOT (A)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (H)",
+          "diff": 3
+        },
+        {
+          "opp": "MUN (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "team": "Brentford",
+      "short": "BRE",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Schade (46đ), Ajer (42đ)",
+      "matches": [
+        {
+          "opp": "MUN (A)",
+          "diff": 3
+        },
+        {
+          "opp": "ARS (H)",
+          "diff": 4
+        },
+        {
+          "opp": "MCI (H)",
+          "diff": 4
+        },
+        {
+          "opp": "FUL (A)",
+          "diff": 3
+        },
+        {
+          "opp": "NEW (H)",
+          "diff": 3
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "team": "Hull City",
+      "short": "HUL",
+      "avg": 3.4,
+      "avg_label": "3.4 (Xương Xẩu)",
+      "strat": "Ngôi sao: Tzolakis (49đ), Belloumi (48đ)",
+      "matches": [
+        {
+          "opp": "CRY (A)",
+          "diff": 2
+        },
+        {
+          "opp": "NFO (H)",
+          "diff": 3
+        },
+        {
+          "opp": "BOU (A)",
+          "diff": 4
+        },
+        {
+          "opp": "TOT (H)",
+          "diff": 3
+        },
+        {
+          "opp": "MCI (A)",
+          "diff": 5
         }
       ]
     },
@@ -5017,12 +5056,8 @@
       "short": "MCI",
       "avg": 3.6,
       "avg_label": "3.6 (Xương Xẩu)",
-      "strat": "Ngôi sao: Haaland (70đ), Cherki (54đ)",
+      "strat": "Ngôi sao: Haaland (71đ), Cherki (54đ)",
       "matches": [
-        {
-          "opp": "FUL (H)",
-          "diff": 2
-        },
         {
           "opp": "ARS (A)",
           "diff": 5
@@ -5038,6 +5073,10 @@
         {
           "opp": "CHE (H)",
           "diff": 4
+        },
+        {
+          "opp": "HUL (H)",
+          "diff": 2
         }
       ]
     }
@@ -5050,43 +5089,11 @@
       "pos": "DEF",
       "cost": 5.5,
       "pts": 75,
-      "form": 5.3,
+      "form": 4.0,
       "xgi_90": 0.43,
       "ict": 67.1,
       "value": 13.64,
-      "selected_by": 49.2,
-      "news": "",
-      "tag": "👑 Vua Điểm Số"
-    },
-    {
-      "id": 124,
-      "name": "Groß",
-      "team": "BHA",
-      "pos": "MID",
-      "cost": 6.3,
-      "pts": 70,
-      "form": 4.0,
-      "xgi_90": 0.54,
-      "ict": 90.7,
-      "value": 11.11,
-      "selected_by": 49.0,
-      "news": "",
-      "tag": "👑 Vua Điểm Số",
-      "cap_index": 85.5,
-      "next_opp": "HUL (A)"
-    },
-    {
-      "id": 504,
-      "name": "Vuskovic",
-      "team": "BHA",
-      "pos": "DEF",
-      "cost": 5.3,
-      "pts": 70,
-      "form": 6.3,
-      "xgi_90": 0.15,
-      "ict": 41.6,
-      "value": 13.21,
-      "selected_by": 10.8,
+      "selected_by": 49.8,
       "news": "",
       "tag": "👑 Vua Điểm Số"
     },
@@ -5096,16 +5103,48 @@
       "team": "MCI",
       "pos": "FWD",
       "cost": 15.8,
-      "pts": 70,
-      "form": 4.0,
-      "xgi_90": 0.8,
+      "pts": 71,
+      "form": 3.2,
+      "xgi_90": 0.85,
       "ict": 90.3,
-      "value": 4.43,
-      "selected_by": 78.8,
+      "value": 4.49,
+      "selected_by": 78.9,
       "news": "",
       "tag": "👑 Vua Điểm Số",
-      "cap_index": 92.0,
-      "next_opp": "FUL (H)"
+      "cap_index": 79.2,
+      "next_opp": "ARS (A)"
+    },
+    {
+      "id": 124,
+      "name": "Groß",
+      "team": "BHA",
+      "pos": "MID",
+      "cost": 6.3,
+      "pts": 70,
+      "form": 3.0,
+      "xgi_90": 0.54,
+      "ict": 90.7,
+      "value": 11.11,
+      "selected_by": 49.3,
+      "news": "",
+      "tag": "👑 Vua Điểm Số",
+      "cap_index": 79.0,
+      "next_opp": "NEW (H)"
+    },
+    {
+      "id": 504,
+      "name": "Vuskovic",
+      "team": "BHA",
+      "pos": "DEF",
+      "cost": 5.3,
+      "pts": 70,
+      "form": 4.8,
+      "xgi_90": 0.15,
+      "ict": 41.6,
+      "value": 13.21,
+      "selected_by": 11.3,
+      "news": "",
+      "tag": "👑 Vua Điểm Số"
     },
     {
       "id": 4,
@@ -5114,7 +5153,7 @@
       "pos": "DEF",
       "cost": 8.1,
       "pts": 66,
-      "form": 10.3,
+      "form": 7.8,
       "xgi_90": 0.17,
       "ict": 47.8,
       "value": 8.15,
@@ -5129,15 +5168,15 @@
       "pos": "FWD",
       "cost": 6.5,
       "pts": 61,
-      "form": 8.0,
+      "form": 6.0,
       "xgi_90": 0.59,
       "ict": 71.6,
       "value": 9.38,
-      "selected_by": 25.4,
+      "selected_by": 26.0,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 92.8,
-      "next_opp": "NFO (H)"
+      "cap_index": 87.8,
+      "next_opp": "FUL (A)"
     },
     {
       "id": 379,
@@ -5146,15 +5185,15 @@
       "pos": "FWD",
       "cost": 9.3,
       "pts": 61,
-      "form": 6.3,
+      "form": 4.8,
       "xgi_90": 0.62,
       "ict": 71.6,
       "value": 6.56,
-      "selected_by": 26.0,
+      "selected_by": 26.2,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 89.2,
-      "next_opp": "MUN (H)"
+      "cap_index": 85.5,
+      "next_opp": "EVE (A)"
     },
     {
       "id": 1,
@@ -5163,11 +5202,11 @@
       "pos": "GKP",
       "cost": 6.3,
       "pts": 60,
-      "form": 6.0,
+      "form": 4.5,
       "xgi_90": 0.0,
       "ict": 19.7,
       "value": 9.52,
-      "selected_by": 47.7,
+      "selected_by": 47.8,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5178,15 +5217,15 @@
       "pos": "MID",
       "cost": 6.7,
       "pts": 58,
-      "form": 5.3,
+      "form": 4.0,
       "xgi_90": 0.61,
       "ict": 81.0,
       "value": 8.66,
-      "selected_by": 32.2,
+      "selected_by": 32.5,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 86.5,
-      "next_opp": "NFO (H)"
+      "cap_index": 83.2,
+      "next_opp": "FUL (A)"
     },
     {
       "id": 330,
@@ -5195,7 +5234,7 @@
       "pos": "DEF",
       "cost": 4.8,
       "pts": 58,
-      "form": 4.3,
+      "form": 3.2,
       "xgi_90": 0.29,
       "ict": 51.7,
       "value": 12.08,
@@ -5210,11 +5249,11 @@
       "pos": "DEF",
       "cost": 5.9,
       "pts": 57,
-      "form": 4.3,
+      "form": 3.2,
       "xgi_90": 0.26,
       "ict": 40.2,
       "value": 9.66,
-      "selected_by": 48.7,
+      "selected_by": 48.6,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5225,11 +5264,11 @@
       "pos": "DEF",
       "cost": 4.9,
       "pts": 57,
-      "form": 10.7,
+      "form": 8.0,
       "xgi_90": 0.08,
       "ict": 26.9,
       "value": 11.63,
-      "selected_by": 25.4,
+      "selected_by": 25.5,
       "news": "",
       "tag": "💎 Giá Siêu Hời"
     },
@@ -5240,11 +5279,11 @@
       "pos": "GKP",
       "cost": 4.7,
       "pts": 57,
-      "form": 6.3,
+      "form": 4.8,
       "xgi_90": 0.02,
       "ict": 24.8,
       "value": 12.13,
-      "selected_by": 24.2,
+      "selected_by": 24.3,
       "news": "",
       "tag": "💎 Giá Siêu Hời"
     },
@@ -5255,11 +5294,11 @@
       "pos": "DEF",
       "cost": 5.1,
       "pts": 57,
-      "form": 8.7,
+      "form": 6.5,
       "xgi_90": 0.24,
       "ict": 67.3,
       "value": 11.18,
-      "selected_by": 17.2,
+      "selected_by": 18.1,
       "news": "",
       "tag": "💎 Giá Siêu Hời"
     },
@@ -5270,11 +5309,11 @@
       "pos": "DEF",
       "cost": 6.2,
       "pts": 56,
-      "form": 3.3,
+      "form": 2.5,
       "xgi_90": 0.03,
       "ict": 36.0,
       "value": 9.03,
-      "selected_by": 19.0,
+      "selected_by": 18.9,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5285,7 +5324,7 @@
       "pos": "DEF",
       "cost": 5.1,
       "pts": 56,
-      "form": 7.3,
+      "form": 5.5,
       "xgi_90": 0.09,
       "ict": 44.5,
       "value": 10.98,
@@ -5300,15 +5339,15 @@
       "pos": "FWD",
       "cost": 5.7,
       "pts": 55,
-      "form": 9.0,
+      "form": 6.8,
       "xgi_90": 0.82,
       "ict": 89.0,
       "value": 9.65,
-      "selected_by": 11.4,
+      "selected_by": 11.5,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 97.0,
-      "next_opp": "BRE (A)"
+      "cap_index": 91.5,
+      "next_opp": "LIV (H)"
     },
     {
       "id": 166,
@@ -5317,15 +5356,15 @@
       "pos": "FWD",
       "cost": 7.2,
       "pts": 54,
-      "form": 11.0,
+      "form": 8.2,
       "xgi_90": 0.54,
       "ict": 66.5,
       "value": 7.5,
-      "selected_by": 34.5,
+      "selected_by": 35.7,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 98.0,
-      "next_opp": "SUN (H)"
+      "cap_index": 96.0,
+      "next_opp": "IPS (A)"
     },
     {
       "id": 385,
@@ -5334,7 +5373,7 @@
       "pos": "GKP",
       "cost": 5.0,
       "pts": 54,
-      "form": 7.3,
+      "form": 5.5,
       "xgi_90": 0.0,
       "ict": 27.3,
       "value": 10.8,
@@ -5349,15 +5388,15 @@
       "pos": "MID",
       "cost": 7.9,
       "pts": 54,
-      "form": 3.3,
+      "form": 2.5,
       "xgi_90": 0.61,
       "ict": 81.5,
       "value": 6.84,
       "selected_by": 33.6,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 85.5,
-      "next_opp": "FUL (H)"
+      "cap_index": 71.5,
+      "next_opp": "ARS (A)"
     },
     {
       "id": 40,
@@ -5366,15 +5405,15 @@
       "pos": "MID",
       "cost": 8.2,
       "pts": 52,
-      "form": 4.0,
+      "form": 3.0,
       "xgi_90": 0.47,
       "ict": 74.0,
       "value": 6.34,
-      "selected_by": 54.4,
+      "selected_by": 54.6,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 79.8,
-      "next_opp": "LEE (H)"
+      "cap_index": 81.2,
+      "next_opp": "NFO (A)"
     },
     {
       "id": 127,
@@ -5383,15 +5422,15 @@
       "pos": "MID",
       "cost": 5.1,
       "pts": 51,
-      "form": 4.7,
+      "form": 3.5,
       "xgi_90": 0.26,
       "ict": 61.9,
       "value": 10.0,
       "selected_by": 4.6,
       "news": "",
       "tag": "💎 Giá Siêu Hời",
-      "cap_index": 80.2,
-      "next_opp": "HUL (A)"
+      "cap_index": 73.2,
+      "next_opp": "NEW (H)"
     },
     {
       "id": 332,
@@ -5400,7 +5439,7 @@
       "pos": "DEF",
       "cost": 4.5,
       "pts": 51,
-      "form": 5.7,
+      "form": 4.2,
       "xgi_90": 0.17,
       "ict": 39.9,
       "value": 11.33,
@@ -5415,15 +5454,15 @@
       "pos": "MID",
       "cost": 7.5,
       "pts": 50,
-      "form": 4.7,
+      "form": 3.5,
       "xgi_90": 0.29,
       "ict": 58.3,
       "value": 6.67,
       "selected_by": 13.7,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 77.0,
-      "next_opp": "NEW (A)"
+      "cap_index": 70.0,
+      "next_opp": "MCI (H)"
     },
     {
       "id": 15,
@@ -5432,15 +5471,15 @@
       "pos": "MID",
       "cost": 6.7,
       "pts": 50,
-      "form": 5.7,
+      "form": 4.2,
       "xgi_90": 0.53,
       "ict": 77.4,
       "value": 7.46,
       "selected_by": 16.6,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 85.5,
-      "next_opp": "NEW (A)"
+      "cap_index": 77.8,
+      "next_opp": "MCI (H)"
     },
     {
       "id": 236,
@@ -5449,15 +5488,15 @@
       "pos": "MID",
       "cost": 6.7,
       "pts": 50,
-      "form": 5.0,
+      "form": 3.8,
       "xgi_90": 0.32,
       "ict": 80.0,
       "value": 7.46,
       "selected_by": 7.2,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 74.5,
-      "next_opp": "BRE (A)"
+      "cap_index": 71.5,
+      "next_opp": "LIV (H)"
     },
     {
       "id": 572,
@@ -5466,7 +5505,7 @@
       "pos": "GKP",
       "cost": 4.7,
       "pts": 49,
-      "form": 3.3,
+      "form": 2.5,
       "xgi_90": 0.0,
       "ict": 32.9,
       "value": 10.43,
@@ -5481,11 +5520,11 @@
       "pos": "MID",
       "cost": 5.3,
       "pts": 48,
-      "form": 3.0,
+      "form": 2.2,
       "xgi_90": 0.29,
       "ict": 51.9,
       "value": 9.06,
-      "selected_by": 8.9,
+      "selected_by": 8.8,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5496,11 +5535,11 @@
       "pos": "FWD",
       "cost": 5.8,
       "pts": 47,
-      "form": 2.0,
+      "form": 1.5,
       "xgi_90": 0.35,
       "ict": 54.5,
       "value": 8.1,
-      "selected_by": 9.4,
+      "selected_by": 9.3,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5511,11 +5550,11 @@
       "pos": "MID",
       "cost": 9.8,
       "pts": 47,
-      "form": 3.0,
+      "form": 2.2,
       "xgi_90": 0.38,
       "ict": 81.2,
       "value": 4.8,
-      "selected_by": 28.2,
+      "selected_by": 28.1,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5530,7 +5569,7 @@
       "xgi_90": 0.58,
       "ict": 53.9,
       "value": 6.18,
-      "selected_by": 29.5,
+      "selected_by": 28.7,
       "news": "Thigh injury - Unknown return date",
       "tag": "🔥 Máy Cày xGI"
     },
@@ -5541,11 +5580,11 @@
       "pos": "MID",
       "cost": 6.1,
       "pts": 46,
-      "form": 2.0,
+      "form": 1.5,
       "xgi_90": 0.32,
       "ict": 42.8,
       "value": 7.54,
-      "selected_by": 12.4,
+      "selected_by": 12.2,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5556,7 +5595,7 @@
       "pos": "MID",
       "cost": 5.5,
       "pts": 46,
-      "form": 5.0,
+      "form": 3.8,
       "xgi_90": 0.31,
       "ict": 38.0,
       "value": 8.36,
@@ -5571,11 +5610,11 @@
       "pos": "MID",
       "cost": 7.3,
       "pts": 46,
-      "form": 7.0,
+      "form": 5.2,
       "xgi_90": 0.35,
       "ict": 70.5,
       "value": 6.3,
-      "selected_by": 6.7,
+      "selected_by": 6.9,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định"
     },
@@ -5586,11 +5625,11 @@
       "pos": "MID",
       "cost": 7.8,
       "pts": 46,
-      "form": 1.7,
+      "form": 1.2,
       "xgi_90": 0.6,
       "ict": 75.5,
       "value": 5.9,
-      "selected_by": 18.2,
+      "selected_by": 17.9,
       "news": "",
       "tag": "🔥 Máy Cày xGI"
     }
@@ -5601,45 +5640,45 @@
         "name": "N.Jackson",
         "team": "AVL",
         "cost": 7.2,
-        "net_transfers": "+677,752",
+        "net_transfers": "+4,802",
         "pts": 54
-      },
-      {
-        "name": "Van Hecke",
-        "team": "TOT",
-        "cost": 5.1,
-        "net_transfers": "+453,705",
-        "pts": 57
       },
       {
         "name": "Evanilson",
         "team": "BOU",
         "cost": 6.5,
-        "net_transfers": "+409,161",
+        "net_transfers": "+2,964",
         "pts": 61
+      },
+      {
+        "name": "Van Hecke",
+        "team": "TOT",
+        "cost": 5.1,
+        "net_transfers": "+2,090",
+        "pts": 57
       }
     ],
     "falling": [
       {
-        "name": "João Pedro",
-        "team": "CHE",
-        "cost": 7.6,
-        "net_transfers": "-558,509",
-        "pts": 47
+        "name": "Cherki",
+        "team": "MCI",
+        "cost": 7.9,
+        "net_transfers": "-4,801",
+        "pts": 54
       },
       {
         "name": "Gvardiol",
         "team": "MCI",
         "cost": 5.6,
-        "net_transfers": "-507,872",
+        "net_transfers": "-4,542",
         "pts": 44
       },
       {
-        "name": "Guéhi",
-        "team": "MCI",
-        "cost": 5.9,
-        "net_transfers": "-278,420",
-        "pts": 37
+        "name": "João Pedro",
+        "team": "CHE",
+        "cost": 7.6,
+        "net_transfers": "-4,320",
+        "pts": 47
       }
     ]
   },
@@ -5650,11 +5689,11 @@
       "team": "ARS",
       "cost": 6.3,
       "pts": 60,
-      "gw_pts": 6,
-      "form": 6.0,
+      "gw_pts": 0,
+      "form": 4.5,
       "xgi_90": 0.0,
       "ict": 19.7,
-      "selected_by": 47.7
+      "selected_by": 47.8
     },
     "defs": [
       {
@@ -5663,11 +5702,11 @@
         "team": "BHA",
         "cost": 5.5,
         "pts": 75,
-        "gw_pts": 6,
-        "form": 5.3,
+        "gw_pts": 0,
+        "form": 4.0,
         "xgi_90": 0.43,
         "ict": 67.1,
-        "selected_by": 49.2
+        "selected_by": 49.8
       },
       {
         "id": 504,
@@ -5675,11 +5714,11 @@
         "team": "BHA",
         "cost": 5.3,
         "pts": 70,
-        "gw_pts": 12,
-        "form": 6.3,
+        "gw_pts": 0,
+        "form": 4.8,
         "xgi_90": 0.15,
         "ict": 41.6,
-        "selected_by": 10.8
+        "selected_by": 11.3
       },
       {
         "id": 4,
@@ -5687,8 +5726,8 @@
         "team": "ARS",
         "cost": 8.1,
         "pts": 66,
-        "gw_pts": 8,
-        "form": 10.3,
+        "gw_pts": 0,
+        "form": 7.8,
         "xgi_90": 0.17,
         "ict": 47.8,
         "selected_by": 26.6
@@ -5701,11 +5740,11 @@
         "team": "BHA",
         "cost": 6.3,
         "pts": 70,
-        "gw_pts": 10,
-        "form": 4.0,
+        "gw_pts": 0,
+        "form": 3.0,
         "xgi_90": 0.54,
         "ict": 90.7,
-        "selected_by": 49.0
+        "selected_by": 49.3
       },
       {
         "id": 68,
@@ -5713,11 +5752,11 @@
         "team": "BOU",
         "cost": 6.7,
         "pts": 58,
-        "gw_pts": 3,
-        "form": 5.3,
+        "gw_pts": 0,
+        "form": 4.0,
         "xgi_90": 0.61,
         "ict": 81.0,
-        "selected_by": 32.2
+        "selected_by": 32.5
       },
       {
         "id": 399,
@@ -5725,8 +5764,8 @@
         "team": "MCI",
         "cost": 7.9,
         "pts": 54,
-        "gw_pts": 9,
-        "form": 3.3,
+        "gw_pts": 0,
+        "form": 2.5,
         "xgi_90": 0.61,
         "ict": 81.5,
         "selected_by": 33.6
@@ -5737,11 +5776,11 @@
         "team": "CHE",
         "cost": 8.2,
         "pts": 52,
-        "gw_pts": 2,
-        "form": 4.0,
+        "gw_pts": 0,
+        "form": 3.0,
         "xgi_90": 0.47,
         "ict": 74.0,
-        "selected_by": 54.4
+        "selected_by": 54.6
       }
     ],
     "fwds": [
@@ -5750,12 +5789,12 @@
         "name": "Haaland",
         "team": "MCI",
         "cost": 15.8,
-        "pts": 70,
-        "gw_pts": 2,
-        "form": 4.0,
-        "xgi_90": 0.8,
+        "pts": 71,
+        "gw_pts": 1,
+        "form": 3.2,
+        "xgi_90": 0.85,
         "ict": 90.3,
-        "selected_by": 78.8
+        "selected_by": 78.9
       },
       {
         "id": 79,
@@ -5763,11 +5802,11 @@
         "team": "BOU",
         "cost": 6.5,
         "pts": 61,
-        "gw_pts": 9,
-        "form": 8.0,
+        "gw_pts": 0,
+        "form": 6.0,
         "xgi_90": 0.59,
         "ict": 71.6,
-        "selected_by": 25.4
+        "selected_by": 26.0
       },
       {
         "id": 379,
@@ -5775,11 +5814,11 @@
         "team": "LIV",
         "cost": 9.3,
         "pts": 61,
-        "gw_pts": 8,
-        "form": 6.3,
+        "gw_pts": 0,
+        "form": 4.8,
         "xgi_90": 0.62,
         "ict": 71.6,
-        "selected_by": 26.0
+        "selected_by": 26.2
       }
     ],
     "bench": [
@@ -5790,11 +5829,11 @@
         "team": "BHA",
         "cost": 4.7,
         "pts": 57,
-        "gw_pts": 6,
-        "form": 6.3,
+        "gw_pts": 0,
+        "form": 4.8,
         "xgi_90": 0.02,
         "ict": 24.8,
-        "selected_by": 24.2
+        "selected_by": 24.3
       },
       {
         "pos": "DEF",
@@ -5803,8 +5842,8 @@
         "team": "LEE",
         "cost": 4.8,
         "pts": 58,
-        "gw_pts": 7,
-        "form": 4.3,
+        "gw_pts": 0,
+        "form": 3.2,
         "xgi_90": 0.29,
         "ict": 51.7,
         "selected_by": 11.3
@@ -5816,11 +5855,11 @@
         "team": "ARS",
         "cost": 5.9,
         "pts": 57,
-        "gw_pts": 6,
-        "form": 4.3,
+        "gw_pts": 0,
+        "form": 3.2,
         "xgi_90": 0.26,
         "ict": 40.2,
-        "selected_by": 48.7
+        "selected_by": 48.6
       },
       {
         "pos": "FWD",
@@ -5829,14 +5868,14 @@
         "team": "EVE",
         "cost": 5.7,
         "pts": 55,
-        "gw_pts": 16,
-        "form": 9.0,
+        "gw_pts": 0,
+        "form": 6.8,
         "xgi_90": 0.82,
         "ict": 89.0,
-        "selected_by": 11.4
+        "selected_by": 11.5
       }
     ],
-    "total_pts": 697
+    "total_pts": 698
   },
   "captaincy": [
     {
@@ -5846,15 +5885,15 @@
       "pos": "FWD",
       "cost": 7.2,
       "pts": 54,
-      "form": 11.0,
+      "form": 8.2,
       "xgi_90": 0.54,
       "ict": 66.5,
       "value": 7.5,
-      "selected_by": 34.5,
+      "selected_by": 35.7,
       "news": "",
       "tag": "⭐ Trụ Cột Ổn Định",
-      "cap_index": 98.0,
-      "next_opp": "SUN (H)"
+      "cap_index": 96.0,
+      "next_opp": "IPS (A)"
     },
     {
       "id": 249,
@@ -5863,15 +5902,15 @@
       "pos": "FWD",
       "cost": 5.7,
       "pts": 55,
-      "form": 9.0,
+      "form": 6.8,
       "xgi_90": 0.82,
       "ict": 89.0,
       "value": 9.65,
-      "selected_by": 11.4,
+      "selected_by": 11.5,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 97.0,
-      "next_opp": "BRE (A)"
+      "cap_index": 91.5,
+      "next_opp": "LIV (H)"
     },
     {
       "id": 79,
@@ -5880,42 +5919,42 @@
       "pos": "FWD",
       "cost": 6.5,
       "pts": 61,
-      "form": 8.0,
+      "form": 6.0,
       "xgi_90": 0.59,
       "ict": 71.6,
       "value": 9.38,
-      "selected_by": 25.4,
+      "selected_by": 26.0,
       "news": "",
       "tag": "🔥 Máy Cày xGI",
-      "cap_index": 92.8,
-      "next_opp": "NFO (H)"
+      "cap_index": 87.8,
+      "next_opp": "FUL (A)"
     },
     {
-      "id": 411,
-      "name": "Haaland",
-      "team": "MCI",
+      "id": 379,
+      "name": "Isak",
+      "team": "LIV",
       "pos": "FWD",
-      "cost": 15.8,
-      "pts": 70,
-      "form": 4.0,
-      "xgi_90": 0.8,
-      "ict": 90.3,
-      "value": 4.43,
-      "selected_by": 78.8,
+      "cost": 9.3,
+      "pts": 61,
+      "form": 4.8,
+      "xgi_90": 0.62,
+      "ict": 71.6,
+      "value": 6.56,
+      "selected_by": 26.2,
       "news": "",
-      "tag": "👑 Vua Điểm Số",
-      "cap_index": 92.0,
-      "next_opp": "FUL (H)"
+      "tag": "🔥 Máy Cày xGI",
+      "cap_index": 85.5,
+      "next_opp": "EVE (A)"
     }
   ],
   "vip_vault": {
     "team_name": "Cận VIP",
     "manager": "Trung TíT",
-    "total_points": 578,
-    "overall_rank": 3985307,
+    "total_points": 580,
+    "overall_rank": 3960187,
     "gap_to_leader": -27,
     "leader_name": "Bao Bui",
-    "leader_pts": 605,
+    "leader_pts": 607,
     "bank_itb": 2.8,
     "phase1_chips": [
       {
@@ -6003,7 +6042,7 @@
         "cost": 6.3,
         "pts": 70,
         "is_captain": false,
-        "is_vc": false,
+        "is_vc": true,
         "is_bench": false
       },
       {
@@ -6012,7 +6051,7 @@
         "name": "Doku",
         "team": "MCI",
         "cost": 7.5,
-        "pts": 25,
+        "pts": 26,
         "is_captain": false,
         "is_vc": false,
         "is_bench": false
@@ -6025,7 +6064,7 @@
         "cost": 8.2,
         "pts": 52,
         "is_captain": false,
-        "is_vc": true,
+        "is_vc": false,
         "is_bench": false
       },
       {
@@ -6035,7 +6074,7 @@
         "team": "AVL",
         "cost": 7.2,
         "pts": 54,
-        "is_captain": false,
+        "is_captain": true,
         "is_vc": false,
         "is_bench": false
       },
@@ -6056,8 +6095,8 @@
         "name": "Haaland",
         "team": "MCI",
         "cost": 15.8,
-        "pts": 70,
-        "is_captain": true,
+        "pts": 71,
+        "is_captain": false,
         "is_vc": false,
         "is_bench": false
       },
@@ -6067,7 +6106,7 @@
         "name": "Leno",
         "team": "FUL",
         "cost": 4.5,
-        "pts": 39,
+        "pts": 40,
         "is_captain": false,
         "is_vc": false,
         "is_bench": true
@@ -6100,7 +6139,7 @@
         "name": "Affengruber",
         "team": "FUL",
         "cost": 4.5,
-        "pts": 32,
+        "pts": 33,
         "is_captain": false,
         "is_vc": false,
         "is_bench": true
