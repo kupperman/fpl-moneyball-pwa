@@ -599,24 +599,24 @@
 
         if (dispRank === 1) {
           rankBadge = '🥇 #1';
-          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-extrabold border border-amber-500/40 inline-block whitespace-nowrap">🏆 Quán Quân Turn 1</span>';
+          statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-extrabold border border-amber-500/40 inline-block whitespace-nowrap">🏆 Quán Quân</span>';
         } else if (dispRank === 2) {
           rankBadge = '🥈 #2';
           rowStyle = 'bg-cyan-950/15 border-l-2 border-cyan-400 hover:bg-cyan-950/30 cursor-pointer';
-          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-extrabold border border-cyan-500/40 inline-block whitespace-nowrap">🥈 Á Quân Turn 1</span>';
+          statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-extrabold border border-cyan-500/40 inline-block whitespace-nowrap">🥈 Á Quân</span>';
         } else if (dispRank === 3) {
           rankBadge = '🥉 #3';
-          statusTag = '<span class="px-2.5 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700 inline-block whitespace-nowrap">Top 3</span>';
+          statusTag = '<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700 inline-block whitespace-nowrap">Top 3</span>';
         } else if (s.is_last) {
           rowStyle = 'bg-rose-950/15 hover:bg-rose-950/30 cursor-pointer';
-          statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50 inline-block whitespace-nowrap">🎖️ Nhà Hảo Tâm Turn 1</span>';
+          statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50 inline-block whitespace-nowrap">🎖️ Hảo Tâm</span>';
         }
 
         // MÀU XANH SAMSUNG CHO ANH NINH (NINH SS) — TÍNH ĐỘNG THEO VÒNG MỚI NHẤT
         if (s.team === 'Ninh SS') {
           teamNameStyle = 'text-blue-400';
           const gapBottom = Math.max(0, s.total - minPts);
-          statusTag = `<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition inline-block">Hạng ${dispRank} • Cách đáy ${gapBottom}đ</span>`;
+          statusTag = `<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition inline-block whitespace-nowrap">#${dispRank} • +${gapBottom}đ đáy</span>`;
         }
 
         if (isSpot) {
@@ -633,26 +633,26 @@
 
         return `
           <tr onclick="focusSpotlightTeam('${s.team}', true)" title="Bấm để soi riêng đường biểu đồ của ${s.team} (${hlv})" class="${rowStyle} transition">
-            <td class="p-2.5 text-center font-black whitespace-nowrap ${dispRank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
-            <td class="p-2.5 whitespace-nowrap">
-              <div class="flex items-center gap-1.5 whitespace-nowrap">
+            <td class="px-1.5 py-2 text-center font-black whitespace-nowrap ${dispRank <= 2 ? 'text-amber-400' : 'text-slate-400'}">${rankBadge}</td>
+            <td class="px-1.5 py-2 whitespace-nowrap">
+              <div class="flex items-center gap-1 whitespace-nowrap">
                 <span class="w-2 h-2 rounded-full shrink-0" style="background-color:${teamCol}; box-shadow: 0 0 6px ${teamCol}"></span>
                 <span class="font-extrabold ${teamNameStyle}">${s.team}</span>
-                <span class="text-[11px] font-semibold text-slate-300">(${hlv})</span>
-                ${isSpot ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/30 text-cyan-200 font-black">ĐANG SOI</span>' : ''}
+                <span class="text-[10px] font-semibold text-slate-300">(${hlv})</span>
+                ${isSpot ? '<span class="text-[9px] px-1 py-0.2 rounded bg-cyan-500/30 text-cyan-200 font-black">SOI</span>' : ''}
               </div>
             </td>
-            <td class="p-2.5 text-center hidden sm:table-cell whitespace-nowrap">
+            <td class="px-1.5 py-2 text-center hidden sm:table-cell whitespace-nowrap">
               <div class="inline-flex items-center gap-1">${formHtml}</div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers font-bold whitespace-nowrap ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
-            <td class="p-2.5 text-right whitespace-nowrap">
+            <td class="px-1.5 py-2 text-right font-mono-numbers font-bold whitespace-nowrap ${s.gw_pts >= 64 ? 'text-emerald-400' : 'text-slate-300'}">${s.gw_pts}</td>
+            <td class="px-1.5 py-2 text-right whitespace-nowrap">
               <div class="font-mono-numbers font-black text-white">${s.total}</div>
-              <div class="w-16 ml-auto bg-slate-800/90 h-1 rounded-full overflow-hidden mt-0.5">
+              <div class="w-12 ml-auto bg-slate-800/90 h-1 rounded-full overflow-hidden mt-0.5">
                 <div class="h-1 rounded-full" style="width:${pctBar}%; background-color:${teamCol}"></div>
               </div>
             </td>
-            <td class="p-2.5 text-right font-mono-numbers text-slate-400 whitespace-nowrap">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
+            <td class="px-1.5 py-2 text-right font-mono-numbers text-slate-400 whitespace-nowrap">${s.gap_leader === 0 ? 'MỐC #1' : s.gap_leader + 'đ'}</td>
             <td class="p-2.5 text-center whitespace-nowrap">${statusTag}</td>
           </tr>
         `;
