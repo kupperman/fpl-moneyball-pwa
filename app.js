@@ -612,10 +612,11 @@
           statusTag = '<span onclick="event.stopPropagation(); openHaoTamModal()" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-rose-500/25 text-rose-300 font-black border border-rose-500/50 inline-block whitespace-nowrap">🎖️ Nhà Hảo Tâm Turn 1</span>';
         }
 
-        // MÀU XANH SAMSUNG CHO ANH NINH (NINH SS) — CHỈ ĐỔI MÀU CHỮ & TRẠNG THÁI TRÊU CHỌC NHẸ, KHÔNG LÀM BADGE TO LẤN ÁT TOP 1 & NHÀ HẢO TÂM
+        // MÀU XANH SAMSUNG CHO ANH NINH (NINH SS) — TÍNH ĐỘNG THEO VÒNG MỚI NHẤT
         if (s.team === 'Ninh SS') {
           teamNameStyle = 'text-blue-400';
-          statusTag = '<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2.5 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition inline-block whitespace-nowrap">Hạng 5 • Cách đáy 19đ</span>';
+          const gapBottom = Math.max(0, s.total - minPts);
+          statusTag = `<span onclick="event.stopPropagation(); openSamsungModal()" title="Bấm xem lý do đổi màu chống chìm" class="cursor-pointer px-2 py-0.5 rounded-full text-[10px] bg-slate-900 text-blue-300/90 border border-blue-500/30 hover:border-blue-400 transition inline-block">Hạng ${dispRank} • Cách đáy ${gapBottom}đ</span>`;
         }
 
         if (isSpot) {
